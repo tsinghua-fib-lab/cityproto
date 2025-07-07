@@ -98,6 +98,12 @@ extern GetControlledTaxiOrderAllocationPlanRequestDefaultTypeInternal _GetContro
 class GetControlledTaxiOrderAllocationPlanResponse;
 struct GetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal;
 extern GetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal _GetControlledTaxiOrderAllocationPlanResponse_default_instance_;
+class GetGlobalStatisticsRequest;
+struct GetGlobalStatisticsRequestDefaultTypeInternal;
+extern GetGlobalStatisticsRequestDefaultTypeInternal _GetGlobalStatisticsRequest_default_instance_;
+class GetGlobalStatisticsResponse;
+struct GetGlobalStatisticsResponseDefaultTypeInternal;
+extern GetGlobalStatisticsResponseDefaultTypeInternal _GetGlobalStatisticsResponse_default_instance_;
 class GetPersonByLongLatBBoxRequest;
 struct GetPersonByLongLatBBoxRequestDefaultTypeInternal;
 extern GetPersonByLongLatBBoxRequestDefaultTypeInternal _GetPersonByLongLatBBoxRequest_default_instance_;
@@ -188,6 +194,8 @@ template<> ::city::person::v2::GetAllVehiclesRequest* Arena::CreateMaybeMessage<
 template<> ::city::person::v2::GetAllVehiclesResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesResponse>(Arena*);
 template<> ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest* Arena::CreateMaybeMessage<::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest>(Arena*);
 template<> ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* Arena::CreateMaybeMessage<::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse>(Arena*);
+template<> ::city::person::v2::GetGlobalStatisticsRequest* Arena::CreateMaybeMessage<::city::person::v2::GetGlobalStatisticsRequest>(Arena*);
+template<> ::city::person::v2::GetGlobalStatisticsResponse* Arena::CreateMaybeMessage<::city::person::v2::GetGlobalStatisticsResponse>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxRequest>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxResponse* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxResponse>(Arena*);
 template<> ::city::person::v2::GetPersonRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonRequest>(Arena*);
@@ -5749,6 +5757,426 @@ class SetControlledTaxiOrderAllocationPlanResponse final :
   };
   friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetGlobalStatisticsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.GetGlobalStatisticsRequest) */ {
+ public:
+  inline GetGlobalStatisticsRequest() : GetGlobalStatisticsRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetGlobalStatisticsRequest(const GetGlobalStatisticsRequest& from);
+  GetGlobalStatisticsRequest(GetGlobalStatisticsRequest&& from) noexcept
+    : GetGlobalStatisticsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetGlobalStatisticsRequest& operator=(const GetGlobalStatisticsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetGlobalStatisticsRequest& operator=(GetGlobalStatisticsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetGlobalStatisticsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetGlobalStatisticsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetGlobalStatisticsRequest*>(
+               &_GetGlobalStatisticsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  friend void swap(GetGlobalStatisticsRequest& a, GetGlobalStatisticsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetGlobalStatisticsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetGlobalStatisticsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetGlobalStatisticsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetGlobalStatisticsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const GetGlobalStatisticsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const GetGlobalStatisticsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.GetGlobalStatisticsRequest";
+  }
+  protected:
+  explicit GetGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetGlobalStatisticsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetGlobalStatisticsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.GetGlobalStatisticsResponse) */ {
+ public:
+  inline GetGlobalStatisticsResponse() : GetGlobalStatisticsResponse(nullptr) {}
+  ~GetGlobalStatisticsResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetGlobalStatisticsResponse(const GetGlobalStatisticsResponse& from);
+  GetGlobalStatisticsResponse(GetGlobalStatisticsResponse&& from) noexcept
+    : GetGlobalStatisticsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetGlobalStatisticsResponse& operator=(const GetGlobalStatisticsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetGlobalStatisticsResponse& operator=(GetGlobalStatisticsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetGlobalStatisticsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetGlobalStatisticsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetGlobalStatisticsResponse*>(
+               &_GetGlobalStatisticsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    39;
+
+  friend void swap(GetGlobalStatisticsResponse& a, GetGlobalStatisticsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetGlobalStatisticsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetGlobalStatisticsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetGlobalStatisticsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetGlobalStatisticsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetGlobalStatisticsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetGlobalStatisticsResponse& from) {
+    GetGlobalStatisticsResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetGlobalStatisticsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.GetGlobalStatisticsResponse";
+  }
+  protected:
+  explicit GetGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCompletedTotalTravelTimeFieldNumber = 2,
+    kCompletedTotalTravelDistanceFieldNumber = 3,
+    kCompletedAvgTravelTimeFieldNumber = 4,
+    kCompletedAvgVFieldNumber = 5,
+    kNumCompletedTripsFieldNumber = 1,
+    kNumVehiclesFieldNumber = 10,
+    kRunningTotalTravelTimeFieldNumber = 6,
+    kRunningTotalTravelDistanceFieldNumber = 7,
+    kRunningAvgVFieldNumber = 8,
+    kAvgVFieldNumber = 9,
+    kNumPedestriansFieldNumber = 11,
+    kNumPassengersFieldNumber = 12,
+    kNumSubwaysFieldNumber = 13,
+    kNumTaxisFieldNumber = 14,
+    kNumCrowdsFieldNumber = 15,
+  };
+  // double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
+  void clear_completed_total_travel_time();
+  double completed_total_travel_time() const;
+  void set_completed_total_travel_time(double value);
+  private:
+  double _internal_completed_total_travel_time() const;
+  void _internal_set_completed_total_travel_time(double value);
+  public:
+
+  // double completed_total_travel_distance = 3 [json_name = "completedTotalTravelDistance"];
+  void clear_completed_total_travel_distance();
+  double completed_total_travel_distance() const;
+  void set_completed_total_travel_distance(double value);
+  private:
+  double _internal_completed_total_travel_distance() const;
+  void _internal_set_completed_total_travel_distance(double value);
+  public:
+
+  // double completed_avg_travel_time = 4 [json_name = "completedAvgTravelTime"];
+  void clear_completed_avg_travel_time();
+  double completed_avg_travel_time() const;
+  void set_completed_avg_travel_time(double value);
+  private:
+  double _internal_completed_avg_travel_time() const;
+  void _internal_set_completed_avg_travel_time(double value);
+  public:
+
+  // double completed_avg_v = 5 [json_name = "completedAvgV"];
+  void clear_completed_avg_v();
+  double completed_avg_v() const;
+  void set_completed_avg_v(double value);
+  private:
+  double _internal_completed_avg_v() const;
+  void _internal_set_completed_avg_v(double value);
+  public:
+
+  // int32 num_completed_trips = 1 [json_name = "numCompletedTrips"];
+  void clear_num_completed_trips();
+  int32_t num_completed_trips() const;
+  void set_num_completed_trips(int32_t value);
+  private:
+  int32_t _internal_num_completed_trips() const;
+  void _internal_set_num_completed_trips(int32_t value);
+  public:
+
+  // int32 num_vehicles = 10 [json_name = "numVehicles"];
+  void clear_num_vehicles();
+  int32_t num_vehicles() const;
+  void set_num_vehicles(int32_t value);
+  private:
+  int32_t _internal_num_vehicles() const;
+  void _internal_set_num_vehicles(int32_t value);
+  public:
+
+  // double running_total_travel_time = 6 [json_name = "runningTotalTravelTime"];
+  void clear_running_total_travel_time();
+  double running_total_travel_time() const;
+  void set_running_total_travel_time(double value);
+  private:
+  double _internal_running_total_travel_time() const;
+  void _internal_set_running_total_travel_time(double value);
+  public:
+
+  // double running_total_travel_distance = 7 [json_name = "runningTotalTravelDistance"];
+  void clear_running_total_travel_distance();
+  double running_total_travel_distance() const;
+  void set_running_total_travel_distance(double value);
+  private:
+  double _internal_running_total_travel_distance() const;
+  void _internal_set_running_total_travel_distance(double value);
+  public:
+
+  // double running_avg_v = 8 [json_name = "runningAvgV"];
+  void clear_running_avg_v();
+  double running_avg_v() const;
+  void set_running_avg_v(double value);
+  private:
+  double _internal_running_avg_v() const;
+  void _internal_set_running_avg_v(double value);
+  public:
+
+  // double avg_v = 9 [json_name = "avgV"];
+  void clear_avg_v();
+  double avg_v() const;
+  void set_avg_v(double value);
+  private:
+  double _internal_avg_v() const;
+  void _internal_set_avg_v(double value);
+  public:
+
+  // int32 num_pedestrians = 11 [json_name = "numPedestrians"];
+  void clear_num_pedestrians();
+  int32_t num_pedestrians() const;
+  void set_num_pedestrians(int32_t value);
+  private:
+  int32_t _internal_num_pedestrians() const;
+  void _internal_set_num_pedestrians(int32_t value);
+  public:
+
+  // int32 num_passengers = 12 [json_name = "numPassengers"];
+  void clear_num_passengers();
+  int32_t num_passengers() const;
+  void set_num_passengers(int32_t value);
+  private:
+  int32_t _internal_num_passengers() const;
+  void _internal_set_num_passengers(int32_t value);
+  public:
+
+  // int32 num_subways = 13 [json_name = "numSubways"];
+  void clear_num_subways();
+  int32_t num_subways() const;
+  void set_num_subways(int32_t value);
+  private:
+  int32_t _internal_num_subways() const;
+  void _internal_set_num_subways(int32_t value);
+  public:
+
+  // int32 num_taxis = 14 [json_name = "numTaxis"];
+  void clear_num_taxis();
+  int32_t num_taxis() const;
+  void set_num_taxis(int32_t value);
+  private:
+  int32_t _internal_num_taxis() const;
+  void _internal_set_num_taxis(int32_t value);
+  public:
+
+  // int32 num_crowds = 15 [json_name = "numCrowds"];
+  void clear_num_crowds();
+  int32_t num_crowds() const;
+  void set_num_crowds(int32_t value);
+  private:
+  int32_t _internal_num_crowds() const;
+  void _internal_set_num_crowds(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetGlobalStatisticsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    double completed_total_travel_time_;
+    double completed_total_travel_distance_;
+    double completed_avg_travel_time_;
+    double completed_avg_v_;
+    int32_t num_completed_trips_;
+    int32_t num_vehicles_;
+    double running_total_travel_time_;
+    double running_total_travel_distance_;
+    double running_avg_v_;
+    double avg_v_;
+    int32_t num_pedestrians_;
+    int32_t num_passengers_;
+    int32_t num_subways_;
+    int32_t num_taxis_;
+    int32_t num_crowds_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -7244,9 +7672,321 @@ SetControlledTaxiOrderAllocationPlanRequest::order_allocations() const {
 
 // SetControlledTaxiOrderAllocationPlanResponse
 
+// -------------------------------------------------------------------
+
+// GetGlobalStatisticsRequest
+
+// -------------------------------------------------------------------
+
+// GetGlobalStatisticsResponse
+
+// int32 num_completed_trips = 1 [json_name = "numCompletedTrips"];
+inline void GetGlobalStatisticsResponse::clear_num_completed_trips() {
+  _impl_.num_completed_trips_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_completed_trips() const {
+  return _impl_.num_completed_trips_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_completed_trips() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_completed_trips)
+  return _internal_num_completed_trips();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_completed_trips(int32_t value) {
+  
+  _impl_.num_completed_trips_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_completed_trips(int32_t value) {
+  _internal_set_num_completed_trips(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_completed_trips)
+}
+
+// double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
+inline void GetGlobalStatisticsResponse::clear_completed_total_travel_time() {
+  _impl_.completed_total_travel_time_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_completed_total_travel_time() const {
+  return _impl_.completed_total_travel_time_;
+}
+inline double GetGlobalStatisticsResponse::completed_total_travel_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.completed_total_travel_time)
+  return _internal_completed_total_travel_time();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_completed_total_travel_time(double value) {
+  
+  _impl_.completed_total_travel_time_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_completed_total_travel_time(double value) {
+  _internal_set_completed_total_travel_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.completed_total_travel_time)
+}
+
+// double completed_total_travel_distance = 3 [json_name = "completedTotalTravelDistance"];
+inline void GetGlobalStatisticsResponse::clear_completed_total_travel_distance() {
+  _impl_.completed_total_travel_distance_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_completed_total_travel_distance() const {
+  return _impl_.completed_total_travel_distance_;
+}
+inline double GetGlobalStatisticsResponse::completed_total_travel_distance() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.completed_total_travel_distance)
+  return _internal_completed_total_travel_distance();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_completed_total_travel_distance(double value) {
+  
+  _impl_.completed_total_travel_distance_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_completed_total_travel_distance(double value) {
+  _internal_set_completed_total_travel_distance(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.completed_total_travel_distance)
+}
+
+// double completed_avg_travel_time = 4 [json_name = "completedAvgTravelTime"];
+inline void GetGlobalStatisticsResponse::clear_completed_avg_travel_time() {
+  _impl_.completed_avg_travel_time_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_completed_avg_travel_time() const {
+  return _impl_.completed_avg_travel_time_;
+}
+inline double GetGlobalStatisticsResponse::completed_avg_travel_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.completed_avg_travel_time)
+  return _internal_completed_avg_travel_time();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_completed_avg_travel_time(double value) {
+  
+  _impl_.completed_avg_travel_time_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_completed_avg_travel_time(double value) {
+  _internal_set_completed_avg_travel_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.completed_avg_travel_time)
+}
+
+// double completed_avg_v = 5 [json_name = "completedAvgV"];
+inline void GetGlobalStatisticsResponse::clear_completed_avg_v() {
+  _impl_.completed_avg_v_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_completed_avg_v() const {
+  return _impl_.completed_avg_v_;
+}
+inline double GetGlobalStatisticsResponse::completed_avg_v() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.completed_avg_v)
+  return _internal_completed_avg_v();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_completed_avg_v(double value) {
+  
+  _impl_.completed_avg_v_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_completed_avg_v(double value) {
+  _internal_set_completed_avg_v(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.completed_avg_v)
+}
+
+// double running_total_travel_time = 6 [json_name = "runningTotalTravelTime"];
+inline void GetGlobalStatisticsResponse::clear_running_total_travel_time() {
+  _impl_.running_total_travel_time_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_running_total_travel_time() const {
+  return _impl_.running_total_travel_time_;
+}
+inline double GetGlobalStatisticsResponse::running_total_travel_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.running_total_travel_time)
+  return _internal_running_total_travel_time();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_running_total_travel_time(double value) {
+  
+  _impl_.running_total_travel_time_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_running_total_travel_time(double value) {
+  _internal_set_running_total_travel_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.running_total_travel_time)
+}
+
+// double running_total_travel_distance = 7 [json_name = "runningTotalTravelDistance"];
+inline void GetGlobalStatisticsResponse::clear_running_total_travel_distance() {
+  _impl_.running_total_travel_distance_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_running_total_travel_distance() const {
+  return _impl_.running_total_travel_distance_;
+}
+inline double GetGlobalStatisticsResponse::running_total_travel_distance() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.running_total_travel_distance)
+  return _internal_running_total_travel_distance();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_running_total_travel_distance(double value) {
+  
+  _impl_.running_total_travel_distance_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_running_total_travel_distance(double value) {
+  _internal_set_running_total_travel_distance(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.running_total_travel_distance)
+}
+
+// double running_avg_v = 8 [json_name = "runningAvgV"];
+inline void GetGlobalStatisticsResponse::clear_running_avg_v() {
+  _impl_.running_avg_v_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_running_avg_v() const {
+  return _impl_.running_avg_v_;
+}
+inline double GetGlobalStatisticsResponse::running_avg_v() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.running_avg_v)
+  return _internal_running_avg_v();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_running_avg_v(double value) {
+  
+  _impl_.running_avg_v_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_running_avg_v(double value) {
+  _internal_set_running_avg_v(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.running_avg_v)
+}
+
+// double avg_v = 9 [json_name = "avgV"];
+inline void GetGlobalStatisticsResponse::clear_avg_v() {
+  _impl_.avg_v_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_avg_v() const {
+  return _impl_.avg_v_;
+}
+inline double GetGlobalStatisticsResponse::avg_v() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.avg_v)
+  return _internal_avg_v();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_avg_v(double value) {
+  
+  _impl_.avg_v_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_avg_v(double value) {
+  _internal_set_avg_v(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.avg_v)
+}
+
+// int32 num_vehicles = 10 [json_name = "numVehicles"];
+inline void GetGlobalStatisticsResponse::clear_num_vehicles() {
+  _impl_.num_vehicles_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_vehicles() const {
+  return _impl_.num_vehicles_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_vehicles() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_vehicles)
+  return _internal_num_vehicles();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_vehicles(int32_t value) {
+  
+  _impl_.num_vehicles_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_vehicles(int32_t value) {
+  _internal_set_num_vehicles(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_vehicles)
+}
+
+// int32 num_pedestrians = 11 [json_name = "numPedestrians"];
+inline void GetGlobalStatisticsResponse::clear_num_pedestrians() {
+  _impl_.num_pedestrians_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_pedestrians() const {
+  return _impl_.num_pedestrians_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_pedestrians() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_pedestrians)
+  return _internal_num_pedestrians();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_pedestrians(int32_t value) {
+  
+  _impl_.num_pedestrians_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_pedestrians(int32_t value) {
+  _internal_set_num_pedestrians(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_pedestrians)
+}
+
+// int32 num_passengers = 12 [json_name = "numPassengers"];
+inline void GetGlobalStatisticsResponse::clear_num_passengers() {
+  _impl_.num_passengers_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_passengers() const {
+  return _impl_.num_passengers_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_passengers() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_passengers)
+  return _internal_num_passengers();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_passengers(int32_t value) {
+  
+  _impl_.num_passengers_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_passengers(int32_t value) {
+  _internal_set_num_passengers(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_passengers)
+}
+
+// int32 num_subways = 13 [json_name = "numSubways"];
+inline void GetGlobalStatisticsResponse::clear_num_subways() {
+  _impl_.num_subways_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_subways() const {
+  return _impl_.num_subways_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_subways() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_subways)
+  return _internal_num_subways();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_subways(int32_t value) {
+  
+  _impl_.num_subways_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_subways(int32_t value) {
+  _internal_set_num_subways(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_subways)
+}
+
+// int32 num_taxis = 14 [json_name = "numTaxis"];
+inline void GetGlobalStatisticsResponse::clear_num_taxis() {
+  _impl_.num_taxis_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_taxis() const {
+  return _impl_.num_taxis_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_taxis() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_taxis)
+  return _internal_num_taxis();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_taxis(int32_t value) {
+  
+  _impl_.num_taxis_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_taxis(int32_t value) {
+  _internal_set_num_taxis(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_taxis)
+}
+
+// int32 num_crowds = 15 [json_name = "numCrowds"];
+inline void GetGlobalStatisticsResponse::clear_num_crowds() {
+  _impl_.num_crowds_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_crowds() const {
+  return _impl_.num_crowds_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_crowds() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_crowds)
+  return _internal_num_crowds();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_crowds(int32_t value) {
+  
+  _impl_.num_crowds_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_crowds(int32_t value) {
+  _internal_set_num_crowds(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_crowds)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

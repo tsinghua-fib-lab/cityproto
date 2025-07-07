@@ -486,3 +486,41 @@ export const SetControlledTaxiOrderAllocationPlanResponse = /*@__PURE__*/ proto3
   [],
 );
 
+/**
+ * 获取全局统计信息请求
+ * Request for getting global statistics
+ *
+ * @generated from message city.person.v2.GetGlobalStatisticsRequest
+ */
+export const GetGlobalStatisticsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetGlobalStatisticsRequest",
+  [],
+);
+
+/**
+ * 获取全局统计信息响应
+ * Response of getting global statistics
+ *
+ * @generated from message city.person.v2.GetGlobalStatisticsResponse
+ */
+export const GetGlobalStatisticsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetGlobalStatisticsResponse",
+  () => [
+    { no: 1, name: "num_completed_trips", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "completed_total_travel_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "completed_total_travel_distance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "completed_avg_travel_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "completed_avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 6, name: "running_total_travel_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "running_total_travel_distance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "running_avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "num_vehicles", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "num_pedestrians", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "num_passengers", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 13, name: "num_subways", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "num_taxis", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "num_crowds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+

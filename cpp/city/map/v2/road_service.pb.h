@@ -57,6 +57,12 @@ extern GetEventsRequestDefaultTypeInternal _GetEventsRequest_default_instance_;
 class GetEventsResponse;
 struct GetEventsResponseDefaultTypeInternal;
 extern GetEventsResponseDefaultTypeInternal _GetEventsResponse_default_instance_;
+class GetRoadGlobalStatisticsRequest;
+struct GetRoadGlobalStatisticsRequestDefaultTypeInternal;
+extern GetRoadGlobalStatisticsRequestDefaultTypeInternal _GetRoadGlobalStatisticsRequest_default_instance_;
+class GetRoadGlobalStatisticsResponse;
+struct GetRoadGlobalStatisticsResponseDefaultTypeInternal;
+extern GetRoadGlobalStatisticsResponseDefaultTypeInternal _GetRoadGlobalStatisticsResponse_default_instance_;
 class GetRoadRequest;
 struct GetRoadRequestDefaultTypeInternal;
 extern GetRoadRequestDefaultTypeInternal _GetRoadRequest_default_instance_;
@@ -81,6 +87,8 @@ extern RuinInfoDefaultTypeInternal _RuinInfo_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::map::v2::GetEventsRequest* Arena::CreateMaybeMessage<::city::map::v2::GetEventsRequest>(Arena*);
 template<> ::city::map::v2::GetEventsResponse* Arena::CreateMaybeMessage<::city::map::v2::GetEventsResponse>(Arena*);
+template<> ::city::map::v2::GetRoadGlobalStatisticsRequest* Arena::CreateMaybeMessage<::city::map::v2::GetRoadGlobalStatisticsRequest>(Arena*);
+template<> ::city::map::v2::GetRoadGlobalStatisticsResponse* Arena::CreateMaybeMessage<::city::map::v2::GetRoadGlobalStatisticsResponse>(Arena*);
 template<> ::city::map::v2::GetRoadRequest* Arena::CreateMaybeMessage<::city::map::v2::GetRoadRequest>(Arena*);
 template<> ::city::map::v2::GetRoadResponse* Arena::CreateMaybeMessage<::city::map::v2::GetRoadResponse>(Arena*);
 template<> ::city::map::v2::GetRuinInfoRequest* Arena::CreateMaybeMessage<::city::map::v2::GetRuinInfoRequest>(Arena*);
@@ -492,6 +500,272 @@ class GetRoadResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetRoadGlobalStatisticsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.map.v2.GetRoadGlobalStatisticsRequest) */ {
+ public:
+  inline GetRoadGlobalStatisticsRequest() : GetRoadGlobalStatisticsRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetRoadGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetRoadGlobalStatisticsRequest(const GetRoadGlobalStatisticsRequest& from);
+  GetRoadGlobalStatisticsRequest(GetRoadGlobalStatisticsRequest&& from) noexcept
+    : GetRoadGlobalStatisticsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetRoadGlobalStatisticsRequest& operator=(const GetRoadGlobalStatisticsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetRoadGlobalStatisticsRequest& operator=(GetRoadGlobalStatisticsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetRoadGlobalStatisticsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetRoadGlobalStatisticsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetRoadGlobalStatisticsRequest*>(
+               &_GetRoadGlobalStatisticsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(GetRoadGlobalStatisticsRequest& a, GetRoadGlobalStatisticsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetRoadGlobalStatisticsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetRoadGlobalStatisticsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetRoadGlobalStatisticsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetRoadGlobalStatisticsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const GetRoadGlobalStatisticsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const GetRoadGlobalStatisticsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.GetRoadGlobalStatisticsRequest";
+  }
+  protected:
+  explicit GetRoadGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.GetRoadGlobalStatisticsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetRoadGlobalStatisticsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.GetRoadGlobalStatisticsResponse) */ {
+ public:
+  inline GetRoadGlobalStatisticsResponse() : GetRoadGlobalStatisticsResponse(nullptr) {}
+  ~GetRoadGlobalStatisticsResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetRoadGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetRoadGlobalStatisticsResponse(const GetRoadGlobalStatisticsResponse& from);
+  GetRoadGlobalStatisticsResponse(GetRoadGlobalStatisticsResponse&& from) noexcept
+    : GetRoadGlobalStatisticsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetRoadGlobalStatisticsResponse& operator=(const GetRoadGlobalStatisticsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetRoadGlobalStatisticsResponse& operator=(GetRoadGlobalStatisticsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetRoadGlobalStatisticsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetRoadGlobalStatisticsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetRoadGlobalStatisticsResponse*>(
+               &_GetRoadGlobalStatisticsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(GetRoadGlobalStatisticsResponse& a, GetRoadGlobalStatisticsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetRoadGlobalStatisticsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetRoadGlobalStatisticsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetRoadGlobalStatisticsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetRoadGlobalStatisticsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetRoadGlobalStatisticsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetRoadGlobalStatisticsResponse& from) {
+    GetRoadGlobalStatisticsResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetRoadGlobalStatisticsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.GetRoadGlobalStatisticsResponse";
+  }
+  protected:
+  explicit GetRoadGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAvgRoadCongestionIndexFieldNumber = 1,
+  };
+  // double avg_road_congestion_index = 1 [json_name = "avgRoadCongestionIndex"];
+  void clear_avg_road_congestion_index();
+  double avg_road_congestion_index() const;
+  void set_avg_road_congestion_index(double value);
+  private:
+  double _internal_avg_road_congestion_index() const;
+  void _internal_set_avg_road_congestion_index(double value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.GetRoadGlobalStatisticsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    double avg_road_congestion_index_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetRuinInfoRequest final :
     public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.map.v2.GetRuinInfoRequest) */ {
  public:
@@ -539,7 +813,7 @@ class GetRuinInfoRequest final :
                &_GetRuinInfoRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(GetRuinInfoRequest& a, GetRuinInfoRequest& b) {
     a.Swap(&b);
@@ -658,7 +932,7 @@ class RuinInfo final :
                &_RuinInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(RuinInfo& a, RuinInfo& b) {
     a.Swap(&b);
@@ -817,7 +1091,7 @@ class GetRuinInfoResponse final :
                &_GetRuinInfoResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(GetRuinInfoResponse& a, GetRuinInfoResponse& b) {
     a.Swap(&b);
@@ -1013,7 +1287,7 @@ class GetEventsRequest final :
                &_GetEventsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(GetEventsRequest& a, GetEventsRequest& b) {
     a.Swap(&b);
@@ -1132,7 +1406,7 @@ class GetEventsResponse final :
                &_GetEventsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(GetEventsResponse& a, GetEventsResponse& b) {
     a.Swap(&b);
@@ -1289,7 +1563,7 @@ class RoadState final :
                &_RoadState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(RoadState& a, RoadState& b) {
     a.Swap(&b);
@@ -1367,6 +1641,14 @@ class RoadState final :
     kLevelFieldNumber = 2,
     kAvgVFieldNumber = 4,
     kReasonFieldNumber = 3,
+    kInVehicleCntFieldNumber = 7,
+    kMaxVFieldNumber = 6,
+    kOutVehicleCntFieldNumber = 8,
+    kVehicleCntFieldNumber = 9,
+    kCumInVehicleCntFieldNumber = 10,
+    kCumOutVehicleCntFieldNumber = 11,
+    kAvgTravelTimeFieldNumber = 12,
+    kCongestionIndexFieldNumber = 13,
   };
   // repeated .city.map.v2.LaneState lanes = 5 [json_name = "lanes"];
   int lanes_size() const;
@@ -1422,6 +1704,78 @@ class RoadState final :
   void _internal_set_reason(::city::map::v2::InterruptionReason value);
   public:
 
+  // int32 in_vehicle_cnt = 7 [json_name = "inVehicleCnt"];
+  void clear_in_vehicle_cnt();
+  int32_t in_vehicle_cnt() const;
+  void set_in_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_in_vehicle_cnt() const;
+  void _internal_set_in_vehicle_cnt(int32_t value);
+  public:
+
+  // double max_v = 6 [json_name = "maxV"];
+  void clear_max_v();
+  double max_v() const;
+  void set_max_v(double value);
+  private:
+  double _internal_max_v() const;
+  void _internal_set_max_v(double value);
+  public:
+
+  // int32 out_vehicle_cnt = 8 [json_name = "outVehicleCnt"];
+  void clear_out_vehicle_cnt();
+  int32_t out_vehicle_cnt() const;
+  void set_out_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_out_vehicle_cnt() const;
+  void _internal_set_out_vehicle_cnt(int32_t value);
+  public:
+
+  // int32 vehicle_cnt = 9 [json_name = "vehicleCnt"];
+  void clear_vehicle_cnt();
+  int32_t vehicle_cnt() const;
+  void set_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_vehicle_cnt() const;
+  void _internal_set_vehicle_cnt(int32_t value);
+  public:
+
+  // int32 cum_in_vehicle_cnt = 10 [json_name = "cumInVehicleCnt"];
+  void clear_cum_in_vehicle_cnt();
+  int32_t cum_in_vehicle_cnt() const;
+  void set_cum_in_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_cum_in_vehicle_cnt() const;
+  void _internal_set_cum_in_vehicle_cnt(int32_t value);
+  public:
+
+  // int32 cum_out_vehicle_cnt = 11 [json_name = "cumOutVehicleCnt"];
+  void clear_cum_out_vehicle_cnt();
+  int32_t cum_out_vehicle_cnt() const;
+  void set_cum_out_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_cum_out_vehicle_cnt() const;
+  void _internal_set_cum_out_vehicle_cnt(int32_t value);
+  public:
+
+  // double avg_travel_time = 12 [json_name = "avgTravelTime"];
+  void clear_avg_travel_time();
+  double avg_travel_time() const;
+  void set_avg_travel_time(double value);
+  private:
+  double _internal_avg_travel_time() const;
+  void _internal_set_avg_travel_time(double value);
+  public:
+
+  // double congestion_index = 13 [json_name = "congestionIndex"];
+  void clear_congestion_index();
+  double congestion_index() const;
+  void set_congestion_index(double value);
+  private:
+  double _internal_congestion_index() const;
+  void _internal_set_congestion_index(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.map.v2.RoadState)
  private:
   class _Internal;
@@ -1435,6 +1789,14 @@ class RoadState final :
     int level_;
     double avg_v_;
     int reason_;
+    int32_t in_vehicle_cnt_;
+    double max_v_;
+    int32_t out_vehicle_cnt_;
+    int32_t vehicle_cnt_;
+    int32_t cum_in_vehicle_cnt_;
+    int32_t cum_out_vehicle_cnt_;
+    double avg_travel_time_;
+    double congestion_index_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1580,6 +1942,34 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::RoadSta
 GetRoadResponse::states() const {
   // @@protoc_insertion_point(field_list:city.map.v2.GetRoadResponse.states)
   return _impl_.states_;
+}
+
+// -------------------------------------------------------------------
+
+// GetRoadGlobalStatisticsRequest
+
+// -------------------------------------------------------------------
+
+// GetRoadGlobalStatisticsResponse
+
+// double avg_road_congestion_index = 1 [json_name = "avgRoadCongestionIndex"];
+inline void GetRoadGlobalStatisticsResponse::clear_avg_road_congestion_index() {
+  _impl_.avg_road_congestion_index_ = 0;
+}
+inline double GetRoadGlobalStatisticsResponse::_internal_avg_road_congestion_index() const {
+  return _impl_.avg_road_congestion_index_;
+}
+inline double GetRoadGlobalStatisticsResponse::avg_road_congestion_index() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.GetRoadGlobalStatisticsResponse.avg_road_congestion_index)
+  return _internal_avg_road_congestion_index();
+}
+inline void GetRoadGlobalStatisticsResponse::_internal_set_avg_road_congestion_index(double value) {
+  
+  _impl_.avg_road_congestion_index_ = value;
+}
+inline void GetRoadGlobalStatisticsResponse::set_avg_road_congestion_index(double value) {
+  _internal_set_avg_road_congestion_index(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.GetRoadGlobalStatisticsResponse.avg_road_congestion_index)
 }
 
 // -------------------------------------------------------------------
@@ -2021,6 +2411,106 @@ inline void RoadState::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:city.map.v2.RoadState.id)
 }
 
+// int32 in_vehicle_cnt = 7 [json_name = "inVehicleCnt"];
+inline void RoadState::clear_in_vehicle_cnt() {
+  _impl_.in_vehicle_cnt_ = 0;
+}
+inline int32_t RoadState::_internal_in_vehicle_cnt() const {
+  return _impl_.in_vehicle_cnt_;
+}
+inline int32_t RoadState::in_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.in_vehicle_cnt)
+  return _internal_in_vehicle_cnt();
+}
+inline void RoadState::_internal_set_in_vehicle_cnt(int32_t value) {
+  
+  _impl_.in_vehicle_cnt_ = value;
+}
+inline void RoadState::set_in_vehicle_cnt(int32_t value) {
+  _internal_set_in_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.in_vehicle_cnt)
+}
+
+// int32 out_vehicle_cnt = 8 [json_name = "outVehicleCnt"];
+inline void RoadState::clear_out_vehicle_cnt() {
+  _impl_.out_vehicle_cnt_ = 0;
+}
+inline int32_t RoadState::_internal_out_vehicle_cnt() const {
+  return _impl_.out_vehicle_cnt_;
+}
+inline int32_t RoadState::out_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.out_vehicle_cnt)
+  return _internal_out_vehicle_cnt();
+}
+inline void RoadState::_internal_set_out_vehicle_cnt(int32_t value) {
+  
+  _impl_.out_vehicle_cnt_ = value;
+}
+inline void RoadState::set_out_vehicle_cnt(int32_t value) {
+  _internal_set_out_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.out_vehicle_cnt)
+}
+
+// int32 vehicle_cnt = 9 [json_name = "vehicleCnt"];
+inline void RoadState::clear_vehicle_cnt() {
+  _impl_.vehicle_cnt_ = 0;
+}
+inline int32_t RoadState::_internal_vehicle_cnt() const {
+  return _impl_.vehicle_cnt_;
+}
+inline int32_t RoadState::vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.vehicle_cnt)
+  return _internal_vehicle_cnt();
+}
+inline void RoadState::_internal_set_vehicle_cnt(int32_t value) {
+  
+  _impl_.vehicle_cnt_ = value;
+}
+inline void RoadState::set_vehicle_cnt(int32_t value) {
+  _internal_set_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.vehicle_cnt)
+}
+
+// int32 cum_in_vehicle_cnt = 10 [json_name = "cumInVehicleCnt"];
+inline void RoadState::clear_cum_in_vehicle_cnt() {
+  _impl_.cum_in_vehicle_cnt_ = 0;
+}
+inline int32_t RoadState::_internal_cum_in_vehicle_cnt() const {
+  return _impl_.cum_in_vehicle_cnt_;
+}
+inline int32_t RoadState::cum_in_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.cum_in_vehicle_cnt)
+  return _internal_cum_in_vehicle_cnt();
+}
+inline void RoadState::_internal_set_cum_in_vehicle_cnt(int32_t value) {
+  
+  _impl_.cum_in_vehicle_cnt_ = value;
+}
+inline void RoadState::set_cum_in_vehicle_cnt(int32_t value) {
+  _internal_set_cum_in_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.cum_in_vehicle_cnt)
+}
+
+// int32 cum_out_vehicle_cnt = 11 [json_name = "cumOutVehicleCnt"];
+inline void RoadState::clear_cum_out_vehicle_cnt() {
+  _impl_.cum_out_vehicle_cnt_ = 0;
+}
+inline int32_t RoadState::_internal_cum_out_vehicle_cnt() const {
+  return _impl_.cum_out_vehicle_cnt_;
+}
+inline int32_t RoadState::cum_out_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.cum_out_vehicle_cnt)
+  return _internal_cum_out_vehicle_cnt();
+}
+inline void RoadState::_internal_set_cum_out_vehicle_cnt(int32_t value) {
+  
+  _impl_.cum_out_vehicle_cnt_ = value;
+}
+inline void RoadState::set_cum_out_vehicle_cnt(int32_t value) {
+  _internal_set_cum_out_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.cum_out_vehicle_cnt)
+}
+
 // double avg_v = 4 [json_name = "avgV"];
 inline void RoadState::clear_avg_v() {
   _impl_.avg_v_ = 0;
@@ -2041,6 +2531,26 @@ inline void RoadState::set_avg_v(double value) {
   // @@protoc_insertion_point(field_set:city.map.v2.RoadState.avg_v)
 }
 
+// double avg_travel_time = 12 [json_name = "avgTravelTime"];
+inline void RoadState::clear_avg_travel_time() {
+  _impl_.avg_travel_time_ = 0;
+}
+inline double RoadState::_internal_avg_travel_time() const {
+  return _impl_.avg_travel_time_;
+}
+inline double RoadState::avg_travel_time() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.avg_travel_time)
+  return _internal_avg_travel_time();
+}
+inline void RoadState::_internal_set_avg_travel_time(double value) {
+  
+  _impl_.avg_travel_time_ = value;
+}
+inline void RoadState::set_avg_travel_time(double value) {
+  _internal_set_avg_travel_time(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.avg_travel_time)
+}
+
 // .city.map.v2.RoadLevel level = 2 [json_name = "level"];
 inline void RoadState::clear_level() {
   _impl_.level_ = 0;
@@ -2059,6 +2569,26 @@ inline void RoadState::_internal_set_level(::city::map::v2::RoadLevel value) {
 inline void RoadState::set_level(::city::map::v2::RoadLevel value) {
   _internal_set_level(value);
   // @@protoc_insertion_point(field_set:city.map.v2.RoadState.level)
+}
+
+// double congestion_index = 13 [json_name = "congestionIndex"];
+inline void RoadState::clear_congestion_index() {
+  _impl_.congestion_index_ = 0;
+}
+inline double RoadState::_internal_congestion_index() const {
+  return _impl_.congestion_index_;
+}
+inline double RoadState::congestion_index() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.congestion_index)
+  return _internal_congestion_index();
+}
+inline void RoadState::_internal_set_congestion_index(double value) {
+  
+  _impl_.congestion_index_ = value;
+}
+inline void RoadState::set_congestion_index(double value) {
+  _internal_set_congestion_index(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.congestion_index)
 }
 
 // .city.map.v2.InterruptionReason reason = 3 [json_name = "reason"];
@@ -2118,9 +2648,33 @@ RoadState::lanes() const {
   return _impl_.lanes_;
 }
 
+// double max_v = 6 [json_name = "maxV"];
+inline void RoadState::clear_max_v() {
+  _impl_.max_v_ = 0;
+}
+inline double RoadState::_internal_max_v() const {
+  return _impl_.max_v_;
+}
+inline double RoadState::max_v() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadState.max_v)
+  return _internal_max_v();
+}
+inline void RoadState::_internal_set_max_v(double value) {
+  
+  _impl_.max_v_ = value;
+}
+inline void RoadState::set_max_v(double value) {
+  _internal_set_max_v(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadState.max_v)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

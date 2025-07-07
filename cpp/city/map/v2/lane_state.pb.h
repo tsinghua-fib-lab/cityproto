@@ -190,6 +190,12 @@ class LaneState final :
     kRestrictionFieldNumber = 4,
     kAvgVFieldNumber = 3,
     kLightStateFieldNumber = 5,
+    kInVehicleCntFieldNumber = 6,
+    kOutVehicleCntFieldNumber = 7,
+    kVehicleCntFieldNumber = 8,
+    kTotalQueuingTimeFieldNumber = 10,
+    kAvgQueuingTimeFieldNumber = 11,
+    kTotalQueuingVehicleCntFieldNumber = 9,
   };
   // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
   int persons_size() const;
@@ -245,6 +251,60 @@ class LaneState final :
   void _internal_set_light_state(::city::map::v2::LightState value);
   public:
 
+  // int32 in_vehicle_cnt = 6 [json_name = "inVehicleCnt"];
+  void clear_in_vehicle_cnt();
+  int32_t in_vehicle_cnt() const;
+  void set_in_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_in_vehicle_cnt() const;
+  void _internal_set_in_vehicle_cnt(int32_t value);
+  public:
+
+  // int32 out_vehicle_cnt = 7 [json_name = "outVehicleCnt"];
+  void clear_out_vehicle_cnt();
+  int32_t out_vehicle_cnt() const;
+  void set_out_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_out_vehicle_cnt() const;
+  void _internal_set_out_vehicle_cnt(int32_t value);
+  public:
+
+  // int32 vehicle_cnt = 8 [json_name = "vehicleCnt"];
+  void clear_vehicle_cnt();
+  int32_t vehicle_cnt() const;
+  void set_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_vehicle_cnt() const;
+  void _internal_set_vehicle_cnt(int32_t value);
+  public:
+
+  // double total_queuing_time = 10 [json_name = "totalQueuingTime"];
+  void clear_total_queuing_time();
+  double total_queuing_time() const;
+  void set_total_queuing_time(double value);
+  private:
+  double _internal_total_queuing_time() const;
+  void _internal_set_total_queuing_time(double value);
+  public:
+
+  // double avg_queuing_time = 11 [json_name = "avgQueuingTime"];
+  void clear_avg_queuing_time();
+  double avg_queuing_time() const;
+  void set_avg_queuing_time(double value);
+  private:
+  double _internal_avg_queuing_time() const;
+  void _internal_set_avg_queuing_time(double value);
+  public:
+
+  // int32 total_queuing_vehicle_cnt = 9 [json_name = "totalQueuingVehicleCnt"];
+  void clear_total_queuing_vehicle_cnt();
+  int32_t total_queuing_vehicle_cnt() const;
+  void set_total_queuing_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_total_queuing_vehicle_cnt() const;
+  void _internal_set_total_queuing_vehicle_cnt(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.map.v2.LaneState)
  private:
   class _Internal;
@@ -258,6 +318,12 @@ class LaneState final :
     bool restriction_;
     double avg_v_;
     int light_state_;
+    int32_t in_vehicle_cnt_;
+    int32_t out_vehicle_cnt_;
+    int32_t vehicle_cnt_;
+    double total_queuing_time_;
+    double avg_queuing_time_;
+    int32_t total_queuing_vehicle_cnt_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -389,6 +455,126 @@ inline void LaneState::_internal_set_light_state(::city::map::v2::LightState val
 inline void LaneState::set_light_state(::city::map::v2::LightState value) {
   _internal_set_light_state(value);
   // @@protoc_insertion_point(field_set:city.map.v2.LaneState.light_state)
+}
+
+// int32 in_vehicle_cnt = 6 [json_name = "inVehicleCnt"];
+inline void LaneState::clear_in_vehicle_cnt() {
+  _impl_.in_vehicle_cnt_ = 0;
+}
+inline int32_t LaneState::_internal_in_vehicle_cnt() const {
+  return _impl_.in_vehicle_cnt_;
+}
+inline int32_t LaneState::in_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.in_vehicle_cnt)
+  return _internal_in_vehicle_cnt();
+}
+inline void LaneState::_internal_set_in_vehicle_cnt(int32_t value) {
+  
+  _impl_.in_vehicle_cnt_ = value;
+}
+inline void LaneState::set_in_vehicle_cnt(int32_t value) {
+  _internal_set_in_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.in_vehicle_cnt)
+}
+
+// int32 out_vehicle_cnt = 7 [json_name = "outVehicleCnt"];
+inline void LaneState::clear_out_vehicle_cnt() {
+  _impl_.out_vehicle_cnt_ = 0;
+}
+inline int32_t LaneState::_internal_out_vehicle_cnt() const {
+  return _impl_.out_vehicle_cnt_;
+}
+inline int32_t LaneState::out_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.out_vehicle_cnt)
+  return _internal_out_vehicle_cnt();
+}
+inline void LaneState::_internal_set_out_vehicle_cnt(int32_t value) {
+  
+  _impl_.out_vehicle_cnt_ = value;
+}
+inline void LaneState::set_out_vehicle_cnt(int32_t value) {
+  _internal_set_out_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.out_vehicle_cnt)
+}
+
+// int32 vehicle_cnt = 8 [json_name = "vehicleCnt"];
+inline void LaneState::clear_vehicle_cnt() {
+  _impl_.vehicle_cnt_ = 0;
+}
+inline int32_t LaneState::_internal_vehicle_cnt() const {
+  return _impl_.vehicle_cnt_;
+}
+inline int32_t LaneState::vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.vehicle_cnt)
+  return _internal_vehicle_cnt();
+}
+inline void LaneState::_internal_set_vehicle_cnt(int32_t value) {
+  
+  _impl_.vehicle_cnt_ = value;
+}
+inline void LaneState::set_vehicle_cnt(int32_t value) {
+  _internal_set_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.vehicle_cnt)
+}
+
+// int32 total_queuing_vehicle_cnt = 9 [json_name = "totalQueuingVehicleCnt"];
+inline void LaneState::clear_total_queuing_vehicle_cnt() {
+  _impl_.total_queuing_vehicle_cnt_ = 0;
+}
+inline int32_t LaneState::_internal_total_queuing_vehicle_cnt() const {
+  return _impl_.total_queuing_vehicle_cnt_;
+}
+inline int32_t LaneState::total_queuing_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.total_queuing_vehicle_cnt)
+  return _internal_total_queuing_vehicle_cnt();
+}
+inline void LaneState::_internal_set_total_queuing_vehicle_cnt(int32_t value) {
+  
+  _impl_.total_queuing_vehicle_cnt_ = value;
+}
+inline void LaneState::set_total_queuing_vehicle_cnt(int32_t value) {
+  _internal_set_total_queuing_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.total_queuing_vehicle_cnt)
+}
+
+// double total_queuing_time = 10 [json_name = "totalQueuingTime"];
+inline void LaneState::clear_total_queuing_time() {
+  _impl_.total_queuing_time_ = 0;
+}
+inline double LaneState::_internal_total_queuing_time() const {
+  return _impl_.total_queuing_time_;
+}
+inline double LaneState::total_queuing_time() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.total_queuing_time)
+  return _internal_total_queuing_time();
+}
+inline void LaneState::_internal_set_total_queuing_time(double value) {
+  
+  _impl_.total_queuing_time_ = value;
+}
+inline void LaneState::set_total_queuing_time(double value) {
+  _internal_set_total_queuing_time(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.total_queuing_time)
+}
+
+// double avg_queuing_time = 11 [json_name = "avgQueuingTime"];
+inline void LaneState::clear_avg_queuing_time() {
+  _impl_.avg_queuing_time_ = 0;
+}
+inline double LaneState::_internal_avg_queuing_time() const {
+  return _impl_.avg_queuing_time_;
+}
+inline double LaneState::avg_queuing_time() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.avg_queuing_time)
+  return _internal_avg_queuing_time();
+}
+inline void LaneState::_internal_set_avg_queuing_time(double value) {
+  
+  _impl_.avg_queuing_time_ = value;
+}
+inline void LaneState::set_avg_queuing_time(double value) {
+  _internal_set_avg_queuing_time(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.avg_queuing_time)
 }
 
 #ifdef __GNUC__

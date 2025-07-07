@@ -5,3 +5,4 @@ test*
 __pycache__/
 node_modules/
 ignore/
+.venv/

@@ -52,6 +52,30 @@ struct GetRoadResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadResponseDefaultTypeInternal _GetRoadResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetRoadGlobalStatisticsRequest::GetRoadGlobalStatisticsRequest(
+    ::_pbi::ConstantInitialized) {}
+struct GetRoadGlobalStatisticsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetRoadGlobalStatisticsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetRoadGlobalStatisticsRequestDefaultTypeInternal() {}
+  union {
+    GetRoadGlobalStatisticsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadGlobalStatisticsRequestDefaultTypeInternal _GetRoadGlobalStatisticsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetRoadGlobalStatisticsResponse::GetRoadGlobalStatisticsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.avg_road_congestion_index_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetRoadGlobalStatisticsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetRoadGlobalStatisticsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetRoadGlobalStatisticsResponseDefaultTypeInternal() {}
+  union {
+    GetRoadGlobalStatisticsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadGlobalStatisticsResponseDefaultTypeInternal _GetRoadGlobalStatisticsResponse_default_instance_;
 PROTOBUF_CONSTEXPR GetRuinInfoRequest::GetRuinInfoRequest(
     ::_pbi::ConstantInitialized) {}
 struct GetRuinInfoRequestDefaultTypeInternal {
@@ -123,6 +147,14 @@ PROTOBUF_CONSTEXPR RoadState::RoadState(
   , /*decltype(_impl_.level_)*/0
   , /*decltype(_impl_.avg_v_)*/0
   , /*decltype(_impl_.reason_)*/0
+  , /*decltype(_impl_.in_vehicle_cnt_)*/0
+  , /*decltype(_impl_.max_v_)*/0
+  , /*decltype(_impl_.out_vehicle_cnt_)*/0
+  , /*decltype(_impl_.vehicle_cnt_)*/0
+  , /*decltype(_impl_.cum_in_vehicle_cnt_)*/0
+  , /*decltype(_impl_.cum_out_vehicle_cnt_)*/0
+  , /*decltype(_impl_.avg_travel_time_)*/0
+  , /*decltype(_impl_.congestion_index_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RoadStateDefaultTypeInternal {
   PROTOBUF_CONSTEXPR RoadStateDefaultTypeInternal()
@@ -136,7 +168,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace map
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[8];
+static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[10];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto[2];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto = nullptr;
 
@@ -157,6 +189,19 @@ const uint32_t TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadResponse, _impl_.states_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadGlobalStatisticsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadGlobalStatisticsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadGlobalStatisticsResponse, _impl_.avg_road_congestion_index_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -200,25 +245,37 @@ const uint32_t TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.in_vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.out_vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.cum_in_vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.cum_out_vehicle_cnt_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.avg_v_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.avg_travel_time_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.level_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.congestion_index_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.reason_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.lanes_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.max_v_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::map::v2::GetRoadRequest)},
   { 9, -1, -1, sizeof(::city::map::v2::GetRoadResponse)},
-  { 16, -1, -1, sizeof(::city::map::v2::GetRuinInfoRequest)},
-  { 22, -1, -1, sizeof(::city::map::v2::RuinInfo)},
-  { 30, -1, -1, sizeof(::city::map::v2::GetRuinInfoResponse)},
-  { 39, -1, -1, sizeof(::city::map::v2::GetEventsRequest)},
-  { 45, -1, -1, sizeof(::city::map::v2::GetEventsResponse)},
-  { 52, -1, -1, sizeof(::city::map::v2::RoadState)},
+  { 16, -1, -1, sizeof(::city::map::v2::GetRoadGlobalStatisticsRequest)},
+  { 22, -1, -1, sizeof(::city::map::v2::GetRoadGlobalStatisticsResponse)},
+  { 29, -1, -1, sizeof(::city::map::v2::GetRuinInfoRequest)},
+  { 35, -1, -1, sizeof(::city::map::v2::RuinInfo)},
+  { 43, -1, -1, sizeof(::city::map::v2::GetRuinInfoResponse)},
+  { 52, -1, -1, sizeof(::city::map::v2::GetEventsRequest)},
+  { 58, -1, -1, sizeof(::city::map::v2::GetEventsResponse)},
+  { 65, -1, -1, sizeof(::city::map::v2::RoadState)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::city::map::v2::_GetRoadRequest_default_instance_._instance,
   &::city::map::v2::_GetRoadResponse_default_instance_._instance,
+  &::city::map::v2::_GetRoadGlobalStatisticsRequest_default_instance_._instance,
+  &::city::map::v2::_GetRoadGlobalStatisticsResponse_default_instance_._instance,
   &::city::map::v2::_GetRuinInfoRequest_default_instance_._instance,
   &::city::map::v2::_RuinInfo_default_instance_._instance,
   &::city::map::v2::_GetRuinInfoResponse_default_instance_._instance,
@@ -235,39 +292,53 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto[] 
   "ane\030\002 \001(\010R\013excludeLane\022%\n\016exclude_person"
   "\030\003 \001(\010R\rexcludePerson\"A\n\017GetRoadResponse"
   "\022.\n\006states\030\001 \003(\0132\026.city.map.v2.RoadState"
-  "R\006states\"\024\n\022GetRuinInfoRequest\"2\n\010RuinIn"
-  "fo\022\020\n\003num\030\001 \001(\005R\003num\022\024\n\005ratio\030\002 \001(\001R\005rat"
-  "io\"\224\001\n\023GetRuinInfoResponse\022\'\n\003one\030\001 \001(\0132"
-  "\025.city.map.v2.RuinInfoR\003one\022\'\n\003two\030\002 \001(\013"
-  "2\025.city.map.v2.RuinInfoR\003two\022+\n\005three\030\003 "
-  "\001(\0132\025.city.map.v2.RuinInfoR\005three\"\022\n\020Get"
-  "EventsRequest\"B\n\021GetEventsResponse\022-\n\006ev"
-  "ents\030\001 \001(\0132\025.city.event.v1.EventsR\006event"
-  "s\"\305\001\n\tRoadState\022\016\n\002id\030\001 \001(\005R\002id\022\023\n\005avg_v"
-  "\030\004 \001(\001R\004avgV\022,\n\005level\030\002 \001(\0162\026.city.map.v"
-  "2.RoadLevelR\005level\0227\n\006reason\030\003 \001(\0162\037.cit"
-  "y.map.v2.InterruptionReasonR\006reason\022,\n\005l"
-  "anes\030\005 \003(\0132\026.city.map.v2.LaneStateR\005lane"
-  "s*\303\001\n\tRoadLevel\022\032\n\026ROAD_LEVEL_UNSPECIFIE"
-  "D\020\000\022\024\n\020ROAD_LEVEL_CLEAR\020\001\022\031\n\025ROAD_LEVEL_"
-  "LIGHT_LOAD\020\002\022\032\n\026ROAD_LEVEL_MEDIUM_LOAD\020\003"
-  "\022\031\n\025ROAD_LEVEL_HEAVY_LOAD\020\004\022\027\n\023ROAD_LEVE"
-  "L_OVERLOAD\020\005\022\031\n\025ROAD_LEVEL_RESTRICTED\020\006*"
-  "\236\001\n\022InterruptionReason\022#\n\037INTERRUPTION_R"
-  "EASON_UNSPECIFIED\020\000\022\036\n\032INTERRUPTION_REAS"
-  "ON_RUINED\020\001\022\037\n\033INTERRUPTION_REASON_CASCA"
-  "DE\020\002\022\"\n\036INTERRUPTION_REASON_CONGESTION\020\003"
-  "2\361\001\n\013RoadService\022D\n\007GetRoad\022\033.city.map.v"
-  "2.GetRoadRequest\032\034.city.map.v2.GetRoadRe"
-  "sponse\022P\n\013GetRuinInfo\022\037.city.map.v2.GetR"
-  "uinInfoRequest\032 .city.map.v2.GetRuinInfo"
-  "Response\022J\n\tGetEvents\022\035.city.map.v2.GetE"
-  "ventsRequest\032\036.city.map.v2.GetEventsResp"
-  "onseB\244\001\n\017com.city.map.v2B\020RoadServicePro"
-  "toP\001Z1git.fiblab.net/sim/protos/v2/go/ci"
-  "ty/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013Ci"
-  "ty\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCi"
-  "ty::Map::V2b\006proto3"
+  "R\006states\" \n\036GetRoadGlobalStatisticsReque"
+  "st\"\\\n\037GetRoadGlobalStatisticsResponse\0229\n"
+  "\031avg_road_congestion_index\030\001 \001(\001R\026avgRoa"
+  "dCongestionIndex\"\024\n\022GetRuinInfoRequest\"2"
+  "\n\010RuinInfo\022\020\n\003num\030\001 \001(\005R\003num\022\024\n\005ratio\030\002 "
+  "\001(\001R\005ratio\"\224\001\n\023GetRuinInfoResponse\022\'\n\003on"
+  "e\030\001 \001(\0132\025.city.map.v2.RuinInfoR\003one\022\'\n\003t"
+  "wo\030\002 \001(\0132\025.city.map.v2.RuinInfoR\003two\022+\n\005"
+  "three\030\003 \001(\0132\025.city.map.v2.RuinInfoR\005thre"
+  "e\"\022\n\020GetEventsRequest\"B\n\021GetEventsRespon"
+  "se\022-\n\006events\030\001 \001(\0132\025.city.event.v1.Event"
+  "sR\006events\"\370\003\n\tRoadState\022\016\n\002id\030\001 \001(\005R\002id\022"
+  "$\n\016in_vehicle_cnt\030\007 \001(\005R\014inVehicleCnt\022&\n"
+  "\017out_vehicle_cnt\030\010 \001(\005R\routVehicleCnt\022\037\n"
+  "\013vehicle_cnt\030\t \001(\005R\nvehicleCnt\022+\n\022cum_in"
+  "_vehicle_cnt\030\n \001(\005R\017cumInVehicleCnt\022-\n\023c"
+  "um_out_vehicle_cnt\030\013 \001(\005R\020cumOutVehicleC"
+  "nt\022\023\n\005avg_v\030\004 \001(\001R\004avgV\022&\n\017avg_travel_ti"
+  "me\030\014 \001(\001R\ravgTravelTime\022,\n\005level\030\002 \001(\0162\026"
+  ".city.map.v2.RoadLevelR\005level\022)\n\020congest"
+  "ion_index\030\r \001(\001R\017congestionIndex\0227\n\006reas"
+  "on\030\003 \001(\0162\037.city.map.v2.InterruptionReaso"
+  "nR\006reason\022,\n\005lanes\030\005 \003(\0132\026.city.map.v2.L"
+  "aneStateR\005lanes\022\023\n\005max_v\030\006 \001(\001R\004maxV*\303\001\n"
+  "\tRoadLevel\022\032\n\026ROAD_LEVEL_UNSPECIFIED\020\000\022\024"
+  "\n\020ROAD_LEVEL_CLEAR\020\001\022\031\n\025ROAD_LEVEL_LIGHT"
+  "_LOAD\020\002\022\032\n\026ROAD_LEVEL_MEDIUM_LOAD\020\003\022\031\n\025R"
+  "OAD_LEVEL_HEAVY_LOAD\020\004\022\027\n\023ROAD_LEVEL_OVE"
+  "RLOAD\020\005\022\031\n\025ROAD_LEVEL_RESTRICTED\020\006*\236\001\n\022I"
+  "nterruptionReason\022#\n\037INTERRUPTION_REASON"
+  "_UNSPECIFIED\020\000\022\036\n\032INTERRUPTION_REASON_RU"
+  "INED\020\001\022\037\n\033INTERRUPTION_REASON_CASCADE\020\002\022"
+  "\"\n\036INTERRUPTION_REASON_CONGESTION\020\0032\347\002\n\013"
+  "RoadService\022D\n\007GetRoad\022\033.city.map.v2.Get"
+  "RoadRequest\032\034.city.map.v2.GetRoadRespons"
+  "e\022t\n\027GetRoadGlobalStatistics\022+.city.map."
+  "v2.GetRoadGlobalStatisticsRequest\032,.city"
+  ".map.v2.GetRoadGlobalStatisticsResponse\022"
+  "P\n\013GetRuinInfo\022\037.city.map.v2.GetRuinInfo"
+  "Request\032 .city.map.v2.GetRuinInfoRespons"
+  "e\022J\n\tGetEvents\022\035.city.map.v2.GetEventsRe"
+  "quest\032\036.city.map.v2.GetEventsResponseB\244\001"
+  "\n\017com.city.map.v2B\020RoadServiceProtoP\001Z1g"
+  "it.fiblab.net/sim/protos/v2/go/city/map/"
+  "v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\"
+  "V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCity::Map"
+  "::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2fevent_2fv1_2fevent_2eproto,
@@ -275,9 +346,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fr
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto = {
-    false, false, 1579, descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto,
+    false, false, 2132, descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto,
     "city/map/v2/road_service.proto",
-    &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps, 2, 8,
+    &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps, 2, 10,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets,
     file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto, file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto,
     file_level_service_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto,
@@ -767,6 +838,236 @@ void GetRoadResponse::InternalSwap(GetRoadResponse* other) {
 
 // ===================================================================
 
+class GetRoadGlobalStatisticsRequest::_Internal {
+ public:
+};
+
+GetRoadGlobalStatisticsRequest::GetRoadGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.map.v2.GetRoadGlobalStatisticsRequest)
+}
+GetRoadGlobalStatisticsRequest::GetRoadGlobalStatisticsRequest(const GetRoadGlobalStatisticsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetRoadGlobalStatisticsRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.map.v2.GetRoadGlobalStatisticsRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRoadGlobalStatisticsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRoadGlobalStatisticsRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRoadGlobalStatisticsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[2]);
+}
+
+// ===================================================================
+
+class GetRoadGlobalStatisticsResponse::_Internal {
+ public:
+};
+
+GetRoadGlobalStatisticsResponse::GetRoadGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.map.v2.GetRoadGlobalStatisticsResponse)
+}
+GetRoadGlobalStatisticsResponse::GetRoadGlobalStatisticsResponse(const GetRoadGlobalStatisticsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRoadGlobalStatisticsResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.avg_road_congestion_index_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.avg_road_congestion_index_ = from._impl_.avg_road_congestion_index_;
+  // @@protoc_insertion_point(copy_constructor:city.map.v2.GetRoadGlobalStatisticsResponse)
+}
+
+inline void GetRoadGlobalStatisticsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.avg_road_congestion_index_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetRoadGlobalStatisticsResponse::~GetRoadGlobalStatisticsResponse() {
+  // @@protoc_insertion_point(destructor:city.map.v2.GetRoadGlobalStatisticsResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetRoadGlobalStatisticsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetRoadGlobalStatisticsResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetRoadGlobalStatisticsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.map.v2.GetRoadGlobalStatisticsResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.avg_road_congestion_index_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetRoadGlobalStatisticsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double avg_road_congestion_index = 1 [json_name = "avgRoadCongestionIndex"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.avg_road_congestion_index_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetRoadGlobalStatisticsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetRoadGlobalStatisticsResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double avg_road_congestion_index = 1 [json_name = "avgRoadCongestionIndex"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_road_congestion_index = this->_internal_avg_road_congestion_index();
+  uint64_t raw_avg_road_congestion_index;
+  memcpy(&raw_avg_road_congestion_index, &tmp_avg_road_congestion_index, sizeof(tmp_avg_road_congestion_index));
+  if (raw_avg_road_congestion_index != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_avg_road_congestion_index(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetRoadGlobalStatisticsResponse)
+  return target;
+}
+
+size_t GetRoadGlobalStatisticsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetRoadGlobalStatisticsResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // double avg_road_congestion_index = 1 [json_name = "avgRoadCongestionIndex"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_road_congestion_index = this->_internal_avg_road_congestion_index();
+  uint64_t raw_avg_road_congestion_index;
+  memcpy(&raw_avg_road_congestion_index, &tmp_avg_road_congestion_index, sizeof(tmp_avg_road_congestion_index));
+  if (raw_avg_road_congestion_index != 0) {
+    total_size += 1 + 8;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRoadGlobalStatisticsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetRoadGlobalStatisticsResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRoadGlobalStatisticsResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetRoadGlobalStatisticsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetRoadGlobalStatisticsResponse*>(&to_msg);
+  auto& from = static_cast<const GetRoadGlobalStatisticsResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetRoadGlobalStatisticsResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_road_congestion_index = from._internal_avg_road_congestion_index();
+  uint64_t raw_avg_road_congestion_index;
+  memcpy(&raw_avg_road_congestion_index, &tmp_avg_road_congestion_index, sizeof(tmp_avg_road_congestion_index));
+  if (raw_avg_road_congestion_index != 0) {
+    _this->_internal_set_avg_road_congestion_index(from._internal_avg_road_congestion_index());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetRoadGlobalStatisticsResponse::CopyFrom(const GetRoadGlobalStatisticsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.map.v2.GetRoadGlobalStatisticsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRoadGlobalStatisticsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetRoadGlobalStatisticsResponse::InternalSwap(GetRoadGlobalStatisticsResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.avg_road_congestion_index_, other->_impl_.avg_road_congestion_index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRoadGlobalStatisticsResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[3]);
+}
+
+// ===================================================================
+
 class GetRuinInfoRequest::_Internal {
  public:
 };
@@ -802,7 +1103,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuinInfoRequest::GetClassDa
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRuinInfoRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[2]);
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[4]);
 }
 
 // ===================================================================
@@ -1025,7 +1326,7 @@ void RuinInfo::InternalSwap(RuinInfo* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RuinInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[3]);
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[5]);
 }
 
 // ===================================================================
@@ -1305,7 +1606,7 @@ void GetRuinInfoResponse::InternalSwap(GetRuinInfoResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRuinInfoResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[4]);
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[6]);
 }
 
 // ===================================================================
@@ -1345,7 +1646,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEventsRequest::GetClassData
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEventsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[5]);
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[7]);
 }
 
 // ===================================================================
@@ -1544,7 +1845,7 @@ void GetEventsResponse::InternalSwap(GetEventsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEventsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[6]);
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[8]);
 }
 
 // ===================================================================
@@ -1571,12 +1872,20 @@ RoadState::RoadState(const RoadState& from)
     , decltype(_impl_.level_){}
     , decltype(_impl_.avg_v_){}
     , decltype(_impl_.reason_){}
+    , decltype(_impl_.in_vehicle_cnt_){}
+    , decltype(_impl_.max_v_){}
+    , decltype(_impl_.out_vehicle_cnt_){}
+    , decltype(_impl_.vehicle_cnt_){}
+    , decltype(_impl_.cum_in_vehicle_cnt_){}
+    , decltype(_impl_.cum_out_vehicle_cnt_){}
+    , decltype(_impl_.avg_travel_time_){}
+    , decltype(_impl_.congestion_index_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.reason_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.congestion_index_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.congestion_index_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.RoadState)
 }
 
@@ -1590,6 +1899,14 @@ inline void RoadState::SharedCtor(
     , decltype(_impl_.level_){0}
     , decltype(_impl_.avg_v_){0}
     , decltype(_impl_.reason_){0}
+    , decltype(_impl_.in_vehicle_cnt_){0}
+    , decltype(_impl_.max_v_){0}
+    , decltype(_impl_.out_vehicle_cnt_){0}
+    , decltype(_impl_.vehicle_cnt_){0}
+    , decltype(_impl_.cum_in_vehicle_cnt_){0}
+    , decltype(_impl_.cum_out_vehicle_cnt_){0}
+    , decltype(_impl_.avg_travel_time_){0}
+    , decltype(_impl_.congestion_index_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1620,8 +1937,8 @@ void RoadState::Clear() {
 
   _impl_.lanes_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.reason_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
+      reinterpret_cast<char*>(&_impl_.congestion_index_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.congestion_index_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1675,6 +1992,70 @@ const char* RoadState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // double max_v = 6 [json_name = "maxV"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.max_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 in_vehicle_cnt = 7 [json_name = "inVehicleCnt"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.in_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 out_vehicle_cnt = 8 [json_name = "outVehicleCnt"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.out_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 vehicle_cnt = 9 [json_name = "vehicleCnt"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 cum_in_vehicle_cnt = 10 [json_name = "cumInVehicleCnt"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.cum_in_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 cum_out_vehicle_cnt = 11 [json_name = "cumOutVehicleCnt"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.cum_out_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double avg_travel_time = 12 [json_name = "avgTravelTime"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 97)) {
+          _impl_.avg_travel_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double congestion_index = 13 [json_name = "congestionIndex"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 105)) {
+          _impl_.congestion_index_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -1745,6 +2126,66 @@ uint8_t* RoadState::_InternalSerialize(
         InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // double max_v = 6 [json_name = "maxV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_max_v = this->_internal_max_v();
+  uint64_t raw_max_v;
+  memcpy(&raw_max_v, &tmp_max_v, sizeof(tmp_max_v));
+  if (raw_max_v != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_max_v(), target);
+  }
+
+  // int32 in_vehicle_cnt = 7 [json_name = "inVehicleCnt"];
+  if (this->_internal_in_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_in_vehicle_cnt(), target);
+  }
+
+  // int32 out_vehicle_cnt = 8 [json_name = "outVehicleCnt"];
+  if (this->_internal_out_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_out_vehicle_cnt(), target);
+  }
+
+  // int32 vehicle_cnt = 9 [json_name = "vehicleCnt"];
+  if (this->_internal_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_vehicle_cnt(), target);
+  }
+
+  // int32 cum_in_vehicle_cnt = 10 [json_name = "cumInVehicleCnt"];
+  if (this->_internal_cum_in_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_cum_in_vehicle_cnt(), target);
+  }
+
+  // int32 cum_out_vehicle_cnt = 11 [json_name = "cumOutVehicleCnt"];
+  if (this->_internal_cum_out_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_cum_out_vehicle_cnt(), target);
+  }
+
+  // double avg_travel_time = 12 [json_name = "avgTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_travel_time = this->_internal_avg_travel_time();
+  uint64_t raw_avg_travel_time;
+  memcpy(&raw_avg_travel_time, &tmp_avg_travel_time, sizeof(tmp_avg_travel_time));
+  if (raw_avg_travel_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(12, this->_internal_avg_travel_time(), target);
+  }
+
+  // double congestion_index = 13 [json_name = "congestionIndex"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_congestion_index = this->_internal_congestion_index();
+  uint64_t raw_congestion_index;
+  memcpy(&raw_congestion_index, &tmp_congestion_index, sizeof(tmp_congestion_index));
+  if (raw_congestion_index != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(13, this->_internal_congestion_index(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1794,6 +2235,58 @@ size_t RoadState::ByteSizeLong() const {
       ::_pbi::WireFormatLite::EnumSize(this->_internal_reason());
   }
 
+  // int32 in_vehicle_cnt = 7 [json_name = "inVehicleCnt"];
+  if (this->_internal_in_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_in_vehicle_cnt());
+  }
+
+  // double max_v = 6 [json_name = "maxV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_max_v = this->_internal_max_v();
+  uint64_t raw_max_v;
+  memcpy(&raw_max_v, &tmp_max_v, sizeof(tmp_max_v));
+  if (raw_max_v != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 out_vehicle_cnt = 8 [json_name = "outVehicleCnt"];
+  if (this->_internal_out_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_out_vehicle_cnt());
+  }
+
+  // int32 vehicle_cnt = 9 [json_name = "vehicleCnt"];
+  if (this->_internal_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vehicle_cnt());
+  }
+
+  // int32 cum_in_vehicle_cnt = 10 [json_name = "cumInVehicleCnt"];
+  if (this->_internal_cum_in_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_cum_in_vehicle_cnt());
+  }
+
+  // int32 cum_out_vehicle_cnt = 11 [json_name = "cumOutVehicleCnt"];
+  if (this->_internal_cum_out_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_cum_out_vehicle_cnt());
+  }
+
+  // double avg_travel_time = 12 [json_name = "avgTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_travel_time = this->_internal_avg_travel_time();
+  uint64_t raw_avg_travel_time;
+  memcpy(&raw_avg_travel_time, &tmp_avg_travel_time, sizeof(tmp_avg_travel_time));
+  if (raw_avg_travel_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double congestion_index = 13 [json_name = "congestionIndex"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_congestion_index = this->_internal_congestion_index();
+  uint64_t raw_congestion_index;
+  memcpy(&raw_congestion_index, &tmp_congestion_index, sizeof(tmp_congestion_index));
+  if (raw_congestion_index != 0) {
+    total_size += 1 + 8;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1829,6 +2322,42 @@ void RoadState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
   if (from._internal_reason() != 0) {
     _this->_internal_set_reason(from._internal_reason());
   }
+  if (from._internal_in_vehicle_cnt() != 0) {
+    _this->_internal_set_in_vehicle_cnt(from._internal_in_vehicle_cnt());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_max_v = from._internal_max_v();
+  uint64_t raw_max_v;
+  memcpy(&raw_max_v, &tmp_max_v, sizeof(tmp_max_v));
+  if (raw_max_v != 0) {
+    _this->_internal_set_max_v(from._internal_max_v());
+  }
+  if (from._internal_out_vehicle_cnt() != 0) {
+    _this->_internal_set_out_vehicle_cnt(from._internal_out_vehicle_cnt());
+  }
+  if (from._internal_vehicle_cnt() != 0) {
+    _this->_internal_set_vehicle_cnt(from._internal_vehicle_cnt());
+  }
+  if (from._internal_cum_in_vehicle_cnt() != 0) {
+    _this->_internal_set_cum_in_vehicle_cnt(from._internal_cum_in_vehicle_cnt());
+  }
+  if (from._internal_cum_out_vehicle_cnt() != 0) {
+    _this->_internal_set_cum_out_vehicle_cnt(from._internal_cum_out_vehicle_cnt());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_travel_time = from._internal_avg_travel_time();
+  uint64_t raw_avg_travel_time;
+  memcpy(&raw_avg_travel_time, &tmp_avg_travel_time, sizeof(tmp_avg_travel_time));
+  if (raw_avg_travel_time != 0) {
+    _this->_internal_set_avg_travel_time(from._internal_avg_travel_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_congestion_index = from._internal_congestion_index();
+  uint64_t raw_congestion_index;
+  memcpy(&raw_congestion_index, &tmp_congestion_index, sizeof(tmp_congestion_index));
+  if (raw_congestion_index != 0) {
+    _this->_internal_set_congestion_index(from._internal_congestion_index());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1848,8 +2377,8 @@ void RoadState::InternalSwap(RoadState* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.lanes_.InternalSwap(&other->_impl_.lanes_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RoadState, _impl_.reason_)
-      + sizeof(RoadState::_impl_.reason_)
+      PROTOBUF_FIELD_OFFSET(RoadState, _impl_.congestion_index_)
+      + sizeof(RoadState::_impl_.congestion_index_)
       - PROTOBUF_FIELD_OFFSET(RoadState, _impl_.id_)>(
           reinterpret_cast<char*>(&_impl_.id_),
           reinterpret_cast<char*>(&other->_impl_.id_));
@@ -1858,7 +2387,7 @@ void RoadState::InternalSwap(RoadState* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RoadState::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[7]);
+      file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[9]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1873,6 +2402,14 @@ Arena::CreateMaybeMessage< ::city::map::v2::GetRoadRequest >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::city::map::v2::GetRoadResponse*
 Arena::CreateMaybeMessage< ::city::map::v2::GetRoadResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::map::v2::GetRoadResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetRoadGlobalStatisticsRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::GetRoadGlobalStatisticsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetRoadGlobalStatisticsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetRoadGlobalStatisticsResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::GetRoadGlobalStatisticsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetRoadGlobalStatisticsResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::map::v2::GetRuinInfoRequest*
 Arena::CreateMaybeMessage< ::city::map::v2::GetRuinInfoRequest >(Arena* arena) {

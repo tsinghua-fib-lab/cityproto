@@ -46,6 +46,15 @@ class RoadService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadResponse>> PrepareAsyncGetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadResponse>>(PrepareAsyncGetRoadRaw(context, request, cq));
     }
+    // 获取全局统计信息
+    // Get global statistics
+    virtual ::grpc::Status GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadGlobalStatisticsResponse>> AsyncGetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadGlobalStatisticsResponse>>(AsyncGetRoadGlobalStatisticsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadGlobalStatisticsResponse>> PrepareAsyncGetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadGlobalStatisticsResponse>>(PrepareAsyncGetRoadGlobalStatisticsRaw(context, request, cq));
+    }
     virtual ::grpc::Status GetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::city::map::v2::GetRuinInfoResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRuinInfoResponse>> AsyncGetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRuinInfoResponse>>(AsyncGetRuinInfoRaw(context, request, cq));
@@ -67,6 +76,10 @@ class RoadService final {
       // Get road information
       virtual void GetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest* request, ::city::map::v2::GetRoadResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest* request, ::city::map::v2::GetRoadResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 获取全局统计信息
+      // Get global statistics
+      virtual void GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest* request, ::city::map::v2::GetRuinInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest* request, ::city::map::v2::GetRuinInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetEvents(::grpc::ClientContext* context, const ::city::map::v2::GetEventsRequest* request, ::city::map::v2::GetEventsResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -78,6 +91,8 @@ class RoadService final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadResponse>* AsyncGetRoadRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadResponse>* PrepareAsyncGetRoadRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadGlobalStatisticsResponse>* AsyncGetRoadGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRoadGlobalStatisticsResponse>* PrepareAsyncGetRoadGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRuinInfoResponse>* AsyncGetRuinInfoRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetRuinInfoResponse>* PrepareAsyncGetRuinInfoRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetEventsResponse>* AsyncGetEventsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetEventsRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -92,6 +107,13 @@ class RoadService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadResponse>> PrepareAsyncGetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadResponse>>(PrepareAsyncGetRoadRaw(context, request, cq));
+    }
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>> AsyncGetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>>(AsyncGetRoadGlobalStatisticsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>> PrepareAsyncGetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>>(PrepareAsyncGetRoadGlobalStatisticsRaw(context, request, cq));
     }
     ::grpc::Status GetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::city::map::v2::GetRuinInfoResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRuinInfoResponse>> AsyncGetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::grpc::CompletionQueue* cq) {
@@ -112,6 +134,8 @@ class RoadService final {
      public:
       void GetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest* request, ::city::map::v2::GetRoadResponse* response, std::function<void(::grpc::Status)>) override;
       void GetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest* request, ::city::map::v2::GetRoadResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest* request, ::city::map::v2::GetRuinInfoResponse* response, std::function<void(::grpc::Status)>) override;
       void GetRuinInfo(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest* request, ::city::map::v2::GetRuinInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetEvents(::grpc::ClientContext* context, const ::city::map::v2::GetEventsRequest* request, ::city::map::v2::GetEventsResponse* response, std::function<void(::grpc::Status)>) override;
@@ -129,11 +153,14 @@ class RoadService final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadResponse>* AsyncGetRoadRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadResponse>* PrepareAsyncGetRoadRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>* AsyncGetRoadGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>* PrepareAsyncGetRoadGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRuinInfoResponse>* AsyncGetRuinInfoRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRuinInfoResponse>* PrepareAsyncGetRuinInfoRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRuinInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetEventsResponse>* AsyncGetEventsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetEventsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetEventsResponse>* PrepareAsyncGetEventsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetEventsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetRoad_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetRoadGlobalStatistics_;
     const ::grpc::internal::RpcMethod rpcmethod_GetRuinInfo_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEvents_;
   };
@@ -146,6 +173,9 @@ class RoadService final {
     // 查询道路信息
     // Get road information
     virtual ::grpc::Status GetRoad(::grpc::ServerContext* context, const ::city::map::v2::GetRoadRequest* request, ::city::map::v2::GetRoadResponse* response);
+    // 获取全局统计信息
+    // Get global statistics
+    virtual ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response);
     virtual ::grpc::Status GetRuinInfo(::grpc::ServerContext* context, const ::city::map::v2::GetRuinInfoRequest* request, ::city::map::v2::GetRuinInfoResponse* response);
     virtual ::grpc::Status GetEvents(::grpc::ServerContext* context, const ::city::map::v2::GetEventsRequest* request, ::city::map::v2::GetEventsResponse* response);
   };
@@ -170,12 +200,32 @@ class RoadService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_GetRoadGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetRoadGlobalStatistics() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_GetRoadGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRoadGlobalStatistics(::grpc::ServerContext* context, ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::GetRoadGlobalStatisticsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_GetRuinInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetRuinInfo() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_GetRuinInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -186,7 +236,7 @@ class RoadService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetRuinInfo(::grpc::ServerContext* context, ::city::map::v2::GetRuinInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::GetRuinInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -195,7 +245,7 @@ class RoadService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetEvents() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_GetEvents() override {
       BaseClassMustBeDerivedFromService(this);
@@ -206,10 +256,10 @@ class RoadService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetEvents(::grpc::ServerContext* context, ::city::map::v2::GetEventsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::GetEventsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetRoad<WithAsyncMethod_GetRuinInfo<WithAsyncMethod_GetEvents<Service > > > AsyncService;
+  typedef WithAsyncMethod_GetRoad<WithAsyncMethod_GetRoadGlobalStatistics<WithAsyncMethod_GetRuinInfo<WithAsyncMethod_GetEvents<Service > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_GetRoad : public BaseClass {
    private:
@@ -238,18 +288,45 @@ class RoadService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::GetRoadRequest* /*request*/, ::city::map::v2::GetRoadResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_GetRoadGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetRoadGlobalStatistics() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response) { return this->GetRoadGlobalStatistics(context, request, response); }));}
+    void SetMessageAllocatorFor_GetRoadGlobalStatistics(
+        ::grpc::MessageAllocator< ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetRoadGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetRoadGlobalStatistics(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_GetRuinInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetRuinInfo() {
-      ::grpc::Service::MarkMethodCallback(1,
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetRuinInfoRequest, ::city::map::v2::GetRuinInfoResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::map::v2::GetRuinInfoRequest* request, ::city::map::v2::GetRuinInfoResponse* response) { return this->GetRuinInfo(context, request, response); }));}
     void SetMessageAllocatorFor_GetRuinInfo(
         ::grpc::MessageAllocator< ::city::map::v2::GetRuinInfoRequest, ::city::map::v2::GetRuinInfoResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetRuinInfoRequest, ::city::map::v2::GetRuinInfoResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -270,13 +347,13 @@ class RoadService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetEvents() {
-      ::grpc::Service::MarkMethodCallback(2,
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetEventsRequest, ::city::map::v2::GetEventsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::map::v2::GetEventsRequest* request, ::city::map::v2::GetEventsResponse* response) { return this->GetEvents(context, request, response); }));}
     void SetMessageAllocatorFor_GetEvents(
         ::grpc::MessageAllocator< ::city::map::v2::GetEventsRequest, ::city::map::v2::GetEventsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetEventsRequest, ::city::map::v2::GetEventsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -291,7 +368,7 @@ class RoadService final {
     virtual ::grpc::ServerUnaryReactor* GetEvents(
       ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::GetEventsRequest* /*request*/, ::city::map::v2::GetEventsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_GetRoad<WithCallbackMethod_GetRuinInfo<WithCallbackMethod_GetEvents<Service > > > CallbackService;
+  typedef WithCallbackMethod_GetRoad<WithCallbackMethod_GetRoadGlobalStatistics<WithCallbackMethod_GetRuinInfo<WithCallbackMethod_GetEvents<Service > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetRoad : public BaseClass {
@@ -311,12 +388,29 @@ class RoadService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_GetRoadGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetRoadGlobalStatistics() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_GetRoadGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetRuinInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetRuinInfo() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_GetRuinInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -333,7 +427,7 @@ class RoadService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetEvents() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_GetEvents() override {
       BaseClassMustBeDerivedFromService(this);
@@ -365,12 +459,32 @@ class RoadService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetRoadGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetRoadGlobalStatistics() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_GetRoadGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetRoadGlobalStatistics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_GetRuinInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetRuinInfo() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_GetRuinInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -381,7 +495,7 @@ class RoadService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetRuinInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -390,7 +504,7 @@ class RoadService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetEvents() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_GetEvents() override {
       BaseClassMustBeDerivedFromService(this);
@@ -401,7 +515,7 @@ class RoadService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetEvents(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -427,12 +541,34 @@ class RoadService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_GetRoadGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetRoadGlobalStatistics() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetRoadGlobalStatistics(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetRoadGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetRoadGlobalStatistics(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetRuinInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetRuinInfo() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetRuinInfo(context, request, response); }));
@@ -454,7 +590,7 @@ class RoadService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetEvents() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetEvents(context, request, response); }));
@@ -498,12 +634,39 @@ class RoadService final {
     virtual ::grpc::Status StreamedGetRoad(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::GetRoadRequest,::city::map::v2::GetRoadResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_GetRoadGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetRoadGlobalStatistics() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse>* streamer) {
+                       return this->StreamedGetRoadGlobalStatistics(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetRoadGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetRoadGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetRoadGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetRoadGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetRoadGlobalStatistics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::GetRoadGlobalStatisticsRequest,::city::map::v2::GetRoadGlobalStatisticsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetRuinInfo : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetRuinInfo() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::map::v2::GetRuinInfoRequest, ::city::map::v2::GetRuinInfoResponse>(
             [this](::grpc::ServerContext* context,
@@ -530,7 +693,7 @@ class RoadService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetEvents() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::map::v2::GetEventsRequest, ::city::map::v2::GetEventsResponse>(
             [this](::grpc::ServerContext* context,
@@ -551,9 +714,9 @@ class RoadService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetEvents(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::GetEventsRequest,::city::map::v2::GetEventsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetRoad<WithStreamedUnaryMethod_GetRuinInfo<WithStreamedUnaryMethod_GetEvents<Service > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetRoad<WithStreamedUnaryMethod_GetRoadGlobalStatistics<WithStreamedUnaryMethod_GetRuinInfo<WithStreamedUnaryMethod_GetEvents<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetRoad<WithStreamedUnaryMethod_GetRuinInfo<WithStreamedUnaryMethod_GetEvents<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetRoad<WithStreamedUnaryMethod_GetRoadGlobalStatistics<WithStreamedUnaryMethod_GetRuinInfo<WithStreamedUnaryMethod_GetEvents<Service > > > > StreamedService;
 };
 
 }  // namespace v2

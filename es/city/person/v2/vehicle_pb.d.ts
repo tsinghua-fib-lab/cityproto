@@ -339,6 +339,22 @@ export declare class VehicleRuntime extends Message<VehicleRuntime> {
   action?: VehicleAction;
 
   /**
+   * 估计的总行驶距离
+   * estimated total running distance
+   *
+   * @generated from field: double estimated_total_running_distance = 15;
+   */
+  estimatedTotalRunningDistance: number;
+
+  /**
+   * 行驶时间
+   * running time
+   *
+   * @generated from field: double running_time = 16;
+   */
+  runningTime: number;
+
+  /**
    * 走过的里程
    * running distance
    *
@@ -347,12 +363,60 @@ export declare class VehicleRuntime extends Message<VehicleRuntime> {
   runningDistance: number;
 
   /**
+   * 行驶比例
+   * running ratio
+   *
+   * @generated from field: double running_ratio = 18;
+   */
+  runningRatio: number;
+
+  /**
+   * 平均速度
+   * average speed
+   *
+   * @generated from field: double avg_v = 19;
+   */
+  avgV: number;
+
+  /**
    * 走错路次数
    * number of going astray
    *
    * @generated from field: int32 num_going_astray = 7;
    */
   numGoingAstray: number;
+
+  /**
+   * 在车道上排队的次数
+   * number of queuing on lane
+   *
+   * @generated from field: int32 num_queuing_on_lane = 20;
+   */
+  numQueuingOnLane: number;
+
+  /**
+   * 总排队时间
+   * total queuing time
+   *
+   * @generated from field: double total_queuing_time = 21;
+   */
+  totalQueuingTime: number;
+
+  /**
+   * 平均排队时间
+   * average queuing time
+   *
+   * @generated from field: double avg_queuing_time = 22;
+   */
+  avgQueuingTime: number;
+
+  /**
+   * 通过红绿灯次数
+   * number of passing traffic lights
+   *
+   * @generated from field: int32 num_passing_traffic_lights = 23;
+   */
+  numPassingTrafficLights: number;
 
   /**
    * 出发时刻

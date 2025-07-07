@@ -91,12 +91,20 @@ class VehicleRouteAction(_message.Message):
         ...
 
 class VehicleRuntime(_message.Message):
-    __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow', 'carbon', 'emission_statistics', 'pollution_statistics', 'parking_status']
+    __slots__ = ['base', 'lc', 'action', 'estimated_total_running_distance', 'running_time', 'running_distance', 'running_ratio', 'avg_v', 'num_going_astray', 'num_queuing_on_lane', 'total_queuing_time', 'avg_queuing_time', 'num_passing_traffic_lights', 'departure_time', 'eta', 'eta_free_flow', 'carbon', 'emission_statistics', 'pollution_statistics', 'parking_status']
     BASE_FIELD_NUMBER: _ClassVar[int]
     LC_FIELD_NUMBER: _ClassVar[int]
     ACTION_FIELD_NUMBER: _ClassVar[int]
+    ESTIMATED_TOTAL_RUNNING_DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    RUNNING_TIME_FIELD_NUMBER: _ClassVar[int]
     RUNNING_DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    RUNNING_RATIO_FIELD_NUMBER: _ClassVar[int]
+    AVG_V_FIELD_NUMBER: _ClassVar[int]
     NUM_GOING_ASTRAY_FIELD_NUMBER: _ClassVar[int]
+    NUM_QUEUING_ON_LANE_FIELD_NUMBER: _ClassVar[int]
+    TOTAL_QUEUING_TIME_FIELD_NUMBER: _ClassVar[int]
+    AVG_QUEUING_TIME_FIELD_NUMBER: _ClassVar[int]
+    NUM_PASSING_TRAFFIC_LIGHTS_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
     ETA_FIELD_NUMBER: _ClassVar[int]
     ETA_FREE_FLOW_FIELD_NUMBER: _ClassVar[int]
@@ -107,8 +115,16 @@ class VehicleRuntime(_message.Message):
     base: _motion_pb2.PersonMotion
     lc: LC
     action: VehicleAction
+    estimated_total_running_distance: float
+    running_time: float
     running_distance: float
+    running_ratio: float
+    avg_v: float
     num_going_astray: int
+    num_queuing_on_lane: int
+    total_queuing_time: float
+    avg_queuing_time: float
+    num_passing_traffic_lights: int
     departure_time: float
     eta: float
     eta_free_flow: float
@@ -117,7 +133,7 @@ class VehicleRuntime(_message.Message):
     pollution_statistics: _pollution_pb2.PollutionStatistics
     parking_status: VehicleParkingStatus
 
-    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=..., carbon: _Optional[_Union[_carbon_pb2.VehicleCarbon, _Mapping]]=..., emission_statistics: _Optional[_Union[_carbon_pb2.EmissionStatistics, _Mapping]]=..., pollution_statistics: _Optional[_Union[_pollution_pb2.PollutionStatistics, _Mapping]]=..., parking_status: _Optional[_Union[VehicleParkingStatus, str]]=...) -> None:
+    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., estimated_total_running_distance: _Optional[float]=..., running_time: _Optional[float]=..., running_distance: _Optional[float]=..., running_ratio: _Optional[float]=..., avg_v: _Optional[float]=..., num_going_astray: _Optional[int]=..., num_queuing_on_lane: _Optional[int]=..., total_queuing_time: _Optional[float]=..., avg_queuing_time: _Optional[float]=..., num_passing_traffic_lights: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=..., carbon: _Optional[_Union[_carbon_pb2.VehicleCarbon, _Mapping]]=..., emission_statistics: _Optional[_Union[_carbon_pb2.EmissionStatistics, _Mapping]]=..., pollution_statistics: _Optional[_Union[_pollution_pb2.PollutionStatistics, _Mapping]]=..., parking_status: _Optional[_Union[VehicleParkingStatus, str]]=...) -> None:
         ...
 
 class ObservedVehicle(_message.Message):

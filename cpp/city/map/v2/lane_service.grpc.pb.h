@@ -73,6 +73,15 @@ class LaneService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneByLongLatBBoxResponse>> PrepareAsyncGetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneByLongLatBBoxResponse>>(PrepareAsyncGetLaneByLongLatBBoxRaw(context, request, cq));
     }
+    // 获取Lane全局统计信息
+    // Get lane global statistics
+    virtual ::grpc::Status GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneGlobalStatisticsResponse>> AsyncGetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneGlobalStatisticsResponse>>(AsyncGetLaneGlobalStatisticsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneGlobalStatisticsResponse>> PrepareAsyncGetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneGlobalStatisticsResponse>>(PrepareAsyncGetLaneGlobalStatisticsRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -92,6 +101,10 @@ class LaneService final {
       // Get Lane information in a specific region
       virtual void GetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 获取Lane全局统计信息
+      // Get lane global statistics
+      virtual void GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -105,6 +118,8 @@ class LaneService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneResponse>* PrepareAsyncGetLaneRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneByLongLatBBoxResponse>* AsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneByLongLatBBoxResponse>* PrepareAsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneGlobalStatisticsResponse>* AsyncGetLaneGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneGlobalStatisticsResponse>* PrepareAsyncGetLaneGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -137,6 +152,13 @@ class LaneService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneByLongLatBBoxResponse>> PrepareAsyncGetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneByLongLatBBoxResponse>>(PrepareAsyncGetLaneByLongLatBBoxRaw(context, request, cq));
     }
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>> AsyncGetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>>(AsyncGetLaneGlobalStatisticsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>> PrepareAsyncGetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>>(PrepareAsyncGetLaneGlobalStatisticsRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -148,6 +170,8 @@ class LaneService final {
       void GetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest* request, ::city::map::v2::GetLaneResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response, std::function<void(::grpc::Status)>) override;
       void GetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -167,10 +191,13 @@ class LaneService final {
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneResponse>* PrepareAsyncGetLaneRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneByLongLatBBoxResponse>* AsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneByLongLatBBoxResponse>* PrepareAsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>* AsyncGetLaneGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>* PrepareAsyncGetLaneGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_SetLaneMaxV_;
     const ::grpc::internal::RpcMethod rpcmethod_SetLaneRestriction_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLane_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLaneByLongLatBBox_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetLaneGlobalStatistics_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -190,6 +217,9 @@ class LaneService final {
     // 获取特定区域内的Lane的信息
     // Get Lane information in a specific region
     virtual ::grpc::Status GetLaneByLongLatBBox(::grpc::ServerContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response);
+    // 获取Lane全局统计信息
+    // Get lane global statistics
+    virtual ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_SetLaneMaxV : public BaseClass {
@@ -271,7 +301,27 @@ class LaneService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_SetLaneMaxV<WithAsyncMethod_SetLaneRestriction<WithAsyncMethod_GetLane<WithAsyncMethod_GetLaneByLongLatBBox<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetLaneGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetLaneGlobalStatistics() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_GetLaneGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetLaneGlobalStatistics(::grpc::ServerContext* context, ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::GetLaneGlobalStatisticsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_SetLaneMaxV<WithAsyncMethod_SetLaneRestriction<WithAsyncMethod_GetLane<WithAsyncMethod_GetLaneByLongLatBBox<WithAsyncMethod_GetLaneGlobalStatistics<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_SetLaneMaxV : public BaseClass {
    private:
@@ -380,7 +430,34 @@ class LaneService final {
     virtual ::grpc::ServerUnaryReactor* GetLaneByLongLatBBox(
       ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::GetLaneByLongLatBBoxRequest* /*request*/, ::city::map::v2::GetLaneByLongLatBBoxResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_SetLaneMaxV<WithCallbackMethod_SetLaneRestriction<WithCallbackMethod_GetLane<WithCallbackMethod_GetLaneByLongLatBBox<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_GetLaneGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetLaneGlobalStatistics() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response) { return this->GetLaneGlobalStatistics(context, request, response); }));}
+    void SetMessageAllocatorFor_GetLaneGlobalStatistics(
+        ::grpc::MessageAllocator< ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetLaneGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetLaneGlobalStatistics(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_SetLaneMaxV<WithCallbackMethod_SetLaneRestriction<WithCallbackMethod_GetLane<WithCallbackMethod_GetLaneByLongLatBBox<WithCallbackMethod_GetLaneGlobalStatistics<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_SetLaneMaxV : public BaseClass {
@@ -446,6 +523,23 @@ class LaneService final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetLaneByLongLatBBox(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneByLongLatBBoxRequest* /*request*/, ::city::map::v2::GetLaneByLongLatBBoxResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetLaneGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetLaneGlobalStatistics() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_GetLaneGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -528,6 +622,26 @@ class LaneService final {
     }
     void RequestGetLaneByLongLatBBox(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetLaneGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetLaneGlobalStatistics() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_GetLaneGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetLaneGlobalStatistics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -616,6 +730,28 @@ class LaneService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetLaneByLongLatBBox(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetLaneGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetLaneGlobalStatistics() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetLaneGlobalStatistics(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetLaneGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetLaneGlobalStatistics(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -726,9 +862,36 @@ class LaneService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetLaneByLongLatBBox(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::GetLaneByLongLatBBoxRequest,::city::map::v2::GetLaneByLongLatBBoxResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_SetLaneRestriction<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetLaneGlobalStatistics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetLaneGlobalStatistics() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse>* streamer) {
+                       return this->StreamedGetLaneGlobalStatistics(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetLaneGlobalStatistics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetLaneGlobalStatistics(::grpc::ServerContext* /*context*/, const ::city::map::v2::GetLaneGlobalStatisticsRequest* /*request*/, ::city::map::v2::GetLaneGlobalStatisticsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetLaneGlobalStatistics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::GetLaneGlobalStatisticsRequest,::city::map::v2::GetLaneGlobalStatisticsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_SetLaneRestriction<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<WithStreamedUnaryMethod_GetLaneGlobalStatistics<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_SetLaneRestriction<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_SetLaneRestriction<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<WithStreamedUnaryMethod_GetLaneGlobalStatistics<Service > > > > > StreamedService;
 };
 
 }  // namespace v2

@@ -1105,3 +1105,167 @@ export declare class SetControlledTaxiOrderAllocationPlanResponse extends Messag
   static equals(a: SetControlledTaxiOrderAllocationPlanResponse | PlainMessage<SetControlledTaxiOrderAllocationPlanResponse> | undefined, b: SetControlledTaxiOrderAllocationPlanResponse | PlainMessage<SetControlledTaxiOrderAllocationPlanResponse> | undefined): boolean;
 }
 
+/**
+ * 获取全局统计信息请求
+ * Request for getting global statistics
+ *
+ * @generated from message city.person.v2.GetGlobalStatisticsRequest
+ */
+export declare class GetGlobalStatisticsRequest extends Message<GetGlobalStatisticsRequest> {
+  constructor(data?: PartialMessage<GetGlobalStatisticsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetGlobalStatisticsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGlobalStatisticsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGlobalStatisticsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGlobalStatisticsRequest;
+
+  static equals(a: GetGlobalStatisticsRequest | PlainMessage<GetGlobalStatisticsRequest> | undefined, b: GetGlobalStatisticsRequest | PlainMessage<GetGlobalStatisticsRequest> | undefined): boolean;
+}
+
+/**
+ * 获取全局统计信息响应
+ * Response of getting global statistics
+ *
+ * @generated from message city.person.v2.GetGlobalStatisticsResponse
+ */
+export declare class GetGlobalStatisticsResponse extends Message<GetGlobalStatisticsResponse> {
+  /**
+   * 完成行程数
+   * completed trip count
+   *
+   * @generated from field: int32 num_completed_trips = 1;
+   */
+  numCompletedTrips: number;
+
+  /**
+   * 完成行程总行驶时间
+   * total travel time of completed trips
+   *
+   * @generated from field: double completed_total_travel_time = 2;
+   */
+  completedTotalTravelTime: number;
+
+  /**
+   * 完成行程总行驶距离
+   * total travel distance of completed trips
+   *
+   * @generated from field: double completed_total_travel_distance = 3;
+   */
+  completedTotalTravelDistance: number;
+
+  /**
+   * 完成行程平均行驶时间
+   * average travel time of completed trips
+   *
+   * @generated from field: double completed_avg_travel_time = 4;
+   */
+  completedAvgTravelTime: number;
+
+  /**
+   * 完成行程平均速度
+   * average speed of completed trips
+   *
+   * @generated from field: double completed_avg_v = 5;
+   */
+  completedAvgV: number;
+
+  /**
+   * 在路上的行程总行驶时间
+   * total travel time of running trips
+   *
+   * @generated from field: double running_total_travel_time = 6;
+   */
+  runningTotalTravelTime: number;
+
+  /**
+   * 在路上的行程总行驶距离
+   * total travel distance of running trips
+   *
+   * @generated from field: double running_total_travel_distance = 7;
+   */
+  runningTotalTravelDistance: number;
+
+  /**
+   * 在路上的行程平均速度
+   * average speed of running trips
+   *
+   * @generated from field: double running_avg_v = 8;
+   */
+  runningAvgV: number;
+
+  /**
+   * 当前步平均速度
+   * current step's average speed
+   *
+   * @generated from field: double avg_v = 9;
+   */
+  avgV: number;
+
+  /**
+   * 当前车辆数
+   * current vehicle count
+   *
+   * @generated from field: int32 num_vehicles = 10;
+   */
+  numVehicles: number;
+
+  /**
+   * 当前行人数
+   * current pedestrian count
+   *
+   * @generated from field: int32 num_pedestrians = 11;
+   */
+  numPedestrians: number;
+
+  /**
+   * 当前乘客数
+   * current passenger count
+   *
+   * @generated from field: int32 num_passengers = 12;
+   */
+  numPassengers: number;
+
+  /**
+   * 当前地铁数
+   * current subway count
+   *
+   * @generated from field: int32 num_subways = 13;
+   */
+  numSubways: number;
+
+  /**
+   * 当前出租车数
+   * current taxi count
+   *
+   * @generated from field: int32 num_taxis = 14;
+   */
+  numTaxis: number;
+
+  /**
+   * 当前室内行人数
+   * current indoor pedestrian count
+   *
+   * @generated from field: int32 num_crowds = 15;
+   */
+  numCrowds: number;
+
+  constructor(data?: PartialMessage<GetGlobalStatisticsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetGlobalStatisticsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGlobalStatisticsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGlobalStatisticsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGlobalStatisticsResponse;
+
+  static equals(a: GetGlobalStatisticsResponse | PlainMessage<GetGlobalStatisticsResponse> | undefined, b: GetGlobalStatisticsResponse | PlainMessage<GetGlobalStatisticsResponse> | undefined): boolean;
+}
+

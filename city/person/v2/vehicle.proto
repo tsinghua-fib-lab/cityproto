@@ -77,12 +77,36 @@ message VehicleRuntime {
   // 本轮车辆行为（获取车辆环境信息时不返回）
   // vehicle action in the step (not returned when getting vehicle environment information)
   optional VehicleAction action = 5;
+  // 估计的总行驶距离
+  // estimated total running distance
+  double estimated_total_running_distance = 15;
+  // 行驶时间
+  // running time
+  double running_time = 16;
   // 走过的里程
   // running distance
   double running_distance = 6;
+  // 行驶比例
+  // running ratio
+  double running_ratio = 18;
+  // 平均速度
+  // average speed
+  double avg_v = 19;
   // 走错路次数
   // number of going astray
   int32 num_going_astray = 7;
+  // 在车道上排队的次数
+  // number of queuing on lane
+  int32 num_queuing_on_lane = 20;
+  // 总排队时间
+  // total queuing time
+  double total_queuing_time = 21;
+  // 平均排队时间
+  // average queuing time
+  double avg_queuing_time = 22;
+  // 通过红绿灯次数
+  // number of passing traffic lights
+  int32 num_passing_traffic_lights = 23;
   // 出发时刻
   // departure time
   double departure_time = 8;

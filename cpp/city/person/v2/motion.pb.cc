@@ -33,6 +33,9 @@ PROTOBUF_CONSTEXPR PersonMotion::PersonMotion(
   , /*decltype(_impl_.direction_)*/0
   , /*decltype(_impl_.l_)*/0
   , /*decltype(_impl_.a_)*/0
+  , /*decltype(_impl_.queuing_time_on_cur_lane_)*/0
+  , /*decltype(_impl_.is_queuing_on_lane_)*/false
+  , /*decltype(_impl_.num_passengers_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonMotionDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PersonMotionDefaultTypeInternal()
@@ -65,6 +68,9 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fmotion_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PersonMotion, _impl_.activity_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PersonMotion, _impl_.l_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PersonMotion, _impl_.a_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PersonMotion, _impl_.is_queuing_on_lane_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PersonMotion, _impl_.queuing_time_on_cur_lane_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PersonMotion, _impl_.num_passengers_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::PersonMotion)},
@@ -76,30 +82,34 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2fperson_2fv2_2fmotion_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033city/person/v2/motion.proto\022\016city.pers"
-  "on.v2\032\025city/geo/v2/geo.proto\"\345\001\n\014PersonM"
+  "on.v2\032\025city/geo/v2/geo.proto\"\361\002\n\014PersonM"
   "otion\022\016\n\002id\030\001 \001(\005R\002id\022.\n\006status\030\002 \001(\0162\026."
   "city.person.v2.StatusR\006status\0221\n\010positio"
   "n\030\003 \001(\0132\025.city.geo.v2.PositionR\010position"
   "\022\014\n\001v\030\004 \001(\001R\001v\022\034\n\tdirection\030\005 \001(\001R\tdirec"
   "tion\022\032\n\010activity\030\006 \001(\tR\010activity\022\014\n\001l\030\007 "
-  "\001(\001R\001l\022\014\n\001a\030\010 \001(\001R\001a*\335\001\n\006Status\022\026\n\022STATU"
-  "S_UNSPECIFIED\020\000\022\020\n\014STATUS_SLEEP\020\001\022\022\n\016STA"
-  "TUS_DRIVING\020\002\022\022\n\016STATUS_WALKING\020\003\022\020\n\014STA"
-  "TUS_CROWD\020\004\022\024\n\020STATUS_PASSENGER\020\005\022\025\n\021STA"
-  "TUS_WAIT_ROUTE\020\006\022\023\n\017STATUS_WAIT_BUS\020\007\022\027\n"
-  "\023STATUS_RAIL_TRANSIT\020\010\022\024\n\020STATUS_WAIT_TA"
-  "XI\020\tB\264\001\n\022com.city.person.v2B\013MotionProto"
-  "P\001Z7git.fiblab.net/sim/protos/v2/go/city"
-  "/person/v2;personv2\242\002\003CPX\252\002\016City.Person."
-  "V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPB"
-  "Metadata\352\002\020City::Person::V2b\006proto3"
+  "\001(\001R\001l\022\014\n\001a\030\010 \001(\001R\001a\022+\n\022is_queuing_on_la"
+  "ne\030\t \001(\010R\017isQueuingOnLane\0226\n\030queuing_tim"
+  "e_on_cur_lane\030\n \001(\001R\024queuingTimeOnCurLan"
+  "e\022%\n\016num_passengers\030\013 \001(\005R\rnumPassengers"
+  "*\335\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\020\n\014S"
+  "TATUS_SLEEP\020\001\022\022\n\016STATUS_DRIVING\020\002\022\022\n\016STA"
+  "TUS_WALKING\020\003\022\020\n\014STATUS_CROWD\020\004\022\024\n\020STATU"
+  "S_PASSENGER\020\005\022\025\n\021STATUS_WAIT_ROUTE\020\006\022\023\n\017"
+  "STATUS_WAIT_BUS\020\007\022\027\n\023STATUS_RAIL_TRANSIT"
+  "\020\010\022\024\n\020STATUS_WAIT_TAXI\020\tB\264\001\n\022com.city.pe"
+  "rson.v2B\013MotionProtoP\001Z7git.fiblab.net/s"
+  "im/protos/v2/go/city/person/v2;personv2\242"
+  "\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\V2\342"
+  "\002\032City\\Person\\V2\\GPBMetadata\352\002\020City::Per"
+  "son::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fmotion_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fmotion_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fmotion_2eproto = {
-    false, false, 715, descriptor_table_protodef_city_2fperson_2fv2_2fmotion_2eproto,
+    false, false, 855, descriptor_table_protodef_city_2fperson_2fv2_2fmotion_2eproto,
     "city/person/v2/motion.proto",
     &descriptor_table_city_2fperson_2fv2_2fmotion_2eproto_once, descriptor_table_city_2fperson_2fv2_2fmotion_2eproto_deps, 1, 1,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fmotion_2eproto::offsets,
@@ -173,6 +183,9 @@ PersonMotion::PersonMotion(const PersonMotion& from)
     , decltype(_impl_.direction_){}
     , decltype(_impl_.l_){}
     , decltype(_impl_.a_){}
+    , decltype(_impl_.queuing_time_on_cur_lane_){}
+    , decltype(_impl_.is_queuing_on_lane_){}
+    , decltype(_impl_.num_passengers_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -188,8 +201,8 @@ PersonMotion::PersonMotion(const PersonMotion& from)
     _this->_impl_.position_ = new ::city::geo::v2::Position(*from._impl_.position_);
   }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.a_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.a_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_passengers_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.num_passengers_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.PersonMotion)
 }
 
@@ -206,6 +219,9 @@ inline void PersonMotion::SharedCtor(
     , decltype(_impl_.direction_){0}
     , decltype(_impl_.l_){0}
     , decltype(_impl_.a_){0}
+    , decltype(_impl_.queuing_time_on_cur_lane_){0}
+    , decltype(_impl_.is_queuing_on_lane_){false}
+    , decltype(_impl_.num_passengers_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.activity_.InitDefault();
@@ -245,8 +261,8 @@ void PersonMotion::Clear() {
   }
   _impl_.position_ = nullptr;
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.a_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.a_));
+      reinterpret_cast<char*>(&_impl_.num_passengers_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.num_passengers_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -320,6 +336,30 @@ const char* PersonMotion::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 65)) {
           _impl_.a_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool is_queuing_on_lane = 9 [json_name = "isQueuingOnLane"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.is_queuing_on_lane_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double queuing_time_on_cur_lane = 10 [json_name = "queuingTimeOnCurLane"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.queuing_time_on_cur_lane_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_passengers = 11 [json_name = "numPassengers"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.num_passengers_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -422,6 +462,28 @@ uint8_t* PersonMotion::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_a(), target);
   }
 
+  // bool is_queuing_on_lane = 9 [json_name = "isQueuingOnLane"];
+  if (this->_internal_is_queuing_on_lane() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(9, this->_internal_is_queuing_on_lane(), target);
+  }
+
+  // double queuing_time_on_cur_lane = 10 [json_name = "queuingTimeOnCurLane"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_queuing_time_on_cur_lane = this->_internal_queuing_time_on_cur_lane();
+  uint64_t raw_queuing_time_on_cur_lane;
+  memcpy(&raw_queuing_time_on_cur_lane, &tmp_queuing_time_on_cur_lane, sizeof(tmp_queuing_time_on_cur_lane));
+  if (raw_queuing_time_on_cur_lane != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_queuing_time_on_cur_lane(), target);
+  }
+
+  // int32 num_passengers = 11 [json_name = "numPassengers"];
+  if (this->_internal_num_passengers() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_num_passengers(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -499,6 +561,25 @@ size_t PersonMotion::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // double queuing_time_on_cur_lane = 10 [json_name = "queuingTimeOnCurLane"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_queuing_time_on_cur_lane = this->_internal_queuing_time_on_cur_lane();
+  uint64_t raw_queuing_time_on_cur_lane;
+  memcpy(&raw_queuing_time_on_cur_lane, &tmp_queuing_time_on_cur_lane, sizeof(tmp_queuing_time_on_cur_lane));
+  if (raw_queuing_time_on_cur_lane != 0) {
+    total_size += 1 + 8;
+  }
+
+  // bool is_queuing_on_lane = 9 [json_name = "isQueuingOnLane"];
+  if (this->_internal_is_queuing_on_lane() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // int32 num_passengers = 11 [json_name = "numPassengers"];
+  if (this->_internal_num_passengers() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_passengers());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -558,6 +639,19 @@ void PersonMotion::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (raw_a != 0) {
     _this->_internal_set_a(from._internal_a());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_queuing_time_on_cur_lane = from._internal_queuing_time_on_cur_lane();
+  uint64_t raw_queuing_time_on_cur_lane;
+  memcpy(&raw_queuing_time_on_cur_lane, &tmp_queuing_time_on_cur_lane, sizeof(tmp_queuing_time_on_cur_lane));
+  if (raw_queuing_time_on_cur_lane != 0) {
+    _this->_internal_set_queuing_time_on_cur_lane(from._internal_queuing_time_on_cur_lane());
+  }
+  if (from._internal_is_queuing_on_lane() != 0) {
+    _this->_internal_set_is_queuing_on_lane(from._internal_is_queuing_on_lane());
+  }
+  if (from._internal_num_passengers() != 0) {
+    _this->_internal_set_num_passengers(from._internal_num_passengers());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -582,8 +676,8 @@ void PersonMotion::InternalSwap(PersonMotion* other) {
       &other->_impl_.activity_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PersonMotion, _impl_.a_)
-      + sizeof(PersonMotion::_impl_.a_)
+      PROTOBUF_FIELD_OFFSET(PersonMotion, _impl_.num_passengers_)
+      + sizeof(PersonMotion::_impl_.num_passengers_)
       - PROTOBUF_FIELD_OFFSET(PersonMotion, _impl_.position_)>(
           reinterpret_cast<char*>(&_impl_.position_),
           reinterpret_cast<char*>(&other->_impl_.position_));

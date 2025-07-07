@@ -22,4 +22,22 @@ message LaneState {
   // 交通灯状态
   // traffic light state
   LightState light_state = 5;
+  // 当前进入车道的车辆数
+  // current entering vehicle count
+  int32 in_vehicle_cnt = 6;
+  // 当前离开车道的车辆数
+  // current leaving vehicle count
+  int32 out_vehicle_cnt = 7;
+  // 总车数
+  // total vehicle count
+  int32 vehicle_cnt = 8;
+  // 排队数量
+  // queueing vehicle count
+  int32 total_queuing_vehicle_cnt = 9;
+  // 排队时间
+  // queueing time
+  double total_queuing_time = 10;
+  // 平均排队时间
+  // average queueing time
+  double avg_queuing_time = 11;
 }

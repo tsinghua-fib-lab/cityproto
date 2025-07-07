@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetEventsRequest, GetEventsResponse, GetRoadRequest, GetRoadResponse, GetRuinInfoRequest, GetRuinInfoResponse } from "./road_service_pb.js";
+import { GetEventsRequest, GetEventsResponse, GetRoadGlobalStatisticsRequest, GetRoadGlobalStatisticsResponse, GetRoadRequest, GetRoadResponse, GetRuinInfoRequest, GetRuinInfoResponse } from "./road_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -22,6 +22,18 @@ export const RoadService = {
       name: "GetRoad",
       I: GetRoadRequest,
       O: GetRoadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 获取全局统计信息
+     * Get global statistics
+     *
+     * @generated from rpc city.map.v2.RoadService.GetRoadGlobalStatistics
+     */
+    getRoadGlobalStatistics: {
+      name: "GetRoadGlobalStatistics",
+      I: GetRoadGlobalStatisticsRequest,
+      O: GetRoadGlobalStatisticsResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -262,3 +262,55 @@ export declare class GetLaneByLongLatBBoxResponse extends Message<GetLaneByLongL
   static equals(a: GetLaneByLongLatBBoxResponse | PlainMessage<GetLaneByLongLatBBoxResponse> | undefined, b: GetLaneByLongLatBBoxResponse | PlainMessage<GetLaneByLongLatBBoxResponse> | undefined): boolean;
 }
 
+/**
+ * 获取Lane全局统计信息请求
+ * Request for getting lane global statistics
+ *
+ * @generated from message city.map.v2.GetLaneGlobalStatisticsRequest
+ */
+export declare class GetLaneGlobalStatisticsRequest extends Message<GetLaneGlobalStatisticsRequest> {
+  constructor(data?: PartialMessage<GetLaneGlobalStatisticsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetLaneGlobalStatisticsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLaneGlobalStatisticsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLaneGlobalStatisticsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLaneGlobalStatisticsRequest;
+
+  static equals(a: GetLaneGlobalStatisticsRequest | PlainMessage<GetLaneGlobalStatisticsRequest> | undefined, b: GetLaneGlobalStatisticsRequest | PlainMessage<GetLaneGlobalStatisticsRequest> | undefined): boolean;
+}
+
+/**
+ * 获取Lane全局统计信息响应
+ * Response of getting lane global statistics
+ *
+ * @generated from message city.map.v2.GetLaneGlobalStatisticsResponse
+ */
+export declare class GetLaneGlobalStatisticsResponse extends Message<GetLaneGlobalStatisticsResponse> {
+  /**
+   * 最大排队车辆数
+   * max queuing vehicle count
+   *
+   * @generated from field: int32 max_queuing_vehicle_cnt = 1;
+   */
+  maxQueuingVehicleCnt: number;
+
+  constructor(data?: PartialMessage<GetLaneGlobalStatisticsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetLaneGlobalStatisticsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLaneGlobalStatisticsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLaneGlobalStatisticsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLaneGlobalStatisticsResponse;
+
+  static equals(a: GetLaneGlobalStatisticsResponse | PlainMessage<GetLaneGlobalStatisticsResponse> | undefined, b: GetLaneGlobalStatisticsResponse | PlainMessage<GetLaneGlobalStatisticsResponse> | undefined): boolean;
+}
+

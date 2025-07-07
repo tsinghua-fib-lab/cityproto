@@ -39,9 +39,27 @@ type LaneState struct {
 	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
 	// 交通灯状态
 	// traffic light state
-	LightState    LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" bson:"light_state" db:"light_state" yaml:"light_state"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	LightState LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" bson:"light_state" db:"light_state" yaml:"light_state"`
+	// 当前进入车道的车辆数
+	// current entering vehicle count
+	InVehicleCnt int32 `protobuf:"varint,6,opt,name=in_vehicle_cnt,json=inVehicleCnt,proto3" json:"in_vehicle_cnt,omitempty" bson:"in_vehicle_cnt" db:"in_vehicle_cnt" yaml:"in_vehicle_cnt"`
+	// 当前离开车道的车辆数
+	// current leaving vehicle count
+	OutVehicleCnt int32 `protobuf:"varint,7,opt,name=out_vehicle_cnt,json=outVehicleCnt,proto3" json:"out_vehicle_cnt,omitempty" bson:"out_vehicle_cnt" db:"out_vehicle_cnt" yaml:"out_vehicle_cnt"`
+	// 总车数
+	// total vehicle count
+	VehicleCnt int32 `protobuf:"varint,8,opt,name=vehicle_cnt,json=vehicleCnt,proto3" json:"vehicle_cnt,omitempty" bson:"vehicle_cnt" db:"vehicle_cnt" yaml:"vehicle_cnt"`
+	// 排队数量
+	// queueing vehicle count
+	TotalQueuingVehicleCnt int32 `protobuf:"varint,9,opt,name=total_queuing_vehicle_cnt,json=totalQueuingVehicleCnt,proto3" json:"total_queuing_vehicle_cnt,omitempty" bson:"total_queuing_vehicle_cnt" db:"total_queuing_vehicle_cnt" yaml:"total_queuing_vehicle_cnt"`
+	// 排队时间
+	// queueing time
+	TotalQueuingTime float64 `protobuf:"fixed64,10,opt,name=total_queuing_time,json=totalQueuingTime,proto3" json:"total_queuing_time,omitempty" bson:"total_queuing_time" db:"total_queuing_time" yaml:"total_queuing_time"`
+	// 平均排队时间
+	// average queueing time
+	AvgQueuingTime float64 `protobuf:"fixed64,11,opt,name=avg_queuing_time,json=avgQueuingTime,proto3" json:"avg_queuing_time,omitempty" bson:"avg_queuing_time" db:"avg_queuing_time" yaml:"avg_queuing_time"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *LaneState) Reset() {
@@ -109,18 +127,68 @@ func (x *LaneState) GetLightState() LightState {
 	return LightState_LIGHT_STATE_UNSPECIFIED
 }
 
+func (x *LaneState) GetInVehicleCnt() int32 {
+	if x != nil {
+		return x.InVehicleCnt
+	}
+	return 0
+}
+
+func (x *LaneState) GetOutVehicleCnt() int32 {
+	if x != nil {
+		return x.OutVehicleCnt
+	}
+	return 0
+}
+
+func (x *LaneState) GetVehicleCnt() int32 {
+	if x != nil {
+		return x.VehicleCnt
+	}
+	return 0
+}
+
+func (x *LaneState) GetTotalQueuingVehicleCnt() int32 {
+	if x != nil {
+		return x.TotalQueuingVehicleCnt
+	}
+	return 0
+}
+
+func (x *LaneState) GetTotalQueuingTime() float64 {
+	if x != nil {
+		return x.TotalQueuingTime
+	}
+	return 0
+}
+
+func (x *LaneState) GetAvgQueuingTime() float64 {
+	if x != nil {
+		return x.AvgQueuingTime
+	}
+	return 0
+}
+
 var File_city_map_v2_lane_state_proto protoreflect.FileDescriptor
 
 const file_city_map_v2_lane_state_proto_rawDesc = "" +
 	"\n" +
-	"\x1ccity/map/v2/lane_state.proto\x12\vcity.map.v2\x1a\x17city/map/v2/light.proto\x1a\x1bcity/person/v2/motion.proto\"\xc4\x01\n" +
+	"\x1ccity/map/v2/lane_state.proto\x12\vcity.map.v2\x1a\x17city/map/v2/light.proto\x1a\x1bcity/person/v2/motion.proto\"\xc6\x03\n" +
 	"\tLaneState\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x126\n" +
 	"\apersons\x18\x02 \x03(\v2\x1c.city.person.v2.PersonMotionR\apersons\x12\x13\n" +
 	"\x05avg_v\x18\x03 \x01(\x01R\x04avgV\x12 \n" +
 	"\vrestriction\x18\x04 \x01(\bR\vrestriction\x128\n" +
 	"\vlight_state\x18\x05 \x01(\x0e2\x17.city.map.v2.LightStateR\n" +
-	"lightStateB\xa2\x01\n" +
+	"lightState\x12$\n" +
+	"\x0ein_vehicle_cnt\x18\x06 \x01(\x05R\finVehicleCnt\x12&\n" +
+	"\x0fout_vehicle_cnt\x18\a \x01(\x05R\routVehicleCnt\x12\x1f\n" +
+	"\vvehicle_cnt\x18\b \x01(\x05R\n" +
+	"vehicleCnt\x129\n" +
+	"\x19total_queuing_vehicle_cnt\x18\t \x01(\x05R\x16totalQueuingVehicleCnt\x12,\n" +
+	"\x12total_queuing_time\x18\n" +
+	" \x01(\x01R\x10totalQueuingTime\x12(\n" +
+	"\x10avg_queuing_time\x18\v \x01(\x01R\x0eavgQueuingTimeB\xa2\x01\n" +
 	"\x0fcom.city.map.v2B\x0eLaneStateProtoP\x01Z1git.fiblab.net/sim/protos/v2/go/city/map/v2;mapv2\xa2\x02\x03CMX\xaa\x02\vCity.Map.V2\xca\x02\vCity\\Map\\V2\xe2\x02\x17City\\Map\\V2\\GPBMetadata\xea\x02\rCity::Map::V2b\x06proto3"
 
 var (

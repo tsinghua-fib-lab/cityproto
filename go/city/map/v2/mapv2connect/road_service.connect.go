@@ -35,6 +35,9 @@ const (
 const (
 	// RoadServiceGetRoadProcedure is the fully-qualified name of the RoadService's GetRoad RPC.
 	RoadServiceGetRoadProcedure = "/city.map.v2.RoadService/GetRoad"
+	// RoadServiceGetRoadGlobalStatisticsProcedure is the fully-qualified name of the RoadService's
+	// GetRoadGlobalStatistics RPC.
+	RoadServiceGetRoadGlobalStatisticsProcedure = "/city.map.v2.RoadService/GetRoadGlobalStatistics"
 	// RoadServiceGetRuinInfoProcedure is the fully-qualified name of the RoadService's GetRuinInfo RPC.
 	RoadServiceGetRuinInfoProcedure = "/city.map.v2.RoadService/GetRuinInfo"
 	// RoadServiceGetEventsProcedure is the fully-qualified name of the RoadService's GetEvents RPC.
@@ -46,6 +49,9 @@ type RoadServiceClient interface {
 	// 查询道路信息
 	// Get road information
 	GetRoad(context.Context, *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error)
+	// 获取全局统计信息
+	// Get global statistics
+	GetRoadGlobalStatistics(context.Context, *connect.Request[v2.GetRoadGlobalStatisticsRequest]) (*connect.Response[v2.GetRoadGlobalStatisticsResponse], error)
 	GetRuinInfo(context.Context, *connect.Request[v2.GetRuinInfoRequest]) (*connect.Response[v2.GetRuinInfoResponse], error)
 	GetEvents(context.Context, *connect.Request[v2.GetEventsRequest]) (*connect.Response[v2.GetEventsResponse], error)
 }
@@ -67,6 +73,12 @@ func NewRoadServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(roadServiceMethods.ByName("GetRoad")),
 			connect.WithClientOptions(opts...),
 		),
+		getRoadGlobalStatistics: connect.NewClient[v2.GetRoadGlobalStatisticsRequest, v2.GetRoadGlobalStatisticsResponse](
+			httpClient,
+			baseURL+RoadServiceGetRoadGlobalStatisticsProcedure,
+			connect.WithSchema(roadServiceMethods.ByName("GetRoadGlobalStatistics")),
+			connect.WithClientOptions(opts...),
+		),
 		getRuinInfo: connect.NewClient[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse](
 			httpClient,
 			baseURL+RoadServiceGetRuinInfoProcedure,
@@ -84,14 +96,20 @@ func NewRoadServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 
 // roadServiceClient implements RoadServiceClient.
 type roadServiceClient struct {
-	getRoad     *connect.Client[v2.GetRoadRequest, v2.GetRoadResponse]
-	getRuinInfo *connect.Client[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse]
-	getEvents   *connect.Client[v2.GetEventsRequest, v2.GetEventsResponse]
+	getRoad                 *connect.Client[v2.GetRoadRequest, v2.GetRoadResponse]
+	getRoadGlobalStatistics *connect.Client[v2.GetRoadGlobalStatisticsRequest, v2.GetRoadGlobalStatisticsResponse]
+	getRuinInfo             *connect.Client[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse]
+	getEvents               *connect.Client[v2.GetEventsRequest, v2.GetEventsResponse]
 }
 
 // GetRoad calls city.map.v2.RoadService.GetRoad.
 func (c *roadServiceClient) GetRoad(ctx context.Context, req *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error) {
 	return c.getRoad.CallUnary(ctx, req)
+}
+
+// GetRoadGlobalStatistics calls city.map.v2.RoadService.GetRoadGlobalStatistics.
+func (c *roadServiceClient) GetRoadGlobalStatistics(ctx context.Context, req *connect.Request[v2.GetRoadGlobalStatisticsRequest]) (*connect.Response[v2.GetRoadGlobalStatisticsResponse], error) {
+	return c.getRoadGlobalStatistics.CallUnary(ctx, req)
 }
 
 // GetRuinInfo calls city.map.v2.RoadService.GetRuinInfo.
@@ -109,6 +127,9 @@ type RoadServiceHandler interface {
 	// 查询道路信息
 	// Get road information
 	GetRoad(context.Context, *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error)
+	// 获取全局统计信息
+	// Get global statistics
+	GetRoadGlobalStatistics(context.Context, *connect.Request[v2.GetRoadGlobalStatisticsRequest]) (*connect.Response[v2.GetRoadGlobalStatisticsResponse], error)
 	GetRuinInfo(context.Context, *connect.Request[v2.GetRuinInfoRequest]) (*connect.Response[v2.GetRuinInfoResponse], error)
 	GetEvents(context.Context, *connect.Request[v2.GetEventsRequest]) (*connect.Response[v2.GetEventsResponse], error)
 }
@@ -124,6 +145,12 @@ func NewRoadServiceHandler(svc RoadServiceHandler, opts ...connect.HandlerOption
 		RoadServiceGetRoadProcedure,
 		svc.GetRoad,
 		connect.WithSchema(roadServiceMethods.ByName("GetRoad")),
+		connect.WithHandlerOptions(opts...),
+	)
+	roadServiceGetRoadGlobalStatisticsHandler := connect.NewUnaryHandler(
+		RoadServiceGetRoadGlobalStatisticsProcedure,
+		svc.GetRoadGlobalStatistics,
+		connect.WithSchema(roadServiceMethods.ByName("GetRoadGlobalStatistics")),
 		connect.WithHandlerOptions(opts...),
 	)
 	roadServiceGetRuinInfoHandler := connect.NewUnaryHandler(
@@ -142,6 +169,8 @@ func NewRoadServiceHandler(svc RoadServiceHandler, opts ...connect.HandlerOption
 		switch r.URL.Path {
 		case RoadServiceGetRoadProcedure:
 			roadServiceGetRoadHandler.ServeHTTP(w, r)
+		case RoadServiceGetRoadGlobalStatisticsProcedure:
+			roadServiceGetRoadGlobalStatisticsHandler.ServeHTTP(w, r)
 		case RoadServiceGetRuinInfoProcedure:
 			roadServiceGetRuinInfoHandler.ServeHTTP(w, r)
 		case RoadServiceGetEventsProcedure:
@@ -157,6 +186,10 @@ type UnimplementedRoadServiceHandler struct{}
 
 func (UnimplementedRoadServiceHandler) GetRoad(context.Context, *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.RoadService.GetRoad is not implemented"))
+}
+
+func (UnimplementedRoadServiceHandler) GetRoadGlobalStatistics(context.Context, *connect.Request[v2.GetRoadGlobalStatisticsRequest]) (*connect.Response[v2.GetRoadGlobalStatisticsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.RoadService.GetRoadGlobalStatistics is not implemented"))
 }
 
 func (UnimplementedRoadServiceHandler) GetRuinInfo(context.Context, *connect.Request[v2.GetRuinInfoRequest]) (*connect.Response[v2.GetRuinInfoResponse], error) {

@@ -139,7 +139,16 @@ type PersonMotion struct {
 	L float64 `protobuf:"fixed64,7,opt,name=l,proto3" json:"l,omitempty" bson:"l" db:"l" yaml:"l"`
 	// 加速度
 	// acceleration
-	A             float64 `protobuf:"fixed64,8,opt,name=a,proto3" json:"a,omitempty" bson:"a" db:"a" yaml:"a"`
+	A float64 `protobuf:"fixed64,8,opt,name=a,proto3" json:"a,omitempty" bson:"a" db:"a" yaml:"a"`
+	// 是否排队
+	// whether queuing on lane
+	IsQueuingOnLane bool `protobuf:"varint,9,opt,name=is_queuing_on_lane,json=isQueuingOnLane,proto3" json:"is_queuing_on_lane,omitempty" bson:"is_queuing_on_lane" db:"is_queuing_on_lane" yaml:"is_queuing_on_lane"`
+	// 在当前车道排队时间
+	// queuing time on current lane
+	QueuingTimeOnCurLane float64 `protobuf:"fixed64,10,opt,name=queuing_time_on_cur_lane,json=queuingTimeOnCurLane,proto3" json:"queuing_time_on_cur_lane,omitempty" bson:"queuing_time_on_cur_lane" db:"queuing_time_on_cur_lane" yaml:"queuing_time_on_cur_lane"`
+	// 乘客数量
+	// number of passengers
+	NumPassengers int32 `protobuf:"varint,11,opt,name=num_passengers,json=numPassengers,proto3" json:"num_passengers,omitempty" bson:"num_passengers" db:"num_passengers" yaml:"num_passengers"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -230,11 +239,32 @@ func (x *PersonMotion) GetA() float64 {
 	return 0
 }
 
+func (x *PersonMotion) GetIsQueuingOnLane() bool {
+	if x != nil {
+		return x.IsQueuingOnLane
+	}
+	return false
+}
+
+func (x *PersonMotion) GetQueuingTimeOnCurLane() float64 {
+	if x != nil {
+		return x.QueuingTimeOnCurLane
+	}
+	return 0
+}
+
+func (x *PersonMotion) GetNumPassengers() int32 {
+	if x != nil {
+		return x.NumPassengers
+	}
+	return 0
+}
+
 var File_city_person_v2_motion_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_motion_proto_rawDesc = "" +
 	"\n" +
-	"\x1bcity/person/v2/motion.proto\x12\x0ecity.person.v2\x1a\x15city/geo/v2/geo.proto\"\xe5\x01\n" +
+	"\x1bcity/person/v2/motion.proto\x12\x0ecity.person.v2\x1a\x15city/geo/v2/geo.proto\"\xf1\x02\n" +
 	"\fPersonMotion\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12.\n" +
 	"\x06status\x18\x02 \x01(\x0e2\x16.city.person.v2.StatusR\x06status\x121\n" +
@@ -243,7 +273,11 @@ const file_city_person_v2_motion_proto_rawDesc = "" +
 	"\tdirection\x18\x05 \x01(\x01R\tdirection\x12\x1a\n" +
 	"\bactivity\x18\x06 \x01(\tR\bactivity\x12\f\n" +
 	"\x01l\x18\a \x01(\x01R\x01l\x12\f\n" +
-	"\x01a\x18\b \x01(\x01R\x01a*\xdd\x01\n" +
+	"\x01a\x18\b \x01(\x01R\x01a\x12+\n" +
+	"\x12is_queuing_on_lane\x18\t \x01(\bR\x0fisQueuingOnLane\x126\n" +
+	"\x18queuing_time_on_cur_lane\x18\n" +
+	" \x01(\x01R\x14queuingTimeOnCurLane\x12%\n" +
+	"\x0enum_passengers\x18\v \x01(\x05R\rnumPassengers*\xdd\x01\n" +
 	"\x06Status\x12\x16\n" +
 	"\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n" +
 	"\fSTATUS_SLEEP\x10\x01\x12\x12\n" +

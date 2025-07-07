@@ -10,6 +10,10 @@ service RoadService {
   // Get road information
   rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
 
+  // 获取全局统计信息
+  // Get global statistics
+  rpc GetRoadGlobalStatistics(GetRoadGlobalStatisticsRequest) returns (GetRoadGlobalStatisticsResponse);
+
   rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
   rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
 }
@@ -34,6 +38,18 @@ message GetRoadResponse {
   // 道路信息列表
   // List of road information
   repeated RoadState states = 1;
+}
+
+// 获取Road全局统计信息请求
+// Request for getting road global statistics
+message GetRoadGlobalStatisticsRequest {}
+
+// 获取Road全局统计信息响应
+// Response of getting road global statistics
+message GetRoadGlobalStatisticsResponse {
+  // 平均道路拥堵指数
+  // average congestion index
+  double avg_road_congestion_index = 1;
 }
 
 message GetRuinInfoRequest {}
@@ -98,16 +114,40 @@ message RoadState {
   // 道路ID
   // road ID
   int32 id = 1;
+  // 当前进入道路的车辆数
+  // current entering road vehicle count
+  int32 in_vehicle_cnt = 7;
+  // 当前离开道路的车辆数
+  // current leaving road vehicle count
+  int32 out_vehicle_cnt = 8;
+  // 当前道路车辆数
+  // current road vehicle count
+  int32 vehicle_cnt = 9;
+  // 累计进入道路的车辆数
+  // cumulative entering road vehicle count
+  int32 cum_in_vehicle_cnt = 10;
+  // 累计离开道路的车辆数
+  // cumulative leaving road vehicle count
+  int32 cum_out_vehicle_cnt = 11;
   // 道路平均速度（m/s）
   // road average speed (m/s)
   double avg_v = 4;
+  // 当前平均通行时间（s）
+  // current average travel time (s)
+  double avg_travel_time = 12;
   // 道路拥堵情况
   // road congestion level
   RoadLevel level = 2;
+  // 拥堵指数（最大限速/平均车速）
+  // congestion index (max speed / average speed)
+  double congestion_index = 13;
   // 道路中断原因
   // road interruption reason
   InterruptionReason reason = 3;
   // 车道情况
   // lane state
   repeated LaneState lanes = 5;
+  // 道路最大限速
+  // road max speed
+  double max_v = 6;
 }

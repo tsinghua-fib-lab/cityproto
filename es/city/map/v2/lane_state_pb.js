@@ -21,6 +21,12 @@ export const LaneState = /*@__PURE__*/ proto3.makeMessageType(
     { no: 3, name: "avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "restriction", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "light_state", kind: "enum", T: proto3.getEnumType(LightState) },
+    { no: 6, name: "in_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "out_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "total_queuing_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "total_queuing_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "avg_queuing_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

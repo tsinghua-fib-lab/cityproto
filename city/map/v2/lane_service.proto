@@ -19,6 +19,10 @@ service LaneService {
   // 获取特定区域内的Lane的信息
   // Get Lane information in a specific region
   rpc GetLaneByLongLatBBox(GetLaneByLongLatBBoxRequest) returns (GetLaneByLongLatBBoxResponse);
+
+  // 获取Lane全局统计信息
+  // Get lane global statistics
+  rpc GetLaneGlobalStatistics(GetLaneGlobalStatisticsRequest) returns (GetLaneGlobalStatisticsResponse);
 }
 
 // 设置Lane的最大速度（限速）请求
@@ -85,4 +89,16 @@ message GetLaneByLongLatBBoxResponse {
   // Lane的信息
   // Lane information
   repeated LaneState states = 1;
+}
+
+// 获取Lane全局统计信息请求
+// Request for getting lane global statistics
+message GetLaneGlobalStatisticsRequest {}
+
+// 获取Lane全局统计信息响应
+// Response of getting lane global statistics
+message GetLaneGlobalStatisticsResponse {
+  // 最大排队车辆数
+  // max queuing vehicle count
+  int32 max_queuing_vehicle_cnt = 1;
 }

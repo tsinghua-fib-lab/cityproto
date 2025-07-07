@@ -85,7 +85,15 @@ PROTOBUF_CONSTEXPR VehicleRuntime::VehicleRuntime(
   , /*decltype(_impl_.eta_)*/0
   , /*decltype(_impl_.eta_free_flow_)*/0
   , /*decltype(_impl_.num_going_astray_)*/0
-  , /*decltype(_impl_.parking_status_)*/0} {}
+  , /*decltype(_impl_.parking_status_)*/0
+  , /*decltype(_impl_.estimated_total_running_distance_)*/0
+  , /*decltype(_impl_.running_time_)*/0
+  , /*decltype(_impl_.running_ratio_)*/0
+  , /*decltype(_impl_.avg_v_)*/0
+  , /*decltype(_impl_.total_queuing_time_)*/0
+  , /*decltype(_impl_.num_queuing_on_lane_)*/0
+  , /*decltype(_impl_.num_passing_traffic_lights_)*/0
+  , /*decltype(_impl_.avg_queuing_time_)*/0} {}
 struct VehicleRuntimeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR VehicleRuntimeDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -193,8 +201,16 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.base_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.lc_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.action_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.estimated_total_running_distance_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.running_time_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.running_distance_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.running_ratio_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.avg_v_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.num_going_astray_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.num_queuing_on_lane_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.total_queuing_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.avg_queuing_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.num_passing_traffic_lights_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.departure_time_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.eta_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.eta_free_flow_),
@@ -205,6 +221,14 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTO
   ~0u,
   0,
   1,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
   ~0u,
   ~0u,
   ~0u,
@@ -250,10 +274,10 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, -1, -1, sizeof(::city::person::v2::LC)},
   { 10, 20, -1, sizeof(::city::person::v2::VehicleAction)},
   { 24, -1, -1, sizeof(::city::person::v2::VehicleRouteAction)},
-  { 32, 50, -1, sizeof(::city::person::v2::VehicleRuntime)},
-  { 62, -1, -1, sizeof(::city::person::v2::ObservedVehicle)},
-  { 72, -1, -1, sizeof(::city::person::v2::ObservedLane)},
-  { 82, -1, -1, sizeof(::city::person::v2::VehicleEnv)},
+  { 32, 58, -1, sizeof(::city::person::v2::VehicleRuntime)},
+  { 78, -1, -1, sizeof(::city::person::v2::ObservedVehicle)},
+  { 88, -1, -1, sizeof(::city::person::v2::ObservedLane)},
+  { 98, -1, -1, sizeof(::city::person::v2::VehicleEnv)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -280,62 +304,71 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto[] PROT
   "e\030\003 \001(\001R\005angleB\017\n\r_lc_target_id\"X\n\022Vehic"
   "leRouteAction\022\016\n\002id\030\001 \001(\005R\002id\0222\n\007journey"
   "\030\002 \001(\0132\030.city.routing.v2.JourneyR\007journe"
-  "y\"\347\005\n\016VehicleRuntime\0220\n\004base\030\001 \001(\0132\034.cit"
+  "y\"\321\010\n\016VehicleRuntime\0220\n\004base\030\001 \001(\0132\034.cit"
   "y.person.v2.PersonMotionR\004base\022\'\n\002lc\030\004 \001"
   "(\0132\022.city.person.v2.LCH\000R\002lc\210\001\001\022:\n\006actio"
   "n\030\005 \001(\0132\035.city.person.v2.VehicleActionH\001"
-  "R\006action\210\001\001\022)\n\020running_distance\030\006 \001(\001R\017r"
-  "unningDistance\022(\n\020num_going_astray\030\007 \001(\005"
-  "R\016numGoingAstray\022%\n\016departure_time\030\010 \001(\001"
-  "R\rdepartureTime\022\020\n\003eta\030\t \001(\001R\003eta\022\"\n\reta"
-  "_free_flow\030\n \001(\001R\013etaFreeFlow\022:\n\006carbon\030"
-  "\013 \001(\0132\035.city.person.v2.VehicleCarbonH\002R\006"
-  "carbon\210\001\001\022X\n\023emission_statistics\030\014 \001(\0132\""
-  ".city.person.v2.EmissionStatisticsH\003R\022em"
-  "issionStatistics\210\001\001\022[\n\024pollution_statist"
-  "ics\030\r \001(\0132#.city.person.v2.PollutionStat"
-  "isticsH\004R\023pollutionStatistics\210\001\001\022K\n\016park"
-  "ing_status\030\016 \001(\0162$.city.person.v2.Vehicl"
-  "eParkingStatusR\rparkingStatusB\005\n\003_lcB\t\n\007"
-  "_actionB\t\n\007_carbonB\026\n\024_emission_statisti"
-  "csB\027\n\025_pollution_statistics\"\301\001\n\017Observed"
-  "Vehicle\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001(\0132"
-  "\034.city.person.v2.PersonMotionR\006motion\022+\n"
-  "\021relative_distance\030\003 \001(\001R\020relativeDistan"
-  "ce\022;\n\010relation\030\004 \001(\0162\037.city.person.v2.Ve"
-  "hicleRelationR\010relation\"\257\001\n\014ObservedLane"
-  "\022\016\n\002id\030\001 \001(\005R\002id\022 \n\013restriction\030\002 \001(\010R\013r"
-  "estriction\022;\n\013light_state\030\003 \001(\0162\032.city.p"
-  "erson.v2.LightStateR\nlightState\0220\n\024light"
-  "_remaining_time\030\004 \001(\001R\022lightRemainingTim"
-  "e\"\235\002\n\nVehicleEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007runt"
-  "ime\030\002 \001(\0132\036.city.person.v2.VehicleRuntim"
-  "eR\007runtime\0222\n\007journey\030\003 \001(\0132\030.city.routi"
-  "ng.v2.JourneyR\007journey\022L\n\021observed_vehic"
-  "les\030\004 \003(\0132\037.city.person.v2.ObservedVehic"
-  "leR\020observedVehicles\022C\n\016observed_lanes\030\005"
-  " \003(\0132\034.city.person.v2.ObservedLaneR\robse"
-  "rvedLanes*\252\001\n\024VehicleParkingStatus\022&\n\"VE"
-  "HICLE_PARKING_STATUS_UNSPECIFIED\020\000\022\"\n\036VE"
-  "HICLE_PARKING_STATUS_PARKING\020\001\022\"\n\036VEHICL"
-  "E_PARKING_STATUS_LEAVING\020\002\022\"\n\036VEHICLE_PA"
-  "RKING_STATUS_DRIVING\020\003*\273\002\n\017VehicleRelati"
-  "on\022 \n\034VEHICLE_RELATION_UNSPECIFIED\020\000\022\032\n\026"
-  "VEHICLE_RELATION_AHEAD\020\001\022\033\n\027VEHICLE_RELA"
-  "TION_BEHIND\020\002\022!\n\035VEHICLE_RELATION_SHADOW"
-  "_AHEAD\020\003\022\"\n\036VEHICLE_RELATION_SHADOW_BEHI"
-  "ND\020\004\022\037\n\033VEHICLE_RELATION_LEFT_AHEAD\020\005\022 \n"
-  "\034VEHICLE_RELATION_RIGHT_AHEAD\020\006\022 \n\034VEHIC"
-  "LE_RELATION_LEFT_BEHIND\020\007\022!\n\035VEHICLE_REL"
-  "ATION_RIGHT_BEHIND\020\010*m\n\nLightState\022\033\n\027LI"
-  "GHT_STATE_UNSPECIFIED\020\000\022\023\n\017LIGHT_STATE_R"
-  "ED\020\001\022\025\n\021LIGHT_STATE_GREEN\020\002\022\026\n\022LIGHT_STA"
-  "TE_YELLOW\020\003B\265\001\n\022com.city.person.v2B\014Vehi"
-  "cleProtoP\001Z7git.fiblab.net/sim/protos/v2"
-  "/go/city/person/v2;personv2\242\002\003CPX\252\002\016City"
-  ".Person.V2\312\002\016City\\Person\\V2\342\002\032City\\Perso"
-  "n\\V2\\GPBMetadata\352\002\020City::Person::V2b\006pro"
-  "to3"
+  "R\006action\210\001\001\022G\n estimated_total_running_d"
+  "istance\030\017 \001(\001R\035estimatedTotalRunningDist"
+  "ance\022!\n\014running_time\030\020 \001(\001R\013runningTime\022"
+  ")\n\020running_distance\030\006 \001(\001R\017runningDistan"
+  "ce\022#\n\rrunning_ratio\030\022 \001(\001R\014runningRatio\022"
+  "\023\n\005avg_v\030\023 \001(\001R\004avgV\022(\n\020num_going_astray"
+  "\030\007 \001(\005R\016numGoingAstray\022-\n\023num_queuing_on"
+  "_lane\030\024 \001(\005R\020numQueuingOnLane\022,\n\022total_q"
+  "ueuing_time\030\025 \001(\001R\020totalQueuingTime\022(\n\020a"
+  "vg_queuing_time\030\026 \001(\001R\016avgQueuingTime\022;\n"
+  "\032num_passing_traffic_lights\030\027 \001(\005R\027numPa"
+  "ssingTrafficLights\022%\n\016departure_time\030\010 \001"
+  "(\001R\rdepartureTime\022\020\n\003eta\030\t \001(\001R\003eta\022\"\n\re"
+  "ta_free_flow\030\n \001(\001R\013etaFreeFlow\022:\n\006carbo"
+  "n\030\013 \001(\0132\035.city.person.v2.VehicleCarbonH\002"
+  "R\006carbon\210\001\001\022X\n\023emission_statistics\030\014 \001(\013"
+  "2\".city.person.v2.EmissionStatisticsH\003R\022"
+  "emissionStatistics\210\001\001\022[\n\024pollution_stati"
+  "stics\030\r \001(\0132#.city.person.v2.PollutionSt"
+  "atisticsH\004R\023pollutionStatistics\210\001\001\022K\n\016pa"
+  "rking_status\030\016 \001(\0162$.city.person.v2.Vehi"
+  "cleParkingStatusR\rparkingStatusB\005\n\003_lcB\t"
+  "\n\007_actionB\t\n\007_carbonB\026\n\024_emission_statis"
+  "ticsB\027\n\025_pollution_statistics\"\301\001\n\017Observ"
+  "edVehicle\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001("
+  "\0132\034.city.person.v2.PersonMotionR\006motion\022"
+  "+\n\021relative_distance\030\003 \001(\001R\020relativeDist"
+  "ance\022;\n\010relation\030\004 \001(\0162\037.city.person.v2."
+  "VehicleRelationR\010relation\"\257\001\n\014ObservedLa"
+  "ne\022\016\n\002id\030\001 \001(\005R\002id\022 \n\013restriction\030\002 \001(\010R"
+  "\013restriction\022;\n\013light_state\030\003 \001(\0162\032.city"
+  ".person.v2.LightStateR\nlightState\0220\n\024lig"
+  "ht_remaining_time\030\004 \001(\001R\022lightRemainingT"
+  "ime\"\235\002\n\nVehicleEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007ru"
+  "ntime\030\002 \001(\0132\036.city.person.v2.VehicleRunt"
+  "imeR\007runtime\0222\n\007journey\030\003 \001(\0132\030.city.rou"
+  "ting.v2.JourneyR\007journey\022L\n\021observed_veh"
+  "icles\030\004 \003(\0132\037.city.person.v2.ObservedVeh"
+  "icleR\020observedVehicles\022C\n\016observed_lanes"
+  "\030\005 \003(\0132\034.city.person.v2.ObservedLaneR\rob"
+  "servedLanes*\252\001\n\024VehicleParkingStatus\022&\n\""
+  "VEHICLE_PARKING_STATUS_UNSPECIFIED\020\000\022\"\n\036"
+  "VEHICLE_PARKING_STATUS_PARKING\020\001\022\"\n\036VEHI"
+  "CLE_PARKING_STATUS_LEAVING\020\002\022\"\n\036VEHICLE_"
+  "PARKING_STATUS_DRIVING\020\003*\273\002\n\017VehicleRela"
+  "tion\022 \n\034VEHICLE_RELATION_UNSPECIFIED\020\000\022\032"
+  "\n\026VEHICLE_RELATION_AHEAD\020\001\022\033\n\027VEHICLE_RE"
+  "LATION_BEHIND\020\002\022!\n\035VEHICLE_RELATION_SHAD"
+  "OW_AHEAD\020\003\022\"\n\036VEHICLE_RELATION_SHADOW_BE"
+  "HIND\020\004\022\037\n\033VEHICLE_RELATION_LEFT_AHEAD\020\005\022"
+  " \n\034VEHICLE_RELATION_RIGHT_AHEAD\020\006\022 \n\034VEH"
+  "ICLE_RELATION_LEFT_BEHIND\020\007\022!\n\035VEHICLE_R"
+  "ELATION_RIGHT_BEHIND\020\010*m\n\nLightState\022\033\n\027"
+  "LIGHT_STATE_UNSPECIFIED\020\000\022\023\n\017LIGHT_STATE"
+  "_RED\020\001\022\025\n\021LIGHT_STATE_GREEN\020\002\022\026\n\022LIGHT_S"
+  "TATE_YELLOW\020\003B\265\001\n\022com.city.person.v2B\014Ve"
+  "hicleProtoP\001Z7git.fiblab.net/sim/protos/"
+  "v2/go/city/person/v2;personv2\242\002\003CPX\252\002\016Ci"
+  "ty.Person.V2\312\002\016City\\Person\\V2\342\002\032City\\Per"
+  "son\\V2\\GPBMetadata\352\002\020City::Person::V2b\006p"
+  "roto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps[4] = {
   &::descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto,
@@ -345,7 +378,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto = {
-    false, false, 2723, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
+    false, false, 3085, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
     "city/person/v2/vehicle.proto",
     &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once, descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps, 4, 7,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets,
@@ -1330,7 +1363,15 @@ VehicleRuntime::VehicleRuntime(const VehicleRuntime& from)
     , decltype(_impl_.eta_){}
     , decltype(_impl_.eta_free_flow_){}
     , decltype(_impl_.num_going_astray_){}
-    , decltype(_impl_.parking_status_){}};
+    , decltype(_impl_.parking_status_){}
+    , decltype(_impl_.estimated_total_running_distance_){}
+    , decltype(_impl_.running_time_){}
+    , decltype(_impl_.running_ratio_){}
+    , decltype(_impl_.avg_v_){}
+    , decltype(_impl_.total_queuing_time_){}
+    , decltype(_impl_.num_queuing_on_lane_){}
+    , decltype(_impl_.num_passing_traffic_lights_){}
+    , decltype(_impl_.avg_queuing_time_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_base()) {
@@ -1352,8 +1393,8 @@ VehicleRuntime::VehicleRuntime(const VehicleRuntime& from)
     _this->_impl_.pollution_statistics_ = new ::city::person::v2::PollutionStatistics(*from._impl_.pollution_statistics_);
   }
   ::memcpy(&_impl_.running_distance_, &from._impl_.running_distance_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.parking_status_) -
-    reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.parking_status_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.avg_queuing_time_) -
+    reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.avg_queuing_time_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.VehicleRuntime)
 }
 
@@ -1376,6 +1417,14 @@ inline void VehicleRuntime::SharedCtor(
     , decltype(_impl_.eta_free_flow_){0}
     , decltype(_impl_.num_going_astray_){0}
     , decltype(_impl_.parking_status_){0}
+    , decltype(_impl_.estimated_total_running_distance_){0}
+    , decltype(_impl_.running_time_){0}
+    , decltype(_impl_.running_ratio_){0}
+    , decltype(_impl_.avg_v_){0}
+    , decltype(_impl_.total_queuing_time_){0}
+    , decltype(_impl_.num_queuing_on_lane_){0}
+    , decltype(_impl_.num_passing_traffic_lights_){0}
+    , decltype(_impl_.avg_queuing_time_){0}
   };
 }
 
@@ -1436,8 +1485,8 @@ void VehicleRuntime::Clear() {
     }
   }
   ::memset(&_impl_.running_distance_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.parking_status_) -
-      reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.parking_status_));
+      reinterpret_cast<char*>(&_impl_.avg_queuing_time_) -
+      reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.avg_queuing_time_));
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1543,6 +1592,70 @@ const char* VehicleRuntime::_InternalParse(const char* ptr, ::_pbi::ParseContext
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_parking_status(static_cast<::city::person::v2::VehicleParkingStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // double estimated_total_running_distance = 15 [json_name = "estimatedTotalRunningDistance"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 121)) {
+          _impl_.estimated_total_running_distance_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double running_time = 16 [json_name = "runningTime"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 129)) {
+          _impl_.running_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double running_ratio = 18 [json_name = "runningRatio"];
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 145)) {
+          _impl_.running_ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double avg_v = 19 [json_name = "avgV"];
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 153)) {
+          _impl_.avg_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_queuing_on_lane = 20 [json_name = "numQueuingOnLane"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
+          _impl_.num_queuing_on_lane_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double total_queuing_time = 21 [json_name = "totalQueuingTime"];
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 169)) {
+          _impl_.total_queuing_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double avg_queuing_time = 22 [json_name = "avgQueuingTime"];
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 177)) {
+          _impl_.avg_queuing_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_passing_traffic_lights = 23 [json_name = "numPassingTrafficLights"];
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
+          _impl_.num_passing_traffic_lights_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -1671,6 +1784,78 @@ uint8_t* VehicleRuntime::_InternalSerialize(
       14, this->_internal_parking_status(), target);
   }
 
+  // double estimated_total_running_distance = 15 [json_name = "estimatedTotalRunningDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_estimated_total_running_distance = this->_internal_estimated_total_running_distance();
+  uint64_t raw_estimated_total_running_distance;
+  memcpy(&raw_estimated_total_running_distance, &tmp_estimated_total_running_distance, sizeof(tmp_estimated_total_running_distance));
+  if (raw_estimated_total_running_distance != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(15, this->_internal_estimated_total_running_distance(), target);
+  }
+
+  // double running_time = 16 [json_name = "runningTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_time = this->_internal_running_time();
+  uint64_t raw_running_time;
+  memcpy(&raw_running_time, &tmp_running_time, sizeof(tmp_running_time));
+  if (raw_running_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(16, this->_internal_running_time(), target);
+  }
+
+  // double running_ratio = 18 [json_name = "runningRatio"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_ratio = this->_internal_running_ratio();
+  uint64_t raw_running_ratio;
+  memcpy(&raw_running_ratio, &tmp_running_ratio, sizeof(tmp_running_ratio));
+  if (raw_running_ratio != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(18, this->_internal_running_ratio(), target);
+  }
+
+  // double avg_v = 19 [json_name = "avgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_v = this->_internal_avg_v();
+  uint64_t raw_avg_v;
+  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
+  if (raw_avg_v != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(19, this->_internal_avg_v(), target);
+  }
+
+  // int32 num_queuing_on_lane = 20 [json_name = "numQueuingOnLane"];
+  if (this->_internal_num_queuing_on_lane() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(20, this->_internal_num_queuing_on_lane(), target);
+  }
+
+  // double total_queuing_time = 21 [json_name = "totalQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_total_queuing_time = this->_internal_total_queuing_time();
+  uint64_t raw_total_queuing_time;
+  memcpy(&raw_total_queuing_time, &tmp_total_queuing_time, sizeof(tmp_total_queuing_time));
+  if (raw_total_queuing_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(21, this->_internal_total_queuing_time(), target);
+  }
+
+  // double avg_queuing_time = 22 [json_name = "avgQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_queuing_time = this->_internal_avg_queuing_time();
+  uint64_t raw_avg_queuing_time;
+  memcpy(&raw_avg_queuing_time, &tmp_avg_queuing_time, sizeof(tmp_avg_queuing_time));
+  if (raw_avg_queuing_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(22, this->_internal_avg_queuing_time(), target);
+  }
+
+  // int32 num_passing_traffic_lights = 23 [json_name = "numPassingTrafficLights"];
+  if (this->_internal_num_passing_traffic_lights() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(23, this->_internal_num_passing_traffic_lights(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1779,6 +1964,74 @@ size_t VehicleRuntime::ByteSizeLong() const {
       ::_pbi::WireFormatLite::EnumSize(this->_internal_parking_status());
   }
 
+  // double estimated_total_running_distance = 15 [json_name = "estimatedTotalRunningDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_estimated_total_running_distance = this->_internal_estimated_total_running_distance();
+  uint64_t raw_estimated_total_running_distance;
+  memcpy(&raw_estimated_total_running_distance, &tmp_estimated_total_running_distance, sizeof(tmp_estimated_total_running_distance));
+  if (raw_estimated_total_running_distance != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double running_time = 16 [json_name = "runningTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_time = this->_internal_running_time();
+  uint64_t raw_running_time;
+  memcpy(&raw_running_time, &tmp_running_time, sizeof(tmp_running_time));
+  if (raw_running_time != 0) {
+    total_size += 2 + 8;
+  }
+
+  // double running_ratio = 18 [json_name = "runningRatio"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_ratio = this->_internal_running_ratio();
+  uint64_t raw_running_ratio;
+  memcpy(&raw_running_ratio, &tmp_running_ratio, sizeof(tmp_running_ratio));
+  if (raw_running_ratio != 0) {
+    total_size += 2 + 8;
+  }
+
+  // double avg_v = 19 [json_name = "avgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_v = this->_internal_avg_v();
+  uint64_t raw_avg_v;
+  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
+  if (raw_avg_v != 0) {
+    total_size += 2 + 8;
+  }
+
+  // double total_queuing_time = 21 [json_name = "totalQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_total_queuing_time = this->_internal_total_queuing_time();
+  uint64_t raw_total_queuing_time;
+  memcpy(&raw_total_queuing_time, &tmp_total_queuing_time, sizeof(tmp_total_queuing_time));
+  if (raw_total_queuing_time != 0) {
+    total_size += 2 + 8;
+  }
+
+  // int32 num_queuing_on_lane = 20 [json_name = "numQueuingOnLane"];
+  if (this->_internal_num_queuing_on_lane() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_num_queuing_on_lane());
+  }
+
+  // int32 num_passing_traffic_lights = 23 [json_name = "numPassingTrafficLights"];
+  if (this->_internal_num_passing_traffic_lights() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_num_passing_traffic_lights());
+  }
+
+  // double avg_queuing_time = 22 [json_name = "avgQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_queuing_time = this->_internal_avg_queuing_time();
+  uint64_t raw_avg_queuing_time;
+  memcpy(&raw_avg_queuing_time, &tmp_avg_queuing_time, sizeof(tmp_avg_queuing_time));
+  if (raw_avg_queuing_time != 0) {
+    total_size += 2 + 8;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1858,6 +2111,54 @@ void VehicleRuntime::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   if (from._internal_parking_status() != 0) {
     _this->_internal_set_parking_status(from._internal_parking_status());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_estimated_total_running_distance = from._internal_estimated_total_running_distance();
+  uint64_t raw_estimated_total_running_distance;
+  memcpy(&raw_estimated_total_running_distance, &tmp_estimated_total_running_distance, sizeof(tmp_estimated_total_running_distance));
+  if (raw_estimated_total_running_distance != 0) {
+    _this->_internal_set_estimated_total_running_distance(from._internal_estimated_total_running_distance());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_time = from._internal_running_time();
+  uint64_t raw_running_time;
+  memcpy(&raw_running_time, &tmp_running_time, sizeof(tmp_running_time));
+  if (raw_running_time != 0) {
+    _this->_internal_set_running_time(from._internal_running_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_ratio = from._internal_running_ratio();
+  uint64_t raw_running_ratio;
+  memcpy(&raw_running_ratio, &tmp_running_ratio, sizeof(tmp_running_ratio));
+  if (raw_running_ratio != 0) {
+    _this->_internal_set_running_ratio(from._internal_running_ratio());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_v = from._internal_avg_v();
+  uint64_t raw_avg_v;
+  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
+  if (raw_avg_v != 0) {
+    _this->_internal_set_avg_v(from._internal_avg_v());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_total_queuing_time = from._internal_total_queuing_time();
+  uint64_t raw_total_queuing_time;
+  memcpy(&raw_total_queuing_time, &tmp_total_queuing_time, sizeof(tmp_total_queuing_time));
+  if (raw_total_queuing_time != 0) {
+    _this->_internal_set_total_queuing_time(from._internal_total_queuing_time());
+  }
+  if (from._internal_num_queuing_on_lane() != 0) {
+    _this->_internal_set_num_queuing_on_lane(from._internal_num_queuing_on_lane());
+  }
+  if (from._internal_num_passing_traffic_lights() != 0) {
+    _this->_internal_set_num_passing_traffic_lights(from._internal_num_passing_traffic_lights());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_queuing_time = from._internal_avg_queuing_time();
+  uint64_t raw_avg_queuing_time;
+  memcpy(&raw_avg_queuing_time, &tmp_avg_queuing_time, sizeof(tmp_avg_queuing_time));
+  if (raw_avg_queuing_time != 0) {
+    _this->_internal_set_avg_queuing_time(from._internal_avg_queuing_time());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1877,8 +2178,8 @@ void VehicleRuntime::InternalSwap(VehicleRuntime* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.parking_status_)
-      + sizeof(VehicleRuntime::_impl_.parking_status_)
+      PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.avg_queuing_time_)
+      + sizeof(VehicleRuntime::_impl_.avg_queuing_time_)
       - PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.base_)>(
           reinterpret_cast<char*>(&_impl_.base_),
           reinterpret_cast<char*>(&other->_impl_.base_));

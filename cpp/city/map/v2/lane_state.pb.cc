@@ -30,6 +30,12 @@ PROTOBUF_CONSTEXPR LaneState::LaneState(
   , /*decltype(_impl_.restriction_)*/false
   , /*decltype(_impl_.avg_v_)*/0
   , /*decltype(_impl_.light_state_)*/0
+  , /*decltype(_impl_.in_vehicle_cnt_)*/0
+  , /*decltype(_impl_.out_vehicle_cnt_)*/0
+  , /*decltype(_impl_.vehicle_cnt_)*/0
+  , /*decltype(_impl_.total_queuing_time_)*/0
+  , /*decltype(_impl_.avg_queuing_time_)*/0
+  , /*decltype(_impl_.total_queuing_vehicle_cnt_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LaneStateDefaultTypeInternal {
   PROTOBUF_CONSTEXPR LaneStateDefaultTypeInternal()
@@ -59,6 +65,12 @@ const uint32_t TableStruct_city_2fmap_2fv2_2flane_5fstate_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.avg_v_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.restriction_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.light_state_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.in_vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.out_vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.total_queuing_vehicle_cnt_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.total_queuing_time_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.avg_queuing_time_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::map::v2::LaneState)},
@@ -71,16 +83,23 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034city/map/v2/lane_state.proto\022\013city.map"
   ".v2\032\027city/map/v2/light.proto\032\033city/perso"
-  "n/v2/motion.proto\"\304\001\n\tLaneState\022\016\n\002id\030\001 "
+  "n/v2/motion.proto\"\306\003\n\tLaneState\022\016\n\002id\030\001 "
   "\001(\005R\002id\0226\n\007persons\030\002 \003(\0132\034.city.person.v"
   "2.PersonMotionR\007persons\022\023\n\005avg_v\030\003 \001(\001R\004"
   "avgV\022 \n\013restriction\030\004 \001(\010R\013restriction\0228"
   "\n\013light_state\030\005 \001(\0162\027.city.map.v2.LightS"
-  "tateR\nlightStateB\242\001\n\017com.city.map.v2B\016La"
-  "neStateProtoP\001Z1git.fiblab.net/sim/proto"
-  "s/v2/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City.M"
-  "ap.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMet"
-  "adata\352\002\rCity::Map::V2b\006proto3"
+  "tateR\nlightState\022$\n\016in_vehicle_cnt\030\006 \001(\005"
+  "R\014inVehicleCnt\022&\n\017out_vehicle_cnt\030\007 \001(\005R"
+  "\routVehicleCnt\022\037\n\013vehicle_cnt\030\010 \001(\005R\nveh"
+  "icleCnt\0229\n\031total_queuing_vehicle_cnt\030\t \001"
+  "(\005R\026totalQueuingVehicleCnt\022,\n\022total_queu"
+  "ing_time\030\n \001(\001R\020totalQueuingTime\022(\n\020avg_"
+  "queuing_time\030\013 \001(\001R\016avgQueuingTimeB\242\001\n\017c"
+  "om.city.map.v2B\016LaneStateProtoP\001Z1git.fi"
+  "blab.net/sim/protos/v2/go/city/map/v2;ma"
+  "pv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027"
+  "City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V2b"
+  "\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_deps[2] = {
   &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
@@ -88,7 +107,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fl
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto = {
-    false, false, 469, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto,
+    false, false, 727, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto,
     "city/map/v2/lane_state.proto",
     &descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_once, descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_deps, 2, 1,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2flane_5fstate_2eproto::offsets,
@@ -129,12 +148,18 @@ LaneState::LaneState(const LaneState& from)
     , decltype(_impl_.restriction_){}
     , decltype(_impl_.avg_v_){}
     , decltype(_impl_.light_state_){}
+    , decltype(_impl_.in_vehicle_cnt_){}
+    , decltype(_impl_.out_vehicle_cnt_){}
+    , decltype(_impl_.vehicle_cnt_){}
+    , decltype(_impl_.total_queuing_time_){}
+    , decltype(_impl_.avg_queuing_time_){}
+    , decltype(_impl_.total_queuing_vehicle_cnt_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.light_state_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.light_state_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.total_queuing_vehicle_cnt_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.total_queuing_vehicle_cnt_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.LaneState)
 }
 
@@ -148,6 +173,12 @@ inline void LaneState::SharedCtor(
     , decltype(_impl_.restriction_){false}
     , decltype(_impl_.avg_v_){0}
     , decltype(_impl_.light_state_){0}
+    , decltype(_impl_.in_vehicle_cnt_){0}
+    , decltype(_impl_.out_vehicle_cnt_){0}
+    , decltype(_impl_.vehicle_cnt_){0}
+    , decltype(_impl_.total_queuing_time_){0}
+    , decltype(_impl_.avg_queuing_time_){0}
+    , decltype(_impl_.total_queuing_vehicle_cnt_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -178,8 +209,8 @@ void LaneState::Clear() {
 
   _impl_.persons_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.light_state_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.light_state_));
+      reinterpret_cast<char*>(&_impl_.total_queuing_vehicle_cnt_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.total_queuing_vehicle_cnt_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -232,6 +263,54 @@ const char* LaneState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_light_state(static_cast<::city::map::v2::LightState>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 in_vehicle_cnt = 6 [json_name = "inVehicleCnt"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.in_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 out_vehicle_cnt = 7 [json_name = "outVehicleCnt"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.out_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 vehicle_cnt = 8 [json_name = "vehicleCnt"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 total_queuing_vehicle_cnt = 9 [json_name = "totalQueuingVehicleCnt"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.total_queuing_vehicle_cnt_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double total_queuing_time = 10 [json_name = "totalQueuingTime"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.total_queuing_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double avg_queuing_time = 11 [json_name = "avgQueuingTime"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 89)) {
+          _impl_.avg_queuing_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -301,6 +380,50 @@ uint8_t* LaneState::_InternalSerialize(
       5, this->_internal_light_state(), target);
   }
 
+  // int32 in_vehicle_cnt = 6 [json_name = "inVehicleCnt"];
+  if (this->_internal_in_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_in_vehicle_cnt(), target);
+  }
+
+  // int32 out_vehicle_cnt = 7 [json_name = "outVehicleCnt"];
+  if (this->_internal_out_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_out_vehicle_cnt(), target);
+  }
+
+  // int32 vehicle_cnt = 8 [json_name = "vehicleCnt"];
+  if (this->_internal_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_vehicle_cnt(), target);
+  }
+
+  // int32 total_queuing_vehicle_cnt = 9 [json_name = "totalQueuingVehicleCnt"];
+  if (this->_internal_total_queuing_vehicle_cnt() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_total_queuing_vehicle_cnt(), target);
+  }
+
+  // double total_queuing_time = 10 [json_name = "totalQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_total_queuing_time = this->_internal_total_queuing_time();
+  uint64_t raw_total_queuing_time;
+  memcpy(&raw_total_queuing_time, &tmp_total_queuing_time, sizeof(tmp_total_queuing_time));
+  if (raw_total_queuing_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_total_queuing_time(), target);
+  }
+
+  // double avg_queuing_time = 11 [json_name = "avgQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_queuing_time = this->_internal_avg_queuing_time();
+  uint64_t raw_avg_queuing_time;
+  memcpy(&raw_avg_queuing_time, &tmp_avg_queuing_time, sizeof(tmp_avg_queuing_time));
+  if (raw_avg_queuing_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(11, this->_internal_avg_queuing_time(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -349,6 +472,44 @@ size_t LaneState::ByteSizeLong() const {
       ::_pbi::WireFormatLite::EnumSize(this->_internal_light_state());
   }
 
+  // int32 in_vehicle_cnt = 6 [json_name = "inVehicleCnt"];
+  if (this->_internal_in_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_in_vehicle_cnt());
+  }
+
+  // int32 out_vehicle_cnt = 7 [json_name = "outVehicleCnt"];
+  if (this->_internal_out_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_out_vehicle_cnt());
+  }
+
+  // int32 vehicle_cnt = 8 [json_name = "vehicleCnt"];
+  if (this->_internal_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_vehicle_cnt());
+  }
+
+  // double total_queuing_time = 10 [json_name = "totalQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_total_queuing_time = this->_internal_total_queuing_time();
+  uint64_t raw_total_queuing_time;
+  memcpy(&raw_total_queuing_time, &tmp_total_queuing_time, sizeof(tmp_total_queuing_time));
+  if (raw_total_queuing_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double avg_queuing_time = 11 [json_name = "avgQueuingTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_queuing_time = this->_internal_avg_queuing_time();
+  uint64_t raw_avg_queuing_time;
+  memcpy(&raw_avg_queuing_time, &tmp_avg_queuing_time, sizeof(tmp_avg_queuing_time));
+  if (raw_avg_queuing_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 total_queuing_vehicle_cnt = 9 [json_name = "totalQueuingVehicleCnt"];
+  if (this->_internal_total_queuing_vehicle_cnt() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_total_queuing_vehicle_cnt());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -384,6 +545,32 @@ void LaneState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
   if (from._internal_light_state() != 0) {
     _this->_internal_set_light_state(from._internal_light_state());
   }
+  if (from._internal_in_vehicle_cnt() != 0) {
+    _this->_internal_set_in_vehicle_cnt(from._internal_in_vehicle_cnt());
+  }
+  if (from._internal_out_vehicle_cnt() != 0) {
+    _this->_internal_set_out_vehicle_cnt(from._internal_out_vehicle_cnt());
+  }
+  if (from._internal_vehicle_cnt() != 0) {
+    _this->_internal_set_vehicle_cnt(from._internal_vehicle_cnt());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_total_queuing_time = from._internal_total_queuing_time();
+  uint64_t raw_total_queuing_time;
+  memcpy(&raw_total_queuing_time, &tmp_total_queuing_time, sizeof(tmp_total_queuing_time));
+  if (raw_total_queuing_time != 0) {
+    _this->_internal_set_total_queuing_time(from._internal_total_queuing_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_queuing_time = from._internal_avg_queuing_time();
+  uint64_t raw_avg_queuing_time;
+  memcpy(&raw_avg_queuing_time, &tmp_avg_queuing_time, sizeof(tmp_avg_queuing_time));
+  if (raw_avg_queuing_time != 0) {
+    _this->_internal_set_avg_queuing_time(from._internal_avg_queuing_time());
+  }
+  if (from._internal_total_queuing_vehicle_cnt() != 0) {
+    _this->_internal_set_total_queuing_vehicle_cnt(from._internal_total_queuing_vehicle_cnt());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -403,8 +590,8 @@ void LaneState::InternalSwap(LaneState* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.persons_.InternalSwap(&other->_impl_.persons_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(LaneState, _impl_.light_state_)
-      + sizeof(LaneState::_impl_.light_state_)
+      PROTOBUF_FIELD_OFFSET(LaneState, _impl_.total_queuing_vehicle_cnt_)
+      + sizeof(LaneState::_impl_.total_queuing_vehicle_cnt_)
       - PROTOBUF_FIELD_OFFSET(LaneState, _impl_.id_)>(
           reinterpret_cast<char*>(&_impl_.id_),
           reinterpret_cast<char*>(&other->_impl_.id_));

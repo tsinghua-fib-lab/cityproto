@@ -54,6 +54,54 @@ export declare class LaneState extends Message<LaneState> {
    */
   lightState: LightState;
 
+  /**
+   * 当前进入车道的车辆数
+   * current entering vehicle count
+   *
+   * @generated from field: int32 in_vehicle_cnt = 6;
+   */
+  inVehicleCnt: number;
+
+  /**
+   * 当前离开车道的车辆数
+   * current leaving vehicle count
+   *
+   * @generated from field: int32 out_vehicle_cnt = 7;
+   */
+  outVehicleCnt: number;
+
+  /**
+   * 总车数
+   * total vehicle count
+   *
+   * @generated from field: int32 vehicle_cnt = 8;
+   */
+  vehicleCnt: number;
+
+  /**
+   * 排队数量
+   * queueing vehicle count
+   *
+   * @generated from field: int32 total_queuing_vehicle_cnt = 9;
+   */
+  totalQueuingVehicleCnt: number;
+
+  /**
+   * 排队时间
+   * queueing time
+   *
+   * @generated from field: double total_queuing_time = 10;
+   */
+  totalQueuingTime: number;
+
+  /**
+   * 平均排队时间
+   * average queueing time
+   *
+   * @generated from field: double avg_queuing_time = 11;
+   */
+  avgQueuingTime: number;
+
   constructor(data?: PartialMessage<LaneState>);
 
   static readonly runtime: typeof proto3;

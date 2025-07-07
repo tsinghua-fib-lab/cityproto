@@ -56,6 +56,12 @@ extern GetLaneByLongLatBBoxRequestDefaultTypeInternal _GetLaneByLongLatBBoxReque
 class GetLaneByLongLatBBoxResponse;
 struct GetLaneByLongLatBBoxResponseDefaultTypeInternal;
 extern GetLaneByLongLatBBoxResponseDefaultTypeInternal _GetLaneByLongLatBBoxResponse_default_instance_;
+class GetLaneGlobalStatisticsRequest;
+struct GetLaneGlobalStatisticsRequestDefaultTypeInternal;
+extern GetLaneGlobalStatisticsRequestDefaultTypeInternal _GetLaneGlobalStatisticsRequest_default_instance_;
+class GetLaneGlobalStatisticsResponse;
+struct GetLaneGlobalStatisticsResponseDefaultTypeInternal;
+extern GetLaneGlobalStatisticsResponseDefaultTypeInternal _GetLaneGlobalStatisticsResponse_default_instance_;
 class GetLaneRequest;
 struct GetLaneRequestDefaultTypeInternal;
 extern GetLaneRequestDefaultTypeInternal _GetLaneRequest_default_instance_;
@@ -80,6 +86,8 @@ extern SetLaneRestrictionResponseDefaultTypeInternal _SetLaneRestrictionResponse
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::map::v2::GetLaneByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::map::v2::GetLaneByLongLatBBoxRequest>(Arena*);
 template<> ::city::map::v2::GetLaneByLongLatBBoxResponse* Arena::CreateMaybeMessage<::city::map::v2::GetLaneByLongLatBBoxResponse>(Arena*);
+template<> ::city::map::v2::GetLaneGlobalStatisticsRequest* Arena::CreateMaybeMessage<::city::map::v2::GetLaneGlobalStatisticsRequest>(Arena*);
+template<> ::city::map::v2::GetLaneGlobalStatisticsResponse* Arena::CreateMaybeMessage<::city::map::v2::GetLaneGlobalStatisticsResponse>(Arena*);
 template<> ::city::map::v2::GetLaneRequest* Arena::CreateMaybeMessage<::city::map::v2::GetLaneRequest>(Arena*);
 template<> ::city::map::v2::GetLaneResponse* Arena::CreateMaybeMessage<::city::map::v2::GetLaneResponse>(Arena*);
 template<> ::city::map::v2::SetLaneMaxVRequest* Arena::CreateMaybeMessage<::city::map::v2::SetLaneMaxVRequest>(Arena*);
@@ -1300,6 +1308,272 @@ class GetLaneByLongLatBBoxResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetLaneGlobalStatisticsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.map.v2.GetLaneGlobalStatisticsRequest) */ {
+ public:
+  inline GetLaneGlobalStatisticsRequest() : GetLaneGlobalStatisticsRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetLaneGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetLaneGlobalStatisticsRequest(const GetLaneGlobalStatisticsRequest& from);
+  GetLaneGlobalStatisticsRequest(GetLaneGlobalStatisticsRequest&& from) noexcept
+    : GetLaneGlobalStatisticsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetLaneGlobalStatisticsRequest& operator=(const GetLaneGlobalStatisticsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetLaneGlobalStatisticsRequest& operator=(GetLaneGlobalStatisticsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetLaneGlobalStatisticsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetLaneGlobalStatisticsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetLaneGlobalStatisticsRequest*>(
+               &_GetLaneGlobalStatisticsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(GetLaneGlobalStatisticsRequest& a, GetLaneGlobalStatisticsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetLaneGlobalStatisticsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetLaneGlobalStatisticsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetLaneGlobalStatisticsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetLaneGlobalStatisticsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const GetLaneGlobalStatisticsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const GetLaneGlobalStatisticsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.GetLaneGlobalStatisticsRequest";
+  }
+  protected:
+  explicit GetLaneGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.GetLaneGlobalStatisticsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetLaneGlobalStatisticsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.GetLaneGlobalStatisticsResponse) */ {
+ public:
+  inline GetLaneGlobalStatisticsResponse() : GetLaneGlobalStatisticsResponse(nullptr) {}
+  ~GetLaneGlobalStatisticsResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetLaneGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetLaneGlobalStatisticsResponse(const GetLaneGlobalStatisticsResponse& from);
+  GetLaneGlobalStatisticsResponse(GetLaneGlobalStatisticsResponse&& from) noexcept
+    : GetLaneGlobalStatisticsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetLaneGlobalStatisticsResponse& operator=(const GetLaneGlobalStatisticsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetLaneGlobalStatisticsResponse& operator=(GetLaneGlobalStatisticsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetLaneGlobalStatisticsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetLaneGlobalStatisticsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetLaneGlobalStatisticsResponse*>(
+               &_GetLaneGlobalStatisticsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(GetLaneGlobalStatisticsResponse& a, GetLaneGlobalStatisticsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetLaneGlobalStatisticsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetLaneGlobalStatisticsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetLaneGlobalStatisticsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetLaneGlobalStatisticsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetLaneGlobalStatisticsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetLaneGlobalStatisticsResponse& from) {
+    GetLaneGlobalStatisticsResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetLaneGlobalStatisticsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.GetLaneGlobalStatisticsResponse";
+  }
+  protected:
+  explicit GetLaneGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMaxQueuingVehicleCntFieldNumber = 1,
+  };
+  // int32 max_queuing_vehicle_cnt = 1 [json_name = "maxQueuingVehicleCnt"];
+  void clear_max_queuing_vehicle_cnt();
+  int32_t max_queuing_vehicle_cnt() const;
+  void set_max_queuing_vehicle_cnt(int32_t value);
+  private:
+  int32_t _internal_max_queuing_vehicle_cnt() const;
+  void _internal_set_max_queuing_vehicle_cnt(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.GetLaneGlobalStatisticsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t max_queuing_vehicle_cnt_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -1665,9 +1939,41 @@ GetLaneByLongLatBBoxResponse::states() const {
   return _impl_.states_;
 }
 
+// -------------------------------------------------------------------
+
+// GetLaneGlobalStatisticsRequest
+
+// -------------------------------------------------------------------
+
+// GetLaneGlobalStatisticsResponse
+
+// int32 max_queuing_vehicle_cnt = 1 [json_name = "maxQueuingVehicleCnt"];
+inline void GetLaneGlobalStatisticsResponse::clear_max_queuing_vehicle_cnt() {
+  _impl_.max_queuing_vehicle_cnt_ = 0;
+}
+inline int32_t GetLaneGlobalStatisticsResponse::_internal_max_queuing_vehicle_cnt() const {
+  return _impl_.max_queuing_vehicle_cnt_;
+}
+inline int32_t GetLaneGlobalStatisticsResponse::max_queuing_vehicle_cnt() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.GetLaneGlobalStatisticsResponse.max_queuing_vehicle_cnt)
+  return _internal_max_queuing_vehicle_cnt();
+}
+inline void GetLaneGlobalStatisticsResponse::_internal_set_max_queuing_vehicle_cnt(int32_t value) {
+  
+  _impl_.max_queuing_vehicle_cnt_ = value;
+}
+inline void GetLaneGlobalStatisticsResponse::set_max_queuing_vehicle_cnt(int32_t value) {
+  _internal_set_max_queuing_vehicle_cnt(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.GetLaneGlobalStatisticsResponse.max_queuing_vehicle_cnt)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

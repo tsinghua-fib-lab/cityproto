@@ -424,6 +424,92 @@ func (x *GetLaneByLongLatBBoxResponse) GetStates() []*LaneState {
 	return nil
 }
 
+// 获取Lane全局统计信息请求
+// Request for getting lane global statistics
+type GetLaneGlobalStatisticsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLaneGlobalStatisticsRequest) Reset() {
+	*x = GetLaneGlobalStatisticsRequest{}
+	mi := &file_city_map_v2_lane_service_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLaneGlobalStatisticsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLaneGlobalStatisticsRequest) ProtoMessage() {}
+
+func (x *GetLaneGlobalStatisticsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_city_map_v2_lane_service_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLaneGlobalStatisticsRequest.ProtoReflect.Descriptor instead.
+func (*GetLaneGlobalStatisticsRequest) Descriptor() ([]byte, []int) {
+	return file_city_map_v2_lane_service_proto_rawDescGZIP(), []int{8}
+}
+
+// 获取Lane全局统计信息响应
+// Response of getting lane global statistics
+type GetLaneGlobalStatisticsResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 最大排队车辆数
+	// max queuing vehicle count
+	MaxQueuingVehicleCnt int32 `protobuf:"varint,1,opt,name=max_queuing_vehicle_cnt,json=maxQueuingVehicleCnt,proto3" json:"max_queuing_vehicle_cnt,omitempty" bson:"max_queuing_vehicle_cnt" db:"max_queuing_vehicle_cnt" yaml:"max_queuing_vehicle_cnt"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *GetLaneGlobalStatisticsResponse) Reset() {
+	*x = GetLaneGlobalStatisticsResponse{}
+	mi := &file_city_map_v2_lane_service_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLaneGlobalStatisticsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLaneGlobalStatisticsResponse) ProtoMessage() {}
+
+func (x *GetLaneGlobalStatisticsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_city_map_v2_lane_service_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLaneGlobalStatisticsResponse.ProtoReflect.Descriptor instead.
+func (*GetLaneGlobalStatisticsResponse) Descriptor() ([]byte, []int) {
+	return file_city_map_v2_lane_service_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GetLaneGlobalStatisticsResponse) GetMaxQueuingVehicleCnt() int32 {
+	if x != nil {
+		return x.MaxQueuingVehicleCnt
+	}
+	return 0
+}
+
 var File_city_map_v2_lane_service_proto protoreflect.FileDescriptor
 
 const file_city_map_v2_lane_service_proto_rawDesc = "" +
@@ -446,12 +532,16 @@ const file_city_map_v2_lane_service_proto_rawDesc = "" +
 	"\x04bbox\x18\x01 \x01(\v2\x18.city.geo.v2.LongLatBBoxR\x04bbox\x12%\n" +
 	"\x0eexclude_person\x18\x02 \x01(\bR\rexcludePerson\"N\n" +
 	"\x1cGetLaneByLongLatBBoxResponse\x12.\n" +
-	"\x06states\x18\x01 \x03(\v2\x16.city.map.v2.LaneStateR\x06states2\xf9\x02\n" +
+	"\x06states\x18\x01 \x03(\v2\x16.city.map.v2.LaneStateR\x06states\" \n" +
+	"\x1eGetLaneGlobalStatisticsRequest\"X\n" +
+	"\x1fGetLaneGlobalStatisticsResponse\x125\n" +
+	"\x17max_queuing_vehicle_cnt\x18\x01 \x01(\x05R\x14maxQueuingVehicleCnt2\xef\x03\n" +
 	"\vLaneService\x12P\n" +
 	"\vSetLaneMaxV\x12\x1f.city.map.v2.SetLaneMaxVRequest\x1a .city.map.v2.SetLaneMaxVResponse\x12e\n" +
 	"\x12SetLaneRestriction\x12&.city.map.v2.SetLaneRestrictionRequest\x1a'.city.map.v2.SetLaneRestrictionResponse\x12D\n" +
 	"\aGetLane\x12\x1b.city.map.v2.GetLaneRequest\x1a\x1c.city.map.v2.GetLaneResponse\x12k\n" +
-	"\x14GetLaneByLongLatBBox\x12(.city.map.v2.GetLaneByLongLatBBoxRequest\x1a).city.map.v2.GetLaneByLongLatBBoxResponseB\xa4\x01\n" +
+	"\x14GetLaneByLongLatBBox\x12(.city.map.v2.GetLaneByLongLatBBoxRequest\x1a).city.map.v2.GetLaneByLongLatBBoxResponse\x12t\n" +
+	"\x17GetLaneGlobalStatistics\x12+.city.map.v2.GetLaneGlobalStatisticsRequest\x1a,.city.map.v2.GetLaneGlobalStatisticsResponseB\xa4\x01\n" +
 	"\x0fcom.city.map.v2B\x10LaneServiceProtoP\x01Z1git.fiblab.net/sim/protos/v2/go/city/map/v2;mapv2\xa2\x02\x03CMX\xaa\x02\vCity.Map.V2\xca\x02\vCity\\Map\\V2\xe2\x02\x17City\\Map\\V2\\GPBMetadata\xea\x02\rCity::Map::V2b\x06proto3"
 
 var (
@@ -466,36 +556,40 @@ func file_city_map_v2_lane_service_proto_rawDescGZIP() []byte {
 	return file_city_map_v2_lane_service_proto_rawDescData
 }
 
-var file_city_map_v2_lane_service_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_city_map_v2_lane_service_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_city_map_v2_lane_service_proto_goTypes = []any{
-	(*SetLaneMaxVRequest)(nil),           // 0: city.map.v2.SetLaneMaxVRequest
-	(*SetLaneMaxVResponse)(nil),          // 1: city.map.v2.SetLaneMaxVResponse
-	(*SetLaneRestrictionRequest)(nil),    // 2: city.map.v2.SetLaneRestrictionRequest
-	(*SetLaneRestrictionResponse)(nil),   // 3: city.map.v2.SetLaneRestrictionResponse
-	(*GetLaneRequest)(nil),               // 4: city.map.v2.GetLaneRequest
-	(*GetLaneResponse)(nil),              // 5: city.map.v2.GetLaneResponse
-	(*GetLaneByLongLatBBoxRequest)(nil),  // 6: city.map.v2.GetLaneByLongLatBBoxRequest
-	(*GetLaneByLongLatBBoxResponse)(nil), // 7: city.map.v2.GetLaneByLongLatBBoxResponse
-	(*LaneState)(nil),                    // 8: city.map.v2.LaneState
-	(*v2.LongLatBBox)(nil),               // 9: city.geo.v2.LongLatBBox
+	(*SetLaneMaxVRequest)(nil),              // 0: city.map.v2.SetLaneMaxVRequest
+	(*SetLaneMaxVResponse)(nil),             // 1: city.map.v2.SetLaneMaxVResponse
+	(*SetLaneRestrictionRequest)(nil),       // 2: city.map.v2.SetLaneRestrictionRequest
+	(*SetLaneRestrictionResponse)(nil),      // 3: city.map.v2.SetLaneRestrictionResponse
+	(*GetLaneRequest)(nil),                  // 4: city.map.v2.GetLaneRequest
+	(*GetLaneResponse)(nil),                 // 5: city.map.v2.GetLaneResponse
+	(*GetLaneByLongLatBBoxRequest)(nil),     // 6: city.map.v2.GetLaneByLongLatBBoxRequest
+	(*GetLaneByLongLatBBoxResponse)(nil),    // 7: city.map.v2.GetLaneByLongLatBBoxResponse
+	(*GetLaneGlobalStatisticsRequest)(nil),  // 8: city.map.v2.GetLaneGlobalStatisticsRequest
+	(*GetLaneGlobalStatisticsResponse)(nil), // 9: city.map.v2.GetLaneGlobalStatisticsResponse
+	(*LaneState)(nil),                       // 10: city.map.v2.LaneState
+	(*v2.LongLatBBox)(nil),                  // 11: city.geo.v2.LongLatBBox
 }
 var file_city_map_v2_lane_service_proto_depIdxs = []int32{
-	8, // 0: city.map.v2.GetLaneResponse.states:type_name -> city.map.v2.LaneState
-	9, // 1: city.map.v2.GetLaneByLongLatBBoxRequest.bbox:type_name -> city.geo.v2.LongLatBBox
-	8, // 2: city.map.v2.GetLaneByLongLatBBoxResponse.states:type_name -> city.map.v2.LaneState
-	0, // 3: city.map.v2.LaneService.SetLaneMaxV:input_type -> city.map.v2.SetLaneMaxVRequest
-	2, // 4: city.map.v2.LaneService.SetLaneRestriction:input_type -> city.map.v2.SetLaneRestrictionRequest
-	4, // 5: city.map.v2.LaneService.GetLane:input_type -> city.map.v2.GetLaneRequest
-	6, // 6: city.map.v2.LaneService.GetLaneByLongLatBBox:input_type -> city.map.v2.GetLaneByLongLatBBoxRequest
-	1, // 7: city.map.v2.LaneService.SetLaneMaxV:output_type -> city.map.v2.SetLaneMaxVResponse
-	3, // 8: city.map.v2.LaneService.SetLaneRestriction:output_type -> city.map.v2.SetLaneRestrictionResponse
-	5, // 9: city.map.v2.LaneService.GetLane:output_type -> city.map.v2.GetLaneResponse
-	7, // 10: city.map.v2.LaneService.GetLaneByLongLatBBox:output_type -> city.map.v2.GetLaneByLongLatBBoxResponse
-	7, // [7:11] is the sub-list for method output_type
-	3, // [3:7] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	10, // 0: city.map.v2.GetLaneResponse.states:type_name -> city.map.v2.LaneState
+	11, // 1: city.map.v2.GetLaneByLongLatBBoxRequest.bbox:type_name -> city.geo.v2.LongLatBBox
+	10, // 2: city.map.v2.GetLaneByLongLatBBoxResponse.states:type_name -> city.map.v2.LaneState
+	0,  // 3: city.map.v2.LaneService.SetLaneMaxV:input_type -> city.map.v2.SetLaneMaxVRequest
+	2,  // 4: city.map.v2.LaneService.SetLaneRestriction:input_type -> city.map.v2.SetLaneRestrictionRequest
+	4,  // 5: city.map.v2.LaneService.GetLane:input_type -> city.map.v2.GetLaneRequest
+	6,  // 6: city.map.v2.LaneService.GetLaneByLongLatBBox:input_type -> city.map.v2.GetLaneByLongLatBBoxRequest
+	8,  // 7: city.map.v2.LaneService.GetLaneGlobalStatistics:input_type -> city.map.v2.GetLaneGlobalStatisticsRequest
+	1,  // 8: city.map.v2.LaneService.SetLaneMaxV:output_type -> city.map.v2.SetLaneMaxVResponse
+	3,  // 9: city.map.v2.LaneService.SetLaneRestriction:output_type -> city.map.v2.SetLaneRestrictionResponse
+	5,  // 10: city.map.v2.LaneService.GetLane:output_type -> city.map.v2.GetLaneResponse
+	7,  // 11: city.map.v2.LaneService.GetLaneByLongLatBBox:output_type -> city.map.v2.GetLaneByLongLatBBoxResponse
+	9,  // 12: city.map.v2.LaneService.GetLaneGlobalStatistics:output_type -> city.map.v2.GetLaneGlobalStatisticsResponse
+	8,  // [8:13] is the sub-list for method output_type
+	3,  // [3:8] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_city_map_v2_lane_service_proto_init() }
@@ -510,7 +604,7 @@ func file_city_map_v2_lane_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_map_v2_lane_service_proto_rawDesc), len(file_city_map_v2_lane_service_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

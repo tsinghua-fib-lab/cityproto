@@ -1,4 +1,5 @@
 from . import aoi_service_pb2
+from . import junction_service_pb2
 from . import lane_service_pb2
 from . import lane_state_pb2
 from . import light_pb2

@@ -64,4 +64,13 @@ message PersonMotion {
   // 加速度
   // acceleration
   double a = 8;
+  // 是否排队
+  // whether queuing on lane
+  bool is_queuing_on_lane = 9;
+  // 在当前车道排队时间
+  // queuing time on current lane
+  double queuing_time_on_cur_lane = 10;
+  // 乘客数量
+  // number of passengers
+  int32 num_passengers = 11;
 }

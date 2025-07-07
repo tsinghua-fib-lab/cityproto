@@ -45,6 +45,9 @@ export const PersonMotion = /*@__PURE__*/ proto3.makeMessageType(
     { no: 6, name: "activity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "l", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 8, name: "a", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "is_queuing_on_lane", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "queuing_time_on_cur_lane", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 11, name: "num_passengers", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

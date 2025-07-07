@@ -71,6 +71,30 @@ export const GetRoadResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 获取Road全局统计信息请求
+ * Request for getting road global statistics
+ *
+ * @generated from message city.map.v2.GetRoadGlobalStatisticsRequest
+ */
+export const GetRoadGlobalStatisticsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.map.v2.GetRoadGlobalStatisticsRequest",
+  [],
+);
+
+/**
+ * 获取Road全局统计信息响应
+ * Response of getting road global statistics
+ *
+ * @generated from message city.map.v2.GetRoadGlobalStatisticsResponse
+ */
+export const GetRoadGlobalStatisticsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.map.v2.GetRoadGlobalStatisticsResponse",
+  () => [
+    { no: 1, name: "avg_road_congestion_index", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+);
+
+/**
  * @generated from message city.map.v2.GetRuinInfoRequest
  */
 export const GetRuinInfoRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -129,10 +153,18 @@ export const RoadState = /*@__PURE__*/ proto3.makeMessageType(
   "city.map.v2.RoadState",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "in_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "out_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "cum_in_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "cum_out_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 12, name: "avg_travel_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "level", kind: "enum", T: proto3.getEnumType(RoadLevel) },
+    { no: 13, name: "congestion_index", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "reason", kind: "enum", T: proto3.getEnumType(InterruptionReason) },
     { no: 5, name: "lanes", kind: "message", T: LaneState, repeated: true },
+    { no: 6, name: "max_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

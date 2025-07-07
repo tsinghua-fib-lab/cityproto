@@ -73,3 +73,17 @@ class GetLaneByLongLatBBoxResponse(_message.Message):
 
     def __init__(self, states: _Optional[_Iterable[_Union[_lane_state_pb2.LaneState, _Mapping]]]=...) -> None:
         ...
+
+class GetLaneGlobalStatisticsRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetLaneGlobalStatisticsResponse(_message.Message):
+    __slots__ = ['max_queuing_vehicle_cnt']
+    MAX_QUEUING_VEHICLE_CNT_FIELD_NUMBER: _ClassVar[int]
+    max_queuing_vehicle_cnt: int
+
+    def __init__(self, max_queuing_vehicle_cnt: _Optional[int]=...) -> None:
+        ...

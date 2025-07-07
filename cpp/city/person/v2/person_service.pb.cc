@@ -503,10 +503,48 @@ struct SetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal _SetControlledTaxiOrderAllocationPlanResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetGlobalStatisticsRequest::GetGlobalStatisticsRequest(
+    ::_pbi::ConstantInitialized) {}
+struct GetGlobalStatisticsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetGlobalStatisticsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetGlobalStatisticsRequestDefaultTypeInternal() {}
+  union {
+    GetGlobalStatisticsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetGlobalStatisticsRequestDefaultTypeInternal _GetGlobalStatisticsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetGlobalStatisticsResponse::GetGlobalStatisticsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.completed_total_travel_time_)*/0
+  , /*decltype(_impl_.completed_total_travel_distance_)*/0
+  , /*decltype(_impl_.completed_avg_travel_time_)*/0
+  , /*decltype(_impl_.completed_avg_v_)*/0
+  , /*decltype(_impl_.num_completed_trips_)*/0
+  , /*decltype(_impl_.num_vehicles_)*/0
+  , /*decltype(_impl_.running_total_travel_time_)*/0
+  , /*decltype(_impl_.running_total_travel_distance_)*/0
+  , /*decltype(_impl_.running_avg_v_)*/0
+  , /*decltype(_impl_.avg_v_)*/0
+  , /*decltype(_impl_.num_pedestrians_)*/0
+  , /*decltype(_impl_.num_passengers_)*/0
+  , /*decltype(_impl_.num_subways_)*/0
+  , /*decltype(_impl_.num_taxis_)*/0
+  , /*decltype(_impl_.num_crowds_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetGlobalStatisticsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetGlobalStatisticsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetGlobalStatisticsResponseDefaultTypeInternal() {}
+  union {
+    GetGlobalStatisticsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetGlobalStatisticsResponseDefaultTypeInternal _GetGlobalStatisticsResponse_default_instance_;
 }  // namespace v2
 }  // namespace person
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[38];
+static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[40];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto = nullptr;
 
@@ -771,6 +809,33 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_completed_trips_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.completed_total_travel_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.completed_total_travel_distance_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.completed_avg_travel_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.completed_avg_v_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.running_total_travel_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.running_total_travel_distance_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.running_avg_v_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.avg_v_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_vehicles_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_pedestrians_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_passengers_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_subways_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_taxis_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_crowds_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::GetPersonRequest)},
@@ -811,6 +876,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 240, -1, -1, sizeof(::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse)},
   { 247, -1, -1, sizeof(::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest)},
   { 254, -1, -1, sizeof(::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse)},
+  { 260, -1, -1, sizeof(::city::person::v2::GetGlobalStatisticsRequest)},
+  { 266, -1, -1, sizeof(::city::person::v2::GetGlobalStatisticsResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -852,6 +919,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_GetControlledTaxiOrderAllocationPlanResponse_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiOrderAllocationPlanRequest_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiOrderAllocationPlanResponse_default_instance_._instance,
+  &::city::person::v2::_GetGlobalStatisticsRequest_default_instance_._instance,
+  &::city::person::v2::_GetGlobalStatisticsResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -936,68 +1005,90 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "t\022M\n\021order_allocations\030\001 \003(\0132 .city.pers"
   "on.v2.OrderAllocationsR\020orderAllocations"
   "\".\n,SetControlledTaxiOrderAllocationPlan"
-  "Response2\336\021\n\rPersonService\022P\n\tGetPerson\022"
-  " .city.person.v2.GetPersonRequest\032!.city"
-  ".person.v2.GetPersonResponse\022P\n\tAddPerso"
-  "n\022 .city.person.v2.AddPersonRequest\032!.ci"
-  "ty.person.v2.AddPersonResponse\022V\n\013SetSch"
-  "edule\022\".city.person.v2.SetScheduleReques"
-  "t\032#.city.person.v2.SetScheduleResponse\022S"
-  "\n\nGetPersons\022!.city.person.v2.GetPersons"
-  "Request\032\".city.person.v2.GetPersonsRespo"
-  "nse\022w\n\026GetPersonByLongLatBBox\022-.city.per"
-  "son.v2.GetPersonByLongLatBBoxRequest\032..c"
-  "ity.person.v2.GetPersonByLongLatBBoxResp"
-  "onse\022_\n\016GetAllVehicles\022%.city.person.v2."
-  "GetAllVehiclesRequest\032&.city.person.v2.G"
-  "etAllVehiclesResponse\022h\n\021GetAllPedestria"
-  "ns\022(.city.person.v2.GetAllPedestriansReq"
-  "uest\032).city.person.v2.GetAllPedestriansR"
-  "esponse\022n\n\023ResetPersonPosition\022*.city.pe"
-  "rson.v2.ResetPersonPositionRequest\032+.cit"
-  "y.person.v2.ResetPersonPositionResponse\022"
-  "z\n\027SetControlledVehicleIDs\022..city.person"
-  ".v2.SetControlledVehicleIDsRequest\032/.cit"
-  "y.person.v2.SetControlledVehicleIDsRespo"
-  "nse\022\203\001\n\032FetchControlledVehicleEnvs\0221.cit"
-  "y.person.v2.FetchControlledVehicleEnvsRe"
-  "quest\0322.city.person.v2.FetchControlledVe"
-  "hicleEnvsResponse\022\206\001\n\033SetControlledVehic"
-  "leActions\0222.city.person.v2.SetControlled"
-  "VehicleActionsRequest\0323.city.person.v2.S"
-  "etControlledVehicleActionsResponse\022q\n\024Se"
-  "tControlledTaxiIDs\022+.city.person.v2.SetC"
-  "ontrolledTaxiIDsRequest\032,.city.person.v2"
-  ".SetControlledTaxiIDsResponse\022Y\n\014GetAllO"
-  "rders\022#.city.person.v2.GetAllOrdersReque"
-  "st\032$.city.person.v2.GetAllOrdersResponse"
-  "\022\200\001\n\031SetControlledTaxiToOrders\0220.city.pe"
-  "rson.v2.SetControlledTaxiToOrdersRequest"
-  "\0321.city.person.v2.SetControlledTaxiToOrd"
-  "ersResponse\022}\n\030SetControlledPedestrians\022"
-  "/.city.person.v2.SetControlledPedestrian"
-  "sRequest\0320.city.person.v2.SetControlledP"
-  "edestriansResponse\022\217\001\n\036FetchControlledPe"
-  "destriansEnvs\0225.city.person.v2.FetchCont"
-  "rolledPedestriansEnvsRequest\0326.city.pers"
-  "on.v2.FetchControlledPedestriansEnvsResp"
-  "onse\022\222\001\n\037SetControlledPedestriansActions"
-  "\0226.city.person.v2.SetControlledPedestria"
-  "nsActionsRequest\0327.city.person.v2.SetCon"
-  "trolledPedestriansActionsResponse\022\241\001\n$Ge"
-  "tControlledTaxiOrderAllocationPlan\022;.cit"
-  "y.person.v2.GetControlledTaxiOrderAlloca"
-  "tionPlanRequest\032<.city.person.v2.GetCont"
-  "rolledTaxiOrderAllocationPlanResponse\022\241\001"
-  "\n$SetControlledTaxiOrderAllocationPlan\022;"
-  ".city.person.v2.SetControlledTaxiOrderAl"
-  "locationPlanRequest\032<.city.person.v2.Set"
-  "ControlledTaxiOrderAllocationPlanRespons"
-  "eB\273\001\n\022com.city.person.v2B\022PersonServiceP"
-  "rotoP\001Z7git.fiblab.net/sim/protos/v2/go/"
-  "city/person/v2;personv2\242\002\003CPX\252\002\016City.Per"
-  "son.V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2"
-  "\\GPBMetadata\352\002\020City::Person::V2b\006proto3"
+  "Response\"\034\n\032GetGlobalStatisticsRequest\"\275"
+  "\005\n\033GetGlobalStatisticsResponse\022.\n\023num_co"
+  "mpleted_trips\030\001 \001(\005R\021numCompletedTrips\022="
+  "\n\033completed_total_travel_time\030\002 \001(\001R\030com"
+  "pletedTotalTravelTime\022E\n\037completed_total"
+  "_travel_distance\030\003 \001(\001R\034completedTotalTr"
+  "avelDistance\0229\n\031completed_avg_travel_tim"
+  "e\030\004 \001(\001R\026completedAvgTravelTime\022&\n\017compl"
+  "eted_avg_v\030\005 \001(\001R\rcompletedAvgV\0229\n\031runni"
+  "ng_total_travel_time\030\006 \001(\001R\026runningTotal"
+  "TravelTime\022A\n\035running_total_travel_dista"
+  "nce\030\007 \001(\001R\032runningTotalTravelDistance\022\"\n"
+  "\rrunning_avg_v\030\010 \001(\001R\013runningAvgV\022\023\n\005avg"
+  "_v\030\t \001(\001R\004avgV\022!\n\014num_vehicles\030\n \001(\005R\013nu"
+  "mVehicles\022\'\n\017num_pedestrians\030\013 \001(\005R\016numP"
+  "edestrians\022%\n\016num_passengers\030\014 \001(\005R\rnumP"
+  "assengers\022\037\n\013num_subways\030\r \001(\005R\nnumSubwa"
+  "ys\022\033\n\tnum_taxis\030\016 \001(\005R\010numTaxis\022\035\n\nnum_c"
+  "rowds\030\017 \001(\005R\tnumCrowds2\316\022\n\rPersonService"
+  "\022P\n\tGetPerson\022 .city.person.v2.GetPerson"
+  "Request\032!.city.person.v2.GetPersonRespon"
+  "se\022P\n\tAddPerson\022 .city.person.v2.AddPers"
+  "onRequest\032!.city.person.v2.AddPersonResp"
+  "onse\022V\n\013SetSchedule\022\".city.person.v2.Set"
+  "ScheduleRequest\032#.city.person.v2.SetSche"
+  "duleResponse\022S\n\nGetPersons\022!.city.person"
+  ".v2.GetPersonsRequest\032\".city.person.v2.G"
+  "etPersonsResponse\022w\n\026GetPersonByLongLatB"
+  "Box\022-.city.person.v2.GetPersonByLongLatB"
+  "BoxRequest\032..city.person.v2.GetPersonByL"
+  "ongLatBBoxResponse\022_\n\016GetAllVehicles\022%.c"
+  "ity.person.v2.GetAllVehiclesRequest\032&.ci"
+  "ty.person.v2.GetAllVehiclesResponse\022h\n\021G"
+  "etAllPedestrians\022(.city.person.v2.GetAll"
+  "PedestriansRequest\032).city.person.v2.GetA"
+  "llPedestriansResponse\022n\n\023ResetPersonPosi"
+  "tion\022*.city.person.v2.ResetPersonPositio"
+  "nRequest\032+.city.person.v2.ResetPersonPos"
+  "itionResponse\022z\n\027SetControlledVehicleIDs"
+  "\022..city.person.v2.SetControlledVehicleID"
+  "sRequest\032/.city.person.v2.SetControlledV"
+  "ehicleIDsResponse\022\203\001\n\032FetchControlledVeh"
+  "icleEnvs\0221.city.person.v2.FetchControlle"
+  "dVehicleEnvsRequest\0322.city.person.v2.Fet"
+  "chControlledVehicleEnvsResponse\022\206\001\n\033SetC"
+  "ontrolledVehicleActions\0222.city.person.v2"
+  ".SetControlledVehicleActionsRequest\0323.ci"
+  "ty.person.v2.SetControlledVehicleActions"
+  "Response\022q\n\024SetControlledTaxiIDs\022+.city."
+  "person.v2.SetControlledTaxiIDsRequest\032,."
+  "city.person.v2.SetControlledTaxiIDsRespo"
+  "nse\022Y\n\014GetAllOrders\022#.city.person.v2.Get"
+  "AllOrdersRequest\032$.city.person.v2.GetAll"
+  "OrdersResponse\022\200\001\n\031SetControlledTaxiToOr"
+  "ders\0220.city.person.v2.SetControlledTaxiT"
+  "oOrdersRequest\0321.city.person.v2.SetContr"
+  "olledTaxiToOrdersResponse\022}\n\030SetControll"
+  "edPedestrians\022/.city.person.v2.SetContro"
+  "lledPedestriansRequest\0320.city.person.v2."
+  "SetControlledPedestriansResponse\022\217\001\n\036Fet"
+  "chControlledPedestriansEnvs\0225.city.perso"
+  "n.v2.FetchControlledPedestriansEnvsReque"
+  "st\0326.city.person.v2.FetchControlledPedes"
+  "triansEnvsResponse\022\222\001\n\037SetControlledPede"
+  "striansActions\0226.city.person.v2.SetContr"
+  "olledPedestriansActionsRequest\0327.city.pe"
+  "rson.v2.SetControlledPedestriansActionsR"
+  "esponse\022\241\001\n$GetControlledTaxiOrderAlloca"
+  "tionPlan\022;.city.person.v2.GetControlledT"
+  "axiOrderAllocationPlanRequest\032<.city.per"
+  "son.v2.GetControlledTaxiOrderAllocationP"
+  "lanResponse\022\241\001\n$SetControlledTaxiOrderAl"
+  "locationPlan\022;.city.person.v2.SetControl"
+  "ledTaxiOrderAllocationPlanRequest\032<.city"
+  ".person.v2.SetControlledTaxiOrderAllocat"
+  "ionPlanResponse\022n\n\023GetGlobalStatistics\022*"
+  ".city.person.v2.GetGlobalStatisticsReque"
+  "st\032+.city.person.v2.GetGlobalStatisticsR"
+  "esponseB\273\001\n\022com.city.person.v2B\022PersonSe"
+  "rviceProtoP\001Z7git.fiblab.net/sim/protos/"
+  "v2/go/city/person/v2;personv2\242\002\003CPX\252\002\016Ci"
+  "ty.Person.V2\312\002\016City\\Person\\V2\342\002\032City\\Per"
+  "son\\V2\\GPBMetadata\352\002\020City::Person::V2b\006p"
+  "roto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[8] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -1011,9 +1102,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 5719, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 6565, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
-    &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 8, 38,
+    &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 8, 40,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
     file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto, file_level_enum_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     file_level_service_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto,
@@ -6320,6 +6411,665 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledTaxiOrderAllocati
       file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[37]);
 }
 
+// ===================================================================
+
+class GetGlobalStatisticsRequest::_Internal {
+ public:
+};
+
+GetGlobalStatisticsRequest::GetGlobalStatisticsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetGlobalStatisticsRequest)
+}
+GetGlobalStatisticsRequest::GetGlobalStatisticsRequest(const GetGlobalStatisticsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetGlobalStatisticsRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetGlobalStatisticsRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetGlobalStatisticsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetGlobalStatisticsRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGlobalStatisticsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[38]);
+}
+
+// ===================================================================
+
+class GetGlobalStatisticsResponse::_Internal {
+ public:
+};
+
+GetGlobalStatisticsResponse::GetGlobalStatisticsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetGlobalStatisticsResponse)
+}
+GetGlobalStatisticsResponse::GetGlobalStatisticsResponse(const GetGlobalStatisticsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetGlobalStatisticsResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.completed_total_travel_time_){}
+    , decltype(_impl_.completed_total_travel_distance_){}
+    , decltype(_impl_.completed_avg_travel_time_){}
+    , decltype(_impl_.completed_avg_v_){}
+    , decltype(_impl_.num_completed_trips_){}
+    , decltype(_impl_.num_vehicles_){}
+    , decltype(_impl_.running_total_travel_time_){}
+    , decltype(_impl_.running_total_travel_distance_){}
+    , decltype(_impl_.running_avg_v_){}
+    , decltype(_impl_.avg_v_){}
+    , decltype(_impl_.num_pedestrians_){}
+    , decltype(_impl_.num_passengers_){}
+    , decltype(_impl_.num_subways_){}
+    , decltype(_impl_.num_taxis_){}
+    , decltype(_impl_.num_crowds_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.completed_total_travel_time_, &from._impl_.completed_total_travel_time_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_crowds_) -
+    reinterpret_cast<char*>(&_impl_.completed_total_travel_time_)) + sizeof(_impl_.num_crowds_));
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetGlobalStatisticsResponse)
+}
+
+inline void GetGlobalStatisticsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.completed_total_travel_time_){0}
+    , decltype(_impl_.completed_total_travel_distance_){0}
+    , decltype(_impl_.completed_avg_travel_time_){0}
+    , decltype(_impl_.completed_avg_v_){0}
+    , decltype(_impl_.num_completed_trips_){0}
+    , decltype(_impl_.num_vehicles_){0}
+    , decltype(_impl_.running_total_travel_time_){0}
+    , decltype(_impl_.running_total_travel_distance_){0}
+    , decltype(_impl_.running_avg_v_){0}
+    , decltype(_impl_.avg_v_){0}
+    , decltype(_impl_.num_pedestrians_){0}
+    , decltype(_impl_.num_passengers_){0}
+    , decltype(_impl_.num_subways_){0}
+    , decltype(_impl_.num_taxis_){0}
+    , decltype(_impl_.num_crowds_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetGlobalStatisticsResponse::~GetGlobalStatisticsResponse() {
+  // @@protoc_insertion_point(destructor:city.person.v2.GetGlobalStatisticsResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetGlobalStatisticsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetGlobalStatisticsResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetGlobalStatisticsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.GetGlobalStatisticsResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.completed_total_travel_time_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.num_crowds_) -
+      reinterpret_cast<char*>(&_impl_.completed_total_travel_time_)) + sizeof(_impl_.num_crowds_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetGlobalStatisticsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 num_completed_trips = 1 [json_name = "numCompletedTrips"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.num_completed_trips_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.completed_total_travel_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double completed_total_travel_distance = 3 [json_name = "completedTotalTravelDistance"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.completed_total_travel_distance_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double completed_avg_travel_time = 4 [json_name = "completedAvgTravelTime"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.completed_avg_travel_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double completed_avg_v = 5 [json_name = "completedAvgV"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.completed_avg_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double running_total_travel_time = 6 [json_name = "runningTotalTravelTime"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.running_total_travel_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double running_total_travel_distance = 7 [json_name = "runningTotalTravelDistance"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 57)) {
+          _impl_.running_total_travel_distance_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double running_avg_v = 8 [json_name = "runningAvgV"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 65)) {
+          _impl_.running_avg_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double avg_v = 9 [json_name = "avgV"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 73)) {
+          _impl_.avg_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_vehicles = 10 [json_name = "numVehicles"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.num_vehicles_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_pedestrians = 11 [json_name = "numPedestrians"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.num_pedestrians_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_passengers = 12 [json_name = "numPassengers"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.num_passengers_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_subways = 13 [json_name = "numSubways"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.num_subways_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_taxis = 14 [json_name = "numTaxis"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+          _impl_.num_taxis_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_crowds = 15 [json_name = "numCrowds"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+          _impl_.num_crowds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetGlobalStatisticsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.GetGlobalStatisticsResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 num_completed_trips = 1 [json_name = "numCompletedTrips"];
+  if (this->_internal_num_completed_trips() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_num_completed_trips(), target);
+  }
+
+  // double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_total_travel_time = this->_internal_completed_total_travel_time();
+  uint64_t raw_completed_total_travel_time;
+  memcpy(&raw_completed_total_travel_time, &tmp_completed_total_travel_time, sizeof(tmp_completed_total_travel_time));
+  if (raw_completed_total_travel_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_completed_total_travel_time(), target);
+  }
+
+  // double completed_total_travel_distance = 3 [json_name = "completedTotalTravelDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_total_travel_distance = this->_internal_completed_total_travel_distance();
+  uint64_t raw_completed_total_travel_distance;
+  memcpy(&raw_completed_total_travel_distance, &tmp_completed_total_travel_distance, sizeof(tmp_completed_total_travel_distance));
+  if (raw_completed_total_travel_distance != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_completed_total_travel_distance(), target);
+  }
+
+  // double completed_avg_travel_time = 4 [json_name = "completedAvgTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_avg_travel_time = this->_internal_completed_avg_travel_time();
+  uint64_t raw_completed_avg_travel_time;
+  memcpy(&raw_completed_avg_travel_time, &tmp_completed_avg_travel_time, sizeof(tmp_completed_avg_travel_time));
+  if (raw_completed_avg_travel_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_completed_avg_travel_time(), target);
+  }
+
+  // double completed_avg_v = 5 [json_name = "completedAvgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_avg_v = this->_internal_completed_avg_v();
+  uint64_t raw_completed_avg_v;
+  memcpy(&raw_completed_avg_v, &tmp_completed_avg_v, sizeof(tmp_completed_avg_v));
+  if (raw_completed_avg_v != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_completed_avg_v(), target);
+  }
+
+  // double running_total_travel_time = 6 [json_name = "runningTotalTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_total_travel_time = this->_internal_running_total_travel_time();
+  uint64_t raw_running_total_travel_time;
+  memcpy(&raw_running_total_travel_time, &tmp_running_total_travel_time, sizeof(tmp_running_total_travel_time));
+  if (raw_running_total_travel_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_running_total_travel_time(), target);
+  }
+
+  // double running_total_travel_distance = 7 [json_name = "runningTotalTravelDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_total_travel_distance = this->_internal_running_total_travel_distance();
+  uint64_t raw_running_total_travel_distance;
+  memcpy(&raw_running_total_travel_distance, &tmp_running_total_travel_distance, sizeof(tmp_running_total_travel_distance));
+  if (raw_running_total_travel_distance != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(7, this->_internal_running_total_travel_distance(), target);
+  }
+
+  // double running_avg_v = 8 [json_name = "runningAvgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_avg_v = this->_internal_running_avg_v();
+  uint64_t raw_running_avg_v;
+  memcpy(&raw_running_avg_v, &tmp_running_avg_v, sizeof(tmp_running_avg_v));
+  if (raw_running_avg_v != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_running_avg_v(), target);
+  }
+
+  // double avg_v = 9 [json_name = "avgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_v = this->_internal_avg_v();
+  uint64_t raw_avg_v;
+  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
+  if (raw_avg_v != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(9, this->_internal_avg_v(), target);
+  }
+
+  // int32 num_vehicles = 10 [json_name = "numVehicles"];
+  if (this->_internal_num_vehicles() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_num_vehicles(), target);
+  }
+
+  // int32 num_pedestrians = 11 [json_name = "numPedestrians"];
+  if (this->_internal_num_pedestrians() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_num_pedestrians(), target);
+  }
+
+  // int32 num_passengers = 12 [json_name = "numPassengers"];
+  if (this->_internal_num_passengers() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_num_passengers(), target);
+  }
+
+  // int32 num_subways = 13 [json_name = "numSubways"];
+  if (this->_internal_num_subways() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_num_subways(), target);
+  }
+
+  // int32 num_taxis = 14 [json_name = "numTaxis"];
+  if (this->_internal_num_taxis() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_num_taxis(), target);
+  }
+
+  // int32 num_crowds = 15 [json_name = "numCrowds"];
+  if (this->_internal_num_crowds() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_num_crowds(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.GetGlobalStatisticsResponse)
+  return target;
+}
+
+size_t GetGlobalStatisticsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.GetGlobalStatisticsResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_total_travel_time = this->_internal_completed_total_travel_time();
+  uint64_t raw_completed_total_travel_time;
+  memcpy(&raw_completed_total_travel_time, &tmp_completed_total_travel_time, sizeof(tmp_completed_total_travel_time));
+  if (raw_completed_total_travel_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double completed_total_travel_distance = 3 [json_name = "completedTotalTravelDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_total_travel_distance = this->_internal_completed_total_travel_distance();
+  uint64_t raw_completed_total_travel_distance;
+  memcpy(&raw_completed_total_travel_distance, &tmp_completed_total_travel_distance, sizeof(tmp_completed_total_travel_distance));
+  if (raw_completed_total_travel_distance != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double completed_avg_travel_time = 4 [json_name = "completedAvgTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_avg_travel_time = this->_internal_completed_avg_travel_time();
+  uint64_t raw_completed_avg_travel_time;
+  memcpy(&raw_completed_avg_travel_time, &tmp_completed_avg_travel_time, sizeof(tmp_completed_avg_travel_time));
+  if (raw_completed_avg_travel_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double completed_avg_v = 5 [json_name = "completedAvgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_avg_v = this->_internal_completed_avg_v();
+  uint64_t raw_completed_avg_v;
+  memcpy(&raw_completed_avg_v, &tmp_completed_avg_v, sizeof(tmp_completed_avg_v));
+  if (raw_completed_avg_v != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 num_completed_trips = 1 [json_name = "numCompletedTrips"];
+  if (this->_internal_num_completed_trips() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_completed_trips());
+  }
+
+  // int32 num_vehicles = 10 [json_name = "numVehicles"];
+  if (this->_internal_num_vehicles() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_vehicles());
+  }
+
+  // double running_total_travel_time = 6 [json_name = "runningTotalTravelTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_total_travel_time = this->_internal_running_total_travel_time();
+  uint64_t raw_running_total_travel_time;
+  memcpy(&raw_running_total_travel_time, &tmp_running_total_travel_time, sizeof(tmp_running_total_travel_time));
+  if (raw_running_total_travel_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double running_total_travel_distance = 7 [json_name = "runningTotalTravelDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_total_travel_distance = this->_internal_running_total_travel_distance();
+  uint64_t raw_running_total_travel_distance;
+  memcpy(&raw_running_total_travel_distance, &tmp_running_total_travel_distance, sizeof(tmp_running_total_travel_distance));
+  if (raw_running_total_travel_distance != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double running_avg_v = 8 [json_name = "runningAvgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_avg_v = this->_internal_running_avg_v();
+  uint64_t raw_running_avg_v;
+  memcpy(&raw_running_avg_v, &tmp_running_avg_v, sizeof(tmp_running_avg_v));
+  if (raw_running_avg_v != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double avg_v = 9 [json_name = "avgV"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_v = this->_internal_avg_v();
+  uint64_t raw_avg_v;
+  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
+  if (raw_avg_v != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 num_pedestrians = 11 [json_name = "numPedestrians"];
+  if (this->_internal_num_pedestrians() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_pedestrians());
+  }
+
+  // int32 num_passengers = 12 [json_name = "numPassengers"];
+  if (this->_internal_num_passengers() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_passengers());
+  }
+
+  // int32 num_subways = 13 [json_name = "numSubways"];
+  if (this->_internal_num_subways() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_subways());
+  }
+
+  // int32 num_taxis = 14 [json_name = "numTaxis"];
+  if (this->_internal_num_taxis() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_taxis());
+  }
+
+  // int32 num_crowds = 15 [json_name = "numCrowds"];
+  if (this->_internal_num_crowds() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_crowds());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetGlobalStatisticsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetGlobalStatisticsResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetGlobalStatisticsResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetGlobalStatisticsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetGlobalStatisticsResponse*>(&to_msg);
+  auto& from = static_cast<const GetGlobalStatisticsResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.GetGlobalStatisticsResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_total_travel_time = from._internal_completed_total_travel_time();
+  uint64_t raw_completed_total_travel_time;
+  memcpy(&raw_completed_total_travel_time, &tmp_completed_total_travel_time, sizeof(tmp_completed_total_travel_time));
+  if (raw_completed_total_travel_time != 0) {
+    _this->_internal_set_completed_total_travel_time(from._internal_completed_total_travel_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_total_travel_distance = from._internal_completed_total_travel_distance();
+  uint64_t raw_completed_total_travel_distance;
+  memcpy(&raw_completed_total_travel_distance, &tmp_completed_total_travel_distance, sizeof(tmp_completed_total_travel_distance));
+  if (raw_completed_total_travel_distance != 0) {
+    _this->_internal_set_completed_total_travel_distance(from._internal_completed_total_travel_distance());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_avg_travel_time = from._internal_completed_avg_travel_time();
+  uint64_t raw_completed_avg_travel_time;
+  memcpy(&raw_completed_avg_travel_time, &tmp_completed_avg_travel_time, sizeof(tmp_completed_avg_travel_time));
+  if (raw_completed_avg_travel_time != 0) {
+    _this->_internal_set_completed_avg_travel_time(from._internal_completed_avg_travel_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_completed_avg_v = from._internal_completed_avg_v();
+  uint64_t raw_completed_avg_v;
+  memcpy(&raw_completed_avg_v, &tmp_completed_avg_v, sizeof(tmp_completed_avg_v));
+  if (raw_completed_avg_v != 0) {
+    _this->_internal_set_completed_avg_v(from._internal_completed_avg_v());
+  }
+  if (from._internal_num_completed_trips() != 0) {
+    _this->_internal_set_num_completed_trips(from._internal_num_completed_trips());
+  }
+  if (from._internal_num_vehicles() != 0) {
+    _this->_internal_set_num_vehicles(from._internal_num_vehicles());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_total_travel_time = from._internal_running_total_travel_time();
+  uint64_t raw_running_total_travel_time;
+  memcpy(&raw_running_total_travel_time, &tmp_running_total_travel_time, sizeof(tmp_running_total_travel_time));
+  if (raw_running_total_travel_time != 0) {
+    _this->_internal_set_running_total_travel_time(from._internal_running_total_travel_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_total_travel_distance = from._internal_running_total_travel_distance();
+  uint64_t raw_running_total_travel_distance;
+  memcpy(&raw_running_total_travel_distance, &tmp_running_total_travel_distance, sizeof(tmp_running_total_travel_distance));
+  if (raw_running_total_travel_distance != 0) {
+    _this->_internal_set_running_total_travel_distance(from._internal_running_total_travel_distance());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_avg_v = from._internal_running_avg_v();
+  uint64_t raw_running_avg_v;
+  memcpy(&raw_running_avg_v, &tmp_running_avg_v, sizeof(tmp_running_avg_v));
+  if (raw_running_avg_v != 0) {
+    _this->_internal_set_running_avg_v(from._internal_running_avg_v());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_avg_v = from._internal_avg_v();
+  uint64_t raw_avg_v;
+  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
+  if (raw_avg_v != 0) {
+    _this->_internal_set_avg_v(from._internal_avg_v());
+  }
+  if (from._internal_num_pedestrians() != 0) {
+    _this->_internal_set_num_pedestrians(from._internal_num_pedestrians());
+  }
+  if (from._internal_num_passengers() != 0) {
+    _this->_internal_set_num_passengers(from._internal_num_passengers());
+  }
+  if (from._internal_num_subways() != 0) {
+    _this->_internal_set_num_subways(from._internal_num_subways());
+  }
+  if (from._internal_num_taxis() != 0) {
+    _this->_internal_set_num_taxis(from._internal_num_taxis());
+  }
+  if (from._internal_num_crowds() != 0) {
+    _this->_internal_set_num_crowds(from._internal_num_crowds());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetGlobalStatisticsResponse::CopyFrom(const GetGlobalStatisticsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.GetGlobalStatisticsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetGlobalStatisticsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetGlobalStatisticsResponse::InternalSwap(GetGlobalStatisticsResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetGlobalStatisticsResponse, _impl_.num_crowds_)
+      + sizeof(GetGlobalStatisticsResponse::_impl_.num_crowds_)
+      - PROTOBUF_FIELD_OFFSET(GetGlobalStatisticsResponse, _impl_.completed_total_travel_time_)>(
+          reinterpret_cast<char*>(&_impl_.completed_total_travel_time_),
+          reinterpret_cast<char*>(&other->_impl_.completed_total_travel_time_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGlobalStatisticsResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[39]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace person
@@ -6476,6 +7226,14 @@ Arena::CreateMaybeMessage< ::city::person::v2::SetControlledTaxiOrderAllocationP
 template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse*
 Arena::CreateMaybeMessage< ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::GetGlobalStatisticsRequest*
+Arena::CreateMaybeMessage< ::city::person::v2::GetGlobalStatisticsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::GetGlobalStatisticsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::GetGlobalStatisticsResponse*
+Arena::CreateMaybeMessage< ::city::person::v2::GetGlobalStatisticsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::GetGlobalStatisticsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

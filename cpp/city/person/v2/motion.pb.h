@@ -226,6 +226,9 @@ class PersonMotion final :
     kDirectionFieldNumber = 5,
     kLFieldNumber = 7,
     kAFieldNumber = 8,
+    kQueuingTimeOnCurLaneFieldNumber = 10,
+    kIsQueuingOnLaneFieldNumber = 9,
+    kNumPassengersFieldNumber = 11,
   };
   // string activity = 6 [json_name = "activity"];
   void clear_activity();
@@ -313,6 +316,33 @@ class PersonMotion final :
   void _internal_set_a(double value);
   public:
 
+  // double queuing_time_on_cur_lane = 10 [json_name = "queuingTimeOnCurLane"];
+  void clear_queuing_time_on_cur_lane();
+  double queuing_time_on_cur_lane() const;
+  void set_queuing_time_on_cur_lane(double value);
+  private:
+  double _internal_queuing_time_on_cur_lane() const;
+  void _internal_set_queuing_time_on_cur_lane(double value);
+  public:
+
+  // bool is_queuing_on_lane = 9 [json_name = "isQueuingOnLane"];
+  void clear_is_queuing_on_lane();
+  bool is_queuing_on_lane() const;
+  void set_is_queuing_on_lane(bool value);
+  private:
+  bool _internal_is_queuing_on_lane() const;
+  void _internal_set_is_queuing_on_lane(bool value);
+  public:
+
+  // int32 num_passengers = 11 [json_name = "numPassengers"];
+  void clear_num_passengers();
+  int32_t num_passengers() const;
+  void set_num_passengers(int32_t value);
+  private:
+  int32_t _internal_num_passengers() const;
+  void _internal_set_num_passengers(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.PersonMotion)
  private:
   class _Internal;
@@ -329,6 +359,9 @@ class PersonMotion final :
     double direction_;
     double l_;
     double a_;
+    double queuing_time_on_cur_lane_;
+    bool is_queuing_on_lane_;
+    int32_t num_passengers_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -598,6 +631,66 @@ inline void PersonMotion::_internal_set_a(double value) {
 inline void PersonMotion::set_a(double value) {
   _internal_set_a(value);
   // @@protoc_insertion_point(field_set:city.person.v2.PersonMotion.a)
+}
+
+// bool is_queuing_on_lane = 9 [json_name = "isQueuingOnLane"];
+inline void PersonMotion::clear_is_queuing_on_lane() {
+  _impl_.is_queuing_on_lane_ = false;
+}
+inline bool PersonMotion::_internal_is_queuing_on_lane() const {
+  return _impl_.is_queuing_on_lane_;
+}
+inline bool PersonMotion::is_queuing_on_lane() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PersonMotion.is_queuing_on_lane)
+  return _internal_is_queuing_on_lane();
+}
+inline void PersonMotion::_internal_set_is_queuing_on_lane(bool value) {
+  
+  _impl_.is_queuing_on_lane_ = value;
+}
+inline void PersonMotion::set_is_queuing_on_lane(bool value) {
+  _internal_set_is_queuing_on_lane(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.PersonMotion.is_queuing_on_lane)
+}
+
+// double queuing_time_on_cur_lane = 10 [json_name = "queuingTimeOnCurLane"];
+inline void PersonMotion::clear_queuing_time_on_cur_lane() {
+  _impl_.queuing_time_on_cur_lane_ = 0;
+}
+inline double PersonMotion::_internal_queuing_time_on_cur_lane() const {
+  return _impl_.queuing_time_on_cur_lane_;
+}
+inline double PersonMotion::queuing_time_on_cur_lane() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PersonMotion.queuing_time_on_cur_lane)
+  return _internal_queuing_time_on_cur_lane();
+}
+inline void PersonMotion::_internal_set_queuing_time_on_cur_lane(double value) {
+  
+  _impl_.queuing_time_on_cur_lane_ = value;
+}
+inline void PersonMotion::set_queuing_time_on_cur_lane(double value) {
+  _internal_set_queuing_time_on_cur_lane(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.PersonMotion.queuing_time_on_cur_lane)
+}
+
+// int32 num_passengers = 11 [json_name = "numPassengers"];
+inline void PersonMotion::clear_num_passengers() {
+  _impl_.num_passengers_ = 0;
+}
+inline int32_t PersonMotion::_internal_num_passengers() const {
+  return _impl_.num_passengers_;
+}
+inline int32_t PersonMotion::num_passengers() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PersonMotion.num_passengers)
+  return _internal_num_passengers();
+}
+inline void PersonMotion::_internal_set_num_passengers(int32_t value) {
+  
+  _impl_.num_passengers_ = value;
+}
+inline void PersonMotion::set_num_passengers(int32_t value) {
+  _internal_set_num_passengers(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.PersonMotion.num_passengers)
 }
 
 #ifdef __GNUC__

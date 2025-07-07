@@ -25,6 +25,7 @@ namespace v2 {
 
 static const char* RoadService_method_names[] = {
   "/city.map.v2.RoadService/GetRoad",
+  "/city.map.v2.RoadService/GetRoadGlobalStatistics",
   "/city.map.v2.RoadService/GetRuinInfo",
   "/city.map.v2.RoadService/GetEvents",
 };
@@ -37,8 +38,9 @@ std::unique_ptr< RoadService::Stub> RoadService::NewStub(const std::shared_ptr< 
 
 RoadService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_GetRoad_(RoadService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetRuinInfo_(RoadService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetEvents_(RoadService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRoadGlobalStatistics_(RoadService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRuinInfo_(RoadService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetEvents_(RoadService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status RoadService::Stub::GetRoad(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::city::map::v2::GetRoadResponse* response) {
@@ -60,6 +62,29 @@ void RoadService::Stub::async::GetRoad(::grpc::ClientContext* context, const ::c
 ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadResponse>* RoadService::Stub::AsyncGetRoadRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetRoadRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status RoadService::Stub::GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetRoadGlobalStatistics_, context, request, response);
+}
+
+void RoadService::Stub::async::GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRoadGlobalStatistics_, context, request, response, std::move(f));
+}
+
+void RoadService::Stub::async::GetRoadGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRoadGlobalStatistics_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>* RoadService::Stub::PrepareAsyncGetRoadGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::map::v2::GetRoadGlobalStatisticsResponse, ::city::map::v2::GetRoadGlobalStatisticsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetRoadGlobalStatistics_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::map::v2::GetRoadGlobalStatisticsResponse>* RoadService::Stub::AsyncGetRoadGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetRoadGlobalStatisticsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -124,6 +149,16 @@ RoadService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       RoadService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< RoadService::Service, ::city::map::v2::GetRoadGlobalStatisticsRequest, ::city::map::v2::GetRoadGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](RoadService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::map::v2::GetRoadGlobalStatisticsRequest* req,
+             ::city::map::v2::GetRoadGlobalStatisticsResponse* resp) {
+               return service->GetRoadGlobalStatistics(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      RoadService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RoadService::Service, ::city::map::v2::GetRuinInfoRequest, ::city::map::v2::GetRuinInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](RoadService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -132,7 +167,7 @@ RoadService::Service::Service() {
                return service->GetRuinInfo(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      RoadService_method_names[2],
+      RoadService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< RoadService::Service, ::city::map::v2::GetEventsRequest, ::city::map::v2::GetEventsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](RoadService::Service* service,
@@ -147,6 +182,13 @@ RoadService::Service::~Service() {
 }
 
 ::grpc::Status RoadService::Service::GetRoad(::grpc::ServerContext* context, const ::city::map::v2::GetRoadRequest* request, ::city::map::v2::GetRoadResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status RoadService::Service::GetRoadGlobalStatistics(::grpc::ServerContext* context, const ::city::map::v2::GetRoadGlobalStatisticsRequest* request, ::city::map::v2::GetRoadGlobalStatisticsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

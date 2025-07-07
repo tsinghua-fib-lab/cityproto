@@ -15,6 +15,7 @@ class LaneServiceStub(object):
         self.SetLaneRestriction = channel.unary_unary('/city.map.v2.LaneService/SetLaneRestriction', request_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneRestrictionRequest.SerializeToString, response_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneRestrictionResponse.FromString)
         self.GetLane = channel.unary_unary('/city.map.v2.LaneService/GetLane', request_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneRequest.SerializeToString, response_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneResponse.FromString)
         self.GetLaneByLongLatBBox = channel.unary_unary('/city.map.v2.LaneService/GetLaneByLongLatBBox', request_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxRequest.SerializeToString, response_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxResponse.FromString)
+        self.GetLaneGlobalStatistics = channel.unary_unary('/city.map.v2.LaneService/GetLaneGlobalStatistics', request_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneGlobalStatisticsRequest.SerializeToString, response_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneGlobalStatisticsResponse.FromString)
 
 class LaneServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
@@ -51,8 +52,16 @@ class LaneServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetLaneGlobalStatistics(self, request, context):
+        """获取Lane全局统计信息
+        Get lane global statistics
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_LaneServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'SetLaneMaxV': grpc.unary_unary_rpc_method_handler(servicer.SetLaneMaxV, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneMaxVRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneMaxVResponse.SerializeToString), 'SetLaneRestriction': grpc.unary_unary_rpc_method_handler(servicer.SetLaneRestriction, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneRestrictionRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneRestrictionResponse.SerializeToString), 'GetLane': grpc.unary_unary_rpc_method_handler(servicer.GetLane, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneResponse.SerializeToString), 'GetLaneByLongLatBBox': grpc.unary_unary_rpc_method_handler(servicer.GetLaneByLongLatBBox, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxResponse.SerializeToString)}
+    rpc_method_handlers = {'SetLaneMaxV': grpc.unary_unary_rpc_method_handler(servicer.SetLaneMaxV, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneMaxVRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneMaxVResponse.SerializeToString), 'SetLaneRestriction': grpc.unary_unary_rpc_method_handler(servicer.SetLaneRestriction, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneRestrictionRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.SetLaneRestrictionResponse.SerializeToString), 'GetLane': grpc.unary_unary_rpc_method_handler(servicer.GetLane, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneResponse.SerializeToString), 'GetLaneByLongLatBBox': grpc.unary_unary_rpc_method_handler(servicer.GetLaneByLongLatBBox, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxResponse.SerializeToString), 'GetLaneGlobalStatistics': grpc.unary_unary_rpc_method_handler(servicer.GetLaneGlobalStatistics, request_deserializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneGlobalStatisticsRequest.FromString, response_serializer=city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneGlobalStatisticsResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('city.map.v2.LaneService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -74,3 +83,7 @@ class LaneService(object):
     @staticmethod
     def GetLaneByLongLatBBox(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/city.map.v2.LaneService/GetLaneByLongLatBBox', city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxRequest.SerializeToString, city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneByLongLatBBoxResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLaneGlobalStatistics(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.map.v2.LaneService/GetLaneGlobalStatistics', city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneGlobalStatisticsRequest.SerializeToString, city_dot_map_dot_v2_dot_lane__service__pb2.GetLaneGlobalStatisticsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

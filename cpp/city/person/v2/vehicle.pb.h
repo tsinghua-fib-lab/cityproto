@@ -845,6 +845,14 @@ class VehicleRuntime final :
     kEtaFreeFlowFieldNumber = 10,
     kNumGoingAstrayFieldNumber = 7,
     kParkingStatusFieldNumber = 14,
+    kEstimatedTotalRunningDistanceFieldNumber = 15,
+    kRunningTimeFieldNumber = 16,
+    kRunningRatioFieldNumber = 18,
+    kAvgVFieldNumber = 19,
+    kTotalQueuingTimeFieldNumber = 21,
+    kNumQueuingOnLaneFieldNumber = 20,
+    kNumPassingTrafficLightsFieldNumber = 23,
+    kAvgQueuingTimeFieldNumber = 22,
   };
   // .city.person.v2.PersonMotion base = 1 [json_name = "base"];
   bool has_base() const;
@@ -1008,6 +1016,78 @@ class VehicleRuntime final :
   void _internal_set_parking_status(::city::person::v2::VehicleParkingStatus value);
   public:
 
+  // double estimated_total_running_distance = 15 [json_name = "estimatedTotalRunningDistance"];
+  void clear_estimated_total_running_distance();
+  double estimated_total_running_distance() const;
+  void set_estimated_total_running_distance(double value);
+  private:
+  double _internal_estimated_total_running_distance() const;
+  void _internal_set_estimated_total_running_distance(double value);
+  public:
+
+  // double running_time = 16 [json_name = "runningTime"];
+  void clear_running_time();
+  double running_time() const;
+  void set_running_time(double value);
+  private:
+  double _internal_running_time() const;
+  void _internal_set_running_time(double value);
+  public:
+
+  // double running_ratio = 18 [json_name = "runningRatio"];
+  void clear_running_ratio();
+  double running_ratio() const;
+  void set_running_ratio(double value);
+  private:
+  double _internal_running_ratio() const;
+  void _internal_set_running_ratio(double value);
+  public:
+
+  // double avg_v = 19 [json_name = "avgV"];
+  void clear_avg_v();
+  double avg_v() const;
+  void set_avg_v(double value);
+  private:
+  double _internal_avg_v() const;
+  void _internal_set_avg_v(double value);
+  public:
+
+  // double total_queuing_time = 21 [json_name = "totalQueuingTime"];
+  void clear_total_queuing_time();
+  double total_queuing_time() const;
+  void set_total_queuing_time(double value);
+  private:
+  double _internal_total_queuing_time() const;
+  void _internal_set_total_queuing_time(double value);
+  public:
+
+  // int32 num_queuing_on_lane = 20 [json_name = "numQueuingOnLane"];
+  void clear_num_queuing_on_lane();
+  int32_t num_queuing_on_lane() const;
+  void set_num_queuing_on_lane(int32_t value);
+  private:
+  int32_t _internal_num_queuing_on_lane() const;
+  void _internal_set_num_queuing_on_lane(int32_t value);
+  public:
+
+  // int32 num_passing_traffic_lights = 23 [json_name = "numPassingTrafficLights"];
+  void clear_num_passing_traffic_lights();
+  int32_t num_passing_traffic_lights() const;
+  void set_num_passing_traffic_lights(int32_t value);
+  private:
+  int32_t _internal_num_passing_traffic_lights() const;
+  void _internal_set_num_passing_traffic_lights(int32_t value);
+  public:
+
+  // double avg_queuing_time = 22 [json_name = "avgQueuingTime"];
+  void clear_avg_queuing_time();
+  double avg_queuing_time() const;
+  void set_avg_queuing_time(double value);
+  private:
+  double _internal_avg_queuing_time() const;
+  void _internal_set_avg_queuing_time(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.VehicleRuntime)
  private:
   class _Internal;
@@ -1030,6 +1110,14 @@ class VehicleRuntime final :
     double eta_free_flow_;
     int32_t num_going_astray_;
     int parking_status_;
+    double estimated_total_running_distance_;
+    double running_time_;
+    double running_ratio_;
+    double avg_v_;
+    double total_queuing_time_;
+    int32_t num_queuing_on_lane_;
+    int32_t num_passing_traffic_lights_;
+    double avg_queuing_time_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fvehicle_2eproto;
@@ -2194,6 +2282,46 @@ inline void VehicleRuntime::set_allocated_action(::city::person::v2::VehicleActi
   // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRuntime.action)
 }
 
+// double estimated_total_running_distance = 15 [json_name = "estimatedTotalRunningDistance"];
+inline void VehicleRuntime::clear_estimated_total_running_distance() {
+  _impl_.estimated_total_running_distance_ = 0;
+}
+inline double VehicleRuntime::_internal_estimated_total_running_distance() const {
+  return _impl_.estimated_total_running_distance_;
+}
+inline double VehicleRuntime::estimated_total_running_distance() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.estimated_total_running_distance)
+  return _internal_estimated_total_running_distance();
+}
+inline void VehicleRuntime::_internal_set_estimated_total_running_distance(double value) {
+  
+  _impl_.estimated_total_running_distance_ = value;
+}
+inline void VehicleRuntime::set_estimated_total_running_distance(double value) {
+  _internal_set_estimated_total_running_distance(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.estimated_total_running_distance)
+}
+
+// double running_time = 16 [json_name = "runningTime"];
+inline void VehicleRuntime::clear_running_time() {
+  _impl_.running_time_ = 0;
+}
+inline double VehicleRuntime::_internal_running_time() const {
+  return _impl_.running_time_;
+}
+inline double VehicleRuntime::running_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.running_time)
+  return _internal_running_time();
+}
+inline void VehicleRuntime::_internal_set_running_time(double value) {
+  
+  _impl_.running_time_ = value;
+}
+inline void VehicleRuntime::set_running_time(double value) {
+  _internal_set_running_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.running_time)
+}
+
 // double running_distance = 6 [json_name = "runningDistance"];
 inline void VehicleRuntime::clear_running_distance() {
   _impl_.running_distance_ = 0;
@@ -2214,6 +2342,46 @@ inline void VehicleRuntime::set_running_distance(double value) {
   // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.running_distance)
 }
 
+// double running_ratio = 18 [json_name = "runningRatio"];
+inline void VehicleRuntime::clear_running_ratio() {
+  _impl_.running_ratio_ = 0;
+}
+inline double VehicleRuntime::_internal_running_ratio() const {
+  return _impl_.running_ratio_;
+}
+inline double VehicleRuntime::running_ratio() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.running_ratio)
+  return _internal_running_ratio();
+}
+inline void VehicleRuntime::_internal_set_running_ratio(double value) {
+  
+  _impl_.running_ratio_ = value;
+}
+inline void VehicleRuntime::set_running_ratio(double value) {
+  _internal_set_running_ratio(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.running_ratio)
+}
+
+// double avg_v = 19 [json_name = "avgV"];
+inline void VehicleRuntime::clear_avg_v() {
+  _impl_.avg_v_ = 0;
+}
+inline double VehicleRuntime::_internal_avg_v() const {
+  return _impl_.avg_v_;
+}
+inline double VehicleRuntime::avg_v() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.avg_v)
+  return _internal_avg_v();
+}
+inline void VehicleRuntime::_internal_set_avg_v(double value) {
+  
+  _impl_.avg_v_ = value;
+}
+inline void VehicleRuntime::set_avg_v(double value) {
+  _internal_set_avg_v(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.avg_v)
+}
+
 // int32 num_going_astray = 7 [json_name = "numGoingAstray"];
 inline void VehicleRuntime::clear_num_going_astray() {
   _impl_.num_going_astray_ = 0;
@@ -2232,6 +2400,86 @@ inline void VehicleRuntime::_internal_set_num_going_astray(int32_t value) {
 inline void VehicleRuntime::set_num_going_astray(int32_t value) {
   _internal_set_num_going_astray(value);
   // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.num_going_astray)
+}
+
+// int32 num_queuing_on_lane = 20 [json_name = "numQueuingOnLane"];
+inline void VehicleRuntime::clear_num_queuing_on_lane() {
+  _impl_.num_queuing_on_lane_ = 0;
+}
+inline int32_t VehicleRuntime::_internal_num_queuing_on_lane() const {
+  return _impl_.num_queuing_on_lane_;
+}
+inline int32_t VehicleRuntime::num_queuing_on_lane() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.num_queuing_on_lane)
+  return _internal_num_queuing_on_lane();
+}
+inline void VehicleRuntime::_internal_set_num_queuing_on_lane(int32_t value) {
+  
+  _impl_.num_queuing_on_lane_ = value;
+}
+inline void VehicleRuntime::set_num_queuing_on_lane(int32_t value) {
+  _internal_set_num_queuing_on_lane(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.num_queuing_on_lane)
+}
+
+// double total_queuing_time = 21 [json_name = "totalQueuingTime"];
+inline void VehicleRuntime::clear_total_queuing_time() {
+  _impl_.total_queuing_time_ = 0;
+}
+inline double VehicleRuntime::_internal_total_queuing_time() const {
+  return _impl_.total_queuing_time_;
+}
+inline double VehicleRuntime::total_queuing_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.total_queuing_time)
+  return _internal_total_queuing_time();
+}
+inline void VehicleRuntime::_internal_set_total_queuing_time(double value) {
+  
+  _impl_.total_queuing_time_ = value;
+}
+inline void VehicleRuntime::set_total_queuing_time(double value) {
+  _internal_set_total_queuing_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.total_queuing_time)
+}
+
+// double avg_queuing_time = 22 [json_name = "avgQueuingTime"];
+inline void VehicleRuntime::clear_avg_queuing_time() {
+  _impl_.avg_queuing_time_ = 0;
+}
+inline double VehicleRuntime::_internal_avg_queuing_time() const {
+  return _impl_.avg_queuing_time_;
+}
+inline double VehicleRuntime::avg_queuing_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.avg_queuing_time)
+  return _internal_avg_queuing_time();
+}
+inline void VehicleRuntime::_internal_set_avg_queuing_time(double value) {
+  
+  _impl_.avg_queuing_time_ = value;
+}
+inline void VehicleRuntime::set_avg_queuing_time(double value) {
+  _internal_set_avg_queuing_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.avg_queuing_time)
+}
+
+// int32 num_passing_traffic_lights = 23 [json_name = "numPassingTrafficLights"];
+inline void VehicleRuntime::clear_num_passing_traffic_lights() {
+  _impl_.num_passing_traffic_lights_ = 0;
+}
+inline int32_t VehicleRuntime::_internal_num_passing_traffic_lights() const {
+  return _impl_.num_passing_traffic_lights_;
+}
+inline int32_t VehicleRuntime::num_passing_traffic_lights() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.num_passing_traffic_lights)
+  return _internal_num_passing_traffic_lights();
+}
+inline void VehicleRuntime::_internal_set_num_passing_traffic_lights(int32_t value) {
+  
+  _impl_.num_passing_traffic_lights_ = value;
+}
+inline void VehicleRuntime::set_num_passing_traffic_lights(int32_t value) {
+  _internal_set_num_passing_traffic_lights(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.num_passing_traffic_lights)
 }
 
 // double departure_time = 8 [json_name = "departureTime"];

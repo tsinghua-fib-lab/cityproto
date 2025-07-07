@@ -88,6 +88,9 @@ const (
 	// PersonServiceSetControlledTaxiOrderAllocationPlanProcedure is the fully-qualified name of the
 	// PersonService's SetControlledTaxiOrderAllocationPlan RPC.
 	PersonServiceSetControlledTaxiOrderAllocationPlanProcedure = "/city.person.v2.PersonService/SetControlledTaxiOrderAllocationPlan"
+	// PersonServiceGetGlobalStatisticsProcedure is the fully-qualified name of the PersonService's
+	// GetGlobalStatistics RPC.
+	PersonServiceGetGlobalStatisticsProcedure = "/city.person.v2.PersonService/GetGlobalStatistics"
 )
 
 // PersonServiceClient is a client for the city.person.v2.PersonService service.
@@ -150,6 +153,9 @@ type PersonServiceClient interface {
 	// 设置当前所有受控出租车的订单分配方案
 	// Set current order allocation plan for all controlled taxis
 	SetControlledTaxiOrderAllocationPlan(context.Context, *connect.Request[v2.SetControlledTaxiOrderAllocationPlanRequest]) (*connect.Response[v2.SetControlledTaxiOrderAllocationPlanResponse], error)
+	// 获取全局统计信息
+	// Get global statistics
+	GetGlobalStatistics(context.Context, *connect.Request[v2.GetGlobalStatisticsRequest]) (*connect.Response[v2.GetGlobalStatisticsResponse], error)
 }
 
 // NewPersonServiceClient constructs a client for the city.person.v2.PersonService service. By
@@ -277,6 +283,12 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiOrderAllocationPlan")),
 			connect.WithClientOptions(opts...),
 		),
+		getGlobalStatistics: connect.NewClient[v2.GetGlobalStatisticsRequest, v2.GetGlobalStatisticsResponse](
+			httpClient,
+			baseURL+PersonServiceGetGlobalStatisticsProcedure,
+			connect.WithSchema(personServiceMethods.ByName("GetGlobalStatistics")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -301,6 +313,7 @@ type personServiceClient struct {
 	setControlledPedestriansActions      *connect.Client[v2.SetControlledPedestriansActionsRequest, v2.SetControlledPedestriansActionsResponse]
 	getControlledTaxiOrderAllocationPlan *connect.Client[v2.GetControlledTaxiOrderAllocationPlanRequest, v2.GetControlledTaxiOrderAllocationPlanResponse]
 	setControlledTaxiOrderAllocationPlan *connect.Client[v2.SetControlledTaxiOrderAllocationPlanRequest, v2.SetControlledTaxiOrderAllocationPlanResponse]
+	getGlobalStatistics                  *connect.Client[v2.GetGlobalStatisticsRequest, v2.GetGlobalStatisticsResponse]
 }
 
 // GetPerson calls city.person.v2.PersonService.GetPerson.
@@ -401,6 +414,11 @@ func (c *personServiceClient) SetControlledTaxiOrderAllocationPlan(ctx context.C
 	return c.setControlledTaxiOrderAllocationPlan.CallUnary(ctx, req)
 }
 
+// GetGlobalStatistics calls city.person.v2.PersonService.GetGlobalStatistics.
+func (c *personServiceClient) GetGlobalStatistics(ctx context.Context, req *connect.Request[v2.GetGlobalStatisticsRequest]) (*connect.Response[v2.GetGlobalStatisticsResponse], error) {
+	return c.getGlobalStatistics.CallUnary(ctx, req)
+}
+
 // PersonServiceHandler is an implementation of the city.person.v2.PersonService service.
 type PersonServiceHandler interface {
 	// 获取person信息
@@ -461,6 +479,9 @@ type PersonServiceHandler interface {
 	// 设置当前所有受控出租车的订单分配方案
 	// Set current order allocation plan for all controlled taxis
 	SetControlledTaxiOrderAllocationPlan(context.Context, *connect.Request[v2.SetControlledTaxiOrderAllocationPlanRequest]) (*connect.Response[v2.SetControlledTaxiOrderAllocationPlanResponse], error)
+	// 获取全局统计信息
+	// Get global statistics
+	GetGlobalStatistics(context.Context, *connect.Request[v2.GetGlobalStatisticsRequest]) (*connect.Response[v2.GetGlobalStatisticsResponse], error)
 }
 
 // NewPersonServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -584,6 +605,12 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiOrderAllocationPlan")),
 		connect.WithHandlerOptions(opts...),
 	)
+	personServiceGetGlobalStatisticsHandler := connect.NewUnaryHandler(
+		PersonServiceGetGlobalStatisticsProcedure,
+		svc.GetGlobalStatistics,
+		connect.WithSchema(personServiceMethods.ByName("GetGlobalStatistics")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.person.v2.PersonService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case PersonServiceGetPersonProcedure:
@@ -624,6 +651,8 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceGetControlledTaxiOrderAllocationPlanHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledTaxiOrderAllocationPlanProcedure:
 			personServiceSetControlledTaxiOrderAllocationPlanHandler.ServeHTTP(w, r)
+		case PersonServiceGetGlobalStatisticsProcedure:
+			personServiceGetGlobalStatisticsHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -707,4 +736,8 @@ func (UnimplementedPersonServiceHandler) GetControlledTaxiOrderAllocationPlan(co
 
 func (UnimplementedPersonServiceHandler) SetControlledTaxiOrderAllocationPlan(context.Context, *connect.Request[v2.SetControlledTaxiOrderAllocationPlanRequest]) (*connect.Response[v2.SetControlledTaxiOrderAllocationPlanResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledTaxiOrderAllocationPlan is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) GetGlobalStatistics(context.Context, *connect.Request[v2.GetGlobalStatisticsRequest]) (*connect.Response[v2.GetGlobalStatisticsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.GetGlobalStatistics is not implemented"))
 }

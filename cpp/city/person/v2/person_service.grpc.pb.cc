@@ -43,6 +43,7 @@ static const char* PersonService_method_names[] = {
   "/city.person.v2.PersonService/SetControlledPedestriansActions",
   "/city.person.v2.PersonService/GetControlledTaxiOrderAllocationPlan",
   "/city.person.v2.PersonService/SetControlledTaxiOrderAllocationPlan",
+  "/city.person.v2.PersonService/GetGlobalStatistics",
 };
 
 std::unique_ptr< PersonService::Stub> PersonService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -71,6 +72,7 @@ PersonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_SetControlledPedestriansActions_(PersonService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetControlledTaxiOrderAllocationPlan_(PersonService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledTaxiOrderAllocationPlan_(PersonService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetGlobalStatistics_(PersonService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PersonService::Stub::GetPerson(::grpc::ClientContext* context, const ::city::person::v2::GetPersonRequest& request, ::city::person::v2::GetPersonResponse* response) {
@@ -510,6 +512,29 @@ void PersonService::Stub::async::SetControlledTaxiOrderAllocationPlan(::grpc::Cl
   return result;
 }
 
+::grpc::Status PersonService::Stub::GetGlobalStatistics(::grpc::ClientContext* context, const ::city::person::v2::GetGlobalStatisticsRequest& request, ::city::person::v2::GetGlobalStatisticsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::GetGlobalStatisticsRequest, ::city::person::v2::GetGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetGlobalStatistics_, context, request, response);
+}
+
+void PersonService::Stub::async::GetGlobalStatistics(::grpc::ClientContext* context, const ::city::person::v2::GetGlobalStatisticsRequest* request, ::city::person::v2::GetGlobalStatisticsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v2::GetGlobalStatisticsRequest, ::city::person::v2::GetGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetGlobalStatistics_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::GetGlobalStatistics(::grpc::ClientContext* context, const ::city::person::v2::GetGlobalStatisticsRequest* request, ::city::person::v2::GetGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetGlobalStatistics_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::GetGlobalStatisticsResponse>* PersonService::Stub::PrepareAsyncGetGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::person::v2::GetGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v2::GetGlobalStatisticsResponse, ::city::person::v2::GetGlobalStatisticsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetGlobalStatistics_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::GetGlobalStatisticsResponse>* PersonService::Stub::AsyncGetGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::person::v2::GetGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetGlobalStatisticsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 PersonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[0],
@@ -701,6 +726,16 @@ PersonService::Service::Service() {
              ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* resp) {
                return service->SetControlledTaxiOrderAllocationPlan(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::GetGlobalStatisticsRequest, ::city::person::v2::GetGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v2::GetGlobalStatisticsRequest* req,
+             ::city::person::v2::GetGlobalStatisticsResponse* resp) {
+               return service->GetGlobalStatistics(ctx, req, resp);
+             }, this)));
 }
 
 PersonService::Service::~Service() {
@@ -833,6 +868,13 @@ PersonService::Service::~Service() {
 }
 
 ::grpc::Status PersonService::Service::SetControlledTaxiOrderAllocationPlan(::grpc::ServerContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::GetGlobalStatistics(::grpc::ServerContext* context, const ::city::person::v2::GetGlobalStatisticsRequest* request, ::city::person::v2::GetGlobalStatisticsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

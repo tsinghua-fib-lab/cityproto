@@ -28,6 +28,7 @@ static const char* LaneService_method_names[] = {
   "/city.map.v2.LaneService/SetLaneRestriction",
   "/city.map.v2.LaneService/GetLane",
   "/city.map.v2.LaneService/GetLaneByLongLatBBox",
+  "/city.map.v2.LaneService/GetLaneGlobalStatistics",
 };
 
 std::unique_ptr< LaneService::Stub> LaneService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -41,6 +42,7 @@ LaneService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channe
   , rpcmethod_SetLaneRestriction_(LaneService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetLane_(LaneService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetLaneByLongLatBBox_(LaneService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLaneGlobalStatistics_(LaneService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status LaneService::Stub::SetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::city::map::v2::SetLaneMaxVResponse* response) {
@@ -135,6 +137,29 @@ void LaneService::Stub::async::GetLaneByLongLatBBox(::grpc::ClientContext* conte
   return result;
 }
 
+::grpc::Status LaneService::Stub::GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetLaneGlobalStatistics_, context, request, response);
+}
+
+void LaneService::Stub::async::GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetLaneGlobalStatistics_, context, request, response, std::move(f));
+}
+
+void LaneService::Stub::async::GetLaneGlobalStatistics(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetLaneGlobalStatistics_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>* LaneService::Stub::PrepareAsyncGetLaneGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::map::v2::GetLaneGlobalStatisticsResponse, ::city::map::v2::GetLaneGlobalStatisticsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetLaneGlobalStatistics_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneGlobalStatisticsResponse>* LaneService::Stub::AsyncGetLaneGlobalStatisticsRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetLaneGlobalStatisticsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 LaneService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       LaneService_method_names[0],
@@ -176,6 +201,16 @@ LaneService::Service::Service() {
              ::city::map::v2::GetLaneByLongLatBBoxResponse* resp) {
                return service->GetLaneByLongLatBBox(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      LaneService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< LaneService::Service, ::city::map::v2::GetLaneGlobalStatisticsRequest, ::city::map::v2::GetLaneGlobalStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](LaneService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::map::v2::GetLaneGlobalStatisticsRequest* req,
+             ::city::map::v2::GetLaneGlobalStatisticsResponse* resp) {
+               return service->GetLaneGlobalStatistics(ctx, req, resp);
+             }, this)));
 }
 
 LaneService::Service::~Service() {
@@ -203,6 +238,13 @@ LaneService::Service::~Service() {
 }
 
 ::grpc::Status LaneService::Service::GetLaneByLongLatBBox(::grpc::ServerContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status LaneService::Service::GetLaneGlobalStatistics(::grpc::ServerContext* context, const ::city::map::v2::GetLaneGlobalStatisticsRequest* request, ::city::map::v2::GetLaneGlobalStatisticsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

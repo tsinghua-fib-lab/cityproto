@@ -111,3 +111,27 @@ export const GetLaneByLongLatBBoxResponse = /*@__PURE__*/ proto3.makeMessageType
   ],
 );
 
+/**
+ * 获取Lane全局统计信息请求
+ * Request for getting lane global statistics
+ *
+ * @generated from message city.map.v2.GetLaneGlobalStatisticsRequest
+ */
+export const GetLaneGlobalStatisticsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.map.v2.GetLaneGlobalStatisticsRequest",
+  [],
+);
+
+/**
+ * 获取Lane全局统计信息响应
+ * Response of getting lane global statistics
+ *
+ * @generated from message city.map.v2.GetLaneGlobalStatisticsResponse
+ */
+export const GetLaneGlobalStatisticsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.map.v2.GetLaneGlobalStatisticsResponse",
+  () => [
+    { no: 1, name: "max_queuing_vehicle_cnt", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+

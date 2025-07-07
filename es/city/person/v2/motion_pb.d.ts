@@ -164,6 +164,30 @@ export declare class PersonMotion extends Message<PersonMotion> {
    */
   a: number;
 
+  /**
+   * 是否排队
+   * whether queuing on lane
+   *
+   * @generated from field: bool is_queuing_on_lane = 9;
+   */
+  isQueuingOnLane: boolean;
+
+  /**
+   * 在当前车道排队时间
+   * queuing time on current lane
+   *
+   * @generated from field: double queuing_time_on_cur_lane = 10;
+   */
+  queuingTimeOnCurLane: number;
+
+  /**
+   * 乘客数量
+   * number of passengers
+   *
+   * @generated from field: int32 num_passengers = 11;
+   */
+  numPassengers: number;
+
   constructor(data?: PartialMessage<PersonMotion>);
 
   static readonly runtime: typeof proto3;

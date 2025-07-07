@@ -454,12 +454,36 @@ type VehicleRuntime struct {
 	// 本轮车辆行为（获取车辆环境信息时不返回）
 	// vehicle action in the step (not returned when getting vehicle environment information)
 	Action *VehicleAction `protobuf:"bytes,5,opt,name=action,proto3,oneof" json:"action,omitempty" bson:"action" db:"action" yaml:"action"`
+	// 估计的总行驶距离
+	// estimated total running distance
+	EstimatedTotalRunningDistance float64 `protobuf:"fixed64,15,opt,name=estimated_total_running_distance,json=estimatedTotalRunningDistance,proto3" json:"estimated_total_running_distance,omitempty" bson:"estimated_total_running_distance" db:"estimated_total_running_distance" yaml:"estimated_total_running_distance"`
+	// 行驶时间
+	// running time
+	RunningTime float64 `protobuf:"fixed64,16,opt,name=running_time,json=runningTime,proto3" json:"running_time,omitempty" bson:"running_time" db:"running_time" yaml:"running_time"`
 	// 走过的里程
 	// running distance
 	RunningDistance float64 `protobuf:"fixed64,6,opt,name=running_distance,json=runningDistance,proto3" json:"running_distance,omitempty" bson:"running_distance" db:"running_distance" yaml:"running_distance"`
+	// 行驶比例
+	// running ratio
+	RunningRatio float64 `protobuf:"fixed64,18,opt,name=running_ratio,json=runningRatio,proto3" json:"running_ratio,omitempty" bson:"running_ratio" db:"running_ratio" yaml:"running_ratio"`
+	// 平均速度
+	// average speed
+	AvgV float64 `protobuf:"fixed64,19,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" bson:"avg_v" db:"avg_v" yaml:"avg_v"`
 	// 走错路次数
 	// number of going astray
 	NumGoingAstray int32 `protobuf:"varint,7,opt,name=num_going_astray,json=numGoingAstray,proto3" json:"num_going_astray,omitempty" bson:"num_going_astray" db:"num_going_astray" yaml:"num_going_astray"`
+	// 在车道上排队的次数
+	// number of queuing on lane
+	NumQueuingOnLane int32 `protobuf:"varint,20,opt,name=num_queuing_on_lane,json=numQueuingOnLane,proto3" json:"num_queuing_on_lane,omitempty" bson:"num_queuing_on_lane" db:"num_queuing_on_lane" yaml:"num_queuing_on_lane"`
+	// 总排队时间
+	// total queuing time
+	TotalQueuingTime float64 `protobuf:"fixed64,21,opt,name=total_queuing_time,json=totalQueuingTime,proto3" json:"total_queuing_time,omitempty" bson:"total_queuing_time" db:"total_queuing_time" yaml:"total_queuing_time"`
+	// 平均排队时间
+	// average queuing time
+	AvgQueuingTime float64 `protobuf:"fixed64,22,opt,name=avg_queuing_time,json=avgQueuingTime,proto3" json:"avg_queuing_time,omitempty" bson:"avg_queuing_time" db:"avg_queuing_time" yaml:"avg_queuing_time"`
+	// 通过红绿灯次数
+	// number of passing traffic lights
+	NumPassingTrafficLights int32 `protobuf:"varint,23,opt,name=num_passing_traffic_lights,json=numPassingTrafficLights,proto3" json:"num_passing_traffic_lights,omitempty" bson:"num_passing_traffic_lights" db:"num_passing_traffic_lights" yaml:"num_passing_traffic_lights"`
 	// 出发时刻
 	// departure time
 	DepartureTime float64 `protobuf:"fixed64,8,opt,name=departure_time,json=departureTime,proto3" json:"departure_time,omitempty" bson:"departure_time" db:"departure_time" yaml:"departure_time"`
@@ -536,6 +560,20 @@ func (x *VehicleRuntime) GetAction() *VehicleAction {
 	return nil
 }
 
+func (x *VehicleRuntime) GetEstimatedTotalRunningDistance() float64 {
+	if x != nil {
+		return x.EstimatedTotalRunningDistance
+	}
+	return 0
+}
+
+func (x *VehicleRuntime) GetRunningTime() float64 {
+	if x != nil {
+		return x.RunningTime
+	}
+	return 0
+}
+
 func (x *VehicleRuntime) GetRunningDistance() float64 {
 	if x != nil {
 		return x.RunningDistance
@@ -543,9 +581,51 @@ func (x *VehicleRuntime) GetRunningDistance() float64 {
 	return 0
 }
 
+func (x *VehicleRuntime) GetRunningRatio() float64 {
+	if x != nil {
+		return x.RunningRatio
+	}
+	return 0
+}
+
+func (x *VehicleRuntime) GetAvgV() float64 {
+	if x != nil {
+		return x.AvgV
+	}
+	return 0
+}
+
 func (x *VehicleRuntime) GetNumGoingAstray() int32 {
 	if x != nil {
 		return x.NumGoingAstray
+	}
+	return 0
+}
+
+func (x *VehicleRuntime) GetNumQueuingOnLane() int32 {
+	if x != nil {
+		return x.NumQueuingOnLane
+	}
+	return 0
+}
+
+func (x *VehicleRuntime) GetTotalQueuingTime() float64 {
+	if x != nil {
+		return x.TotalQueuingTime
+	}
+	return 0
+}
+
+func (x *VehicleRuntime) GetAvgQueuingTime() float64 {
+	if x != nil {
+		return x.AvgQueuingTime
+	}
+	return 0
+}
+
+func (x *VehicleRuntime) GetNumPassingTrafficLights() int32 {
+	if x != nil {
+		return x.NumPassingTrafficLights
 	}
 	return 0
 }
@@ -859,13 +939,21 @@ const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	"\r_lc_target_id\"X\n" +
 	"\x12VehicleRouteAction\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x122\n" +
-	"\ajourney\x18\x02 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\"\xe7\x05\n" +
+	"\ajourney\x18\x02 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\"\xd1\b\n" +
 	"\x0eVehicleRuntime\x120\n" +
 	"\x04base\x18\x01 \x01(\v2\x1c.city.person.v2.PersonMotionR\x04base\x12'\n" +
 	"\x02lc\x18\x04 \x01(\v2\x12.city.person.v2.LCH\x00R\x02lc\x88\x01\x01\x12:\n" +
-	"\x06action\x18\x05 \x01(\v2\x1d.city.person.v2.VehicleActionH\x01R\x06action\x88\x01\x01\x12)\n" +
-	"\x10running_distance\x18\x06 \x01(\x01R\x0frunningDistance\x12(\n" +
-	"\x10num_going_astray\x18\a \x01(\x05R\x0enumGoingAstray\x12%\n" +
+	"\x06action\x18\x05 \x01(\v2\x1d.city.person.v2.VehicleActionH\x01R\x06action\x88\x01\x01\x12G\n" +
+	" estimated_total_running_distance\x18\x0f \x01(\x01R\x1destimatedTotalRunningDistance\x12!\n" +
+	"\frunning_time\x18\x10 \x01(\x01R\vrunningTime\x12)\n" +
+	"\x10running_distance\x18\x06 \x01(\x01R\x0frunningDistance\x12#\n" +
+	"\rrunning_ratio\x18\x12 \x01(\x01R\frunningRatio\x12\x13\n" +
+	"\x05avg_v\x18\x13 \x01(\x01R\x04avgV\x12(\n" +
+	"\x10num_going_astray\x18\a \x01(\x05R\x0enumGoingAstray\x12-\n" +
+	"\x13num_queuing_on_lane\x18\x14 \x01(\x05R\x10numQueuingOnLane\x12,\n" +
+	"\x12total_queuing_time\x18\x15 \x01(\x01R\x10totalQueuingTime\x12(\n" +
+	"\x10avg_queuing_time\x18\x16 \x01(\x01R\x0eavgQueuingTime\x12;\n" +
+	"\x1anum_passing_traffic_lights\x18\x17 \x01(\x05R\x17numPassingTrafficLights\x12%\n" +
 	"\x0edeparture_time\x18\b \x01(\x01R\rdepartureTime\x12\x10\n" +
 	"\x03eta\x18\t \x01(\x01R\x03eta\x12\"\n" +
 	"\reta_free_flow\x18\n" +

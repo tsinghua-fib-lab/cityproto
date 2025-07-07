@@ -43,6 +43,9 @@ const (
 	// LaneServiceGetLaneByLongLatBBoxProcedure is the fully-qualified name of the LaneService's
 	// GetLaneByLongLatBBox RPC.
 	LaneServiceGetLaneByLongLatBBoxProcedure = "/city.map.v2.LaneService/GetLaneByLongLatBBox"
+	// LaneServiceGetLaneGlobalStatisticsProcedure is the fully-qualified name of the LaneService's
+	// GetLaneGlobalStatistics RPC.
+	LaneServiceGetLaneGlobalStatisticsProcedure = "/city.map.v2.LaneService/GetLaneGlobalStatistics"
 )
 
 // LaneServiceClient is a client for the city.map.v2.LaneService service.
@@ -59,6 +62,9 @@ type LaneServiceClient interface {
 	// 获取特定区域内的Lane的信息
 	// Get Lane information in a specific region
 	GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error)
+	// 获取Lane全局统计信息
+	// Get lane global statistics
+	GetLaneGlobalStatistics(context.Context, *connect.Request[v2.GetLaneGlobalStatisticsRequest]) (*connect.Response[v2.GetLaneGlobalStatisticsResponse], error)
 }
 
 // NewLaneServiceClient constructs a client for the city.map.v2.LaneService service. By default, it
@@ -96,15 +102,22 @@ func NewLaneServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(laneServiceMethods.ByName("GetLaneByLongLatBBox")),
 			connect.WithClientOptions(opts...),
 		),
+		getLaneGlobalStatistics: connect.NewClient[v2.GetLaneGlobalStatisticsRequest, v2.GetLaneGlobalStatisticsResponse](
+			httpClient,
+			baseURL+LaneServiceGetLaneGlobalStatisticsProcedure,
+			connect.WithSchema(laneServiceMethods.ByName("GetLaneGlobalStatistics")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // laneServiceClient implements LaneServiceClient.
 type laneServiceClient struct {
-	setLaneMaxV          *connect.Client[v2.SetLaneMaxVRequest, v2.SetLaneMaxVResponse]
-	setLaneRestriction   *connect.Client[v2.SetLaneRestrictionRequest, v2.SetLaneRestrictionResponse]
-	getLane              *connect.Client[v2.GetLaneRequest, v2.GetLaneResponse]
-	getLaneByLongLatBBox *connect.Client[v2.GetLaneByLongLatBBoxRequest, v2.GetLaneByLongLatBBoxResponse]
+	setLaneMaxV             *connect.Client[v2.SetLaneMaxVRequest, v2.SetLaneMaxVResponse]
+	setLaneRestriction      *connect.Client[v2.SetLaneRestrictionRequest, v2.SetLaneRestrictionResponse]
+	getLane                 *connect.Client[v2.GetLaneRequest, v2.GetLaneResponse]
+	getLaneByLongLatBBox    *connect.Client[v2.GetLaneByLongLatBBoxRequest, v2.GetLaneByLongLatBBoxResponse]
+	getLaneGlobalStatistics *connect.Client[v2.GetLaneGlobalStatisticsRequest, v2.GetLaneGlobalStatisticsResponse]
 }
 
 // SetLaneMaxV calls city.map.v2.LaneService.SetLaneMaxV.
@@ -127,6 +140,11 @@ func (c *laneServiceClient) GetLaneByLongLatBBox(ctx context.Context, req *conne
 	return c.getLaneByLongLatBBox.CallUnary(ctx, req)
 }
 
+// GetLaneGlobalStatistics calls city.map.v2.LaneService.GetLaneGlobalStatistics.
+func (c *laneServiceClient) GetLaneGlobalStatistics(ctx context.Context, req *connect.Request[v2.GetLaneGlobalStatisticsRequest]) (*connect.Response[v2.GetLaneGlobalStatisticsResponse], error) {
+	return c.getLaneGlobalStatistics.CallUnary(ctx, req)
+}
+
 // LaneServiceHandler is an implementation of the city.map.v2.LaneService service.
 type LaneServiceHandler interface {
 	// 设置Lane的最大速度（限速）
@@ -141,6 +159,9 @@ type LaneServiceHandler interface {
 	// 获取特定区域内的Lane的信息
 	// Get Lane information in a specific region
 	GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error)
+	// 获取Lane全局统计信息
+	// Get lane global statistics
+	GetLaneGlobalStatistics(context.Context, *connect.Request[v2.GetLaneGlobalStatisticsRequest]) (*connect.Response[v2.GetLaneGlobalStatisticsResponse], error)
 }
 
 // NewLaneServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -174,6 +195,12 @@ func NewLaneServiceHandler(svc LaneServiceHandler, opts ...connect.HandlerOption
 		connect.WithSchema(laneServiceMethods.ByName("GetLaneByLongLatBBox")),
 		connect.WithHandlerOptions(opts...),
 	)
+	laneServiceGetLaneGlobalStatisticsHandler := connect.NewUnaryHandler(
+		LaneServiceGetLaneGlobalStatisticsProcedure,
+		svc.GetLaneGlobalStatistics,
+		connect.WithSchema(laneServiceMethods.ByName("GetLaneGlobalStatistics")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.map.v2.LaneService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case LaneServiceSetLaneMaxVProcedure:
@@ -184,6 +211,8 @@ func NewLaneServiceHandler(svc LaneServiceHandler, opts ...connect.HandlerOption
 			laneServiceGetLaneHandler.ServeHTTP(w, r)
 		case LaneServiceGetLaneByLongLatBBoxProcedure:
 			laneServiceGetLaneByLongLatBBoxHandler.ServeHTTP(w, r)
+		case LaneServiceGetLaneGlobalStatisticsProcedure:
+			laneServiceGetLaneGlobalStatisticsHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -207,4 +236,8 @@ func (UnimplementedLaneServiceHandler) GetLane(context.Context, *connect.Request
 
 func (UnimplementedLaneServiceHandler) GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.LaneService.GetLaneByLongLatBBox is not implemented"))
+}
+
+func (UnimplementedLaneServiceHandler) GetLaneGlobalStatistics(context.Context, *connect.Request[v2.GetLaneGlobalStatisticsRequest]) (*connect.Response[v2.GetLaneGlobalStatisticsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.LaneService.GetLaneGlobalStatistics is not implemented"))
 }

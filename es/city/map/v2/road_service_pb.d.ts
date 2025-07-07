@@ -177,6 +177,58 @@ export declare class GetRoadResponse extends Message<GetRoadResponse> {
 }
 
 /**
+ * 获取Road全局统计信息请求
+ * Request for getting road global statistics
+ *
+ * @generated from message city.map.v2.GetRoadGlobalStatisticsRequest
+ */
+export declare class GetRoadGlobalStatisticsRequest extends Message<GetRoadGlobalStatisticsRequest> {
+  constructor(data?: PartialMessage<GetRoadGlobalStatisticsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetRoadGlobalStatisticsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRoadGlobalStatisticsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRoadGlobalStatisticsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRoadGlobalStatisticsRequest;
+
+  static equals(a: GetRoadGlobalStatisticsRequest | PlainMessage<GetRoadGlobalStatisticsRequest> | undefined, b: GetRoadGlobalStatisticsRequest | PlainMessage<GetRoadGlobalStatisticsRequest> | undefined): boolean;
+}
+
+/**
+ * 获取Road全局统计信息响应
+ * Response of getting road global statistics
+ *
+ * @generated from message city.map.v2.GetRoadGlobalStatisticsResponse
+ */
+export declare class GetRoadGlobalStatisticsResponse extends Message<GetRoadGlobalStatisticsResponse> {
+  /**
+   * 平均道路拥堵指数
+   * average congestion index
+   *
+   * @generated from field: double avg_road_congestion_index = 1;
+   */
+  avgRoadCongestionIndex: number;
+
+  constructor(data?: PartialMessage<GetRoadGlobalStatisticsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetRoadGlobalStatisticsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRoadGlobalStatisticsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRoadGlobalStatisticsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRoadGlobalStatisticsResponse;
+
+  static equals(a: GetRoadGlobalStatisticsResponse | PlainMessage<GetRoadGlobalStatisticsResponse> | undefined, b: GetRoadGlobalStatisticsResponse | PlainMessage<GetRoadGlobalStatisticsResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message city.map.v2.GetRuinInfoRequest
  */
 export declare class GetRuinInfoRequest extends Message<GetRuinInfoRequest> {
@@ -324,6 +376,46 @@ export declare class RoadState extends Message<RoadState> {
   id: number;
 
   /**
+   * 当前进入道路的车辆数
+   * current entering road vehicle count
+   *
+   * @generated from field: int32 in_vehicle_cnt = 7;
+   */
+  inVehicleCnt: number;
+
+  /**
+   * 当前离开道路的车辆数
+   * current leaving road vehicle count
+   *
+   * @generated from field: int32 out_vehicle_cnt = 8;
+   */
+  outVehicleCnt: number;
+
+  /**
+   * 当前道路车辆数
+   * current road vehicle count
+   *
+   * @generated from field: int32 vehicle_cnt = 9;
+   */
+  vehicleCnt: number;
+
+  /**
+   * 累计进入道路的车辆数
+   * cumulative entering road vehicle count
+   *
+   * @generated from field: int32 cum_in_vehicle_cnt = 10;
+   */
+  cumInVehicleCnt: number;
+
+  /**
+   * 累计离开道路的车辆数
+   * cumulative leaving road vehicle count
+   *
+   * @generated from field: int32 cum_out_vehicle_cnt = 11;
+   */
+  cumOutVehicleCnt: number;
+
+  /**
    * 道路平均速度（m/s）
    * road average speed (m/s)
    *
@@ -332,12 +424,28 @@ export declare class RoadState extends Message<RoadState> {
   avgV: number;
 
   /**
+   * 当前平均通行时间（s）
+   * current average travel time (s)
+   *
+   * @generated from field: double avg_travel_time = 12;
+   */
+  avgTravelTime: number;
+
+  /**
    * 道路拥堵情况
    * road congestion level
    *
    * @generated from field: city.map.v2.RoadLevel level = 2;
    */
   level: RoadLevel;
+
+  /**
+   * 拥堵指数（最大限速/平均车速）
+   * congestion index (max speed / average speed)
+   *
+   * @generated from field: double congestion_index = 13;
+   */
+  congestionIndex: number;
 
   /**
    * 道路中断原因
@@ -354,6 +462,14 @@ export declare class RoadState extends Message<RoadState> {
    * @generated from field: repeated city.map.v2.LaneState lanes = 5;
    */
   lanes: LaneState[];
+
+  /**
+   * 道路最大限速
+   * road max speed
+   *
+   * @generated from field: double max_v = 6;
+   */
+  maxV: number;
 
   constructor(data?: PartialMessage<RoadState>);
 

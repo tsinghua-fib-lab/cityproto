@@ -348,9 +348,18 @@
 - [city/map/v2/lane_state.proto](#city_map_v2_lane_state-proto)
     - [LaneState](#city-map-v2-LaneState)
   
+- [city/map/v2/junction_service.proto](#city_map_v2_junction_service-proto)
+    - [GetJunctionRequest](#city-map-v2-GetJunctionRequest)
+    - [GetJunctionResponse](#city-map-v2-GetJunctionResponse)
+    - [JunctionState](#city-map-v2-JunctionState)
+  
+    - [JunctionService](#city-map-v2-JunctionService)
+  
 - [city/map/v2/lane_service.proto](#city_map_v2_lane_service-proto)
     - [GetLaneByLongLatBBoxRequest](#city-map-v2-GetLaneByLongLatBBoxRequest)
     - [GetLaneByLongLatBBoxResponse](#city-map-v2-GetLaneByLongLatBBoxResponse)
+    - [GetLaneGlobalStatisticsRequest](#city-map-v2-GetLaneGlobalStatisticsRequest)
+    - [GetLaneGlobalStatisticsResponse](#city-map-v2-GetLaneGlobalStatisticsResponse)
     - [GetLaneRequest](#city-map-v2-GetLaneRequest)
     - [GetLaneResponse](#city-map-v2-GetLaneResponse)
     - [SetLaneMaxVRequest](#city-map-v2-SetLaneMaxVRequest)
@@ -363,6 +372,8 @@
 - [city/map/v2/road_service.proto](#city_map_v2_road_service-proto)
     - [GetEventsRequest](#city-map-v2-GetEventsRequest)
     - [GetEventsResponse](#city-map-v2-GetEventsResponse)
+    - [GetRoadGlobalStatisticsRequest](#city-map-v2-GetRoadGlobalStatisticsRequest)
+    - [GetRoadGlobalStatisticsResponse](#city-map-v2-GetRoadGlobalStatisticsResponse)
     - [GetRoadRequest](#city-map-v2-GetRoadRequest)
     - [GetRoadResponse](#city-map-v2-GetRoadResponse)
     - [GetRuinInfoRequest](#city-map-v2-GetRuinInfoRequest)
@@ -545,6 +556,8 @@
     - [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse)
     - [GetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-GetControlledTaxiOrderAllocationPlanRequest)
     - [GetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse)
+    - [GetGlobalStatisticsRequest](#city-person-v2-GetGlobalStatisticsRequest)
+    - [GetGlobalStatisticsResponse](#city-person-v2-GetGlobalStatisticsResponse)
     - [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest)
     - [GetPersonByLongLatBBoxResponse](#city-person-v2-GetPersonByLongLatBBoxResponse)
     - [GetPersonRequest](#city-person-v2-GetPersonRequest)
@@ -5245,6 +5258,9 @@ Person&#39;s motion state
 | activity | [string](#string) |  | 活动描述 activity descriptions |
 | l | [double](#double) |  | 长度 length |
 | a | [double](#double) |  | 加速度 acceleration |
+| is_queuing_on_lane | [bool](#bool) |  | 是否排队 whether queuing on lane |
+| queuing_time_on_cur_lane | [double](#double) |  | 在当前车道排队时间 queuing time on current lane |
+| num_passengers | [int32](#int32) |  | 乘客数量 number of passengers |
 
 
 
@@ -5377,6 +5393,12 @@ Lane state
 | avg_v | [double](#double) |  | 平均速度（m/s） average speed (m/s) |
 | restriction | [bool](#bool) |  | 是否限行 whether restricted |
 | light_state | [LightState](#city-map-v2-LightState) |  | 交通灯状态 traffic light state |
+| in_vehicle_cnt | [int32](#int32) |  | 当前进入车道的车辆数 current entering vehicle count |
+| out_vehicle_cnt | [int32](#int32) |  | 当前离开车道的车辆数 current leaving vehicle count |
+| vehicle_cnt | [int32](#int32) |  | 总车数 total vehicle count |
+| total_queuing_vehicle_cnt | [int32](#int32) |  | 排队数量 queueing vehicle count |
+| total_queuing_time | [double](#double) |  | 排队时间 queueing time |
+| avg_queuing_time | [double](#double) |  | 平均排队时间 average queueing time |
 
 
 
@@ -5387,6 +5409,94 @@ Lane state
  
 
  
+
+ 
+
+
+
+<a name="city_map_v2_junction_service-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## city/map/v2/junction_service.proto
+
+
+
+<a name="city-map-v2-GetJunctionRequest"></a>
+
+### GetJunctionRequest
+查询路口信息请求
+Request for getting junction information
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| junction_ids | [int32](#int32) | repeated | 指定查询的路口ID列表，为空代表查询所有路口 List of targeted junction IDs. If empty, it means querying all junctions. |
+| exclude_lane | [bool](#bool) |  | 是否要排除车道信息 Whether to exclude lane information |
+| exclude_person | [bool](#bool) |  | 是否要排除车道上的人的信息（仅在包含车道信息时有效） Whether to exclude information about person in the lane (only valid when lane information is included) |
+
+
+
+
+
+
+<a name="city-map-v2-GetJunctionResponse"></a>
+
+### GetJunctionResponse
+查询路口信息响应
+Response of getting junction information
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| states | [JunctionState](#city-map-v2-JunctionState) | repeated | 路口信息列表 List of junction information |
+
+
+
+
+
+
+<a name="city-map-v2-JunctionState"></a>
+
+### JunctionState
+路口状态
+junction state
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  | 路口ID junction ID |
+| in_vehicle_cnt | [int32](#int32) |  | 当前进入道路的车辆数 current entering road vehicle count |
+| out_vehicle_cnt | [int32](#int32) |  | 当前离开道路的车辆数 current leaving road vehicle count |
+| vehicle_cnt | [int32](#int32) |  | 当前道路车辆数 current road vehicle count |
+| cum_in_vehicle_cnt | [int32](#int32) |  | 累计进入道路的车辆数 cumulative entering road vehicle count |
+| cum_out_vehicle_cnt | [int32](#int32) |  | 累计离开道路的车辆数 cumulative leaving road vehicle count |
+| lanes | [LaneState](#city-map-v2-LaneState) | repeated | 车道情况 lane state |
+| predecessor_driving_lanes | [LaneState](#city-map-v2-LaneState) | repeated | 前驱车道情况（用于查看驶入路口的车道情况） predecessor lane state (used to view the lane situation of entering the junction) |
+| total_queuing_vehicle_cnt | [int32](#int32) |  | 总排队车辆数 total queuing vehicle count |
+| total_queuing_time | [double](#double) |  | 总排队时间 total queuing time |
+| avg_queuing_time | [double](#double) |  | 当前平均排队时间 current average queuing time |
+| max_queuing_vehicle_cnt | [int32](#int32) |  | 最大排队长度（按车道） max queuing vehicle count |
+| has_traffic_light | [bool](#bool) |  | 是否有信号灯 whether there is a traffic light |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+<a name="city-map-v2-JunctionService"></a>
+
+### JunctionService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| GetJunction | [GetJunctionRequest](#city-map-v2-GetJunctionRequest) | [GetJunctionResponse](#city-map-v2-GetJunctionResponse) | 查询路口信息 Get junction information |
 
  
 
@@ -5426,6 +5536,33 @@ Response of getting lane information in a specific region
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | states | [LaneState](#city-map-v2-LaneState) | repeated | Lane的信息 Lane information |
+
+
+
+
+
+
+<a name="city-map-v2-GetLaneGlobalStatisticsRequest"></a>
+
+### GetLaneGlobalStatisticsRequest
+获取Lane全局统计信息请求
+Request for getting lane global statistics
+
+
+
+
+
+
+<a name="city-map-v2-GetLaneGlobalStatisticsResponse"></a>
+
+### GetLaneGlobalStatisticsResponse
+获取Lane全局统计信息响应
+Response of getting lane global statistics
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| max_queuing_vehicle_cnt | [int32](#int32) |  | 最大排队车辆数 max queuing vehicle count |
 
 
 
@@ -5538,6 +5675,7 @@ Response of setting lane&#39;s traffic restriction
 | SetLaneRestriction | [SetLaneRestrictionRequest](#city-map-v2-SetLaneRestrictionRequest) | [SetLaneRestrictionResponse](#city-map-v2-SetLaneRestrictionResponse) | 设置Lane限行 Set Lane&#39;s traffic restriction |
 | GetLane | [GetLaneRequest](#city-map-v2-GetLaneRequest) | [GetLaneResponse](#city-map-v2-GetLaneResponse) | 获取Lane的信息 Get Lane information |
 | GetLaneByLongLatBBox | [GetLaneByLongLatBBoxRequest](#city-map-v2-GetLaneByLongLatBBoxRequest) | [GetLaneByLongLatBBoxResponse](#city-map-v2-GetLaneByLongLatBBoxResponse) | 获取特定区域内的Lane的信息 Get Lane information in a specific region |
+| GetLaneGlobalStatistics | [GetLaneGlobalStatisticsRequest](#city-map-v2-GetLaneGlobalStatisticsRequest) | [GetLaneGlobalStatisticsResponse](#city-map-v2-GetLaneGlobalStatisticsResponse) | 获取Lane全局统计信息 Get lane global statistics |
 
  
 
@@ -5569,6 +5707,33 @@ Response of setting lane&#39;s traffic restriction
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | events | [city.event.v1.Events](#city-event-v1-Events) |  |  |
+
+
+
+
+
+
+<a name="city-map-v2-GetRoadGlobalStatisticsRequest"></a>
+
+### GetRoadGlobalStatisticsRequest
+获取Road全局统计信息请求
+Request for getting road global statistics
+
+
+
+
+
+
+<a name="city-map-v2-GetRoadGlobalStatisticsResponse"></a>
+
+### GetRoadGlobalStatisticsResponse
+获取Road全局统计信息响应
+Response of getting road global statistics
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| avg_road_congestion_index | [double](#double) |  | 平均道路拥堵指数 average congestion index |
 
 
 
@@ -5646,10 +5811,18 @@ road state
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [int32](#int32) |  | 道路ID road ID |
+| in_vehicle_cnt | [int32](#int32) |  | 当前进入道路的车辆数 current entering road vehicle count |
+| out_vehicle_cnt | [int32](#int32) |  | 当前离开道路的车辆数 current leaving road vehicle count |
+| vehicle_cnt | [int32](#int32) |  | 当前道路车辆数 current road vehicle count |
+| cum_in_vehicle_cnt | [int32](#int32) |  | 累计进入道路的车辆数 cumulative entering road vehicle count |
+| cum_out_vehicle_cnt | [int32](#int32) |  | 累计离开道路的车辆数 cumulative leaving road vehicle count |
 | avg_v | [double](#double) |  | 道路平均速度（m/s） road average speed (m/s) |
+| avg_travel_time | [double](#double) |  | 当前平均通行时间（s） current average travel time (s) |
 | level | [RoadLevel](#city-map-v2-RoadLevel) |  | 道路拥堵情况 road congestion level |
+| congestion_index | [double](#double) |  | 拥堵指数（最大限速/平均车速） congestion index (max speed / average speed) |
 | reason | [InterruptionReason](#city-map-v2-InterruptionReason) |  | 道路中断原因 road interruption reason |
 | lanes | [LaneState](#city-map-v2-LaneState) | repeated | 车道情况 lane state |
+| max_v | [double](#double) |  | 道路最大限速 road max speed |
 
 
 
@@ -5719,6 +5892,7 @@ road congestion level
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetRoad | [GetRoadRequest](#city-map-v2-GetRoadRequest) | [GetRoadResponse](#city-map-v2-GetRoadResponse) | 查询道路信息 Get road information |
+| GetRoadGlobalStatistics | [GetRoadGlobalStatisticsRequest](#city-map-v2-GetRoadGlobalStatisticsRequest) | [GetRoadGlobalStatisticsResponse](#city-map-v2-GetRoadGlobalStatisticsResponse) | 获取全局统计信息 Get global statistics |
 | GetRuinInfo | [GetRuinInfoRequest](#city-map-v2-GetRuinInfoRequest) | [GetRuinInfoResponse](#city-map-v2-GetRuinInfoResponse) |  |
 | GetEvents | [GetEventsRequest](#city-map-v2-GetEventsRequest) | [GetEventsResponse](#city-map-v2-GetEventsResponse) |  |
 
@@ -7863,8 +8037,16 @@ vehicle routing information modification
 | base | [PersonMotion](#city-person-v2-PersonMotion) |  | 基本运行时信息 basic runtime information |
 | lc | [LC](#city-person-v2-LC) | optional | 变道信息 lane change information |
 | action | [VehicleAction](#city-person-v2-VehicleAction) | optional | 本轮车辆行为（获取车辆环境信息时不返回） vehicle action in the step (not returned when getting vehicle environment information) |
+| estimated_total_running_distance | [double](#double) |  | 估计的总行驶距离 estimated total running distance |
+| running_time | [double](#double) |  | 行驶时间 running time |
 | running_distance | [double](#double) |  | 走过的里程 running distance |
+| running_ratio | [double](#double) |  | 行驶比例 running ratio |
+| avg_v | [double](#double) |  | 平均速度 average speed |
 | num_going_astray | [int32](#int32) |  | 走错路次数 number of going astray |
+| num_queuing_on_lane | [int32](#int32) |  | 在车道上排队的次数 number of queuing on lane |
+| total_queuing_time | [double](#double) |  | 总排队时间 total queuing time |
+| avg_queuing_time | [double](#double) |  | 平均排队时间 average queuing time |
+| num_passing_traffic_lights | [int32](#int32) |  | 通过红绿灯次数 number of passing traffic lights |
 | departure_time | [double](#double) |  | 出发时刻 departure time |
 | eta | [double](#double) |  | 预计到达时刻（导航返回的eta&#43;出发时刻） estimated arrival time (eta returned by routing &#43; departure time) |
 | eta_free_flow | [double](#double) |  | 自由流下的预计到达时刻 estimated arrival time under free flow |
@@ -8131,6 +8313,47 @@ Response of getting current order allocation plan for all controlled taxis
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | order_allocations | [OrderAllocations](#city-person-v2-OrderAllocations) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
+
+
+
+
+
+
+<a name="city-person-v2-GetGlobalStatisticsRequest"></a>
+
+### GetGlobalStatisticsRequest
+获取全局统计信息请求
+Request for getting global statistics
+
+
+
+
+
+
+<a name="city-person-v2-GetGlobalStatisticsResponse"></a>
+
+### GetGlobalStatisticsResponse
+获取全局统计信息响应
+Response of getting global statistics
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| num_completed_trips | [int32](#int32) |  | 完成行程数 completed trip count |
+| completed_total_travel_time | [double](#double) |  | 完成行程总行驶时间 total travel time of completed trips |
+| completed_total_travel_distance | [double](#double) |  | 完成行程总行驶距离 total travel distance of completed trips |
+| completed_avg_travel_time | [double](#double) |  | 完成行程平均行驶时间 average travel time of completed trips |
+| completed_avg_v | [double](#double) |  | 完成行程平均速度 average speed of completed trips |
+| running_total_travel_time | [double](#double) |  | 在路上的行程总行驶时间 total travel time of running trips |
+| running_total_travel_distance | [double](#double) |  | 在路上的行程总行驶距离 total travel distance of running trips |
+| running_avg_v | [double](#double) |  | 在路上的行程平均速度 average speed of running trips |
+| avg_v | [double](#double) |  | 当前步平均速度 current step&#39;s average speed |
+| num_vehicles | [int32](#int32) |  | 当前车辆数 current vehicle count |
+| num_pedestrians | [int32](#int32) |  | 当前行人数 current pedestrian count |
+| num_passengers | [int32](#int32) |  | 当前乘客数 current passenger count |
+| num_subways | [int32](#int32) |  | 当前地铁数 current subway count |
+| num_taxis | [int32](#int32) |  | 当前出租车数 current taxi count |
+| num_crowds | [int32](#int32) |  | 当前室内行人数 current indoor pedestrian count |
 
 
 
@@ -8516,6 +8739,7 @@ Response of setting person schedule
 | SetControlledPedestriansActions | [SetControlledPedestriansActionsRequest](#city-person-v2-SetControlledPedestriansActionsRequest) | [SetControlledPedestriansActionsResponse](#city-person-v2-SetControlledPedestriansActionsResponse) | 设置由外部控制的行人行为 Set behavior of pedestrian controlled by external behavior |
 | GetControlledTaxiOrderAllocationPlan | [GetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-GetControlledTaxiOrderAllocationPlanRequest) | [GetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse) | 获取当前所有受控出租车的订单分配方案 Get current order allocation plan for all controlled taxis |
 | SetControlledTaxiOrderAllocationPlan | [SetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest) | [SetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-SetControlledTaxiOrderAllocationPlanResponse) | 设置当前所有受控出租车的订单分配方案 Set current order allocation plan for all controlled taxis |
+| GetGlobalStatistics | [GetGlobalStatisticsRequest](#city-person-v2-GetGlobalStatisticsRequest) | [GetGlobalStatisticsResponse](#city-person-v2-GetGlobalStatisticsResponse) | 获取全局统计信息 Get global statistics |
 
  
 
