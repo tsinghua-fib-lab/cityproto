@@ -1254,6 +1254,38 @@ export declare class GetGlobalStatisticsResponse extends Message<GetGlobalStatis
    */
   numCrowds: number;
 
+  /**
+   * 当前排队车辆数
+   * current queuing vehicle count
+   *
+   * @generated from field: int32 num_queuing_vehicles = 16;
+   */
+  numQueuingVehicles: number;
+
+  /**
+   * 车辆通过红绿灯的总时间
+   * total time of vehicles passing traffic lights
+   *
+   * @generated from field: double passing_tl_total_time = 17;
+   */
+  passingTlTotalTime: number;
+
+  /**
+   * 车辆通过红绿灯的总次数
+   * total count of vehicles passing traffic lights
+   *
+   * @generated from field: int32 passing_tl_total_count = 18;
+   */
+  passingTlTotalCount: number;
+
+  /**
+   * 车辆通过红绿灯的平均时间
+   * average time of vehicles passing traffic lights
+   *
+   * @generated from field: double passing_tl_avg_time = 19;
+   */
+  passingTlAvgTime: number;
+
   constructor(data?: PartialMessage<GetGlobalStatisticsResponse>);
 
   static readonly runtime: typeof proto3;

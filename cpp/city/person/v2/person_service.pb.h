@@ -6013,6 +6013,10 @@ class GetGlobalStatisticsResponse final :
     kNumSubwaysFieldNumber = 13,
     kNumTaxisFieldNumber = 14,
     kNumCrowdsFieldNumber = 15,
+    kNumQueuingVehiclesFieldNumber = 16,
+    kPassingTlTotalTimeFieldNumber = 17,
+    kPassingTlAvgTimeFieldNumber = 19,
+    kPassingTlTotalCountFieldNumber = 18,
   };
   // double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
   void clear_completed_total_travel_time();
@@ -6149,6 +6153,42 @@ class GetGlobalStatisticsResponse final :
   void _internal_set_num_crowds(int32_t value);
   public:
 
+  // int32 num_queuing_vehicles = 16 [json_name = "numQueuingVehicles"];
+  void clear_num_queuing_vehicles();
+  int32_t num_queuing_vehicles() const;
+  void set_num_queuing_vehicles(int32_t value);
+  private:
+  int32_t _internal_num_queuing_vehicles() const;
+  void _internal_set_num_queuing_vehicles(int32_t value);
+  public:
+
+  // double passing_tl_total_time = 17 [json_name = "passingTlTotalTime"];
+  void clear_passing_tl_total_time();
+  double passing_tl_total_time() const;
+  void set_passing_tl_total_time(double value);
+  private:
+  double _internal_passing_tl_total_time() const;
+  void _internal_set_passing_tl_total_time(double value);
+  public:
+
+  // double passing_tl_avg_time = 19 [json_name = "passingTlAvgTime"];
+  void clear_passing_tl_avg_time();
+  double passing_tl_avg_time() const;
+  void set_passing_tl_avg_time(double value);
+  private:
+  double _internal_passing_tl_avg_time() const;
+  void _internal_set_passing_tl_avg_time(double value);
+  public:
+
+  // int32 passing_tl_total_count = 18 [json_name = "passingTlTotalCount"];
+  void clear_passing_tl_total_count();
+  int32_t passing_tl_total_count() const;
+  void set_passing_tl_total_count(int32_t value);
+  private:
+  int32_t _internal_passing_tl_total_count() const;
+  void _internal_set_passing_tl_total_count(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.GetGlobalStatisticsResponse)
  private:
   class _Internal;
@@ -6172,6 +6212,10 @@ class GetGlobalStatisticsResponse final :
     int32_t num_subways_;
     int32_t num_taxis_;
     int32_t num_crowds_;
+    int32_t num_queuing_vehicles_;
+    double passing_tl_total_time_;
+    double passing_tl_avg_time_;
+    int32_t passing_tl_total_count_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7978,6 +8022,86 @@ inline void GetGlobalStatisticsResponse::_internal_set_num_crowds(int32_t value)
 inline void GetGlobalStatisticsResponse::set_num_crowds(int32_t value) {
   _internal_set_num_crowds(value);
   // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_crowds)
+}
+
+// int32 num_queuing_vehicles = 16 [json_name = "numQueuingVehicles"];
+inline void GetGlobalStatisticsResponse::clear_num_queuing_vehicles() {
+  _impl_.num_queuing_vehicles_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_queuing_vehicles() const {
+  return _impl_.num_queuing_vehicles_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_queuing_vehicles() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_queuing_vehicles)
+  return _internal_num_queuing_vehicles();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_queuing_vehicles(int32_t value) {
+  
+  _impl_.num_queuing_vehicles_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_queuing_vehicles(int32_t value) {
+  _internal_set_num_queuing_vehicles(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_queuing_vehicles)
+}
+
+// double passing_tl_total_time = 17 [json_name = "passingTlTotalTime"];
+inline void GetGlobalStatisticsResponse::clear_passing_tl_total_time() {
+  _impl_.passing_tl_total_time_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_passing_tl_total_time() const {
+  return _impl_.passing_tl_total_time_;
+}
+inline double GetGlobalStatisticsResponse::passing_tl_total_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.passing_tl_total_time)
+  return _internal_passing_tl_total_time();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_passing_tl_total_time(double value) {
+  
+  _impl_.passing_tl_total_time_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_passing_tl_total_time(double value) {
+  _internal_set_passing_tl_total_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.passing_tl_total_time)
+}
+
+// int32 passing_tl_total_count = 18 [json_name = "passingTlTotalCount"];
+inline void GetGlobalStatisticsResponse::clear_passing_tl_total_count() {
+  _impl_.passing_tl_total_count_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_passing_tl_total_count() const {
+  return _impl_.passing_tl_total_count_;
+}
+inline int32_t GetGlobalStatisticsResponse::passing_tl_total_count() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.passing_tl_total_count)
+  return _internal_passing_tl_total_count();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_passing_tl_total_count(int32_t value) {
+  
+  _impl_.passing_tl_total_count_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_passing_tl_total_count(int32_t value) {
+  _internal_set_passing_tl_total_count(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.passing_tl_total_count)
+}
+
+// double passing_tl_avg_time = 19 [json_name = "passingTlAvgTime"];
+inline void GetGlobalStatisticsResponse::clear_passing_tl_avg_time() {
+  _impl_.passing_tl_avg_time_ = 0;
+}
+inline double GetGlobalStatisticsResponse::_internal_passing_tl_avg_time() const {
+  return _impl_.passing_tl_avg_time_;
+}
+inline double GetGlobalStatisticsResponse::passing_tl_avg_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.passing_tl_avg_time)
+  return _internal_passing_tl_avg_time();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_passing_tl_avg_time(double value) {
+  
+  _impl_.passing_tl_avg_time_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_passing_tl_avg_time(double value) {
+  _internal_set_passing_tl_avg_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.passing_tl_avg_time)
 }
 
 #ifdef __GNUC__

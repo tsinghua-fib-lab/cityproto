@@ -1873,9 +1873,21 @@ type GetGlobalStatisticsResponse struct {
 	NumTaxis int32 `protobuf:"varint,14,opt,name=num_taxis,json=numTaxis,proto3" json:"num_taxis,omitempty" bson:"num_taxis" db:"num_taxis" yaml:"num_taxis"`
 	// 当前室内行人数
 	// current indoor pedestrian count
-	NumCrowds     int32 `protobuf:"varint,15,opt,name=num_crowds,json=numCrowds,proto3" json:"num_crowds,omitempty" bson:"num_crowds" db:"num_crowds" yaml:"num_crowds"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	NumCrowds int32 `protobuf:"varint,15,opt,name=num_crowds,json=numCrowds,proto3" json:"num_crowds,omitempty" bson:"num_crowds" db:"num_crowds" yaml:"num_crowds"`
+	// 当前排队车辆数
+	// current queuing vehicle count
+	NumQueuingVehicles int32 `protobuf:"varint,16,opt,name=num_queuing_vehicles,json=numQueuingVehicles,proto3" json:"num_queuing_vehicles,omitempty" bson:"num_queuing_vehicles" db:"num_queuing_vehicles" yaml:"num_queuing_vehicles"`
+	// 车辆通过红绿灯的总时间
+	// total time of vehicles passing traffic lights
+	PassingTlTotalTime float64 `protobuf:"fixed64,17,opt,name=passing_tl_total_time,json=passingTlTotalTime,proto3" json:"passing_tl_total_time,omitempty" bson:"passing_tl_total_time" db:"passing_tl_total_time" yaml:"passing_tl_total_time"`
+	// 车辆通过红绿灯的总次数
+	// total count of vehicles passing traffic lights
+	PassingTlTotalCount int32 `protobuf:"varint,18,opt,name=passing_tl_total_count,json=passingTlTotalCount,proto3" json:"passing_tl_total_count,omitempty" bson:"passing_tl_total_count" db:"passing_tl_total_count" yaml:"passing_tl_total_count"`
+	// 车辆通过红绿灯的平均时间
+	// average time of vehicles passing traffic lights
+	PassingTlAvgTime float64 `protobuf:"fixed64,19,opt,name=passing_tl_avg_time,json=passingTlAvgTime,proto3" json:"passing_tl_avg_time,omitempty" bson:"passing_tl_avg_time" db:"passing_tl_avg_time" yaml:"passing_tl_avg_time"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *GetGlobalStatisticsResponse) Reset() {
@@ -2013,6 +2025,34 @@ func (x *GetGlobalStatisticsResponse) GetNumCrowds() int32 {
 	return 0
 }
 
+func (x *GetGlobalStatisticsResponse) GetNumQueuingVehicles() int32 {
+	if x != nil {
+		return x.NumQueuingVehicles
+	}
+	return 0
+}
+
+func (x *GetGlobalStatisticsResponse) GetPassingTlTotalTime() float64 {
+	if x != nil {
+		return x.PassingTlTotalTime
+	}
+	return 0
+}
+
+func (x *GetGlobalStatisticsResponse) GetPassingTlTotalCount() int32 {
+	if x != nil {
+		return x.PassingTlTotalCount
+	}
+	return 0
+}
+
+func (x *GetGlobalStatisticsResponse) GetPassingTlAvgTime() float64 {
+	if x != nil {
+		return x.PassingTlAvgTime
+	}
+	return 0
+}
+
 var File_city_person_v2_person_service_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_person_service_proto_rawDesc = "" +
@@ -2094,7 +2134,7 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"+SetControlledTaxiOrderAllocationPlanRequest\x12M\n" +
 	"\x11order_allocations\x18\x01 \x03(\v2 .city.person.v2.OrderAllocationsR\x10orderAllocations\".\n" +
 	",SetControlledTaxiOrderAllocationPlanResponse\"\x1c\n" +
-	"\x1aGetGlobalStatisticsRequest\"\xbd\x05\n" +
+	"\x1aGetGlobalStatisticsRequest\"\x86\a\n" +
 	"\x1bGetGlobalStatisticsResponse\x12.\n" +
 	"\x13num_completed_trips\x18\x01 \x01(\x05R\x11numCompletedTrips\x12=\n" +
 	"\x1bcompleted_total_travel_time\x18\x02 \x01(\x01R\x18completedTotalTravelTime\x12E\n" +
@@ -2113,7 +2153,11 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"numSubways\x12\x1b\n" +
 	"\tnum_taxis\x18\x0e \x01(\x05R\bnumTaxis\x12\x1d\n" +
 	"\n" +
-	"num_crowds\x18\x0f \x01(\x05R\tnumCrowds2\xce\x12\n" +
+	"num_crowds\x18\x0f \x01(\x05R\tnumCrowds\x120\n" +
+	"\x14num_queuing_vehicles\x18\x10 \x01(\x05R\x12numQueuingVehicles\x121\n" +
+	"\x15passing_tl_total_time\x18\x11 \x01(\x01R\x12passingTlTotalTime\x123\n" +
+	"\x16passing_tl_total_count\x18\x12 \x01(\x05R\x13passingTlTotalCount\x12-\n" +
+	"\x13passing_tl_avg_time\x18\x13 \x01(\x01R\x10passingTlAvgTime2\xce\x12\n" +
 	"\rPersonService\x12P\n" +
 	"\tGetPerson\x12 .city.person.v2.GetPersonRequest\x1a!.city.person.v2.GetPersonResponse\x12P\n" +
 	"\tAddPerson\x12 .city.person.v2.AddPersonRequest\x1a!.city.person.v2.AddPersonResponse\x12V\n" +

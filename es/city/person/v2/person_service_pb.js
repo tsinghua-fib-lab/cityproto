@@ -521,6 +521,10 @@ export const GetGlobalStatisticsResponse = /*@__PURE__*/ proto3.makeMessageType(
     { no: 13, name: "num_subways", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 14, name: "num_taxis", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 15, name: "num_crowds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 16, name: "num_queuing_vehicles", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 17, name: "passing_tl_total_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 18, name: "passing_tl_total_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 19, name: "passing_tl_avg_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

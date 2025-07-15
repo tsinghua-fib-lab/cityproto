@@ -311,7 +311,7 @@ class GetGlobalStatisticsRequest(_message.Message):
         ...
 
 class GetGlobalStatisticsResponse(_message.Message):
-    __slots__ = ['num_completed_trips', 'completed_total_travel_time', 'completed_total_travel_distance', 'completed_avg_travel_time', 'completed_avg_v', 'running_total_travel_time', 'running_total_travel_distance', 'running_avg_v', 'avg_v', 'num_vehicles', 'num_pedestrians', 'num_passengers', 'num_subways', 'num_taxis', 'num_crowds']
+    __slots__ = ['num_completed_trips', 'completed_total_travel_time', 'completed_total_travel_distance', 'completed_avg_travel_time', 'completed_avg_v', 'running_total_travel_time', 'running_total_travel_distance', 'running_avg_v', 'avg_v', 'num_vehicles', 'num_pedestrians', 'num_passengers', 'num_subways', 'num_taxis', 'num_crowds', 'num_queuing_vehicles', 'passing_tl_total_time', 'passing_tl_total_count', 'passing_tl_avg_time']
     NUM_COMPLETED_TRIPS_FIELD_NUMBER: _ClassVar[int]
     COMPLETED_TOTAL_TRAVEL_TIME_FIELD_NUMBER: _ClassVar[int]
     COMPLETED_TOTAL_TRAVEL_DISTANCE_FIELD_NUMBER: _ClassVar[int]
@@ -327,6 +327,10 @@ class GetGlobalStatisticsResponse(_message.Message):
     NUM_SUBWAYS_FIELD_NUMBER: _ClassVar[int]
     NUM_TAXIS_FIELD_NUMBER: _ClassVar[int]
     NUM_CROWDS_FIELD_NUMBER: _ClassVar[int]
+    NUM_QUEUING_VEHICLES_FIELD_NUMBER: _ClassVar[int]
+    PASSING_TL_TOTAL_TIME_FIELD_NUMBER: _ClassVar[int]
+    PASSING_TL_TOTAL_COUNT_FIELD_NUMBER: _ClassVar[int]
+    PASSING_TL_AVG_TIME_FIELD_NUMBER: _ClassVar[int]
     num_completed_trips: int
     completed_total_travel_time: float
     completed_total_travel_distance: float
@@ -342,6 +346,10 @@ class GetGlobalStatisticsResponse(_message.Message):
     num_subways: int
     num_taxis: int
     num_crowds: int
+    num_queuing_vehicles: int
+    passing_tl_total_time: float
+    passing_tl_total_count: int
+    passing_tl_avg_time: float
 
-    def __init__(self, num_completed_trips: _Optional[int]=..., completed_total_travel_time: _Optional[float]=..., completed_total_travel_distance: _Optional[float]=..., completed_avg_travel_time: _Optional[float]=..., completed_avg_v: _Optional[float]=..., running_total_travel_time: _Optional[float]=..., running_total_travel_distance: _Optional[float]=..., running_avg_v: _Optional[float]=..., avg_v: _Optional[float]=..., num_vehicles: _Optional[int]=..., num_pedestrians: _Optional[int]=..., num_passengers: _Optional[int]=..., num_subways: _Optional[int]=..., num_taxis: _Optional[int]=..., num_crowds: _Optional[int]=...) -> None:
+    def __init__(self, num_completed_trips: _Optional[int]=..., completed_total_travel_time: _Optional[float]=..., completed_total_travel_distance: _Optional[float]=..., completed_avg_travel_time: _Optional[float]=..., completed_avg_v: _Optional[float]=..., running_total_travel_time: _Optional[float]=..., running_total_travel_distance: _Optional[float]=..., running_avg_v: _Optional[float]=..., avg_v: _Optional[float]=..., num_vehicles: _Optional[int]=..., num_pedestrians: _Optional[int]=..., num_passengers: _Optional[int]=..., num_subways: _Optional[int]=..., num_taxis: _Optional[int]=..., num_crowds: _Optional[int]=..., num_queuing_vehicles: _Optional[int]=..., passing_tl_total_time: _Optional[float]=..., passing_tl_total_count: _Optional[int]=..., passing_tl_avg_time: _Optional[float]=...) -> None:
         ...

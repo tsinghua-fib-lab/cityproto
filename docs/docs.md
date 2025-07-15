@@ -8354,6 +8354,10 @@ Response of getting global statistics
 | num_subways | [int32](#int32) |  | 当前地铁数 current subway count |
 | num_taxis | [int32](#int32) |  | 当前出租车数 current taxi count |
 | num_crowds | [int32](#int32) |  | 当前室内行人数 current indoor pedestrian count |
+| num_queuing_vehicles | [int32](#int32) |  | 当前排队车辆数 current queuing vehicle count |
+| passing_tl_total_time | [double](#double) |  | 车辆通过红绿灯的总时间 total time of vehicles passing traffic lights |
+| passing_tl_total_count | [int32](#int32) |  | 车辆通过红绿灯的总次数 total count of vehicles passing traffic lights |
+| passing_tl_avg_time | [double](#double) |  | 车辆通过红绿灯的平均时间 average time of vehicles passing traffic lights |
 
 
 
