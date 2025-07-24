@@ -535,6 +535,7 @@ PROTOBUF_CONSTEXPR GetGlobalStatisticsResponse::GetGlobalStatisticsResponse(
   , /*decltype(_impl_.passing_tl_total_time_)*/0
   , /*decltype(_impl_.passing_tl_avg_time_)*/0
   , /*decltype(_impl_.passing_tl_total_count_)*/0
+  , /*decltype(_impl_.num_completed_pedestrian_trips_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetGlobalStatisticsResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetGlobalStatisticsResponseDefaultTypeInternal()
@@ -844,6 +845,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.passing_tl_total_time_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.passing_tl_total_count_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.passing_tl_avg_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetGlobalStatisticsResponse, _impl_.num_completed_pedestrian_trips_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::GetPersonRequest)},
@@ -1013,7 +1015,7 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "t\022M\n\021order_allocations\030\001 \003(\0132 .city.pers"
   "on.v2.OrderAllocationsR\020orderAllocations"
   "\".\n,SetControlledTaxiOrderAllocationPlan"
-  "Response\"\034\n\032GetGlobalStatisticsRequest\"\206"
+  "Response\"\034\n\032GetGlobalStatisticsRequest\"\313"
   "\007\n\033GetGlobalStatisticsResponse\022.\n\023num_co"
   "mpleted_trips\030\001 \001(\005R\021numCompletedTrips\022="
   "\n\033completed_total_travel_time\030\002 \001(\001R\030com"
@@ -1036,72 +1038,73 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "ing_tl_total_time\030\021 \001(\001R\022passingTlTotalT"
   "ime\0223\n\026passing_tl_total_count\030\022 \001(\005R\023pas"
   "singTlTotalCount\022-\n\023passing_tl_avg_time\030"
-  "\023 \001(\001R\020passingTlAvgTime2\316\022\n\rPersonServic"
-  "e\022P\n\tGetPerson\022 .city.person.v2.GetPerso"
-  "nRequest\032!.city.person.v2.GetPersonRespo"
-  "nse\022P\n\tAddPerson\022 .city.person.v2.AddPer"
-  "sonRequest\032!.city.person.v2.AddPersonRes"
-  "ponse\022V\n\013SetSchedule\022\".city.person.v2.Se"
-  "tScheduleRequest\032#.city.person.v2.SetSch"
-  "eduleResponse\022S\n\nGetPersons\022!.city.perso"
-  "n.v2.GetPersonsRequest\032\".city.person.v2."
-  "GetPersonsResponse\022w\n\026GetPersonByLongLat"
-  "BBox\022-.city.person.v2.GetPersonByLongLat"
-  "BBoxRequest\032..city.person.v2.GetPersonBy"
-  "LongLatBBoxResponse\022_\n\016GetAllVehicles\022%."
-  "city.person.v2.GetAllVehiclesRequest\032&.c"
-  "ity.person.v2.GetAllVehiclesResponse\022h\n\021"
-  "GetAllPedestrians\022(.city.person.v2.GetAl"
-  "lPedestriansRequest\032).city.person.v2.Get"
-  "AllPedestriansResponse\022n\n\023ResetPersonPos"
-  "ition\022*.city.person.v2.ResetPersonPositi"
-  "onRequest\032+.city.person.v2.ResetPersonPo"
-  "sitionResponse\022z\n\027SetControlledVehicleID"
-  "s\022..city.person.v2.SetControlledVehicleI"
-  "DsRequest\032/.city.person.v2.SetControlled"
-  "VehicleIDsResponse\022\203\001\n\032FetchControlledVe"
-  "hicleEnvs\0221.city.person.v2.FetchControll"
-  "edVehicleEnvsRequest\0322.city.person.v2.Fe"
-  "tchControlledVehicleEnvsResponse\022\206\001\n\033Set"
-  "ControlledVehicleActions\0222.city.person.v"
-  "2.SetControlledVehicleActionsRequest\0323.c"
-  "ity.person.v2.SetControlledVehicleAction"
-  "sResponse\022q\n\024SetControlledTaxiIDs\022+.city"
-  ".person.v2.SetControlledTaxiIDsRequest\032,"
-  ".city.person.v2.SetControlledTaxiIDsResp"
-  "onse\022Y\n\014GetAllOrders\022#.city.person.v2.Ge"
-  "tAllOrdersRequest\032$.city.person.v2.GetAl"
-  "lOrdersResponse\022\200\001\n\031SetControlledTaxiToO"
-  "rders\0220.city.person.v2.SetControlledTaxi"
-  "ToOrdersRequest\0321.city.person.v2.SetCont"
-  "rolledTaxiToOrdersResponse\022}\n\030SetControl"
-  "ledPedestrians\022/.city.person.v2.SetContr"
-  "olledPedestriansRequest\0320.city.person.v2"
-  ".SetControlledPedestriansResponse\022\217\001\n\036Fe"
-  "tchControlledPedestriansEnvs\0225.city.pers"
-  "on.v2.FetchControlledPedestriansEnvsRequ"
-  "est\0326.city.person.v2.FetchControlledPede"
-  "striansEnvsResponse\022\222\001\n\037SetControlledPed"
-  "estriansActions\0226.city.person.v2.SetCont"
-  "rolledPedestriansActionsRequest\0327.city.p"
-  "erson.v2.SetControlledPedestriansActions"
-  "Response\022\241\001\n$GetControlledTaxiOrderAlloc"
-  "ationPlan\022;.city.person.v2.GetControlled"
-  "TaxiOrderAllocationPlanRequest\032<.city.pe"
-  "rson.v2.GetControlledTaxiOrderAllocation"
-  "PlanResponse\022\241\001\n$SetControlledTaxiOrderA"
-  "llocationPlan\022;.city.person.v2.SetContro"
-  "lledTaxiOrderAllocationPlanRequest\032<.cit"
-  "y.person.v2.SetControlledTaxiOrderAlloca"
-  "tionPlanResponse\022n\n\023GetGlobalStatistics\022"
-  "*.city.person.v2.GetGlobalStatisticsRequ"
-  "est\032+.city.person.v2.GetGlobalStatistics"
-  "ResponseB\273\001\n\022com.city.person.v2B\022PersonS"
-  "erviceProtoP\001Z7git.fiblab.net/sim/protos"
-  "/v2/go/city/person/v2;personv2\242\002\003CPX\252\002\016C"
-  "ity.Person.V2\312\002\016City\\Person\\V2\342\002\032City\\Pe"
-  "rson\\V2\\GPBMetadata\352\002\020City::Person::V2b\006"
-  "proto3"
+  "\023 \001(\001R\020passingTlAvgTime\022C\n\036num_completed"
+  "_pedestrian_trips\030\024 \001(\005R\033numCompletedPed"
+  "estrianTrips2\316\022\n\rPersonService\022P\n\tGetPer"
+  "son\022 .city.person.v2.GetPersonRequest\032!."
+  "city.person.v2.GetPersonResponse\022P\n\tAddP"
+  "erson\022 .city.person.v2.AddPersonRequest\032"
+  "!.city.person.v2.AddPersonResponse\022V\n\013Se"
+  "tSchedule\022\".city.person.v2.SetScheduleRe"
+  "quest\032#.city.person.v2.SetScheduleRespon"
+  "se\022S\n\nGetPersons\022!.city.person.v2.GetPer"
+  "sonsRequest\032\".city.person.v2.GetPersonsR"
+  "esponse\022w\n\026GetPersonByLongLatBBox\022-.city"
+  ".person.v2.GetPersonByLongLatBBoxRequest"
+  "\032..city.person.v2.GetPersonByLongLatBBox"
+  "Response\022_\n\016GetAllVehicles\022%.city.person"
+  ".v2.GetAllVehiclesRequest\032&.city.person."
+  "v2.GetAllVehiclesResponse\022h\n\021GetAllPedes"
+  "trians\022(.city.person.v2.GetAllPedestrian"
+  "sRequest\032).city.person.v2.GetAllPedestri"
+  "ansResponse\022n\n\023ResetPersonPosition\022*.cit"
+  "y.person.v2.ResetPersonPositionRequest\032+"
+  ".city.person.v2.ResetPersonPositionRespo"
+  "nse\022z\n\027SetControlledVehicleIDs\022..city.pe"
+  "rson.v2.SetControlledVehicleIDsRequest\032/"
+  ".city.person.v2.SetControlledVehicleIDsR"
+  "esponse\022\203\001\n\032FetchControlledVehicleEnvs\0221"
+  ".city.person.v2.FetchControlledVehicleEn"
+  "vsRequest\0322.city.person.v2.FetchControll"
+  "edVehicleEnvsResponse\022\206\001\n\033SetControlledV"
+  "ehicleActions\0222.city.person.v2.SetContro"
+  "lledVehicleActionsRequest\0323.city.person."
+  "v2.SetControlledVehicleActionsResponse\022q"
+  "\n\024SetControlledTaxiIDs\022+.city.person.v2."
+  "SetControlledTaxiIDsRequest\032,.city.perso"
+  "n.v2.SetControlledTaxiIDsResponse\022Y\n\014Get"
+  "AllOrders\022#.city.person.v2.GetAllOrdersR"
+  "equest\032$.city.person.v2.GetAllOrdersResp"
+  "onse\022\200\001\n\031SetControlledTaxiToOrders\0220.cit"
+  "y.person.v2.SetControlledTaxiToOrdersReq"
+  "uest\0321.city.person.v2.SetControlledTaxiT"
+  "oOrdersResponse\022}\n\030SetControlledPedestri"
+  "ans\022/.city.person.v2.SetControlledPedest"
+  "riansRequest\0320.city.person.v2.SetControl"
+  "ledPedestriansResponse\022\217\001\n\036FetchControll"
+  "edPedestriansEnvs\0225.city.person.v2.Fetch"
+  "ControlledPedestriansEnvsRequest\0326.city."
+  "person.v2.FetchControlledPedestriansEnvs"
+  "Response\022\222\001\n\037SetControlledPedestriansAct"
+  "ions\0226.city.person.v2.SetControlledPedes"
+  "triansActionsRequest\0327.city.person.v2.Se"
+  "tControlledPedestriansActionsResponse\022\241\001"
+  "\n$GetControlledTaxiOrderAllocationPlan\022;"
+  ".city.person.v2.GetControlledTaxiOrderAl"
+  "locationPlanRequest\032<.city.person.v2.Get"
+  "ControlledTaxiOrderAllocationPlanRespons"
+  "e\022\241\001\n$SetControlledTaxiOrderAllocationPl"
+  "an\022;.city.person.v2.SetControlledTaxiOrd"
+  "erAllocationPlanRequest\032<.city.person.v2"
+  ".SetControlledTaxiOrderAllocationPlanRes"
+  "ponse\022n\n\023GetGlobalStatistics\022*.city.pers"
+  "on.v2.GetGlobalStatisticsRequest\032+.city."
+  "person.v2.GetGlobalStatisticsResponseB\273\001"
+  "\n\022com.city.person.v2B\022PersonServiceProto"
+  "P\001Z7git.fiblab.net/sim/protos/v2/go/city"
+  "/person/v2;personv2\242\002\003CPX\252\002\016City.Person."
+  "V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPB"
+  "Metadata\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[8] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -1115,7 +1118,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 6766, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 6835, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 8, 40,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
@@ -6499,12 +6502,13 @@ GetGlobalStatisticsResponse::GetGlobalStatisticsResponse(const GetGlobalStatisti
     , decltype(_impl_.passing_tl_total_time_){}
     , decltype(_impl_.passing_tl_avg_time_){}
     , decltype(_impl_.passing_tl_total_count_){}
+    , decltype(_impl_.num_completed_pedestrian_trips_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.completed_total_travel_time_, &from._impl_.completed_total_travel_time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.passing_tl_total_count_) -
-    reinterpret_cast<char*>(&_impl_.completed_total_travel_time_)) + sizeof(_impl_.passing_tl_total_count_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_completed_pedestrian_trips_) -
+    reinterpret_cast<char*>(&_impl_.completed_total_travel_time_)) + sizeof(_impl_.num_completed_pedestrian_trips_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.GetGlobalStatisticsResponse)
 }
 
@@ -6532,6 +6536,7 @@ inline void GetGlobalStatisticsResponse::SharedCtor(
     , decltype(_impl_.passing_tl_total_time_){0}
     , decltype(_impl_.passing_tl_avg_time_){0}
     , decltype(_impl_.passing_tl_total_count_){0}
+    , decltype(_impl_.num_completed_pedestrian_trips_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -6560,8 +6565,8 @@ void GetGlobalStatisticsResponse::Clear() {
   (void) cached_has_bits;
 
   ::memset(&_impl_.completed_total_travel_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.passing_tl_total_count_) -
-      reinterpret_cast<char*>(&_impl_.completed_total_travel_time_)) + sizeof(_impl_.passing_tl_total_count_));
+      reinterpret_cast<char*>(&_impl_.num_completed_pedestrian_trips_) -
+      reinterpret_cast<char*>(&_impl_.completed_total_travel_time_)) + sizeof(_impl_.num_completed_pedestrian_trips_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6720,6 +6725,14 @@ const char* GetGlobalStatisticsResponse::_InternalParse(const char* ptr, ::_pbi:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 153)) {
           _impl_.passing_tl_avg_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_completed_pedestrian_trips = 20 [json_name = "numCompletedPedestrianTrips"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
+          _impl_.num_completed_pedestrian_trips_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -6906,6 +6919,12 @@ uint8_t* GetGlobalStatisticsResponse::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(19, this->_internal_passing_tl_avg_time(), target);
   }
 
+  // int32 num_completed_pedestrian_trips = 20 [json_name = "numCompletedPedestrianTrips"];
+  if (this->_internal_num_completed_pedestrian_trips() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(20, this->_internal_num_completed_pedestrian_trips(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -7061,6 +7080,13 @@ size_t GetGlobalStatisticsResponse::ByteSizeLong() const {
         this->_internal_passing_tl_total_count());
   }
 
+  // int32 num_completed_pedestrian_trips = 20 [json_name = "numCompletedPedestrianTrips"];
+  if (this->_internal_num_completed_pedestrian_trips() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_num_completed_pedestrian_trips());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -7176,6 +7202,9 @@ void GetGlobalStatisticsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to
   if (from._internal_passing_tl_total_count() != 0) {
     _this->_internal_set_passing_tl_total_count(from._internal_passing_tl_total_count());
   }
+  if (from._internal_num_completed_pedestrian_trips() != 0) {
+    _this->_internal_set_num_completed_pedestrian_trips(from._internal_num_completed_pedestrian_trips());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7194,8 +7223,8 @@ void GetGlobalStatisticsResponse::InternalSwap(GetGlobalStatisticsResponse* othe
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetGlobalStatisticsResponse, _impl_.passing_tl_total_count_)
-      + sizeof(GetGlobalStatisticsResponse::_impl_.passing_tl_total_count_)
+      PROTOBUF_FIELD_OFFSET(GetGlobalStatisticsResponse, _impl_.num_completed_pedestrian_trips_)
+      + sizeof(GetGlobalStatisticsResponse::_impl_.num_completed_pedestrian_trips_)
       - PROTOBUF_FIELD_OFFSET(GetGlobalStatisticsResponse, _impl_.completed_total_travel_time_)>(
           reinterpret_cast<char*>(&_impl_.completed_total_travel_time_),
           reinterpret_cast<char*>(&other->_impl_.completed_total_travel_time_));

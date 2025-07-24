@@ -8358,6 +8358,7 @@ Response of getting global statistics
 | passing_tl_total_time | [double](#double) |  | 车辆通过红绿灯的总时间 total time of vehicles passing traffic lights |
 | passing_tl_total_count | [int32](#int32) |  | 车辆通过红绿灯的总次数 total count of vehicles passing traffic lights |
 | passing_tl_avg_time | [double](#double) |  | 车辆通过红绿灯的平均时间 average time of vehicles passing traffic lights |
+| num_completed_pedestrian_trips | [int32](#int32) |  | 完成行人行程数 number of completed pedestrian trips |
 
 
 

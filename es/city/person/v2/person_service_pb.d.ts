@@ -1286,6 +1286,14 @@ export declare class GetGlobalStatisticsResponse extends Message<GetGlobalStatis
    */
   passingTlAvgTime: number;
 
+  /**
+   * 完成行人行程数
+   * number of completed pedestrian trips
+   *
+   * @generated from field: int32 num_completed_pedestrian_trips = 20;
+   */
+  numCompletedPedestrianTrips: number;
+
   constructor(data?: PartialMessage<GetGlobalStatisticsResponse>);
 
   static readonly runtime: typeof proto3;

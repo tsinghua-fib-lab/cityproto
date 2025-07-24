@@ -525,6 +525,7 @@ export const GetGlobalStatisticsResponse = /*@__PURE__*/ proto3.makeMessageType(
     { no: 17, name: "passing_tl_total_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 18, name: "passing_tl_total_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 19, name: "passing_tl_avg_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 20, name: "num_completed_pedestrian_trips", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

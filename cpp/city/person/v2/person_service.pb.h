@@ -6017,6 +6017,7 @@ class GetGlobalStatisticsResponse final :
     kPassingTlTotalTimeFieldNumber = 17,
     kPassingTlAvgTimeFieldNumber = 19,
     kPassingTlTotalCountFieldNumber = 18,
+    kNumCompletedPedestrianTripsFieldNumber = 20,
   };
   // double completed_total_travel_time = 2 [json_name = "completedTotalTravelTime"];
   void clear_completed_total_travel_time();
@@ -6189,6 +6190,15 @@ class GetGlobalStatisticsResponse final :
   void _internal_set_passing_tl_total_count(int32_t value);
   public:
 
+  // int32 num_completed_pedestrian_trips = 20 [json_name = "numCompletedPedestrianTrips"];
+  void clear_num_completed_pedestrian_trips();
+  int32_t num_completed_pedestrian_trips() const;
+  void set_num_completed_pedestrian_trips(int32_t value);
+  private:
+  int32_t _internal_num_completed_pedestrian_trips() const;
+  void _internal_set_num_completed_pedestrian_trips(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.GetGlobalStatisticsResponse)
  private:
   class _Internal;
@@ -6216,6 +6226,7 @@ class GetGlobalStatisticsResponse final :
     double passing_tl_total_time_;
     double passing_tl_avg_time_;
     int32_t passing_tl_total_count_;
+    int32_t num_completed_pedestrian_trips_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8102,6 +8113,26 @@ inline void GetGlobalStatisticsResponse::_internal_set_passing_tl_avg_time(doubl
 inline void GetGlobalStatisticsResponse::set_passing_tl_avg_time(double value) {
   _internal_set_passing_tl_avg_time(value);
   // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.passing_tl_avg_time)
+}
+
+// int32 num_completed_pedestrian_trips = 20 [json_name = "numCompletedPedestrianTrips"];
+inline void GetGlobalStatisticsResponse::clear_num_completed_pedestrian_trips() {
+  _impl_.num_completed_pedestrian_trips_ = 0;
+}
+inline int32_t GetGlobalStatisticsResponse::_internal_num_completed_pedestrian_trips() const {
+  return _impl_.num_completed_pedestrian_trips_;
+}
+inline int32_t GetGlobalStatisticsResponse::num_completed_pedestrian_trips() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetGlobalStatisticsResponse.num_completed_pedestrian_trips)
+  return _internal_num_completed_pedestrian_trips();
+}
+inline void GetGlobalStatisticsResponse::_internal_set_num_completed_pedestrian_trips(int32_t value) {
+  
+  _impl_.num_completed_pedestrian_trips_ = value;
+}
+inline void GetGlobalStatisticsResponse::set_num_completed_pedestrian_trips(int32_t value) {
+  _internal_set_num_completed_pedestrian_trips(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.GetGlobalStatisticsResponse.num_completed_pedestrian_trips)
 }
 
 #ifdef __GNUC__
