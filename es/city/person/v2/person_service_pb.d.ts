@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { PersonRuntime } from "./person_runtime_pb.js";
-import type { Person } from "./person_pb.js";
+import type { Person, PersonAttribute } from "./person_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { Status } from "./motion_pb.js";
 import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
@@ -504,6 +504,65 @@ export declare class ResetPersonPositionResponse extends Message<ResetPersonPosi
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPersonPositionResponse;
 
   static equals(a: ResetPersonPositionResponse | PlainMessage<ResetPersonPositionResponse> | undefined, b: ResetPersonPositionResponse | PlainMessage<ResetPersonPositionResponse> | undefined): boolean;
+}
+
+/**
+ * 设置人的属性请求
+ * Request for setting person's attribute
+ *
+ * @generated from message city.person.v2.SetPersonAttributeRequest
+ */
+export declare class SetPersonAttributeRequest extends Message<SetPersonAttributeRequest> {
+  /**
+   * person id
+   *
+   * @generated from field: int32 person_id = 1;
+   */
+  personId: number;
+
+  /**
+   * 人的属性
+   * person's attribute
+   *
+   * @generated from field: city.person.v2.PersonAttribute attribute = 2;
+   */
+  attribute?: PersonAttribute;
+
+  constructor(data?: PartialMessage<SetPersonAttributeRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetPersonAttributeRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPersonAttributeRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPersonAttributeRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPersonAttributeRequest;
+
+  static equals(a: SetPersonAttributeRequest | PlainMessage<SetPersonAttributeRequest> | undefined, b: SetPersonAttributeRequest | PlainMessage<SetPersonAttributeRequest> | undefined): boolean;
+}
+
+/**
+ * 设置人的属性响应
+ * Response of setting person's attribute
+ *
+ * @generated from message city.person.v2.SetPersonAttributeResponse
+ */
+export declare class SetPersonAttributeResponse extends Message<SetPersonAttributeResponse> {
+  constructor(data?: PartialMessage<SetPersonAttributeResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetPersonAttributeResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPersonAttributeResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPersonAttributeResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPersonAttributeResponse;
+
+  static equals(a: SetPersonAttributeResponse | PlainMessage<SetPersonAttributeResponse> | undefined, b: SetPersonAttributeResponse | PlainMessage<SetPersonAttributeResponse> | undefined): boolean;
 }
 
 /**

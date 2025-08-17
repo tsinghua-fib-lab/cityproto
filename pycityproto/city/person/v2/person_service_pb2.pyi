@@ -144,6 +144,22 @@ class ResetPersonPositionResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
+class SetPersonAttributeRequest(_message.Message):
+    __slots__ = ['person_id', 'attribute']
+    PERSON_ID_FIELD_NUMBER: _ClassVar[int]
+    ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+    person_id: int
+    attribute: _person_pb2.PersonAttribute
+
+    def __init__(self, person_id: _Optional[int]=..., attribute: _Optional[_Union[_person_pb2.PersonAttribute, _Mapping]]=...) -> None:
+        ...
+
+class SetPersonAttributeResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
 class SetControlledVehicleIDsRequest(_message.Message):
     __slots__ = ['vehicle_ids', 'route_vehicle_ids']
     VEHICLE_IDS_FIELD_NUMBER: _ClassVar[int]

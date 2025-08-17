@@ -5,7 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { PersonRuntime } from "./person_runtime_pb.js";
-import { Person } from "./person_pb.js";
+import { Person, PersonAttribute } from "./person_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 import { Status } from "./motion_pb.js";
 import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
@@ -216,6 +216,31 @@ export const ResetPersonPositionRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const ResetPersonPositionResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.ResetPersonPositionResponse",
+  [],
+);
+
+/**
+ * 设置人的属性请求
+ * Request for setting person's attribute
+ *
+ * @generated from message city.person.v2.SetPersonAttributeRequest
+ */
+export const SetPersonAttributeRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetPersonAttributeRequest",
+  () => [
+    { no: 1, name: "person_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "attribute", kind: "message", T: PersonAttribute },
+  ],
+);
+
+/**
+ * 设置人的属性响应
+ * Response of setting person's attribute
+ *
+ * @generated from message city.person.v2.SetPersonAttributeResponse
+ */
+export const SetPersonAttributeResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetPersonAttributeResponse",
   [],
 );
 

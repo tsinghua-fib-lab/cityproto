@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledPedestriansEnvsRequest, FetchControlledPedestriansEnvsResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllPedestriansRequest, GetAllPedestriansResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetControlledTaxiOrderAllocationPlanRequest, GetControlledTaxiOrderAllocationPlanResponse, GetGlobalStatisticsRequest, GetGlobalStatisticsResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledPedestriansActionsRequest, SetControlledPedestriansActionsResponse, SetControlledPedestriansRequest, SetControlledPedestriansResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiOrderAllocationPlanRequest, SetControlledTaxiOrderAllocationPlanResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledPedestriansEnvsRequest, FetchControlledPedestriansEnvsResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllPedestriansRequest, GetAllPedestriansResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetControlledTaxiOrderAllocationPlanRequest, GetControlledTaxiOrderAllocationPlanResponse, GetGlobalStatisticsRequest, GetGlobalStatisticsResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledPedestriansActionsRequest, SetControlledPedestriansActionsResponse, SetControlledPedestriansRequest, SetControlledPedestriansResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiOrderAllocationPlanRequest, SetControlledTaxiOrderAllocationPlanResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetPersonAttributeRequest, SetPersonAttributeResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -107,6 +107,18 @@ export const PersonService = {
       name: "ResetPersonPosition",
       I: ResetPersonPositionRequest,
       O: ResetPersonPositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 设置人的属性
+     * Set person's attribute
+     *
+     * @generated from rpc city.person.v2.PersonService.SetPersonAttribute
+     */
+    setPersonAttribute: {
+      name: "SetPersonAttribute",
+      I: SetPersonAttributeRequest,
+      O: SetPersonAttributeResponse,
       kind: MethodKind.Unary,
     },
     /**

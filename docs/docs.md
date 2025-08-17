@@ -580,6 +580,8 @@
     - [SetControlledVehicleActionsResponse](#city-person-v2-SetControlledVehicleActionsResponse)
     - [SetControlledVehicleIDsRequest](#city-person-v2-SetControlledVehicleIDsRequest)
     - [SetControlledVehicleIDsResponse](#city-person-v2-SetControlledVehicleIDsResponse)
+    - [SetPersonAttributeRequest](#city-person-v2-SetPersonAttributeRequest)
+    - [SetPersonAttributeResponse](#city-person-v2-SetPersonAttributeResponse)
     - [SetScheduleRequest](#city-person-v2-SetScheduleRequest)
     - [SetScheduleResponse](#city-person-v2-SetScheduleResponse)
   
@@ -8684,6 +8686,34 @@ Response of setting vehicle controlled by external behavior
 
 
 
+<a name="city-person-v2-SetPersonAttributeRequest"></a>
+
+### SetPersonAttributeRequest
+设置人的属性请求
+Request for setting person&#39;s attribute
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| person_id | [int32](#int32) |  | person id |
+| attribute | [PersonAttribute](#city-person-v2-PersonAttribute) |  | 人的属性 person&#39;s attribute |
+
+
+
+
+
+
+<a name="city-person-v2-SetPersonAttributeResponse"></a>
+
+### SetPersonAttributeResponse
+设置人的属性响应
+Response of setting person&#39;s attribute
+
+
+
+
+
+
 <a name="city-person-v2-SetScheduleRequest"></a>
 
 ### SetScheduleRequest
@@ -8733,6 +8763,7 @@ Response of setting person schedule
 | GetAllVehicles | [GetAllVehiclesRequest](#city-person-v2-GetAllVehiclesRequest) | [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse) | 获取所有车辆 Get all vehicles |
 | GetAllPedestrians | [GetAllPedestriansRequest](#city-person-v2-GetAllPedestriansRequest) | [GetAllPedestriansResponse](#city-person-v2-GetAllPedestriansResponse) | 获取所有行人 Get all pedestrians |
 | ResetPersonPosition | [ResetPersonPositionRequest](#city-person-v2-ResetPersonPositionRequest) | [ResetPersonPositionResponse](#city-person-v2-ResetPersonPositionResponse) | 重置人的位置（将停止当前正在进行的出行，转为sleep状态） Reset person&#39;s position (stop the current trip and switch to sleep status) |
+| SetPersonAttribute | [SetPersonAttributeRequest](#city-person-v2-SetPersonAttributeRequest) | [SetPersonAttributeResponse](#city-person-v2-SetPersonAttributeResponse) | 设置人的属性 Set person&#39;s attribute |
 | SetControlledVehicleIDs | [SetControlledVehicleIDsRequest](#city-person-v2-SetControlledVehicleIDsRequest) | [SetControlledVehicleIDsResponse](#city-person-v2-SetControlledVehicleIDsResponse) | 设置由外部控制行为的vehicle Set vehicle controlled by external behavior |
 | FetchControlledVehicleEnvs | [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest) | [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse) | 获取由外部控制行为的vehicle信息 Get information of vehicle controlled by external behavior |
 | SetControlledVehicleActions | [SetControlledVehicleActionsRequest](#city-person-v2-SetControlledVehicleActionsRequest) | [SetControlledVehicleActionsResponse](#city-person-v2-SetControlledVehicleActionsResponse) | 设置由外部控制行为的vehicle的行为 Set behavior of vehicle controlled by external behavior |
