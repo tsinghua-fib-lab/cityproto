@@ -39,9 +39,9 @@ service PersonService {
   // Reset person's position (stop the current trip and switch to sleep status)
   rpc ResetPersonPosition(ResetPersonPositionRequest) returns (ResetPersonPositionResponse);
 
-  // 设置人的属性
-  // Set person's attribute
-  rpc SetPersonAttribute(SetPersonAttributeRequest) returns (SetPersonAttributeResponse);
+  // 设置车辆的属性
+  // Set person's vehicle attribute
+  rpc SetPersonVehicleAttribute(SetPersonVehicleAttributeRequest) returns (SetPersonVehicleAttributeResponse);
 
   // RL接口
   // RL interface
@@ -214,19 +214,19 @@ message ResetPersonPositionRequest {
 // Response of resetting person's position
 message ResetPersonPositionResponse {}
 
-// 设置人的属性请求
-// Request for setting person's attribute
-message SetPersonAttributeRequest {
+// 设置人的车辆属性请求
+// Request for setting person's vehicle attribute
+message SetPersonVehicleAttributeRequest {
   // person id
   int32 person_id = 1;
-  // 人的属性
-  // person's attribute
-  PersonAttribute attribute = 2;
+  // 人的车辆属性
+  // person's vehicle attribute
+  VehicleAttribute vehicle_attribute = 2;
 }
 
-// 设置人的属性响应
-// Response of setting person's attribute
-message SetPersonAttributeResponse {}
+// 设置人的车辆属性响应
+// Response of setting person's vehicle attribute
+message SetPersonVehicleAttributeResponse {}
 
 // 设置由外部控制行为的vehicle请求（下一个step生效）
 // Request for setting vehicle controlled by external behavior

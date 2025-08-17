@@ -170,12 +170,12 @@ extern SetControlledVehicleIDsRequestDefaultTypeInternal _SetControlledVehicleID
 class SetControlledVehicleIDsResponse;
 struct SetControlledVehicleIDsResponseDefaultTypeInternal;
 extern SetControlledVehicleIDsResponseDefaultTypeInternal _SetControlledVehicleIDsResponse_default_instance_;
-class SetPersonAttributeRequest;
-struct SetPersonAttributeRequestDefaultTypeInternal;
-extern SetPersonAttributeRequestDefaultTypeInternal _SetPersonAttributeRequest_default_instance_;
-class SetPersonAttributeResponse;
-struct SetPersonAttributeResponseDefaultTypeInternal;
-extern SetPersonAttributeResponseDefaultTypeInternal _SetPersonAttributeResponse_default_instance_;
+class SetPersonVehicleAttributeRequest;
+struct SetPersonVehicleAttributeRequestDefaultTypeInternal;
+extern SetPersonVehicleAttributeRequestDefaultTypeInternal _SetPersonVehicleAttributeRequest_default_instance_;
+class SetPersonVehicleAttributeResponse;
+struct SetPersonVehicleAttributeResponseDefaultTypeInternal;
+extern SetPersonVehicleAttributeResponseDefaultTypeInternal _SetPersonVehicleAttributeResponse_default_instance_;
 class SetScheduleRequest;
 struct SetScheduleRequestDefaultTypeInternal;
 extern SetScheduleRequestDefaultTypeInternal _SetScheduleRequest_default_instance_;
@@ -224,8 +224,8 @@ template<> ::city::person::v2::SetControlledVehicleActionsRequest* Arena::Create
 template<> ::city::person::v2::SetControlledVehicleActionsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledVehicleActionsResponse>(Arena*);
 template<> ::city::person::v2::SetControlledVehicleIDsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledVehicleIDsRequest>(Arena*);
 template<> ::city::person::v2::SetControlledVehicleIDsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledVehicleIDsResponse>(Arena*);
-template<> ::city::person::v2::SetPersonAttributeRequest* Arena::CreateMaybeMessage<::city::person::v2::SetPersonAttributeRequest>(Arena*);
-template<> ::city::person::v2::SetPersonAttributeResponse* Arena::CreateMaybeMessage<::city::person::v2::SetPersonAttributeResponse>(Arena*);
+template<> ::city::person::v2::SetPersonVehicleAttributeRequest* Arena::CreateMaybeMessage<::city::person::v2::SetPersonVehicleAttributeRequest>(Arena*);
+template<> ::city::person::v2::SetPersonVehicleAttributeResponse* Arena::CreateMaybeMessage<::city::person::v2::SetPersonVehicleAttributeResponse>(Arena*);
 template<> ::city::person::v2::SetScheduleRequest* Arena::CreateMaybeMessage<::city::person::v2::SetScheduleRequest>(Arena*);
 template<> ::city::person::v2::SetScheduleResponse* Arena::CreateMaybeMessage<::city::person::v2::SetScheduleResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -2662,24 +2662,24 @@ class ResetPersonPositionResponse final :
 };
 // -------------------------------------------------------------------
 
-class SetPersonAttributeRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetPersonAttributeRequest) */ {
+class SetPersonVehicleAttributeRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetPersonVehicleAttributeRequest) */ {
  public:
-  inline SetPersonAttributeRequest() : SetPersonAttributeRequest(nullptr) {}
-  ~SetPersonAttributeRequest() override;
-  explicit PROTOBUF_CONSTEXPR SetPersonAttributeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline SetPersonVehicleAttributeRequest() : SetPersonVehicleAttributeRequest(nullptr) {}
+  ~SetPersonVehicleAttributeRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetPersonVehicleAttributeRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  SetPersonAttributeRequest(const SetPersonAttributeRequest& from);
-  SetPersonAttributeRequest(SetPersonAttributeRequest&& from) noexcept
-    : SetPersonAttributeRequest() {
+  SetPersonVehicleAttributeRequest(const SetPersonVehicleAttributeRequest& from);
+  SetPersonVehicleAttributeRequest(SetPersonVehicleAttributeRequest&& from) noexcept
+    : SetPersonVehicleAttributeRequest() {
     *this = ::std::move(from);
   }
 
-  inline SetPersonAttributeRequest& operator=(const SetPersonAttributeRequest& from) {
+  inline SetPersonVehicleAttributeRequest& operator=(const SetPersonVehicleAttributeRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline SetPersonAttributeRequest& operator=(SetPersonAttributeRequest&& from) noexcept {
+  inline SetPersonVehicleAttributeRequest& operator=(SetPersonVehicleAttributeRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -2702,20 +2702,20 @@ class SetPersonAttributeRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const SetPersonAttributeRequest& default_instance() {
+  static const SetPersonVehicleAttributeRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const SetPersonAttributeRequest* internal_default_instance() {
-    return reinterpret_cast<const SetPersonAttributeRequest*>(
-               &_SetPersonAttributeRequest_default_instance_);
+  static inline const SetPersonVehicleAttributeRequest* internal_default_instance() {
+    return reinterpret_cast<const SetPersonVehicleAttributeRequest*>(
+               &_SetPersonVehicleAttributeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     16;
 
-  friend void swap(SetPersonAttributeRequest& a, SetPersonAttributeRequest& b) {
+  friend void swap(SetPersonVehicleAttributeRequest& a, SetPersonVehicleAttributeRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(SetPersonAttributeRequest* other) {
+  inline void Swap(SetPersonVehicleAttributeRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -2728,7 +2728,7 @@ class SetPersonAttributeRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(SetPersonAttributeRequest* other) {
+  void UnsafeArenaSwap(SetPersonVehicleAttributeRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2736,14 +2736,14 @@ class SetPersonAttributeRequest final :
 
   // implements Message ----------------------------------------------
 
-  SetPersonAttributeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<SetPersonAttributeRequest>(arena);
+  SetPersonVehicleAttributeRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetPersonVehicleAttributeRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const SetPersonAttributeRequest& from);
+  void CopyFrom(const SetPersonVehicleAttributeRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const SetPersonAttributeRequest& from) {
-    SetPersonAttributeRequest::MergeImpl(*this, from);
+  void MergeFrom( const SetPersonVehicleAttributeRequest& from) {
+    SetPersonVehicleAttributeRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -2761,15 +2761,15 @@ class SetPersonAttributeRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SetPersonAttributeRequest* other);
+  void InternalSwap(SetPersonVehicleAttributeRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.person.v2.SetPersonAttributeRequest";
+    return "city.person.v2.SetPersonVehicleAttributeRequest";
   }
   protected:
-  explicit SetPersonAttributeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit SetPersonVehicleAttributeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -2783,26 +2783,26 @@ class SetPersonAttributeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAttributeFieldNumber = 2,
+    kVehicleAttributeFieldNumber = 2,
     kPersonIdFieldNumber = 1,
   };
-  // .city.person.v2.PersonAttribute attribute = 2 [json_name = "attribute"];
-  bool has_attribute() const;
+  // .city.person.v2.VehicleAttribute vehicle_attribute = 2 [json_name = "vehicleAttribute"];
+  bool has_vehicle_attribute() const;
   private:
-  bool _internal_has_attribute() const;
+  bool _internal_has_vehicle_attribute() const;
   public:
-  void clear_attribute();
-  const ::city::person::v2::PersonAttribute& attribute() const;
-  PROTOBUF_NODISCARD ::city::person::v2::PersonAttribute* release_attribute();
-  ::city::person::v2::PersonAttribute* mutable_attribute();
-  void set_allocated_attribute(::city::person::v2::PersonAttribute* attribute);
+  void clear_vehicle_attribute();
+  const ::city::person::v2::VehicleAttribute& vehicle_attribute() const;
+  PROTOBUF_NODISCARD ::city::person::v2::VehicleAttribute* release_vehicle_attribute();
+  ::city::person::v2::VehicleAttribute* mutable_vehicle_attribute();
+  void set_allocated_vehicle_attribute(::city::person::v2::VehicleAttribute* vehicle_attribute);
   private:
-  const ::city::person::v2::PersonAttribute& _internal_attribute() const;
-  ::city::person::v2::PersonAttribute* _internal_mutable_attribute();
+  const ::city::person::v2::VehicleAttribute& _internal_vehicle_attribute() const;
+  ::city::person::v2::VehicleAttribute* _internal_mutable_vehicle_attribute();
   public:
-  void unsafe_arena_set_allocated_attribute(
-      ::city::person::v2::PersonAttribute* attribute);
-  ::city::person::v2::PersonAttribute* unsafe_arena_release_attribute();
+  void unsafe_arena_set_allocated_vehicle_attribute(
+      ::city::person::v2::VehicleAttribute* vehicle_attribute);
+  ::city::person::v2::VehicleAttribute* unsafe_arena_release_vehicle_attribute();
 
   // int32 person_id = 1 [json_name = "personId"];
   void clear_person_id();
@@ -2813,7 +2813,7 @@ class SetPersonAttributeRequest final :
   void _internal_set_person_id(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:city.person.v2.SetPersonAttributeRequest)
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetPersonVehicleAttributeRequest)
  private:
   class _Internal;
 
@@ -2821,7 +2821,7 @@ class SetPersonAttributeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::city::person::v2::PersonAttribute* attribute_;
+    ::city::person::v2::VehicleAttribute* vehicle_attribute_;
     int32_t person_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2830,23 +2830,23 @@ class SetPersonAttributeRequest final :
 };
 // -------------------------------------------------------------------
 
-class SetPersonAttributeResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.SetPersonAttributeResponse) */ {
+class SetPersonVehicleAttributeResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.SetPersonVehicleAttributeResponse) */ {
  public:
-  inline SetPersonAttributeResponse() : SetPersonAttributeResponse(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR SetPersonAttributeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline SetPersonVehicleAttributeResponse() : SetPersonVehicleAttributeResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetPersonVehicleAttributeResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  SetPersonAttributeResponse(const SetPersonAttributeResponse& from);
-  SetPersonAttributeResponse(SetPersonAttributeResponse&& from) noexcept
-    : SetPersonAttributeResponse() {
+  SetPersonVehicleAttributeResponse(const SetPersonVehicleAttributeResponse& from);
+  SetPersonVehicleAttributeResponse(SetPersonVehicleAttributeResponse&& from) noexcept
+    : SetPersonVehicleAttributeResponse() {
     *this = ::std::move(from);
   }
 
-  inline SetPersonAttributeResponse& operator=(const SetPersonAttributeResponse& from) {
+  inline SetPersonVehicleAttributeResponse& operator=(const SetPersonVehicleAttributeResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline SetPersonAttributeResponse& operator=(SetPersonAttributeResponse&& from) noexcept {
+  inline SetPersonVehicleAttributeResponse& operator=(SetPersonVehicleAttributeResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -2869,20 +2869,20 @@ class SetPersonAttributeResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const SetPersonAttributeResponse& default_instance() {
+  static const SetPersonVehicleAttributeResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const SetPersonAttributeResponse* internal_default_instance() {
-    return reinterpret_cast<const SetPersonAttributeResponse*>(
-               &_SetPersonAttributeResponse_default_instance_);
+  static inline const SetPersonVehicleAttributeResponse* internal_default_instance() {
+    return reinterpret_cast<const SetPersonVehicleAttributeResponse*>(
+               &_SetPersonVehicleAttributeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     17;
 
-  friend void swap(SetPersonAttributeResponse& a, SetPersonAttributeResponse& b) {
+  friend void swap(SetPersonVehicleAttributeResponse& a, SetPersonVehicleAttributeResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(SetPersonAttributeResponse* other) {
+  inline void Swap(SetPersonVehicleAttributeResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -2895,7 +2895,7 @@ class SetPersonAttributeResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(SetPersonAttributeResponse* other) {
+  void UnsafeArenaSwap(SetPersonVehicleAttributeResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2903,15 +2903,15 @@ class SetPersonAttributeResponse final :
 
   // implements Message ----------------------------------------------
 
-  SetPersonAttributeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<SetPersonAttributeResponse>(arena);
+  SetPersonVehicleAttributeResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetPersonVehicleAttributeResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const SetPersonAttributeResponse& from) {
+  inline void CopyFrom(const SetPersonVehicleAttributeResponse& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const SetPersonAttributeResponse& from) {
+  void MergeFrom(const SetPersonVehicleAttributeResponse& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
@@ -2919,10 +2919,10 @@ class SetPersonAttributeResponse final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.person.v2.SetPersonAttributeResponse";
+    return "city.person.v2.SetPersonVehicleAttributeResponse";
   }
   protected:
-  explicit SetPersonAttributeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit SetPersonVehicleAttributeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -2935,7 +2935,7 @@ class SetPersonAttributeResponse final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:city.person.v2.SetPersonAttributeResponse)
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetPersonVehicleAttributeResponse)
  private:
   class _Internal;
 
@@ -7377,61 +7377,61 @@ inline void ResetPersonPositionRequest::set_allocated_position(::city::geo::v2::
 
 // -------------------------------------------------------------------
 
-// SetPersonAttributeRequest
+// SetPersonVehicleAttributeRequest
 
 // int32 person_id = 1 [json_name = "personId"];
-inline void SetPersonAttributeRequest::clear_person_id() {
+inline void SetPersonVehicleAttributeRequest::clear_person_id() {
   _impl_.person_id_ = 0;
 }
-inline int32_t SetPersonAttributeRequest::_internal_person_id() const {
+inline int32_t SetPersonVehicleAttributeRequest::_internal_person_id() const {
   return _impl_.person_id_;
 }
-inline int32_t SetPersonAttributeRequest::person_id() const {
-  // @@protoc_insertion_point(field_get:city.person.v2.SetPersonAttributeRequest.person_id)
+inline int32_t SetPersonVehicleAttributeRequest::person_id() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetPersonVehicleAttributeRequest.person_id)
   return _internal_person_id();
 }
-inline void SetPersonAttributeRequest::_internal_set_person_id(int32_t value) {
+inline void SetPersonVehicleAttributeRequest::_internal_set_person_id(int32_t value) {
   
   _impl_.person_id_ = value;
 }
-inline void SetPersonAttributeRequest::set_person_id(int32_t value) {
+inline void SetPersonVehicleAttributeRequest::set_person_id(int32_t value) {
   _internal_set_person_id(value);
-  // @@protoc_insertion_point(field_set:city.person.v2.SetPersonAttributeRequest.person_id)
+  // @@protoc_insertion_point(field_set:city.person.v2.SetPersonVehicleAttributeRequest.person_id)
 }
 
-// .city.person.v2.PersonAttribute attribute = 2 [json_name = "attribute"];
-inline bool SetPersonAttributeRequest::_internal_has_attribute() const {
-  return this != internal_default_instance() && _impl_.attribute_ != nullptr;
+// .city.person.v2.VehicleAttribute vehicle_attribute = 2 [json_name = "vehicleAttribute"];
+inline bool SetPersonVehicleAttributeRequest::_internal_has_vehicle_attribute() const {
+  return this != internal_default_instance() && _impl_.vehicle_attribute_ != nullptr;
 }
-inline bool SetPersonAttributeRequest::has_attribute() const {
-  return _internal_has_attribute();
+inline bool SetPersonVehicleAttributeRequest::has_vehicle_attribute() const {
+  return _internal_has_vehicle_attribute();
 }
-inline const ::city::person::v2::PersonAttribute& SetPersonAttributeRequest::_internal_attribute() const {
-  const ::city::person::v2::PersonAttribute* p = _impl_.attribute_;
-  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v2::PersonAttribute&>(
-      ::city::person::v2::_PersonAttribute_default_instance_);
+inline const ::city::person::v2::VehicleAttribute& SetPersonVehicleAttributeRequest::_internal_vehicle_attribute() const {
+  const ::city::person::v2::VehicleAttribute* p = _impl_.vehicle_attribute_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v2::VehicleAttribute&>(
+      ::city::person::v2::_VehicleAttribute_default_instance_);
 }
-inline const ::city::person::v2::PersonAttribute& SetPersonAttributeRequest::attribute() const {
-  // @@protoc_insertion_point(field_get:city.person.v2.SetPersonAttributeRequest.attribute)
-  return _internal_attribute();
+inline const ::city::person::v2::VehicleAttribute& SetPersonVehicleAttributeRequest::vehicle_attribute() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetPersonVehicleAttributeRequest.vehicle_attribute)
+  return _internal_vehicle_attribute();
 }
-inline void SetPersonAttributeRequest::unsafe_arena_set_allocated_attribute(
-    ::city::person::v2::PersonAttribute* attribute) {
+inline void SetPersonVehicleAttributeRequest::unsafe_arena_set_allocated_vehicle_attribute(
+    ::city::person::v2::VehicleAttribute* vehicle_attribute) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.attribute_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.vehicle_attribute_);
   }
-  _impl_.attribute_ = attribute;
-  if (attribute) {
+  _impl_.vehicle_attribute_ = vehicle_attribute;
+  if (vehicle_attribute) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.SetPersonAttributeRequest.attribute)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.SetPersonVehicleAttributeRequest.vehicle_attribute)
 }
-inline ::city::person::v2::PersonAttribute* SetPersonAttributeRequest::release_attribute() {
+inline ::city::person::v2::VehicleAttribute* SetPersonVehicleAttributeRequest::release_vehicle_attribute() {
   
-  ::city::person::v2::PersonAttribute* temp = _impl_.attribute_;
-  _impl_.attribute_ = nullptr;
+  ::city::person::v2::VehicleAttribute* temp = _impl_.vehicle_attribute_;
+  _impl_.vehicle_attribute_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -7443,50 +7443,50 @@ inline ::city::person::v2::PersonAttribute* SetPersonAttributeRequest::release_a
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::city::person::v2::PersonAttribute* SetPersonAttributeRequest::unsafe_arena_release_attribute() {
-  // @@protoc_insertion_point(field_release:city.person.v2.SetPersonAttributeRequest.attribute)
+inline ::city::person::v2::VehicleAttribute* SetPersonVehicleAttributeRequest::unsafe_arena_release_vehicle_attribute() {
+  // @@protoc_insertion_point(field_release:city.person.v2.SetPersonVehicleAttributeRequest.vehicle_attribute)
   
-  ::city::person::v2::PersonAttribute* temp = _impl_.attribute_;
-  _impl_.attribute_ = nullptr;
+  ::city::person::v2::VehicleAttribute* temp = _impl_.vehicle_attribute_;
+  _impl_.vehicle_attribute_ = nullptr;
   return temp;
 }
-inline ::city::person::v2::PersonAttribute* SetPersonAttributeRequest::_internal_mutable_attribute() {
+inline ::city::person::v2::VehicleAttribute* SetPersonVehicleAttributeRequest::_internal_mutable_vehicle_attribute() {
   
-  if (_impl_.attribute_ == nullptr) {
-    auto* p = CreateMaybeMessage<::city::person::v2::PersonAttribute>(GetArenaForAllocation());
-    _impl_.attribute_ = p;
+  if (_impl_.vehicle_attribute_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::person::v2::VehicleAttribute>(GetArenaForAllocation());
+    _impl_.vehicle_attribute_ = p;
   }
-  return _impl_.attribute_;
+  return _impl_.vehicle_attribute_;
 }
-inline ::city::person::v2::PersonAttribute* SetPersonAttributeRequest::mutable_attribute() {
-  ::city::person::v2::PersonAttribute* _msg = _internal_mutable_attribute();
-  // @@protoc_insertion_point(field_mutable:city.person.v2.SetPersonAttributeRequest.attribute)
+inline ::city::person::v2::VehicleAttribute* SetPersonVehicleAttributeRequest::mutable_vehicle_attribute() {
+  ::city::person::v2::VehicleAttribute* _msg = _internal_mutable_vehicle_attribute();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.SetPersonVehicleAttributeRequest.vehicle_attribute)
   return _msg;
 }
-inline void SetPersonAttributeRequest::set_allocated_attribute(::city::person::v2::PersonAttribute* attribute) {
+inline void SetPersonVehicleAttributeRequest::set_allocated_vehicle_attribute(::city::person::v2::VehicleAttribute* vehicle_attribute) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.attribute_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.vehicle_attribute_);
   }
-  if (attribute) {
+  if (vehicle_attribute) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(attribute));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vehicle_attribute));
     if (message_arena != submessage_arena) {
-      attribute = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, attribute, submessage_arena);
+      vehicle_attribute = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, vehicle_attribute, submessage_arena);
     }
     
   } else {
     
   }
-  _impl_.attribute_ = attribute;
-  // @@protoc_insertion_point(field_set_allocated:city.person.v2.SetPersonAttributeRequest.attribute)
+  _impl_.vehicle_attribute_ = vehicle_attribute;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.SetPersonVehicleAttributeRequest.vehicle_attribute)
 }
 
 // -------------------------------------------------------------------
 
-// SetPersonAttributeResponse
+// SetPersonVehicleAttributeResponse
 
 // -------------------------------------------------------------------
 

@@ -808,33 +808,33 @@ func (*ResetPersonPositionResponse) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{15}
 }
 
-// 设置人的属性请求
-// Request for setting person's attribute
-type SetPersonAttributeRequest struct {
+// 设置人的车辆属性请求
+// Request for setting person's vehicle attribute
+type SetPersonVehicleAttributeRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// person id
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
-	// 人的属性
-	// person's attribute
-	Attribute     *PersonAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" bson:"attribute" db:"attribute" yaml:"attribute"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	// 人的车辆属性
+	// person's vehicle attribute
+	VehicleAttribute *VehicleAttribute `protobuf:"bytes,2,opt,name=vehicle_attribute,json=vehicleAttribute,proto3" json:"vehicle_attribute,omitempty" bson:"vehicle_attribute" db:"vehicle_attribute" yaml:"vehicle_attribute"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
-func (x *SetPersonAttributeRequest) Reset() {
-	*x = SetPersonAttributeRequest{}
+func (x *SetPersonVehicleAttributeRequest) Reset() {
+	*x = SetPersonVehicleAttributeRequest{}
 	mi := &file_city_person_v2_person_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *SetPersonAttributeRequest) String() string {
+func (x *SetPersonVehicleAttributeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SetPersonAttributeRequest) ProtoMessage() {}
+func (*SetPersonVehicleAttributeRequest) ProtoMessage() {}
 
-func (x *SetPersonAttributeRequest) ProtoReflect() protoreflect.Message {
+func (x *SetPersonVehicleAttributeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_city_person_v2_person_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -846,47 +846,47 @@ func (x *SetPersonAttributeRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SetPersonAttributeRequest.ProtoReflect.Descriptor instead.
-func (*SetPersonAttributeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use SetPersonVehicleAttributeRequest.ProtoReflect.Descriptor instead.
+func (*SetPersonVehicleAttributeRequest) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *SetPersonAttributeRequest) GetPersonId() int32 {
+func (x *SetPersonVehicleAttributeRequest) GetPersonId() int32 {
 	if x != nil {
 		return x.PersonId
 	}
 	return 0
 }
 
-func (x *SetPersonAttributeRequest) GetAttribute() *PersonAttribute {
+func (x *SetPersonVehicleAttributeRequest) GetVehicleAttribute() *VehicleAttribute {
 	if x != nil {
-		return x.Attribute
+		return x.VehicleAttribute
 	}
 	return nil
 }
 
-// 设置人的属性响应
-// Response of setting person's attribute
-type SetPersonAttributeResponse struct {
+// 设置人的车辆属性响应
+// Response of setting person's vehicle attribute
+type SetPersonVehicleAttributeResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *SetPersonAttributeResponse) Reset() {
-	*x = SetPersonAttributeResponse{}
+func (x *SetPersonVehicleAttributeResponse) Reset() {
+	*x = SetPersonVehicleAttributeResponse{}
 	mi := &file_city_person_v2_person_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *SetPersonAttributeResponse) String() string {
+func (x *SetPersonVehicleAttributeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SetPersonAttributeResponse) ProtoMessage() {}
+func (*SetPersonVehicleAttributeResponse) ProtoMessage() {}
 
-func (x *SetPersonAttributeResponse) ProtoReflect() protoreflect.Message {
+func (x *SetPersonVehicleAttributeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_city_person_v2_person_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -898,8 +898,8 @@ func (x *SetPersonAttributeResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SetPersonAttributeResponse.ProtoReflect.Descriptor instead.
-func (*SetPersonAttributeResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use SetPersonVehicleAttributeResponse.ProtoReflect.Descriptor instead.
+func (*SetPersonVehicleAttributeResponse) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{17}
 }
 
@@ -2199,11 +2199,11 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"\x1aResetPersonPositionRequest\x12\x1b\n" +
 	"\tperson_id\x18\x01 \x01(\x05R\bpersonId\x121\n" +
 	"\bposition\x18\x02 \x01(\v2\x15.city.geo.v2.PositionR\bposition\"\x1d\n" +
-	"\x1bResetPersonPositionResponse\"w\n" +
-	"\x19SetPersonAttributeRequest\x12\x1b\n" +
-	"\tperson_id\x18\x01 \x01(\x05R\bpersonId\x12=\n" +
-	"\tattribute\x18\x02 \x01(\v2\x1f.city.person.v2.PersonAttributeR\tattribute\"\x1c\n" +
-	"\x1aSetPersonAttributeResponse\"m\n" +
+	"\x1bResetPersonPositionResponse\"\x8e\x01\n" +
+	" SetPersonVehicleAttributeRequest\x12\x1b\n" +
+	"\tperson_id\x18\x01 \x01(\x05R\bpersonId\x12M\n" +
+	"\x11vehicle_attribute\x18\x02 \x01(\v2 .city.person.v2.VehicleAttributeR\x10vehicleAttribute\"#\n" +
+	"!SetPersonVehicleAttributeResponse\"m\n" +
 	"\x1eSetControlledVehicleIDsRequest\x12\x1f\n" +
 	"\vvehicle_ids\x18\x01 \x03(\x05R\n" +
 	"vehicleIds\x12*\n" +
@@ -2267,7 +2267,7 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"\x15passing_tl_total_time\x18\x11 \x01(\x01R\x12passingTlTotalTime\x123\n" +
 	"\x16passing_tl_total_count\x18\x12 \x01(\x05R\x13passingTlTotalCount\x12-\n" +
 	"\x13passing_tl_avg_time\x18\x13 \x01(\x01R\x10passingTlAvgTime\x12C\n" +
-	"\x1enum_completed_pedestrian_trips\x18\x14 \x01(\x05R\x1bnumCompletedPedestrianTrips2\xbb\x13\n" +
+	"\x1enum_completed_pedestrian_trips\x18\x14 \x01(\x05R\x1bnumCompletedPedestrianTrips2\xd1\x13\n" +
 	"\rPersonService\x12P\n" +
 	"\tGetPerson\x12 .city.person.v2.GetPersonRequest\x1a!.city.person.v2.GetPersonResponse\x12P\n" +
 	"\tAddPerson\x12 .city.person.v2.AddPersonRequest\x1a!.city.person.v2.AddPersonResponse\x12V\n" +
@@ -2277,8 +2277,8 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"\x16GetPersonByLongLatBBox\x12-.city.person.v2.GetPersonByLongLatBBoxRequest\x1a..city.person.v2.GetPersonByLongLatBBoxResponse\x12_\n" +
 	"\x0eGetAllVehicles\x12%.city.person.v2.GetAllVehiclesRequest\x1a&.city.person.v2.GetAllVehiclesResponse\x12h\n" +
 	"\x11GetAllPedestrians\x12(.city.person.v2.GetAllPedestriansRequest\x1a).city.person.v2.GetAllPedestriansResponse\x12n\n" +
-	"\x13ResetPersonPosition\x12*.city.person.v2.ResetPersonPositionRequest\x1a+.city.person.v2.ResetPersonPositionResponse\x12k\n" +
-	"\x12SetPersonAttribute\x12).city.person.v2.SetPersonAttributeRequest\x1a*.city.person.v2.SetPersonAttributeResponse\x12z\n" +
+	"\x13ResetPersonPosition\x12*.city.person.v2.ResetPersonPositionRequest\x1a+.city.person.v2.ResetPersonPositionResponse\x12\x80\x01\n" +
+	"\x19SetPersonVehicleAttribute\x120.city.person.v2.SetPersonVehicleAttributeRequest\x1a1.city.person.v2.SetPersonVehicleAttributeResponse\x12z\n" +
 	"\x17SetControlledVehicleIDs\x12..city.person.v2.SetControlledVehicleIDsRequest\x1a/.city.person.v2.SetControlledVehicleIDsResponse\x12\x83\x01\n" +
 	"\x1aFetchControlledVehicleEnvs\x121.city.person.v2.FetchControlledVehicleEnvsRequest\x1a2.city.person.v2.FetchControlledVehicleEnvsResponse\x12\x86\x01\n" +
 	"\x1bSetControlledVehicleActions\x122.city.person.v2.SetControlledVehicleActionsRequest\x1a3.city.person.v2.SetControlledVehicleActionsResponse\x12q\n" +
@@ -2323,8 +2323,8 @@ var file_city_person_v2_person_service_proto_goTypes = []any{
 	(*GetAllPedestriansResponse)(nil),                    // 13: city.person.v2.GetAllPedestriansResponse
 	(*ResetPersonPositionRequest)(nil),                   // 14: city.person.v2.ResetPersonPositionRequest
 	(*ResetPersonPositionResponse)(nil),                  // 15: city.person.v2.ResetPersonPositionResponse
-	(*SetPersonAttributeRequest)(nil),                    // 16: city.person.v2.SetPersonAttributeRequest
-	(*SetPersonAttributeResponse)(nil),                   // 17: city.person.v2.SetPersonAttributeResponse
+	(*SetPersonVehicleAttributeRequest)(nil),             // 16: city.person.v2.SetPersonVehicleAttributeRequest
+	(*SetPersonVehicleAttributeResponse)(nil),            // 17: city.person.v2.SetPersonVehicleAttributeResponse
 	(*SetControlledVehicleIDsRequest)(nil),               // 18: city.person.v2.SetControlledVehicleIDsRequest
 	(*SetControlledVehicleIDsResponse)(nil),              // 19: city.person.v2.SetControlledVehicleIDsResponse
 	(*FetchControlledVehicleEnvsRequest)(nil),            // 20: city.person.v2.FetchControlledVehicleEnvsRequest
@@ -2356,7 +2356,7 @@ var file_city_person_v2_person_service_proto_goTypes = []any{
 	(*v21.LongLatBBox)(nil),                              // 46: city.geo.v2.LongLatBBox
 	(*VehicleRuntime)(nil),                               // 47: city.person.v2.VehicleRuntime
 	(*v21.Position)(nil),                                 // 48: city.geo.v2.Position
-	(*PersonAttribute)(nil),                              // 49: city.person.v2.PersonAttribute
+	(*VehicleAttribute)(nil),                             // 49: city.person.v2.VehicleAttribute
 	(*VehicleEnv)(nil),                                   // 50: city.person.v2.VehicleEnv
 	(*VehicleAction)(nil),                                // 51: city.person.v2.VehicleAction
 	(*VehicleRouteAction)(nil),                           // 52: city.person.v2.VehicleRouteAction
@@ -2378,7 +2378,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	47, // 8: city.person.v2.GetAllVehiclesResponse.vehicles:type_name -> city.person.v2.VehicleRuntime
 	42, // 9: city.person.v2.GetAllPedestriansResponse.pedestrians:type_name -> city.person.v2.PersonRuntime
 	48, // 10: city.person.v2.ResetPersonPositionRequest.position:type_name -> city.geo.v2.Position
-	49, // 11: city.person.v2.SetPersonAttributeRequest.attribute:type_name -> city.person.v2.PersonAttribute
+	49, // 11: city.person.v2.SetPersonVehicleAttributeRequest.vehicle_attribute:type_name -> city.person.v2.VehicleAttribute
 	50, // 12: city.person.v2.FetchControlledVehicleEnvsResponse.vehicle_envs:type_name -> city.person.v2.VehicleEnv
 	50, // 13: city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs:type_name -> city.person.v2.VehicleEnv
 	51, // 14: city.person.v2.SetControlledVehicleActionsRequest.vehicle_actions:type_name -> city.person.v2.VehicleAction
@@ -2397,7 +2397,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	10, // 27: city.person.v2.PersonService.GetAllVehicles:input_type -> city.person.v2.GetAllVehiclesRequest
 	12, // 28: city.person.v2.PersonService.GetAllPedestrians:input_type -> city.person.v2.GetAllPedestriansRequest
 	14, // 29: city.person.v2.PersonService.ResetPersonPosition:input_type -> city.person.v2.ResetPersonPositionRequest
-	16, // 30: city.person.v2.PersonService.SetPersonAttribute:input_type -> city.person.v2.SetPersonAttributeRequest
+	16, // 30: city.person.v2.PersonService.SetPersonVehicleAttribute:input_type -> city.person.v2.SetPersonVehicleAttributeRequest
 	18, // 31: city.person.v2.PersonService.SetControlledVehicleIDs:input_type -> city.person.v2.SetControlledVehicleIDsRequest
 	20, // 32: city.person.v2.PersonService.FetchControlledVehicleEnvs:input_type -> city.person.v2.FetchControlledVehicleEnvsRequest
 	22, // 33: city.person.v2.PersonService.SetControlledVehicleActions:input_type -> city.person.v2.SetControlledVehicleActionsRequest
@@ -2418,7 +2418,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	11, // 48: city.person.v2.PersonService.GetAllVehicles:output_type -> city.person.v2.GetAllVehiclesResponse
 	13, // 49: city.person.v2.PersonService.GetAllPedestrians:output_type -> city.person.v2.GetAllPedestriansResponse
 	15, // 50: city.person.v2.PersonService.ResetPersonPosition:output_type -> city.person.v2.ResetPersonPositionResponse
-	17, // 51: city.person.v2.PersonService.SetPersonAttribute:output_type -> city.person.v2.SetPersonAttributeResponse
+	17, // 51: city.person.v2.PersonService.SetPersonVehicleAttribute:output_type -> city.person.v2.SetPersonVehicleAttributeResponse
 	19, // 52: city.person.v2.PersonService.SetControlledVehicleIDs:output_type -> city.person.v2.SetControlledVehicleIDsResponse
 	21, // 53: city.person.v2.PersonService.FetchControlledVehicleEnvs:output_type -> city.person.v2.FetchControlledVehicleEnvsResponse
 	23, // 54: city.person.v2.PersonService.SetControlledVehicleActions:output_type -> city.person.v2.SetControlledVehicleActionsResponse

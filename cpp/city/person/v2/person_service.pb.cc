@@ -232,31 +232,31 @@ struct ResetPersonPositionResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResetPersonPositionResponseDefaultTypeInternal _ResetPersonPositionResponse_default_instance_;
-PROTOBUF_CONSTEXPR SetPersonAttributeRequest::SetPersonAttributeRequest(
+PROTOBUF_CONSTEXPR SetPersonVehicleAttributeRequest::SetPersonVehicleAttributeRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.attribute_)*/nullptr
+    /*decltype(_impl_.vehicle_attribute_)*/nullptr
   , /*decltype(_impl_.person_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct SetPersonAttributeRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetPersonAttributeRequestDefaultTypeInternal()
+struct SetPersonVehicleAttributeRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetPersonVehicleAttributeRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetPersonAttributeRequestDefaultTypeInternal() {}
+  ~SetPersonVehicleAttributeRequestDefaultTypeInternal() {}
   union {
-    SetPersonAttributeRequest _instance;
+    SetPersonVehicleAttributeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetPersonAttributeRequestDefaultTypeInternal _SetPersonAttributeRequest_default_instance_;
-PROTOBUF_CONSTEXPR SetPersonAttributeResponse::SetPersonAttributeResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetPersonVehicleAttributeRequestDefaultTypeInternal _SetPersonVehicleAttributeRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetPersonVehicleAttributeResponse::SetPersonVehicleAttributeResponse(
     ::_pbi::ConstantInitialized) {}
-struct SetPersonAttributeResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetPersonAttributeResponseDefaultTypeInternal()
+struct SetPersonVehicleAttributeResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetPersonVehicleAttributeResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetPersonAttributeResponseDefaultTypeInternal() {}
+  ~SetPersonVehicleAttributeResponseDefaultTypeInternal() {}
   union {
-    SetPersonAttributeResponse _instance;
+    SetPersonVehicleAttributeResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetPersonAttributeResponseDefaultTypeInternal _SetPersonAttributeResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetPersonVehicleAttributeResponseDefaultTypeInternal _SetPersonVehicleAttributeResponse_default_instance_;
 PROTOBUF_CONSTEXPR SetControlledVehicleIDsRequest::SetControlledVehicleIDsRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.vehicle_ids_)*/{}
@@ -694,15 +694,15 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonAttributeRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonVehicleAttributeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonAttributeRequest, _impl_.person_id_),
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonAttributeRequest, _impl_.attribute_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonVehicleAttributeRequest, _impl_.person_id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonVehicleAttributeRequest, _impl_.vehicle_attribute_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonAttributeResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetPersonVehicleAttributeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
@@ -903,8 +903,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 93, -1, -1, sizeof(::city::person::v2::GetAllPedestriansResponse)},
   { 100, -1, -1, sizeof(::city::person::v2::ResetPersonPositionRequest)},
   { 108, -1, -1, sizeof(::city::person::v2::ResetPersonPositionResponse)},
-  { 114, -1, -1, sizeof(::city::person::v2::SetPersonAttributeRequest)},
-  { 122, -1, -1, sizeof(::city::person::v2::SetPersonAttributeResponse)},
+  { 114, -1, -1, sizeof(::city::person::v2::SetPersonVehicleAttributeRequest)},
+  { 122, -1, -1, sizeof(::city::person::v2::SetPersonVehicleAttributeResponse)},
   { 128, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsRequest)},
   { 136, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsResponse)},
   { 142, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsRequest)},
@@ -948,8 +948,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_GetAllPedestriansResponse_default_instance_._instance,
   &::city::person::v2::_ResetPersonPositionRequest_default_instance_._instance,
   &::city::person::v2::_ResetPersonPositionResponse_default_instance_._instance,
-  &::city::person::v2::_SetPersonAttributeRequest_default_instance_._instance,
-  &::city::person::v2::_SetPersonAttributeResponse_default_instance_._instance,
+  &::city::person::v2::_SetPersonVehicleAttributeRequest_default_instance_._instance,
+  &::city::person::v2::_SetPersonVehicleAttributeResponse_default_instance_._instance,
   &::city::person::v2::_SetControlledVehicleIDsRequest_default_instance_._instance,
   &::city::person::v2::_SetControlledVehicleIDsResponse_default_instance_._instance,
   &::city::person::v2::_FetchControlledVehicleEnvsRequest_default_instance_._instance,
@@ -1015,146 +1015,147 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "etPersonPositionRequest\022\033\n\tperson_id\030\001 \001"
   "(\005R\010personId\0221\n\010position\030\002 \001(\0132\025.city.ge"
   "o.v2.PositionR\010position\"\035\n\033ResetPersonPo"
-  "sitionResponse\"w\n\031SetPersonAttributeRequ"
-  "est\022\033\n\tperson_id\030\001 \001(\005R\010personId\022=\n\tattr"
-  "ibute\030\002 \001(\0132\037.city.person.v2.PersonAttri"
-  "buteR\tattribute\"\034\n\032SetPersonAttributeRes"
-  "ponse\"m\n\036SetControlledVehicleIDsRequest\022"
-  "\037\n\013vehicle_ids\030\001 \003(\005R\nvehicleIds\022*\n\021rout"
-  "e_vehicle_ids\030\002 \003(\005R\017routeVehicleIds\"!\n\037"
-  "SetControlledVehicleIDsResponse\"#\n!Fetch"
-  "ControlledVehicleEnvsRequest\"\255\001\n\"FetchCo"
-  "ntrolledVehicleEnvsResponse\022=\n\014vehicle_e"
-  "nvs\030\001 \003(\0132\032.city.person.v2.VehicleEnvR\013v"
-  "ehicleEnvs\022H\n\022route_vehicle_envs\030\002 \003(\0132\032"
-  ".city.person.v2.VehicleEnvR\020routeVehicle"
-  "Envs\"\273\001\n\"SetControlledVehicleActionsRequ"
-  "est\022F\n\017vehicle_actions\030\001 \003(\0132\035.city.pers"
-  "on.v2.VehicleActionR\016vehicleActions\022M\n\020v"
-  "ehicle_journeys\030\002 \003(\0132\".city.person.v2.V"
-  "ehicleRouteActionR\017vehicleJourneys\"%\n#Se"
-  "tControlledVehicleActionsResponse\"8\n\033Set"
-  "ControlledTaxiIDsRequest\022\031\n\010taxi_ids\030\001 \003"
-  "(\005R\007taxiIds\"\036\n\034SetControlledTaxiIDsRespo"
-  "nse\"\025\n\023GetAllOrdersRequest\"Y\n\024GetAllOrde"
-  "rsResponse\022A\n\013order_infos\030\001 \003(\0132 .city.p"
-  "erson.v2.RequestOrderInfoR\norderInfos\"h\n"
-  " SetControlledTaxiToOrdersRequest\022D\n\013ord"
-  "er_plans\030\001 \003(\0132#.city.person.v2.OrderAll"
-  "ocationPlanR\norderPlans\"#\n!SetControlled"
-  "TaxiToOrdersResponse\"H\n\037SetControlledPed"
-  "estriansRequest\022%\n\016pedestrian_ids\030\001 \003(\005R"
-  "\rpedestrianIds\"\"\n SetControlledPedestria"
-  "nsResponse\"\'\n%FetchControlledPedestrians"
-  "EnvsRequest\"p\n&FetchControlledPedestrian"
-  "sEnvsResponse\022F\n\017pedestrian_envs\030\001 \003(\0132\035"
-  ".city.person.v2.PedestrianEnvR\016pedestria"
-  "nEnvs\"y\n&SetControlledPedestriansActions"
-  "Request\022O\n\022pedestrian_actions\030\001 \003(\0132 .ci"
-  "ty.person.v2.PedestrianActionR\021pedestria"
-  "nActions\")\n\'SetControlledPedestriansActi"
-  "onsResponse\"-\n+GetControlledTaxiOrderAll"
-  "ocationPlanRequest\"}\n,GetControlledTaxiO"
-  "rderAllocationPlanResponse\022M\n\021order_allo"
-  "cations\030\001 \003(\0132 .city.person.v2.OrderAllo"
-  "cationsR\020orderAllocations\"|\n+SetControll"
-  "edTaxiOrderAllocationPlanRequest\022M\n\021orde"
-  "r_allocations\030\001 \003(\0132 .city.person.v2.Ord"
-  "erAllocationsR\020orderAllocations\".\n,SetCo"
-  "ntrolledTaxiOrderAllocationPlanResponse\""
-  "\034\n\032GetGlobalStatisticsRequest\"\313\007\n\033GetGlo"
-  "balStatisticsResponse\022.\n\023num_completed_t"
-  "rips\030\001 \001(\005R\021numCompletedTrips\022=\n\033complet"
-  "ed_total_travel_time\030\002 \001(\001R\030completedTot"
-  "alTravelTime\022E\n\037completed_total_travel_d"
-  "istance\030\003 \001(\001R\034completedTotalTravelDista"
-  "nce\0229\n\031completed_avg_travel_time\030\004 \001(\001R\026"
-  "completedAvgTravelTime\022&\n\017completed_avg_"
-  "v\030\005 \001(\001R\rcompletedAvgV\0229\n\031running_total_"
-  "travel_time\030\006 \001(\001R\026runningTotalTravelTim"
-  "e\022A\n\035running_total_travel_distance\030\007 \001(\001"
-  "R\032runningTotalTravelDistance\022\"\n\rrunning_"
-  "avg_v\030\010 \001(\001R\013runningAvgV\022\023\n\005avg_v\030\t \001(\001R"
-  "\004avgV\022!\n\014num_vehicles\030\n \001(\005R\013numVehicles"
-  "\022\'\n\017num_pedestrians\030\013 \001(\005R\016numPedestrian"
-  "s\022%\n\016num_passengers\030\014 \001(\005R\rnumPassengers"
-  "\022\037\n\013num_subways\030\r \001(\005R\nnumSubways\022\033\n\tnum"
-  "_taxis\030\016 \001(\005R\010numTaxis\022\035\n\nnum_crowds\030\017 \001"
-  "(\005R\tnumCrowds\0220\n\024num_queuing_vehicles\030\020 "
-  "\001(\005R\022numQueuingVehicles\0221\n\025passing_tl_to"
-  "tal_time\030\021 \001(\001R\022passingTlTotalTime\0223\n\026pa"
-  "ssing_tl_total_count\030\022 \001(\005R\023passingTlTot"
-  "alCount\022-\n\023passing_tl_avg_time\030\023 \001(\001R\020pa"
-  "ssingTlAvgTime\022C\n\036num_completed_pedestri"
-  "an_trips\030\024 \001(\005R\033numCompletedPedestrianTr"
-  "ips2\273\023\n\rPersonService\022P\n\tGetPerson\022 .cit"
-  "y.person.v2.GetPersonRequest\032!.city.pers"
-  "on.v2.GetPersonResponse\022P\n\tAddPerson\022 .c"
-  "ity.person.v2.AddPersonRequest\032!.city.pe"
-  "rson.v2.AddPersonResponse\022V\n\013SetSchedule"
-  "\022\".city.person.v2.SetScheduleRequest\032#.c"
-  "ity.person.v2.SetScheduleResponse\022S\n\nGet"
-  "Persons\022!.city.person.v2.GetPersonsReque"
-  "st\032\".city.person.v2.GetPersonsResponse\022w"
-  "\n\026GetPersonByLongLatBBox\022-.city.person.v"
-  "2.GetPersonByLongLatBBoxRequest\032..city.p"
-  "erson.v2.GetPersonByLongLatBBoxResponse\022"
-  "_\n\016GetAllVehicles\022%.city.person.v2.GetAl"
-  "lVehiclesRequest\032&.city.person.v2.GetAll"
-  "VehiclesResponse\022h\n\021GetAllPedestrians\022(."
-  "city.person.v2.GetAllPedestriansRequest\032"
-  ").city.person.v2.GetAllPedestriansRespon"
-  "se\022n\n\023ResetPersonPosition\022*.city.person."
-  "v2.ResetPersonPositionRequest\032+.city.per"
-  "son.v2.ResetPersonPositionResponse\022k\n\022Se"
-  "tPersonAttribute\022).city.person.v2.SetPer"
-  "sonAttributeRequest\032*.city.person.v2.Set"
-  "PersonAttributeResponse\022z\n\027SetControlled"
-  "VehicleIDs\022..city.person.v2.SetControlle"
-  "dVehicleIDsRequest\032/.city.person.v2.SetC"
-  "ontrolledVehicleIDsResponse\022\203\001\n\032FetchCon"
-  "trolledVehicleEnvs\0221.city.person.v2.Fetc"
-  "hControlledVehicleEnvsRequest\0322.city.per"
-  "son.v2.FetchControlledVehicleEnvsRespons"
-  "e\022\206\001\n\033SetControlledVehicleActions\0222.city"
-  ".person.v2.SetControlledVehicleActionsRe"
-  "quest\0323.city.person.v2.SetControlledVehi"
-  "cleActionsResponse\022q\n\024SetControlledTaxiI"
-  "Ds\022+.city.person.v2.SetControlledTaxiIDs"
-  "Request\032,.city.person.v2.SetControlledTa"
-  "xiIDsResponse\022Y\n\014GetAllOrders\022#.city.per"
-  "son.v2.GetAllOrdersRequest\032$.city.person"
-  ".v2.GetAllOrdersResponse\022\200\001\n\031SetControll"
-  "edTaxiToOrders\0220.city.person.v2.SetContr"
-  "olledTaxiToOrdersRequest\0321.city.person.v"
-  "2.SetControlledTaxiToOrdersResponse\022}\n\030S"
-  "etControlledPedestrians\022/.city.person.v2"
-  ".SetControlledPedestriansRequest\0320.city."
-  "person.v2.SetControlledPedestriansRespon"
-  "se\022\217\001\n\036FetchControlledPedestriansEnvs\0225."
-  "city.person.v2.FetchControlledPedestrian"
-  "sEnvsRequest\0326.city.person.v2.FetchContr"
-  "olledPedestriansEnvsResponse\022\222\001\n\037SetCont"
-  "rolledPedestriansActions\0226.city.person.v"
-  "2.SetControlledPedestriansActionsRequest"
-  "\0327.city.person.v2.SetControlledPedestria"
-  "nsActionsResponse\022\241\001\n$GetControlledTaxiO"
-  "rderAllocationPlan\022;.city.person.v2.GetC"
-  "ontrolledTaxiOrderAllocationPlanRequest\032"
-  "<.city.person.v2.GetControlledTaxiOrderA"
-  "llocationPlanResponse\022\241\001\n$SetControlledT"
-  "axiOrderAllocationPlan\022;.city.person.v2."
-  "SetControlledTaxiOrderAllocationPlanRequ"
-  "est\032<.city.person.v2.SetControlledTaxiOr"
-  "derAllocationPlanResponse\022n\n\023GetGlobalSt"
-  "atistics\022*.city.person.v2.GetGlobalStati"
-  "sticsRequest\032+.city.person.v2.GetGlobalS"
-  "tatisticsResponseB\273\001\n\022com.city.person.v2"
-  "B\022PersonServiceProtoP\001Z7git.fiblab.net/s"
-  "im/protos/v2/go/city/person/v2;personv2\242"
-  "\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\V2\342"
-  "\002\032City\\Person\\V2\\GPBMetadata\352\002\020City::Per"
-  "son::V2b\006proto3"
+  "sitionResponse\"\216\001\n SetPersonVehicleAttri"
+  "buteRequest\022\033\n\tperson_id\030\001 \001(\005R\010personId"
+  "\022M\n\021vehicle_attribute\030\002 \001(\0132 .city.perso"
+  "n.v2.VehicleAttributeR\020vehicleAttribute\""
+  "#\n!SetPersonVehicleAttributeResponse\"m\n\036"
+  "SetControlledVehicleIDsRequest\022\037\n\013vehicl"
+  "e_ids\030\001 \003(\005R\nvehicleIds\022*\n\021route_vehicle"
+  "_ids\030\002 \003(\005R\017routeVehicleIds\"!\n\037SetContro"
+  "lledVehicleIDsResponse\"#\n!FetchControlle"
+  "dVehicleEnvsRequest\"\255\001\n\"FetchControlledV"
+  "ehicleEnvsResponse\022=\n\014vehicle_envs\030\001 \003(\013"
+  "2\032.city.person.v2.VehicleEnvR\013vehicleEnv"
+  "s\022H\n\022route_vehicle_envs\030\002 \003(\0132\032.city.per"
+  "son.v2.VehicleEnvR\020routeVehicleEnvs\"\273\001\n\""
+  "SetControlledVehicleActionsRequest\022F\n\017ve"
+  "hicle_actions\030\001 \003(\0132\035.city.person.v2.Veh"
+  "icleActionR\016vehicleActions\022M\n\020vehicle_jo"
+  "urneys\030\002 \003(\0132\".city.person.v2.VehicleRou"
+  "teActionR\017vehicleJourneys\"%\n#SetControll"
+  "edVehicleActionsResponse\"8\n\033SetControlle"
+  "dTaxiIDsRequest\022\031\n\010taxi_ids\030\001 \003(\005R\007taxiI"
+  "ds\"\036\n\034SetControlledTaxiIDsResponse\"\025\n\023Ge"
+  "tAllOrdersRequest\"Y\n\024GetAllOrdersRespons"
+  "e\022A\n\013order_infos\030\001 \003(\0132 .city.person.v2."
+  "RequestOrderInfoR\norderInfos\"h\n SetContr"
+  "olledTaxiToOrdersRequest\022D\n\013order_plans\030"
+  "\001 \003(\0132#.city.person.v2.OrderAllocationPl"
+  "anR\norderPlans\"#\n!SetControlledTaxiToOrd"
+  "ersResponse\"H\n\037SetControlledPedestriansR"
+  "equest\022%\n\016pedestrian_ids\030\001 \003(\005R\rpedestri"
+  "anIds\"\"\n SetControlledPedestriansRespons"
+  "e\"\'\n%FetchControlledPedestriansEnvsReque"
+  "st\"p\n&FetchControlledPedestriansEnvsResp"
+  "onse\022F\n\017pedestrian_envs\030\001 \003(\0132\035.city.per"
+  "son.v2.PedestrianEnvR\016pedestrianEnvs\"y\n&"
+  "SetControlledPedestriansActionsRequest\022O"
+  "\n\022pedestrian_actions\030\001 \003(\0132 .city.person"
+  ".v2.PedestrianActionR\021pedestrianActions\""
+  ")\n\'SetControlledPedestriansActionsRespon"
+  "se\"-\n+GetControlledTaxiOrderAllocationPl"
+  "anRequest\"}\n,GetControlledTaxiOrderAlloc"
+  "ationPlanResponse\022M\n\021order_allocations\030\001"
+  " \003(\0132 .city.person.v2.OrderAllocationsR\020"
+  "orderAllocations\"|\n+SetControlledTaxiOrd"
+  "erAllocationPlanRequest\022M\n\021order_allocat"
+  "ions\030\001 \003(\0132 .city.person.v2.OrderAllocat"
+  "ionsR\020orderAllocations\".\n,SetControlledT"
+  "axiOrderAllocationPlanResponse\"\034\n\032GetGlo"
+  "balStatisticsRequest\"\313\007\n\033GetGlobalStatis"
+  "ticsResponse\022.\n\023num_completed_trips\030\001 \001("
+  "\005R\021numCompletedTrips\022=\n\033completed_total_"
+  "travel_time\030\002 \001(\001R\030completedTotalTravelT"
+  "ime\022E\n\037completed_total_travel_distance\030\003"
+  " \001(\001R\034completedTotalTravelDistance\0229\n\031co"
+  "mpleted_avg_travel_time\030\004 \001(\001R\026completed"
+  "AvgTravelTime\022&\n\017completed_avg_v\030\005 \001(\001R\r"
+  "completedAvgV\0229\n\031running_total_travel_ti"
+  "me\030\006 \001(\001R\026runningTotalTravelTime\022A\n\035runn"
+  "ing_total_travel_distance\030\007 \001(\001R\032running"
+  "TotalTravelDistance\022\"\n\rrunning_avg_v\030\010 \001"
+  "(\001R\013runningAvgV\022\023\n\005avg_v\030\t \001(\001R\004avgV\022!\n\014"
+  "num_vehicles\030\n \001(\005R\013numVehicles\022\'\n\017num_p"
+  "edestrians\030\013 \001(\005R\016numPedestrians\022%\n\016num_"
+  "passengers\030\014 \001(\005R\rnumPassengers\022\037\n\013num_s"
+  "ubways\030\r \001(\005R\nnumSubways\022\033\n\tnum_taxis\030\016 "
+  "\001(\005R\010numTaxis\022\035\n\nnum_crowds\030\017 \001(\005R\tnumCr"
+  "owds\0220\n\024num_queuing_vehicles\030\020 \001(\005R\022numQ"
+  "ueuingVehicles\0221\n\025passing_tl_total_time\030"
+  "\021 \001(\001R\022passingTlTotalTime\0223\n\026passing_tl_"
+  "total_count\030\022 \001(\005R\023passingTlTotalCount\022-"
+  "\n\023passing_tl_avg_time\030\023 \001(\001R\020passingTlAv"
+  "gTime\022C\n\036num_completed_pedestrian_trips\030"
+  "\024 \001(\005R\033numCompletedPedestrianTrips2\321\023\n\rP"
+  "ersonService\022P\n\tGetPerson\022 .city.person."
+  "v2.GetPersonRequest\032!.city.person.v2.Get"
+  "PersonResponse\022P\n\tAddPerson\022 .city.perso"
+  "n.v2.AddPersonRequest\032!.city.person.v2.A"
+  "ddPersonResponse\022V\n\013SetSchedule\022\".city.p"
+  "erson.v2.SetScheduleRequest\032#.city.perso"
+  "n.v2.SetScheduleResponse\022S\n\nGetPersons\022!"
+  ".city.person.v2.GetPersonsRequest\032\".city"
+  ".person.v2.GetPersonsResponse\022w\n\026GetPers"
+  "onByLongLatBBox\022-.city.person.v2.GetPers"
+  "onByLongLatBBoxRequest\032..city.person.v2."
+  "GetPersonByLongLatBBoxResponse\022_\n\016GetAll"
+  "Vehicles\022%.city.person.v2.GetAllVehicles"
+  "Request\032&.city.person.v2.GetAllVehiclesR"
+  "esponse\022h\n\021GetAllPedestrians\022(.city.pers"
+  "on.v2.GetAllPedestriansRequest\032).city.pe"
+  "rson.v2.GetAllPedestriansResponse\022n\n\023Res"
+  "etPersonPosition\022*.city.person.v2.ResetP"
+  "ersonPositionRequest\032+.city.person.v2.Re"
+  "setPersonPositionResponse\022\200\001\n\031SetPersonV"
+  "ehicleAttribute\0220.city.person.v2.SetPers"
+  "onVehicleAttributeRequest\0321.city.person."
+  "v2.SetPersonVehicleAttributeResponse\022z\n\027"
+  "SetControlledVehicleIDs\022..city.person.v2"
+  ".SetControlledVehicleIDsRequest\032/.city.p"
+  "erson.v2.SetControlledVehicleIDsResponse"
+  "\022\203\001\n\032FetchControlledVehicleEnvs\0221.city.p"
+  "erson.v2.FetchControlledVehicleEnvsReque"
+  "st\0322.city.person.v2.FetchControlledVehic"
+  "leEnvsResponse\022\206\001\n\033SetControlledVehicleA"
+  "ctions\0222.city.person.v2.SetControlledVeh"
+  "icleActionsRequest\0323.city.person.v2.SetC"
+  "ontrolledVehicleActionsResponse\022q\n\024SetCo"
+  "ntrolledTaxiIDs\022+.city.person.v2.SetCont"
+  "rolledTaxiIDsRequest\032,.city.person.v2.Se"
+  "tControlledTaxiIDsResponse\022Y\n\014GetAllOrde"
+  "rs\022#.city.person.v2.GetAllOrdersRequest\032"
+  "$.city.person.v2.GetAllOrdersResponse\022\200\001"
+  "\n\031SetControlledTaxiToOrders\0220.city.perso"
+  "n.v2.SetControlledTaxiToOrdersRequest\0321."
+  "city.person.v2.SetControlledTaxiToOrders"
+  "Response\022}\n\030SetControlledPedestrians\022/.c"
+  "ity.person.v2.SetControlledPedestriansRe"
+  "quest\0320.city.person.v2.SetControlledPede"
+  "striansResponse\022\217\001\n\036FetchControlledPedes"
+  "triansEnvs\0225.city.person.v2.FetchControl"
+  "ledPedestriansEnvsRequest\0326.city.person."
+  "v2.FetchControlledPedestriansEnvsRespons"
+  "e\022\222\001\n\037SetControlledPedestriansActions\0226."
+  "city.person.v2.SetControlledPedestriansA"
+  "ctionsRequest\0327.city.person.v2.SetContro"
+  "lledPedestriansActionsResponse\022\241\001\n$GetCo"
+  "ntrolledTaxiOrderAllocationPlan\022;.city.p"
+  "erson.v2.GetControlledTaxiOrderAllocatio"
+  "nPlanRequest\032<.city.person.v2.GetControl"
+  "ledTaxiOrderAllocationPlanResponse\022\241\001\n$S"
+  "etControlledTaxiOrderAllocationPlan\022;.ci"
+  "ty.person.v2.SetControlledTaxiOrderAlloc"
+  "ationPlanRequest\032<.city.person.v2.SetCon"
+  "trolledTaxiOrderAllocationPlanResponse\022n"
+  "\n\023GetGlobalStatistics\022*.city.person.v2.G"
+  "etGlobalStatisticsRequest\032+.city.person."
+  "v2.GetGlobalStatisticsResponseB\273\001\n\022com.c"
+  "ity.person.v2B\022PersonServiceProtoP\001Z7git"
+  ".fiblab.net/sim/protos/v2/go/city/person"
+  "/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016Ci"
+  "ty\\Person\\V2\342\002\032City\\Person\\V2\\GPBMetadat"
+  "a\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[8] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -1168,7 +1169,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 7095, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 7148, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 8, 42,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
@@ -3840,56 +3841,56 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResetPersonPositionResponse::G
 
 // ===================================================================
 
-class SetPersonAttributeRequest::_Internal {
+class SetPersonVehicleAttributeRequest::_Internal {
  public:
-  static const ::city::person::v2::PersonAttribute& attribute(const SetPersonAttributeRequest* msg);
+  static const ::city::person::v2::VehicleAttribute& vehicle_attribute(const SetPersonVehicleAttributeRequest* msg);
 };
 
-const ::city::person::v2::PersonAttribute&
-SetPersonAttributeRequest::_Internal::attribute(const SetPersonAttributeRequest* msg) {
-  return *msg->_impl_.attribute_;
+const ::city::person::v2::VehicleAttribute&
+SetPersonVehicleAttributeRequest::_Internal::vehicle_attribute(const SetPersonVehicleAttributeRequest* msg) {
+  return *msg->_impl_.vehicle_attribute_;
 }
-void SetPersonAttributeRequest::clear_attribute() {
-  if (GetArenaForAllocation() == nullptr && _impl_.attribute_ != nullptr) {
-    delete _impl_.attribute_;
+void SetPersonVehicleAttributeRequest::clear_vehicle_attribute() {
+  if (GetArenaForAllocation() == nullptr && _impl_.vehicle_attribute_ != nullptr) {
+    delete _impl_.vehicle_attribute_;
   }
-  _impl_.attribute_ = nullptr;
+  _impl_.vehicle_attribute_ = nullptr;
 }
-SetPersonAttributeRequest::SetPersonAttributeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+SetPersonVehicleAttributeRequest::SetPersonVehicleAttributeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetPersonAttributeRequest)
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetPersonVehicleAttributeRequest)
 }
-SetPersonAttributeRequest::SetPersonAttributeRequest(const SetPersonAttributeRequest& from)
+SetPersonVehicleAttributeRequest::SetPersonVehicleAttributeRequest(const SetPersonVehicleAttributeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SetPersonAttributeRequest* const _this = this; (void)_this;
+  SetPersonVehicleAttributeRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.attribute_){nullptr}
+      decltype(_impl_.vehicle_attribute_){nullptr}
     , decltype(_impl_.person_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_attribute()) {
-    _this->_impl_.attribute_ = new ::city::person::v2::PersonAttribute(*from._impl_.attribute_);
+  if (from._internal_has_vehicle_attribute()) {
+    _this->_impl_.vehicle_attribute_ = new ::city::person::v2::VehicleAttribute(*from._impl_.vehicle_attribute_);
   }
   _this->_impl_.person_id_ = from._impl_.person_id_;
-  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetPersonAttributeRequest)
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetPersonVehicleAttributeRequest)
 }
 
-inline void SetPersonAttributeRequest::SharedCtor(
+inline void SetPersonVehicleAttributeRequest::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.attribute_){nullptr}
+      decltype(_impl_.vehicle_attribute_){nullptr}
     , decltype(_impl_.person_id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
 
-SetPersonAttributeRequest::~SetPersonAttributeRequest() {
-  // @@protoc_insertion_point(destructor:city.person.v2.SetPersonAttributeRequest)
+SetPersonVehicleAttributeRequest::~SetPersonVehicleAttributeRequest() {
+  // @@protoc_insertion_point(destructor:city.person.v2.SetPersonVehicleAttributeRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -3897,30 +3898,30 @@ SetPersonAttributeRequest::~SetPersonAttributeRequest() {
   SharedDtor();
 }
 
-inline void SetPersonAttributeRequest::SharedDtor() {
+inline void SetPersonVehicleAttributeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.attribute_;
+  if (this != internal_default_instance()) delete _impl_.vehicle_attribute_;
 }
 
-void SetPersonAttributeRequest::SetCachedSize(int size) const {
+void SetPersonVehicleAttributeRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void SetPersonAttributeRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.person.v2.SetPersonAttributeRequest)
+void SetPersonVehicleAttributeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.SetPersonVehicleAttributeRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.attribute_ != nullptr) {
-    delete _impl_.attribute_;
+  if (GetArenaForAllocation() == nullptr && _impl_.vehicle_attribute_ != nullptr) {
+    delete _impl_.vehicle_attribute_;
   }
-  _impl_.attribute_ = nullptr;
+  _impl_.vehicle_attribute_ = nullptr;
   _impl_.person_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetPersonAttributeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* SetPersonVehicleAttributeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -3934,10 +3935,10 @@ const char* SetPersonAttributeRequest::_InternalParse(const char* ptr, ::_pbi::P
         } else
           goto handle_unusual;
         continue;
-      // .city.person.v2.PersonAttribute attribute = 2 [json_name = "attribute"];
+      // .city.person.v2.VehicleAttribute vehicle_attribute = 2 [json_name = "vehicleAttribute"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_attribute(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_vehicle_attribute(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3965,9 +3966,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* SetPersonAttributeRequest::_InternalSerialize(
+uint8_t* SetPersonVehicleAttributeRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.SetPersonAttributeRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.SetPersonVehicleAttributeRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3977,34 +3978,34 @@ uint8_t* SetPersonAttributeRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_person_id(), target);
   }
 
-  // .city.person.v2.PersonAttribute attribute = 2 [json_name = "attribute"];
-  if (this->_internal_has_attribute()) {
+  // .city.person.v2.VehicleAttribute vehicle_attribute = 2 [json_name = "vehicleAttribute"];
+  if (this->_internal_has_vehicle_attribute()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::attribute(this),
-        _Internal::attribute(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(2, _Internal::vehicle_attribute(this),
+        _Internal::vehicle_attribute(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.SetPersonAttributeRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.SetPersonVehicleAttributeRequest)
   return target;
 }
 
-size_t SetPersonAttributeRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.person.v2.SetPersonAttributeRequest)
+size_t SetPersonVehicleAttributeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.SetPersonVehicleAttributeRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.person.v2.PersonAttribute attribute = 2 [json_name = "attribute"];
-  if (this->_internal_has_attribute()) {
+  // .city.person.v2.VehicleAttribute vehicle_attribute = 2 [json_name = "vehicleAttribute"];
+  if (this->_internal_has_vehicle_attribute()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.attribute_);
+        *_impl_.vehicle_attribute_);
   }
 
   // int32 person_id = 1 [json_name = "personId"];
@@ -4015,24 +4016,24 @@ size_t SetPersonAttributeRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetPersonAttributeRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetPersonVehicleAttributeRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SetPersonAttributeRequest::MergeImpl
+    SetPersonVehicleAttributeRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetPersonAttributeRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetPersonVehicleAttributeRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetPersonAttributeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<SetPersonAttributeRequest*>(&to_msg);
-  auto& from = static_cast<const SetPersonAttributeRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.SetPersonAttributeRequest)
+void SetPersonVehicleAttributeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetPersonVehicleAttributeRequest*>(&to_msg);
+  auto& from = static_cast<const SetPersonVehicleAttributeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.SetPersonVehicleAttributeRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_attribute()) {
-    _this->_internal_mutable_attribute()->::city::person::v2::PersonAttribute::MergeFrom(
-        from._internal_attribute());
+  if (from._internal_has_vehicle_attribute()) {
+    _this->_internal_mutable_vehicle_attribute()->::city::person::v2::VehicleAttribute::MergeFrom(
+        from._internal_vehicle_attribute());
   }
   if (from._internal_person_id() != 0) {
     _this->_internal_set_person_id(from._internal_person_id());
@@ -4040,29 +4041,29 @@ void SetPersonAttributeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_m
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void SetPersonAttributeRequest::CopyFrom(const SetPersonAttributeRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.SetPersonAttributeRequest)
+void SetPersonVehicleAttributeRequest::CopyFrom(const SetPersonVehicleAttributeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.SetPersonVehicleAttributeRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SetPersonAttributeRequest::IsInitialized() const {
+bool SetPersonVehicleAttributeRequest::IsInitialized() const {
   return true;
 }
 
-void SetPersonAttributeRequest::InternalSwap(SetPersonAttributeRequest* other) {
+void SetPersonVehicleAttributeRequest::InternalSwap(SetPersonVehicleAttributeRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SetPersonAttributeRequest, _impl_.person_id_)
-      + sizeof(SetPersonAttributeRequest::_impl_.person_id_)
-      - PROTOBUF_FIELD_OFFSET(SetPersonAttributeRequest, _impl_.attribute_)>(
-          reinterpret_cast<char*>(&_impl_.attribute_),
-          reinterpret_cast<char*>(&other->_impl_.attribute_));
+      PROTOBUF_FIELD_OFFSET(SetPersonVehicleAttributeRequest, _impl_.person_id_)
+      + sizeof(SetPersonVehicleAttributeRequest::_impl_.person_id_)
+      - PROTOBUF_FIELD_OFFSET(SetPersonVehicleAttributeRequest, _impl_.vehicle_attribute_)>(
+          reinterpret_cast<char*>(&_impl_.vehicle_attribute_),
+          reinterpret_cast<char*>(&other->_impl_.vehicle_attribute_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetPersonAttributeRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetPersonVehicleAttributeRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[16]);
@@ -4070,31 +4071,31 @@ void SetPersonAttributeRequest::InternalSwap(SetPersonAttributeRequest* other) {
 
 // ===================================================================
 
-class SetPersonAttributeResponse::_Internal {
+class SetPersonVehicleAttributeResponse::_Internal {
  public:
 };
 
-SetPersonAttributeResponse::SetPersonAttributeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+SetPersonVehicleAttributeResponse::SetPersonVehicleAttributeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetPersonAttributeResponse)
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetPersonVehicleAttributeResponse)
 }
-SetPersonAttributeResponse::SetPersonAttributeResponse(const SetPersonAttributeResponse& from)
+SetPersonVehicleAttributeResponse::SetPersonVehicleAttributeResponse(const SetPersonVehicleAttributeResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  SetPersonAttributeResponse* const _this = this; (void)_this;
+  SetPersonVehicleAttributeResponse* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetPersonAttributeResponse)
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetPersonVehicleAttributeResponse)
 }
 
 
 
 
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetPersonAttributeResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetPersonVehicleAttributeResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetPersonAttributeResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetPersonVehicleAttributeResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -4102,7 +4103,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetPersonAttributeResponse::Ge
 
 
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetPersonAttributeResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetPersonVehicleAttributeResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[17]);
@@ -7625,13 +7626,13 @@ template<> PROTOBUF_NOINLINE ::city::person::v2::ResetPersonPositionResponse*
 Arena::CreateMaybeMessage< ::city::person::v2::ResetPersonPositionResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::ResetPersonPositionResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::person::v2::SetPersonAttributeRequest*
-Arena::CreateMaybeMessage< ::city::person::v2::SetPersonAttributeRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::person::v2::SetPersonAttributeRequest >(arena);
+template<> PROTOBUF_NOINLINE ::city::person::v2::SetPersonVehicleAttributeRequest*
+Arena::CreateMaybeMessage< ::city::person::v2::SetPersonVehicleAttributeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::SetPersonVehicleAttributeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::person::v2::SetPersonAttributeResponse*
-Arena::CreateMaybeMessage< ::city::person::v2::SetPersonAttributeResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::person::v2::SetPersonAttributeResponse >(arena);
+template<> PROTOBUF_NOINLINE ::city::person::v2::SetPersonVehicleAttributeResponse*
+Arena::CreateMaybeMessage< ::city::person::v2::SetPersonVehicleAttributeResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::SetPersonVehicleAttributeResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledVehicleIDsRequest*
 Arena::CreateMaybeMessage< ::city::person::v2::SetControlledVehicleIDsRequest >(Arena* arena) {

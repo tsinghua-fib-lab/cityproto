@@ -55,9 +55,9 @@ const (
 	// PersonServiceResetPersonPositionProcedure is the fully-qualified name of the PersonService's
 	// ResetPersonPosition RPC.
 	PersonServiceResetPersonPositionProcedure = "/city.person.v2.PersonService/ResetPersonPosition"
-	// PersonServiceSetPersonAttributeProcedure is the fully-qualified name of the PersonService's
-	// SetPersonAttribute RPC.
-	PersonServiceSetPersonAttributeProcedure = "/city.person.v2.PersonService/SetPersonAttribute"
+	// PersonServiceSetPersonVehicleAttributeProcedure is the fully-qualified name of the
+	// PersonService's SetPersonVehicleAttribute RPC.
+	PersonServiceSetPersonVehicleAttributeProcedure = "/city.person.v2.PersonService/SetPersonVehicleAttribute"
 	// PersonServiceSetControlledVehicleIDsProcedure is the fully-qualified name of the PersonService's
 	// SetControlledVehicleIDs RPC.
 	PersonServiceSetControlledVehicleIDsProcedure = "/city.person.v2.PersonService/SetControlledVehicleIDs"
@@ -123,9 +123,9 @@ type PersonServiceClient interface {
 	// 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
 	// Reset person's position (stop the current trip and switch to sleep status)
 	ResetPersonPosition(context.Context, *connect.Request[v2.ResetPersonPositionRequest]) (*connect.Response[v2.ResetPersonPositionResponse], error)
-	// 设置人的属性
-	// Set person's attribute
-	SetPersonAttribute(context.Context, *connect.Request[v2.SetPersonAttributeRequest]) (*connect.Response[v2.SetPersonAttributeResponse], error)
+	// 设置车辆的属性
+	// Set person's vehicle attribute
+	SetPersonVehicleAttribute(context.Context, *connect.Request[v2.SetPersonVehicleAttributeRequest]) (*connect.Response[v2.SetPersonVehicleAttributeResponse], error)
 	// 设置由外部控制行为的vehicle
 	// Set vehicle controlled by external behavior
 	SetControlledVehicleIDs(context.Context, *connect.Request[v2.SetControlledVehicleIDsRequest]) (*connect.Response[v2.SetControlledVehicleIDsResponse], error)
@@ -223,10 +223,10 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceMethods.ByName("ResetPersonPosition")),
 			connect.WithClientOptions(opts...),
 		),
-		setPersonAttribute: connect.NewClient[v2.SetPersonAttributeRequest, v2.SetPersonAttributeResponse](
+		setPersonVehicleAttribute: connect.NewClient[v2.SetPersonVehicleAttributeRequest, v2.SetPersonVehicleAttributeResponse](
 			httpClient,
-			baseURL+PersonServiceSetPersonAttributeProcedure,
-			connect.WithSchema(personServiceMethods.ByName("SetPersonAttribute")),
+			baseURL+PersonServiceSetPersonVehicleAttributeProcedure,
+			connect.WithSchema(personServiceMethods.ByName("SetPersonVehicleAttribute")),
 			connect.WithClientOptions(opts...),
 		),
 		setControlledVehicleIDs: connect.NewClient[v2.SetControlledVehicleIDsRequest, v2.SetControlledVehicleIDsResponse](
@@ -314,7 +314,7 @@ type personServiceClient struct {
 	getAllVehicles                       *connect.Client[v2.GetAllVehiclesRequest, v2.GetAllVehiclesResponse]
 	getAllPedestrians                    *connect.Client[v2.GetAllPedestriansRequest, v2.GetAllPedestriansResponse]
 	resetPersonPosition                  *connect.Client[v2.ResetPersonPositionRequest, v2.ResetPersonPositionResponse]
-	setPersonAttribute                   *connect.Client[v2.SetPersonAttributeRequest, v2.SetPersonAttributeResponse]
+	setPersonVehicleAttribute            *connect.Client[v2.SetPersonVehicleAttributeRequest, v2.SetPersonVehicleAttributeResponse]
 	setControlledVehicleIDs              *connect.Client[v2.SetControlledVehicleIDsRequest, v2.SetControlledVehicleIDsResponse]
 	fetchControlledVehicleEnvs           *connect.Client[v2.FetchControlledVehicleEnvsRequest, v2.FetchControlledVehicleEnvsResponse]
 	setControlledVehicleActions          *connect.Client[v2.SetControlledVehicleActionsRequest, v2.SetControlledVehicleActionsResponse]
@@ -369,9 +369,9 @@ func (c *personServiceClient) ResetPersonPosition(ctx context.Context, req *conn
 	return c.resetPersonPosition.CallUnary(ctx, req)
 }
 
-// SetPersonAttribute calls city.person.v2.PersonService.SetPersonAttribute.
-func (c *personServiceClient) SetPersonAttribute(ctx context.Context, req *connect.Request[v2.SetPersonAttributeRequest]) (*connect.Response[v2.SetPersonAttributeResponse], error) {
-	return c.setPersonAttribute.CallUnary(ctx, req)
+// SetPersonVehicleAttribute calls city.person.v2.PersonService.SetPersonVehicleAttribute.
+func (c *personServiceClient) SetPersonVehicleAttribute(ctx context.Context, req *connect.Request[v2.SetPersonVehicleAttributeRequest]) (*connect.Response[v2.SetPersonVehicleAttributeResponse], error) {
+	return c.setPersonVehicleAttribute.CallUnary(ctx, req)
 }
 
 // SetControlledVehicleIDs calls city.person.v2.PersonService.SetControlledVehicleIDs.
@@ -464,9 +464,9 @@ type PersonServiceHandler interface {
 	// 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
 	// Reset person's position (stop the current trip and switch to sleep status)
 	ResetPersonPosition(context.Context, *connect.Request[v2.ResetPersonPositionRequest]) (*connect.Response[v2.ResetPersonPositionResponse], error)
-	// 设置人的属性
-	// Set person's attribute
-	SetPersonAttribute(context.Context, *connect.Request[v2.SetPersonAttributeRequest]) (*connect.Response[v2.SetPersonAttributeResponse], error)
+	// 设置车辆的属性
+	// Set person's vehicle attribute
+	SetPersonVehicleAttribute(context.Context, *connect.Request[v2.SetPersonVehicleAttributeRequest]) (*connect.Response[v2.SetPersonVehicleAttributeResponse], error)
 	// 设置由外部控制行为的vehicle
 	// Set vehicle controlled by external behavior
 	SetControlledVehicleIDs(context.Context, *connect.Request[v2.SetControlledVehicleIDsRequest]) (*connect.Response[v2.SetControlledVehicleIDsResponse], error)
@@ -560,10 +560,10 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceMethods.ByName("ResetPersonPosition")),
 		connect.WithHandlerOptions(opts...),
 	)
-	personServiceSetPersonAttributeHandler := connect.NewUnaryHandler(
-		PersonServiceSetPersonAttributeProcedure,
-		svc.SetPersonAttribute,
-		connect.WithSchema(personServiceMethods.ByName("SetPersonAttribute")),
+	personServiceSetPersonVehicleAttributeHandler := connect.NewUnaryHandler(
+		PersonServiceSetPersonVehicleAttributeProcedure,
+		svc.SetPersonVehicleAttribute,
+		connect.WithSchema(personServiceMethods.ByName("SetPersonVehicleAttribute")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceSetControlledVehicleIDsHandler := connect.NewUnaryHandler(
@@ -656,8 +656,8 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceGetAllPedestriansHandler.ServeHTTP(w, r)
 		case PersonServiceResetPersonPositionProcedure:
 			personServiceResetPersonPositionHandler.ServeHTTP(w, r)
-		case PersonServiceSetPersonAttributeProcedure:
-			personServiceSetPersonAttributeHandler.ServeHTTP(w, r)
+		case PersonServiceSetPersonVehicleAttributeProcedure:
+			personServiceSetPersonVehicleAttributeHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledVehicleIDsProcedure:
 			personServiceSetControlledVehicleIDsHandler.ServeHTTP(w, r)
 		case PersonServiceFetchControlledVehicleEnvsProcedure:
@@ -723,8 +723,8 @@ func (UnimplementedPersonServiceHandler) ResetPersonPosition(context.Context, *c
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.ResetPersonPosition is not implemented"))
 }
 
-func (UnimplementedPersonServiceHandler) SetPersonAttribute(context.Context, *connect.Request[v2.SetPersonAttributeRequest]) (*connect.Response[v2.SetPersonAttributeResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetPersonAttribute is not implemented"))
+func (UnimplementedPersonServiceHandler) SetPersonVehicleAttribute(context.Context, *connect.Request[v2.SetPersonVehicleAttributeRequest]) (*connect.Response[v2.SetPersonVehicleAttributeResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetPersonVehicleAttribute is not implemented"))
 }
 
 func (UnimplementedPersonServiceHandler) SetControlledVehicleIDs(context.Context, *connect.Request[v2.SetControlledVehicleIDsRequest]) (*connect.Response[v2.SetControlledVehicleIDsResponse], error) {

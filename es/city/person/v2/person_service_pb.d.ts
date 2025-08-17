@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { PersonRuntime } from "./person_runtime_pb.js";
-import type { Person, PersonAttribute } from "./person_pb.js";
+import type { Person, VehicleAttribute } from "./person_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { Status } from "./motion_pb.js";
 import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
@@ -507,12 +507,12 @@ export declare class ResetPersonPositionResponse extends Message<ResetPersonPosi
 }
 
 /**
- * 设置人的属性请求
- * Request for setting person's attribute
+ * 设置人的车辆属性请求
+ * Request for setting person's vehicle attribute
  *
- * @generated from message city.person.v2.SetPersonAttributeRequest
+ * @generated from message city.person.v2.SetPersonVehicleAttributeRequest
  */
-export declare class SetPersonAttributeRequest extends Message<SetPersonAttributeRequest> {
+export declare class SetPersonVehicleAttributeRequest extends Message<SetPersonVehicleAttributeRequest> {
   /**
    * person id
    *
@@ -521,48 +521,48 @@ export declare class SetPersonAttributeRequest extends Message<SetPersonAttribut
   personId: number;
 
   /**
-   * 人的属性
-   * person's attribute
+   * 人的车辆属性
+   * person's vehicle attribute
    *
-   * @generated from field: city.person.v2.PersonAttribute attribute = 2;
+   * @generated from field: city.person.v2.VehicleAttribute vehicle_attribute = 2;
    */
-  attribute?: PersonAttribute;
+  vehicleAttribute?: VehicleAttribute;
 
-  constructor(data?: PartialMessage<SetPersonAttributeRequest>);
+  constructor(data?: PartialMessage<SetPersonVehicleAttributeRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.person.v2.SetPersonAttributeRequest";
+  static readonly typeName = "city.person.v2.SetPersonVehicleAttributeRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPersonAttributeRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPersonVehicleAttributeRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPersonAttributeRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPersonVehicleAttributeRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPersonAttributeRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPersonVehicleAttributeRequest;
 
-  static equals(a: SetPersonAttributeRequest | PlainMessage<SetPersonAttributeRequest> | undefined, b: SetPersonAttributeRequest | PlainMessage<SetPersonAttributeRequest> | undefined): boolean;
+  static equals(a: SetPersonVehicleAttributeRequest | PlainMessage<SetPersonVehicleAttributeRequest> | undefined, b: SetPersonVehicleAttributeRequest | PlainMessage<SetPersonVehicleAttributeRequest> | undefined): boolean;
 }
 
 /**
- * 设置人的属性响应
- * Response of setting person's attribute
+ * 设置人的车辆属性响应
+ * Response of setting person's vehicle attribute
  *
- * @generated from message city.person.v2.SetPersonAttributeResponse
+ * @generated from message city.person.v2.SetPersonVehicleAttributeResponse
  */
-export declare class SetPersonAttributeResponse extends Message<SetPersonAttributeResponse> {
-  constructor(data?: PartialMessage<SetPersonAttributeResponse>);
+export declare class SetPersonVehicleAttributeResponse extends Message<SetPersonVehicleAttributeResponse> {
+  constructor(data?: PartialMessage<SetPersonVehicleAttributeResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.person.v2.SetPersonAttributeResponse";
+  static readonly typeName = "city.person.v2.SetPersonVehicleAttributeResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPersonAttributeResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPersonVehicleAttributeResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPersonAttributeResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPersonVehicleAttributeResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPersonAttributeResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPersonVehicleAttributeResponse;
 
-  static equals(a: SetPersonAttributeResponse | PlainMessage<SetPersonAttributeResponse> | undefined, b: SetPersonAttributeResponse | PlainMessage<SetPersonAttributeResponse> | undefined): boolean;
+  static equals(a: SetPersonVehicleAttributeResponse | PlainMessage<SetPersonVehicleAttributeResponse> | undefined, b: SetPersonVehicleAttributeResponse | PlainMessage<SetPersonVehicleAttributeResponse> | undefined): boolean;
 }
 
 /**

@@ -144,17 +144,17 @@ class ResetPersonPositionResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
-class SetPersonAttributeRequest(_message.Message):
-    __slots__ = ['person_id', 'attribute']
+class SetPersonVehicleAttributeRequest(_message.Message):
+    __slots__ = ['person_id', 'vehicle_attribute']
     PERSON_ID_FIELD_NUMBER: _ClassVar[int]
-    ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+    VEHICLE_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     person_id: int
-    attribute: _person_pb2.PersonAttribute
+    vehicle_attribute: _person_pb2.VehicleAttribute
 
-    def __init__(self, person_id: _Optional[int]=..., attribute: _Optional[_Union[_person_pb2.PersonAttribute, _Mapping]]=...) -> None:
+    def __init__(self, person_id: _Optional[int]=..., vehicle_attribute: _Optional[_Union[_person_pb2.VehicleAttribute, _Mapping]]=...) -> None:
         ...
 
-class SetPersonAttributeResponse(_message.Message):
+class SetPersonVehicleAttributeResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
