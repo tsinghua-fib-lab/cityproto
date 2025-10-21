@@ -21,8 +21,8 @@ requires-python = ">=3.8"
 dependencies = [
   'importlib-metadata; python_version<"3.8"',
   "grpcio >= 1.60.0, < 2.0.0",
-  "protobuf >= 4.24.0, < 5.0.0",
-  "types-protobuf >= 4.24.0, < 5.0.0",
+  "protobuf >= 4.24.0, < 6.0.0",
+  "types-protobuf >= 4.24.0, < 6.0.0",
 ]
 classifiers = [
   "Programming Language :: Python :: 3",
